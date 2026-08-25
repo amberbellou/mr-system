@@ -4,8 +4,8 @@ A classroom game about systemic inequality in education, for 30–60 students in
 
 **▶ Play it: https://amberbellou.github.io/mr-system/**
 
-Ten families try to get to school, get home, and make it to tomorrow. Everyone follows the same
-rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
+Eighteen families try to get to school, get home, and make it to tomorrow. Everyone follows the
+same rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
 screen that shows the class what just happened to them.
 
 ---
@@ -14,7 +14,7 @@ screen that shows the class what just happened to them.
 
 | Phase | What the room does |
 | --- | --- |
-| Setup | Pick a class size (30–60). Ten families are played by hand; the rest are grouped and resolved by the same rules in the background. |
+| Setup | Pick a class size (30–60). Eighteen named families are played by hand; the rest are grouped and resolved by the same rules in the background. |
 | Rounds 1–3 | Morning, evening, night. Each family faces a dilemma and picks A/B/C. Some choices trigger a timed challenge; some resolve on their own. |
 | The vote | After every round the surviving families vote one student out. Eliminated students stay in the room as ghosts — they can mime, they cannot vote. |
 | Final round | Homework is due, then the music starts. Last one in is tardy, and tardy is out. Some students never had to rush. |

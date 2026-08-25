@@ -559,6 +559,10 @@ let CAST = [
  who:"Indian-American, wealthy immigrant family, heavy parental expectation.",
  tags:["Tutor twice a week","Translates every school letter","Sleeps five hours"],
  load:2, tmpl:"long", glasses:true, pal:{H:"#1E1512",S:"#C98B5E",T:"#3B8F55",P:"#33404F",B:"#1B222B"}},
+{id:"mei", name:"MEI", cls:"Upper-middle", tier:"upper",
+ who:"Chinese-American, both parents doctors, a schedule with no air in it.",
+ tags:["Both parents are doctors","Piano, tutoring, four APs","Perfection is assumed, not praised","Sleeps six hours"],
+ load:3, tmpl:"long", glasses:true, pal:{H:"#151013",S:"#EFC9A0",T:"#1F4E7A",P:"#2C3A4C",B:"#1B222B"}},
 {id:"carlos", name:"CARLOS", cls:"Working-class", tier:"work",
  who:"Mexican-American, both parents work opposite shifts.",
  tags:["Opens the shop before class","Shares one car with three adults","Won't call any office"],
@@ -571,6 +575,30 @@ let CAST = [
  who:"Puerto Rican, single mom, plus-size, severe undiagnosed endometriosis.",
  tags:["Pain dismissed as weight-related","No diagnosis, no 504 plan","Mom can't miss another shift"],
  load:4, tmpl:"long", pal:{H:"#241713",S:"#CE9367",T:"#C4332F",P:"#2F3E52",B:"#1B222B"}},
+{id:"fatima", name:"FATIMA", cls:"Working-class", tier:"work",
+ who:"Egyptian-American, Muslim, single mom on 12-hour nursing shifts. Oldest of three.",
+ tags:["Gets two siblings out the door first","Mom on 12-hour nursing shifts","Daily comments about the hijab","Fasting until sundown"],
+ load:4, tmpl:"wrap", pal:{H:"#1A120C",S:"#C98B5E",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#2F6FB0"}},
+{id:"rajesh", name:"RAJESH", cls:"Working-class", tier:"work",
+ who:"Indian-American, single immigrant mother, a nurse on early shifts. No family on this continent.",
+ tags:["Mom is out the door at 5:30","Gets his sister to school first","No family closer than Hyderabad"],
+ load:4, tmpl:"base", pal:{H:"#17110D",S:"#A9713F",T:"#C4332F",P:"#2C3A4C",B:"#1B222B"}},
+{id:"ling", name:"LING", cls:"Working-class", tier:"work",
+ who:"Chinese-American, single mother works restaurant nights. Every form in English goes through her.",
+ tags:["Mom works 2 to 11","Translates every bill and lease","Cooks her own dinner","Homework after everything else"],
+ load:4, tmpl:"long", pal:{H:"#141014",S:"#E8BC93",T:"#C97B14",P:"#2F3E52",B:"#1B222B"}},
+{id:"jamal", name:"JAMAL", cls:"Working-class", tier:"work",
+ who:"Black, Muslim, parents on opposite shifts. Prays five times a day, wherever there's room.",
+ tags:["Up at 6:15 for Fajr","No prayer space at school","Coach doesn't get Ramadan"],
+ load:4, tmpl:"cap", pal:{H:"#120C09",S:"#6B4326",T:"#DFA018",P:"#2C3A4C",B:"#1B222B",A:"#3B8F55"}},
+{id:"aisha", name:"AISHA", cls:"Working-class", tier:"work",
+ who:"Black, Muslim, plus-size. Mom works retail shifts; most mornings are hers alone.",
+ tags:["Mom closes the store most nights","Handles every morning alone","PE uniform stops two sizes short","Comments from every direction"],
+ load:5, tmpl:"wrap", pal:{H:"#120C09",S:"#7E5232",T:"#B85325",P:"#2F3E52",B:"#1B222B",A:"#DFA018"}},
+{id:"kavi", name:"KAVI", cls:"Working-class", tier:"work",
+ who:"Indian-American, non-binary, two parents in shaky IT jobs. Out at school, not at home.",
+ tags:["Out at school, not at home","Deadname at the dinner table","Two IT jobs, both shaky","Clubs count as distractions"],
+ load:4, tmpl:"long", pal:{H:"#2E7D6B",S:"#B57F52",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
 {id:"marcus", name:"MARCUS", cls:"Poverty", tier:"pov",
  who:"Black, sibling-led household, no parents. Oldest of four.",
  tags:["Raising three siblings","$2.50 for a $3 fare","Youngest needs constant supervision"],
@@ -587,6 +615,11 @@ let CAST = [
  who:"White, sibling-led household, mother in psychiatric crisis.",
  tags:["Mom hasn't gotten up in nine days","Hides it from every teacher","Rent is 11 days late"],
  load:5, tmpl:"long", pal:{H:"#8A6A3E",S:"#EAC099",T:"#7E8B9B",P:"#3A2E22",B:"#1B222B"}}
+,
+{id:"amina", name:"AMINA", cls:"Poverty", tier:"pov",
+ who:"Somali, Muslim, refugee family. Grandma is guardian and speaks little English.",
+ tags:["Grandma is guardian and doesn't drive","Translates the doctor, the landlord, the school","Loud knocks mean something else at home","Called a terrorist in the lunch line"],
+ load:5, tmpl:"wrap", pal:{H:"#120C09",S:"#8A5A34",T:"#2F6FB0",P:"#2F3E52",B:"#1B222B",A:"#6C4E96"}}
 ];
 let BY_ID = Object.fromEntries(CAST.map(c => [c.id, c]));
 const TIER_LABEL = {upper:"Upper-class", work:"Working-class", pov:"Poverty / crisis"};
@@ -641,7 +674,19 @@ keepit30: {kind:"quiz", secs:30, diff:4, diffLabel:"Heavy", title:"ACT NORMAL IN
 hotspot30: {kind:"quiz", secs:30, diff:4, diffLabel:"Heavy", title:"ONE BAR OF SIGNAL",
   brief:"Get the assignment submitted before the connection drops.", need:1, qs:[
   {q:"Upload fails at 80%. Best move?", opts:["Retry the same file","Send a photo of the pages","Give up"], a:1},
-  {q:"Portal says \u201cdue 11:59 PM\u201d and it's 11:52.", opts:["Submit what you have","Finish it properly","Email tomorrow"], a:0}]}
+  {q:"Portal says \u201cdue 11:59 PM\u201d and it's 11:52.", opts:["Submit what you have","Finish it properly","Email tomorrow"], a:0}]},
+translatecall25: {kind:"quiz", secs:25, diff:4, diffLabel:"Heavy", title:"TRANSLATE THE CALL",
+  brief:"An adult's problem, in your second language, on a timer. Get both right or something real gets lost.", need:2, qs:[
+  {q:"\u201cTake one tablet twice daily with food; do not stop early\u201d means\u2026",
+   opts:["finish the whole course, morning and night, with meals","take it only when it hurts","stop when she feels better"], a:0},
+  {q:"\u201cA decision on the renewal is required by the first of the month\u201d means\u2026",
+   opts:["the rent went down","an answer is needed by the 1st","move out immediately"], a:1}]},
+evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVERYONE AT ONCE",
+  brief:"Answer as fast as they come. There is no right answer, only a cheaper one.", need:3, qs:[
+  {q:"The little one won't eat what you cooked.", opts:["Make something else","Eat or don't","Sit with him"]},
+  {q:"Homework check: your sister wrote one sentence.", opts:["Make her redo it","Let it go","Write it with her"]},
+  {q:"The phone rings. It's your mom, on break, asking if everything is fine.", opts:["\u201cEverything's fine\u201d","Tell the truth","Hand it to a sibling"]},
+  {q:"It's 10 PM. Your own homework is untouched.", opts:["Start now","Sleep","Set a 5 AM alarm"]}]}
 };
 
 /* ==========================================================
@@ -650,6 +695,68 @@ hotspot30: {kind:"quiz", secs:30, diff:4, diffLabel:"Heavy", title:"ONE BAR OF S
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 let DILEMMAS = {
 1:{
+ mei:{sit:"Your parents booked a 7:30 AP-chem review session on the way to school. You found out at 6:50, when your mother handed you the packet in the car. First bell is 8:30.", choices:[
+  A("A","Do the review in the car","Your last unscheduled twenty minutes.","book",
+    {chal:"apchem25",
+     pass:{st:"in",say:"Both right. You are dropped at the curb at 8:14, on schedule and already tired."},
+     fail:{st:"strug",say:"One wrong, at a red light, with your mother watching. Nothing is said, and you spend first period redoing that question in your head."}}),
+  A("B","Ask to skip it once","The temperature in the car.","clock",
+    {auto:{st:"in",say:"She says \"of course\" and turns the radio off. It is not mentioned again, which is how you know it was recorded."}}),
+  A("C","Propose every other day","Every other morning.","note",
+    {auto:{st:"in",say:"They agree immediately, because it is a reasonable request and you are a reasonable daughter. The Tuesday session is now twice as long."}})]},
+ fatima:{sit:"Your mom's shift started at 6 and she left before anyone was up. You ate before dawn; the little ones haven't eaten at all. Their school is eight blocks in the wrong direction.", choices:[
+  A("A","Make them breakfast first","Ten minutes at the stove.","home",
+    {auto:{st:"in",say:"Eggs, toast, two zipped backpacks. At 8:40 the guard holds your ID up twice before waving you in, and the tardy goes next to your name."}}),
+  A("B","Skip breakfast, everyone on time","Two hungry kids until lunch.","clock",
+    {auto:{st:"in",say:"All three of you make the bell. At 10:15 your brother's teacher writes \u201cunfocused\u201d in the folder that follows him to every meeting."}}),
+  A("C","Call your mom at the hospital","A phone she isn't allowed to touch.","warn",
+    {auto:{st:"in",say:"She whispers you through it: granola bars behind the rice, two dollars in the drawer. All three of you make the bell. A charge nurse saw the phone, and dinner tonight is quiet in a new way."}})]},
+ rajesh:{sit:"Your mom left for the hospital at 5:30. Your sister is eight and will not get out of bed. Her school opens at 7:50. Yours is twenty minutes the other way.", choices:[
+  A("A","Get her up, fed, dressed, and there","Everything before first bell.","walk",
+    {auto:{st:"in",say:"Cereal, shoes, the fight about the shoes. Her door at 7:50, yours at 8:28, and first period spent keeping your eyes open on purpose."}}),
+  A("B","Leave her with the neighbor in 4B","A woman you've met twice.","home",
+    {auto:{st:"in",say:"She says yes before you finish the question. You are on time, and you spend all six periods on what you actually know about her: a name, an apartment number."}}),
+  A("C","Let her stay home sick","The call to the nursing station.","note",
+    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."}})]},
+ ling:{sit:"Your mom got home at 11:40 last night. The landlord calls at 7:30 about the lease renewal, in English. First bell is 8:30, twenty-five minutes away on foot.", choices:[
+  A("A","Sit at the table and translate the call","Fifteen minutes and a tardy.","clock",
+    {chal:"translatecall25",
+     pass:{st:"in",say:"Rent, deposit, renewal date, all of it lands in both languages. You walk into first period at 8:45, marked tardy."},
+     fail:{st:"strug",say:"A line about \"prevailing market rate\" goes past too fast to carry across. Your mom says yes to it anyway, and you spend six periods turning the phrase over."}}),
+  A("B","Leave for school on time","Your mom, alone on the phone.","walk",
+    {auto:{st:"in",say:"You make first bell. At lunch she texts a photo of the page she signed and asks what \"arbitration\" means."}}),
+  A("C","Ask the landlord to call back at 4","The landlord's tone.","warn",
+    {auto:{st:"in",say:"He says fine in a way that means it isn't. You're on time, and you spend the whole day rehearsing the call in your head."}})]},
+ jamal:{sit:"Fajr is at 6:15. Your dad's shift started at five; your mom's doesn't end until seven. Breakfast, the prayer rug, and the 7:25 bus all want the same forty minutes.", choices:[
+  A("A","Pray, skip breakfast","Breakfast.","heart",
+    {auto:{st:"in",say:"You make the prayer and you make the bus. By second period the whiteboard is just shapes and your stomach is the loudest thing in the row."}}),
+  A("B","Skip the prayer","The first of five.","check",
+    {auto:{st:"in",say:"You eat and you're in your seat by 7:55. You spend first period deciding you'll make it up later, and second period, and third."}}),
+  A("C","Up at 5:45. All of it.","Thirty minutes of sleep.","clock",
+    {auto:{st:"in",say:"Prayer at 6:15, eggs at 6:40, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
+ aisha:{sit:"Mom left for inventory at 5:40. Getting dressed means finding what fits, what covers, and what the hallway won't have something to say about. The bus is at 7:52.", choices:[
+  A("A","Take the time to get it right","Ten minutes, recorded.","clock",
+    {auto:{st:"in",say:"You walk in at 8:40 feeling like yourself. The office writes down the tardy without looking up."}}),
+  A("B","Wear whatever is fastest","Feeling wrong until the last bell.","bus",
+    {auto:{st:"in",say:"You make the 7:52 in the first thing your hands touch. You spend all six periods tugging at the hem."}}),
+  A("C","Leave the scarf on the hook","One day of being someone else.","ghost",
+    {auto:{st:"in",say:"The hallway has nothing to say for once. You catch your reflection in the trophy case between classes and look away."}})]},
+ kavi:{sit:"Breakfast at 7. Your mother uses the old name twice before the toast is done. The pin with your pronouns is in your jacket pocket, where it lives until the bus stop.", choices:[
+  A("A","Change at the bus stop, same as always","Being two people before 8 AM.","bus",
+    {auto:{st:"in",say:"You pin it on once the house is out of sight and are Kavi by first bell. On time, in your seat, faster at the changeover every week."}}),
+  A("B","Say it at breakfast","Their version of you.","heart",
+    {auto:{st:"strug",say:"Your father goes quiet. Your mother says something about layoffs, then \u201cfocus on your studies,\u201d and drives you to school so you won't be late. Nobody says the name. Either one."}}),
+  A("C","Leave the pin at home","Both of you.","ghost",
+    {auto:{st:"strug",say:"You answer to anything and correct no one. It is the smoothest morning in weeks. Nobody in either building talks to Kavi, which was the plan."}})]},
+ amina:{sit:"Grandma rides the bus with you since the comments started. This morning her hip is bad and she is moving slowly. The bus comes in ten minutes. The next one is half an hour later.", choices:[
+  A("A","Help her get ready, take the next bus","Fifteen minutes.","bus",
+    {auto:{st:"in",say:"You get her ready and take the 8:10 together. She watches every face that gets on. You walk in at 8:46 and the office writes it down."}}),
+  A("B","Leave without her","Grandma alone, all day.","clock",
+    {auto:{st:"in",say:"You catch the 7:40 alone and make first bell. All day you do the math on how she gets down the stairs by herself."}}),
+  A("C","Rush her","Rushing an old woman down the stairs.","warn",
+    {auto:{st:"in",say:"You both make the 7:40. She took the stairs too fast and pays for it at every stop. She says nothing about being hurried, in either language."}}),
+  A("D","Stay home with her","Another absence.","home",
+    {auto:{st:"out",say:"You stay and settle her hip with the heating pad. She apologizes all morning. When the attendance letter comes, you will be the one who translates it."}})]},
  david:{sit:"Your parents can drive you. They also want to drop your brother at soccer first. First bell is 8:30.", choices:[
   A("A","Ask them to skip the soccer drop-off","Your brother sulks. That is the entire cost.","car",
     {chal:"homework30",
@@ -743,6 +850,66 @@ let DILEMMAS = {
     {auto:{st:"out",say:"A report is filed within the hour. You spend the day in an office, not a classroom."}})]}
 },
 2:{
+ mei:{sit:"Tutor at 4:30, piano at 6, homework after. The grade portal updates at 9 PM. Your parents refresh it at 9:01.", choices:[
+  A("A","Do all of it","Nothing anyone can see.","clock",
+    {auto:{st:"strug",say:"Tutor, piano, three assignments, lights out at 12:40. The portal shows a perfect evening. There is no field for the rest of it."}}),
+  A("B","Tell your parents it's too much","Being told why.","home",
+    {auto:{st:"in",say:"Your father says, \"We do this for your future.\" Your mother agrees. Tomorrow's schedule is identical to today's."}}),
+  A("C","Quietly drop piano","A week, at most.","ghost",
+    {auto:{st:"strug",say:"It works for six days, until the studio calls your mother to confirm the cancellation. Dinner that night has one topic."}})]},
+ fatima:{sit:"Home by four with both of them. You are fasting; iftar is at 7:52. They are seven and nine and hungry now, and your English essay is due at midnight.", choices:[
+  A("A","Cook for them first","A meal you can't taste.","home",
+    {auto:{st:"strug",say:"Rice and chicken by five, standing over a pan you can't touch. You sit down to the essay at six with nothing in you, and the title is still all there is when the light starts to go."}}),
+  A("B","Essay first, they can wait","An hour of them getting louder.","book",
+    {auto:{st:"strug",say:"You get four sentences down before the fighting starts in the next room. At 5:40 you close the laptop and cook, which is how this was always going to go."}}),
+  A("C","Both at once","Every ten minutes, a trade.","warn",
+    {auto:{st:"strug",say:"You stir with the essay propped against the flour jar. Dinner is late, the essay is 400 words of filler, and sundown is still two hours away."}})]},
+ rajesh:{sit:"Home at 4:30, both of you. She has a worksheet she can't start. You have three assignments you haven't. Your mom is home at seven, on her feet since six.", choices:[
+  A("A","Her worksheet first","Your three assignments.","book",
+    {chal:"homework30",
+     pass:{st:"strug",say:"Seven times eight, which word is the noun. She gets it, mostly. Your own three start at 9:15 and two of them finish."},
+     fail:{st:"strug",say:"You explain it three different ways and she cries at the third. The worksheet goes back in her folder half-blank, and yours never leaves the bag."}}),
+  A("B","Your own work first","The sound of the TV.","note",
+    {auto:{st:"in",say:"All three of yours get done. She gives up at the second question and watches cartoons until seven, the worksheet face-down on the couch."}}),
+  A("C","Snack first, then split the time","Half of each.","clock",
+    {auto:{st:"strug",say:"Toast at 4:45, then thirty minutes each. Both end up half-done, and when your mom asks how homework went, you both say fine."}})]},
+ ling:{sit:"You let yourself in at 4:30. Eight envelopes on the counter, all in English. Your mom is at the restaurant until 11 and two assignments are due tomorrow. You start the rice first.", choices:[
+  A("A","Open the mail first","The homework.","note",
+    {auto:{st:"strug",say:"The fourth envelope is a shut-off notice dated Thursday. You catch it in time to set up a payment plan, and both assignments stay in the backpack."}}),
+  A("B","Homework first, mail on the weekend","Whatever the envelopes say.","book",
+    {auto:{st:"in",say:"Both assignments are done and turned in. The overdue bill surfaces three days later under a takeout menu, with a $45 late fee attached."}}),
+  A("C","Skim the stack, do the shortest assignment","Everything second-most-urgent.","warn",
+    {auto:{st:"strug",say:"You handle the envelope stamped URGENT and the worksheet due first period. The essay and five unopened letters move to tomorrow, which is already full."}})]},
+ jamal:{sit:"Asr falls at 4:15, right in the middle of math tutoring. The school has no prayer space; it has never needed one before. Tutoring is what's keeping your grade above a C.", choices:[
+  A("A","Stay in tutoring","Another one.","book",
+    {auto:{st:"in",say:"The quadratics finally click. You keep the count in the back of your planner, where nobody checks."}}),
+  A("B","Find a stairwell and pray","Half the tutoring hour.","heart",
+    {auto:{st:"strug",say:"You make Asr on a folded hoodie between the second and third floor and get back for the last twenty minutes. By last bell the video is up, and somebody has added a sound effect."}}),
+  A("C","Ask the front office for a room","A meeting instead of the prayer.","note",
+    {auto:{st:"in",say:"The vice principal is kind about it for the whole eleven minutes and writes herself a note. There is an empty conference room by the gym, and no one who can find the key."}})]},
+ aisha:{sit:"PE, fourth period. The uniform comes in five sizes and stops two before yours. The weigh-in happens by the open gym door. The comments cover your body, your scarf, and your skin, sometimes in the same sentence.", choices:[
+  A("A","Dress out and go","The mile, in front of everyone.","warn",
+    {auto:{st:"strug",say:"You run the mile in a uniform held closed with a safety pin. The teacher hears the third comment and finds something on his clipboard to read."}}),
+  A("B","Skip it","A cut and a zero.","book",
+    {auto:{st:"strug",say:"You spend fourth period behind the last shelf in the library. The cut posts to the system before you're back in fifth; the zero posts Friday."}}),
+  A("C","Report it","Being the one with the complaint.","note",
+    {auto:{st:"strug",say:"You name all of it, calmly, with dates. The vice principal says \u201ckids will be kids\u201d and asks, before you go, whether the scarf comes off for gym."}})]},
+ kavi:{sit:"Four people on your father's team were laid off Friday. The new rule arrives by group text: straight home, grades only, no clubs. The QSA meets today at 3:30. It is the one hour a week you spend under one name.", choices:[
+  A("A","Go straight home","Your one hour.","home",
+    {auto:{st:"strug",say:"You're home by 3:50 with your homework spread out where it can be seen. The grades are safe. At 4:30 your phone starts filling with photos of a meeting happening without you."}}),
+  A("B","Go, and call it a study group","A second story to keep up.","book",
+    {auto:{st:"in",say:"For one hour you are only Kavi, arguing about fonts on the bake sale poster. On the bus home you text \u201cstudy group ran long.\u201d Your mother sends back a thumbs up."}}),
+  A("C","Ask permission and leave out why","Making the case without the reason.","note",
+    {auto:{st:"strug",say:"You text your mother at lunch and keep it vague: a club, an hour, good for college. \u201cClubs are distractions right now.\u201d The one reason that might have changed her mind is the one you can't type."}})]},
+ amina:{sit:"Home at 4. Grandma's hip is worse and the clinic line closes at five. Somebody has to make the call in English, and there is one person in the house who can. Homework is due tomorrow.", choices:[
+  A("A","Homework first","Listening through the wall.","book",
+    {auto:{st:"in",say:"Your homework is done by seven. Through the wall you hear her repeating \"hip\" into the phone, louder each time, and no appointment gets made."}}),
+  A("B","Translate the call","Homework.","heart",
+    {chal:"translatecall25",
+     pass:{st:"strug",say:"You hold for nineteen minutes and carry every question across in both directions. Thursday at two, bring her card. The homework does not happen."},
+     fail:{st:"strug",say:"One word goes wrong between the two languages and the nurse books her into a clinic that doesn't take her coverage. Tomorrow you make the whole call again, and the homework doesn't happen either way."}}),
+  A("C","Both at once","Half of each.","warn",
+    {auto:{st:"strug",say:"You do the call with the worksheet on your knee. The nurse asks you to repeat yourself; so does problem four. Everything tonight gets half of you."}})]},
  david:{sit:"Debate club, a chapter of history, and a friend waiting on FaceTime. You have four hours before sleep.", choices:[
   A("A","Skip debate club","One club meeting.","clock",
     {auto:{st:"in",say:"Homework by nine, FaceTime until eleven, eight hours of sleep."}}),
@@ -827,6 +994,64 @@ let DILEMMAS = {
     {auto:{st:"out",say:"You lie on the floor of your room with headphones on until it's tomorrow."}})]}
 },
 3:{
+ mei:{sit:"The B+ posts at 9:01. Nobody knocks. By 9:40 there is a confirmation email for a second tutor, Saturdays at 8 AM, and no one has said the grade out loud.", choices:[
+  A("A","Accept the second tutor","Saturday mornings.","book",
+    {auto:{st:"strug",say:"You say thank you, because that is what gets said. There are now zero unscheduled hours in your week; you counted twice."}}),
+  A("B","Push back","Peace at the table.","warn",
+    {auto:{st:"in",say:"The first open argument your kitchen has ever hosted, and you started it. You win Sunday afternoons; breakfast stays cold for two weeks."}}),
+  A("C","Say yes and stop sleeping","Sleep, an hour at a time.","clock",
+    {auto:{st:"strug",say:"The B+ is an A by November. You start waking at 3 AM for no reason and tell no one, because the grades are fine, and the grades are the thing that gets checked."}})]},
+ fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime \u2014 the whole evening is yours now.", choices:[
+  A("A","Run the evening yourself","Your essay, again.","home",
+    {chal:"evening30",
+     pass:{st:"strug",say:"You break your fast over the stove, plate them, check a spelling list, run the whole bedtime. At 10:15 you open your own homework and are asleep on your arm by 10:30."},
+     fail:{st:"strug",say:"The little one cries through iftar and dinner runs until nine. They sleep eventually. Your homework dies on the kitchen table either way."}}),
+  A("B","Leftovers out, door closed, study","Trusting a seven-year-old's evening.","book",
+    {auto:{st:"strug",say:"It holds for two hours. At nine the little one melts down over a stuffed dog nobody can find, and you write nothing after that."}}),
+  A("C","Call Khalto Mona","Her own iftar, abandoned.","heart",
+    {auto:{st:"strug",say:"She leaves her own table and arrives at eight with a container of mahshi. You get half the essay written before your eyes give out."}})]},
+ rajesh:{sit:"Your mom comes home at seven with a lease renewal she needs you to read before she signs, and a school form for your sister. There is nobody else to ask. Your backpack stays shut until nine.", choices:[
+  A("A","Family paperwork first","Midnight.","note",
+    {auto:{st:"strug",say:"You read all nine pages and circle the new rent on page two. Your own work happens between 11:30 and one, in handwriting you won't recognize tomorrow."}}),
+  A("B","Ask her to hold it until Saturday","She won't sleep either.","clock",
+    {auto:{st:"in",say:"She says it can wait and puts the envelope back in her bag. Your work is done by 10:30, and her light is still on at one."}}),
+  A("C","Skip the reading log, do the rest","Two points, again.","bin",
+    {auto:{st:"strug",say:"Lease, form, math, essay; the reading log doesn't happen. It's only two points, which is what you said last week too."}})]},
+ ling:{sit:"9 PM. Your mom calls from the restaurant, voice low. A customer complaint has been written up in English and the manager wants her answer by morning. Your essay is due at 8.", choices:[
+  A("A","Draft her response tonight","The essay.","note",
+    {auto:{st:"strug",say:"You translate it line by line over the phone, then write her side of it in careful English, twice. She keeps her job. The essay stops at four sentences."}}),
+  A("B","Give her the short version, get back to work","Her side of the story.","book",
+    {auto:{st:"in",say:"The essay gets done. Her answer is two sentences she isn't sure of, and she rereads the write-up on her break every night that week."}}),
+  A("C","Help her tonight, ask for an extension tomorrow","An extension nobody promised.","clock",
+    {auto:{st:"strug",say:"You write her response and the essay doesn't happen. In the morning the teacher says deadlines are deadlines and asks why you didn't start earlier."}})]},
+ jamal:{sit:"Basketball tryouts run 4 to 7. It's Ramadan; you've been fasting since 5 AM, and sunset is 7:52. Coach's posted policy is \"hydrate or don't complain.\"", choices:[
+  A("A","Try out anyway","Three hours on empty.","warn",
+    {auto:{st:"strug",say:"You make the cut. Somewhere in hour three the gym tilts sideways, and Coach points at you and tells everyone that's what toughness looks like."}}),
+  A("B","Sit the season out","The season.","home",
+    {auto:{st:"in",say:"You keep the fast and skip the gym. In February the team photo goes up outside the athletic office and you walk past it twice a day."}}),
+  A("C","Explain Ramadan to the coach","Explaining it, again.","clock",
+    {auto:{st:"in",say:"He hears you out with his arms crossed and lands on \"rules are rules, same for everybody.\" Come back in the fall, he says, once all this is over."}})]},
+ aisha:{sit:"Mom's shift runs to close again. At the bus stop a man leans in and says something about your scarf with the word \u201cshould\u201d in it. You get home at 9:40 with your key between your fingers.", choices:[
+  A("A","Tell her when she gets in","Her sleep, on top of yours.","heart",
+    {auto:{st:"strug",say:"You tell her at the kitchen table. She wants to walk you to the stop now, before shifts she cannot be late for. Two people are scared instead of one."}}),
+  A("B","Say nothing","The night, alone with it.","home",
+    {auto:{st:"strug",say:"You read the same paragraph four times and keep none of it. When she gets in at 11:20 you tell her school was fine."}}),
+  A("C","Post about it","Tomorrow.","note",
+    {auto:{st:"strug",say:"The replies are kind all night, and there are a lot of them. By second period it is a screenshot in a group chat you are not in."}})]},
+ kavi:{sit:"Your uncle is staying the night. He uses the old name every time he passes a dish, and his bit about boys these days keeps landing. Your parents laugh in all the right places.", choices:[
+  A("A","Pass the rice and get through it","Answering to it, all evening.","clock",
+    {auto:{st:"strug",say:"You pass dishes, laugh a little late, answer to the name. By the time the table is cleared it has been said fourteen times. You know because you counted."}}),
+  A("B","Leave the table","Your phone and the weekend.","walk",
+    {auto:{st:"strug",say:"You say homework and don't come back down. Your father uses the word disrespectful and takes the phone off your desk. Nobody asks why you left, because as far as they know, nothing happened."}}),
+  A("C","Text Dani from the bathroom","Four minutes.","heart",
+    {auto:{st:"strug",say:"You text one sentence from the bathroom. Dani sends back your name, just your name, five times in a row. You go back to the table and answer to the wrong one, steadier, with the right one in your pocket."}})]},
+ amina:{sit:"The comments from the neighbors have gone on for weeks. Tonight somebody bangs on the door and yells something you will not translate for the little ones. Grandma goes very still. The little ones are crying.", choices:[
+  A("A","Call the police","Uniforms in the doorway.","warn",
+    {auto:{st:"strug",say:"They come at 11:20, write down a report number, and leave. Grandma answers their questions through you in a voice you last heard in the camp. Now she is watching for two things instead of one."}}),
+  A("B","Settle everyone and stay quiet","Sleep, for the whole house.","home",
+    {auto:{st:"strug",say:"You put the little ones in Grandma's bed and tell them it was a drunk man at the wrong door. By two the house is quiet and nobody in it is asleep. Your backpack stays by the door where you dropped it."}}),
+  A("C","Text a teacher you trust","Saying it in writing.","note",
+    {auto:{st:"strug",say:"She texts back in ten minutes and stays in the thread until the house goes quiet. By Friday there is a referral and a waitlist. Help is coming the way it comes: eventually, in English, on a form."}})]},
  david:{sit:"It's 9 PM. Everything's done. There's a party Friday and a group chat arguing about it.", choices:[
   A("A","Go to bed","Nothing.","home",{auto:{st:"in",say:"Nine hours. You wake up before your alarm."}}),
   A("B","Stay up in the group chat","An hour.","clock",{auto:{st:"in",say:"You're a little tired tomorrow. That's the whole story."}}),
@@ -1002,7 +1227,7 @@ let TEXT = {
   titleTagline: "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
   titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter \u2014 but so do the systems built long before you got here.",
   titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. Roughly 20 minutes.",
-  titleStrip: "TEN FAMILIES. THE SAME FIRST BELL.",
+  titleStrip: "EIGHTEEN FAMILIES. THE SAME FIRST BELL.",
   castKaia: "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
   resultsKaia: "Nobody chose wrong. Look at what each of them was choosing between.",
   voteKaia: "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime \u2014 they may not vote. Majority rules.",
@@ -1313,6 +1538,15 @@ V.tardy = () => {
     <div class="actions"><button class="btn" data-act="go" data-to="debrief">SEE THE PATTERN</button></div>`));
 };
 let TARDY_WHY = {
+  lucia:"She had been carrying three siblings for three days before the music ever started.",
+  mei:"Two years of six-hour nights came due at exactly the wrong moment.",
+  fatima:"She had been fasting since dawn and running a household since before that.",
+  rajesh:"He'd been the adult in the house since 5:30 in the morning.",
+  ling:"She was up past midnight writing someone else's response and had nothing left for the music.",
+  jamal:"He'd been fasting since 5 AM and the music started an hour before sunset.",
+  aisha:"She ran the whole thing in a uniform that was never made in her size.",
+  kavi:"They had been two people all day, and both of them were tired.",
+  amina:"She sat up listening for the door until two and had nothing left for running.",
   isabella:"She was in pain before the music started and nobody adjusted anything.",
   marcus:"He was carrying three other people the whole game and it finally showed.",
   carlos:"He came straight from a shift and had nothing left in his legs.",
@@ -2078,9 +2312,9 @@ function seedMid(round){
     for (const c of cs) if (c.fail && c.fail.st === want) return {k:c.k, say:c.fail.say};
     return {k:"A", say:"Made it in, at a cost nobody recorded."};
   };
-  ["marcus","isabella","carlos","sophia"].forEach(id => { S.roster[id].st = "strug";
+  ["marcus","isabella","carlos","sophia","amina","fatima","ling","aisha","kavi"].forEach(id => { S.roster[id].st = "strug";
     const o = pick(id,"strug"); S.roster[id].hist.push({round:1,k:o.k,st:"strug",say:o.say}); });
-  ["david","alejandra","priya","chase"].forEach(id => {
+  ["david","alejandra","priya","chase","mei","rajesh","jamal"].forEach(id => {
     const o = pick(id,"in"); S.roster[id].hist.push({round:1,k:o.k,st:"in",say:o.say}); });
   stepCrowd();
 }

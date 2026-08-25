@@ -19,7 +19,7 @@ the 988 Suicide & Crisis Lifeline. Leave them up for the whole session.
 ## Setting up the room
 
 - Groups of five. Each group is a family and sends one spokesperson to the vote.
-- Ten families are played on screen. Everyone else is resolved in the background by the same rules
+- Eighteen families are played on screen. Everyone else is resolved in the background by the same rules
   — the class-status panel on the right shows the whole room, not just the ten.
 - Project the game. You read Kaia's lines out loud; the room picks A/B/C.
 
@@ -63,9 +63,12 @@ Marcus's morning to be survivable."
 
 ## Timing
 
-About 20 minutes of screen time. Budget 40–50 for the session so the debrief isn't rushed.
+With the full eighteen-family deck, budget 35–45 minutes of screen time and a full hour for the
+session so the debrief isn't rushed.
 
-If you are tight: run rounds 1 and 2, skip round 3, go to the final round. Keep both votes.
+If you are tight: run rounds 1 and 2, skip round 3, go to the final round. Keep both votes. You can
+also read only a subset of families aloud each round and let the class-status panel carry the rest —
+every family still resolves on the dashboard either way.
 
 ## Changing the content
 
