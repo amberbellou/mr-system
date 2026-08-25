@@ -56,6 +56,34 @@
       "load": 3
     },
     {
+      "id": "rebecca",
+      "name": "REBECCA",
+      "cls": "Upper-middle",
+      "tier": "upper",
+      "who": "Ashkenazi Jewish, pediatrician mom, math-teacher dad. The house simply works.",
+      "tags": [
+        "Two parents, both home by six",
+        "Homework help at the dinner table",
+        "Hebrew school on Sundays",
+        "Carpool always covered"
+      ],
+      "load": 1
+    },
+    {
+      "id": "daniel",
+      "name": "DANIEL",
+      "cls": "Upper-middle",
+      "tier": "upper",
+      "who": "Persian-American, Jewish, family import business. His grandmother lives four blocks away and cooks for everyone.",
+      "tags": [
+        "Dad and two uncles run the business",
+        "Grandma cooks four blocks away",
+        "A cousin in every grade",
+        "Someone is always free"
+      ],
+      "load": 1
+    },
+    {
       "id": "carlos",
       "name": "CARLOS",
       "cls": "Working-class",
@@ -964,6 +992,81 @@
             }
           }
         ]
+      },
+      "rebecca": {
+        "sit": "Your mom leaves for the clinic at 7:30 and can drop you early. Your dad leaves at 8:05 and passes the school door at 8:25. Both offers stand every morning. First bell is 8:30.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Go early with mom",
+            "cost": "Forty minutes of sleep.",
+            "icon": "car",
+            "chal": "homework30",
+            "pass": {
+              "st": "in",
+              "say": "The library at 7:50 is empty, warm, and yours. The homework is checked twice before the first bus even pulls in."
+            },
+            "fail": {
+              "st": "in",
+              "say": "You second-guess question four into the wrong answer. Your dad teaches math; it takes four minutes tonight, somewhere between the soup and the salad."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Ride with dad, exactly on time",
+            "cost": "Nothing.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "He pulls up at 8:25 like a train arriving. You spend the five spare minutes on the steps with Hannah and walk in mid-sentence."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Bike it",
+            "cost": "Helmet hair.",
+            "icon": "walk",
+            "auto": {
+              "st": "in",
+              "say": "Twelve minutes of flat streets with a granola bar in your pocket. Both parents wave from the porch like you're leaving for a month."
+            }
+          }
+        ]
+      },
+      "daniel": {
+        "sit": "Dad can drive you. Uncle Davoud's van passes the school anyway, full of cousins. Grandma has already called twice, offering to walk you. The only question this morning is who gets to.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Ride with Dad",
+            "cost": "Nothing.",
+            "icon": "car",
+            "auto": {
+              "st": "in",
+              "say": "He takes the long way to finish the argument about offside. You're at the curb by 8:10, mid-sentence, and he's still wrong."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Walk with Grandma",
+            "cost": "Four blocks at her pace.",
+            "icon": "walk",
+            "auto": {
+              "st": "in",
+              "say": "She hands you a foil package at the gate: tahdig, still warm from this morning. By noon, three people have offered to trade."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Carpool with the cousins",
+            "cost": "The front seat goes by age.",
+            "icon": "check",
+            "auto": {
+              "st": "in",
+              "say": "Uncle Davoud's van, four cousins, one loud vote about tonight's cake. You get out at the gate still laughing."
+            }
+          }
+        ]
       }
     },
     "2": {
@@ -1636,6 +1739,76 @@
             }
           }
         ]
+      },
+      "rebecca": {
+        "sit": "Home by 3:30. Homework, youth group at seven, the new episode at nine. Four free hours. The only question is the order.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Homework first, then the show",
+            "cost": "Youth group, this once.",
+            "icon": "book",
+            "auto": {
+              "st": "in",
+              "say": "Done by eight at the kitchen table, your dad drifting past to admire your margins. You watch the episode with popcorn and nothing hanging over it."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Youth group first",
+            "cost": "Homework squeezed in before nine.",
+            "icon": "car",
+            "auto": {
+              "st": "in",
+              "say": "On the drive home your dad quizzes you on the problem set at red lights, which he thinks is a game and which, annoyingly, works. The homework is done before the opening credits."
+            }
+          },
+          {
+            "k": "C",
+            "t": "All three",
+            "cost": "Nothing.",
+            "icon": "star",
+            "auto": {
+              "st": "in",
+              "say": "Homework by 6:40, youth group at seven, home for the opening credits. Your mom has saved you the good end of the couch."
+            }
+          }
+        ]
+      },
+      "daniel": {
+        "sit": "School lets out at 3:10. The shop could use an hour of shelving and your dad pays family wages. Grandma's table is cleared for homework by 3:30. Nobody needs you anywhere; everybody wants you somewhere.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "An hour at the shop first",
+            "cost": "One episode.",
+            "icon": "star",
+            "auto": {
+              "st": "in",
+              "say": "You shelve saffron and cardamom and Uncle Farhad rounds your pay up to a ten. Homework at grandma's by 4:40, next to a plate of peeled cucumbers."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Straight to grandma's",
+            "cost": "The ten dollars.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "Homework is done by five, next to a tea you didn't ask for. The cousins land at 5:30, straight from Hebrew school, and the table becomes a FIFA bracket."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Homework at the shop counter",
+            "cost": "Nothing.",
+            "icon": "book",
+            "auto": {
+              "st": "in",
+              "say": "Uncle Davoud checks your math between customers, once wrong on purpose to see if you catch it. You catch it."
+            }
+          }
+        ]
       }
     },
     "3": {
@@ -2273,6 +2446,81 @@
             }
           }
         ]
+      },
+      "rebecca": {
+        "sit": "Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Finish it before candle-lighting",
+            "cost": "The afternoon.",
+            "icon": "check",
+            "auto": {
+              "st": "in",
+              "say": "Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Leave it for Sunday",
+            "cost": "Nothing.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "Shabbat, sleep, Hebrew school, and the project on Sunday afternoon. It takes two hours at the dining table and is done before the chicken comes out."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Reconvene Saturday night",
+            "cost": "Nothing.",
+            "icon": "heart",
+            "auto": {
+              "st": "in",
+              "say": "Havdalah ends and the table becomes a workshop — dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."
+            }
+          }
+        ]
+      },
+      "daniel": {
+        "sit": "Shabnam turns thirteen tonight and grandma has been cooking since two. There's a biology quiz tomorrow. The whole family is at the table by seven, including the uncle who majored in bio.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Study before dinner",
+            "cost": "The smell from the kitchen.",
+            "icon": "book",
+            "chal": "homework30",
+            "pass": {
+              "st": "in",
+              "say": "You know it cold by six. Uncle Kian drills you at the table anyway, between the rice and the gondi, and you don't miss one."
+            },
+            "fail": {
+              "st": "in",
+              "say": "You blank on mitosis and Uncle Kian re-explains it twice, the second time using the cake as the cell. You'll walk in tomorrow knowing it better than the textbook does."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Dinner first, study after",
+            "cost": "Staying up until 9:30.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "Grandma sends you home at 8:30 with a thermos of tea for studying. Done by 9:30, and the thermos is still warm."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Skip the party and study",
+            "cost": "Nothing, it turns out.",
+            "icon": "heart",
+            "auto": {
+              "st": "in",
+              "say": "By eight, half the party has migrated to your desk: a plate from dad, cake from two cousins, a call from grandma to confirm the plate arrived. There is frosting on your quiz notes."
+            }
+          }
+        ]
       }
     }
   },
@@ -2687,7 +2935,9 @@
     "sophia": "She was watching the door the entire time, waiting for someone to come asking.",
     "priya": "Even the buffer ran out this time.",
     "alejandra": "She stopped, for once, and it cost her.",
-    "david": "For the first time all game, something didn't go his way."
+    "david": "For the first time all game, something didn't go his way.",
+    "rebecca": "Nobody in her house had ever needed a backup plan, so there wasn't one.",
+    "daniel": "The one thing all week that nobody in the family could fix."
   },
   "text": {
     "titleKicker": "A GAME FOR 30–60 STUDENTS",
@@ -2695,7 +2945,7 @@
     "titleTagline": "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
     "titleBlurb": "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter — but so do the systems built long before you got here.",
     "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. Roughly 20 minutes.",
-    "titleStrip": "EIGHTEEN FAMILIES. THE SAME FIRST BELL.",
+    "titleStrip": "TWENTY FAMILIES. THE SAME FIRST BELL.",
     "castKaia": "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
     "resultsKaia": "Nobody chose wrong. Look at what each of them was choosing between.",
     "voteKaia": "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime — they may not vote. Majority rules.",

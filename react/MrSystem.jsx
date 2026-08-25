@@ -498,6 +498,14 @@ const CAST = [
  who:"Chinese-American, both parents doctors, a schedule with no air in it.",
  tags:["Both parents are doctors","Piano, tutoring, four APs","Perfection is assumed, not praised","Sleeps six hours"],
  load:3, tmpl:"long", glasses:true, pal:{H:"#151013",S:"#EFC9A0",T:"#1F4E7A",P:"#2C3A4C",B:"#1B222B"}},
+{id:"rebecca", name:"REBECCA", cls:"Upper-middle", tier:"upper",
+ who:"Ashkenazi Jewish, pediatrician mom, math-teacher dad. The house simply works.",
+ tags:["Two parents, both home by six","Homework help at the dinner table","Hebrew school on Sundays","Carpool always covered"],
+ load:1, tmpl:"long", pal:{H:"#6E3A1E",S:"#F0C9A2",T:"#4E7AC7",P:"#2C3A4C",B:"#1B222B"}},
+{id:"daniel", name:"DANIEL", cls:"Upper-middle", tier:"upper",
+ who:"Persian-American, Jewish, family import business. His grandmother lives four blocks away and cooks for everyone.",
+ tags:["Dad and two uncles run the business","Grandma cooks four blocks away","A cousin in every grade","Someone is always free"],
+ load:1, tmpl:"base", pal:{H:"#14100A",S:"#CE9367",T:"#20805E",P:"#2F3E52",B:"#1B222B"}},
 {id:"carlos", name:"CARLOS", cls:"Working-class", tier:"work",
  who:"Mexican-American, both parents work opposite shifts.",
  tags:["Opens the shop before class","Shares one car with three adults","Won't call any office"],
@@ -630,6 +638,22 @@ evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVER
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 const DILEMMAS = {
 1:{
+ rebecca:{sit:"Your mom leaves for the clinic at 7:30 and can drop you early. Your dad leaves at 8:05 and passes the school door at 8:25. Both offers stand every morning. First bell is 8:30.", choices:[
+  A("A","Go early with mom","Forty minutes of sleep.","car",
+    {chal:"homework30",
+     pass:{st:"in",say:"The library at 7:50 is empty, warm, and yours. The homework is checked twice before the first bus even pulls in."},
+     fail:{st:"in",say:"You second-guess question four into the wrong answer. Your dad teaches math; it takes four minutes tonight, somewhere between the soup and the salad."}}),
+  A("B","Ride with dad, exactly on time","Nothing.","clock",
+    {auto:{st:"in",say:"He pulls up at 8:25 like a train arriving. You spend the five spare minutes on the steps with Hannah and walk in mid-sentence."}}),
+  A("C","Bike it","Helmet hair.","walk",
+    {auto:{st:"in",say:"Twelve minutes of flat streets with a granola bar in your pocket. Both parents wave from the porch like you're leaving for a month."}})]},
+ daniel:{sit:"Dad can drive you. Uncle Davoud's van passes the school anyway, full of cousins. Grandma has already called twice, offering to walk you. The only question this morning is who gets to.", choices:[
+  A("A","Ride with Dad","Nothing.","car",
+    {auto:{st:"in",say:"He takes the long way to finish the argument about offside. You're at the curb by 8:10, mid-sentence, and he's still wrong."}}),
+  A("B","Walk with Grandma","Four blocks at her pace.","walk",
+    {auto:{st:"in",say:"She hands you a foil package at the gate: tahdig, still warm from this morning. By noon, three people have offered to trade."}}),
+  A("C","Carpool with the cousins","The front seat goes by age.","check",
+    {auto:{st:"in",say:"Uncle Davoud's van, four cousins, one loud vote about tonight's cake. You get out at the gate still laughing."}})]},
  mei:{sit:"Your parents booked a 7:30 AP-chem review session on the way to school. You found out at 6:50, when your mother handed you the packet in the car. First bell is 8:30.", choices:[
   A("A","Do the review in the car","Your last unscheduled twenty minutes.","book",
     {chal:"apchem25",
@@ -785,6 +809,20 @@ const DILEMMAS = {
     {auto:{st:"out",say:"A report is filed within the hour. You spend the day in an office, not a classroom."}})]}
 },
 2:{
+ rebecca:{sit:"Home by 3:30. Homework, youth group at seven, the new episode at nine. Four free hours. The only question is the order.", choices:[
+  A("A","Homework first, then the show","Youth group, this once.","book",
+    {auto:{st:"in",say:"Done by eight at the kitchen table, your dad drifting past to admire your margins. You watch the episode with popcorn and nothing hanging over it."}}),
+  A("B","Youth group first","Homework squeezed in before nine.","car",
+    {auto:{st:"in",say:"On the drive home your dad quizzes you on the problem set at red lights, which he thinks is a game and which, annoyingly, works. The homework is done before the opening credits."}}),
+  A("C","All three","Nothing.","star",
+    {auto:{st:"in",say:"Homework by 6:40, youth group at seven, home for the opening credits. Your mom has saved you the good end of the couch."}})]},
+ daniel:{sit:"School lets out at 3:10. The shop could use an hour of shelving and your dad pays family wages. Grandma's table is cleared for homework by 3:30. Nobody needs you anywhere; everybody wants you somewhere.", choices:[
+  A("A","An hour at the shop first","One episode.","star",
+    {auto:{st:"in",say:"You shelve saffron and cardamom and Uncle Farhad rounds your pay up to a ten. Homework at grandma's by 4:40, next to a plate of peeled cucumbers."}}),
+  A("B","Straight to grandma's","The ten dollars.","home",
+    {auto:{st:"in",say:"Homework is done by five, next to a tea you didn't ask for. The cousins land at 5:30, straight from Hebrew school, and the table becomes a FIFA bracket."}}),
+  A("C","Homework at the shop counter","Nothing.","book",
+    {auto:{st:"in",say:"Uncle Davoud checks your math between customers, once wrong on purpose to see if you catch it. You catch it."}})]},
  mei:{sit:"Tutor at 4:30, piano at 6, homework after. The grade portal updates at 9 PM. Your parents refresh it at 9:01.", choices:[
   A("A","Do all of it","Nothing anyone can see.","clock",
     {auto:{st:"strug",say:"Tutor, piano, three assignments, lights out at 12:40. The portal shows a perfect evening. There is no field for the rest of it."}}),
@@ -929,6 +967,22 @@ const DILEMMAS = {
     {auto:{st:"out",say:"You lie on the floor of your room with headphones on until it's tomorrow."}})]}
 },
 3:{
+ rebecca:{sit:"Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.", choices:[
+  A("A","Finish it before candle-lighting","The afternoon.","check",
+    {auto:{st:"in",say:"Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."}}),
+  A("B","Leave it for Sunday","Nothing.","home",
+    {auto:{st:"in",say:"Shabbat, sleep, Hebrew school, and the project on Sunday afternoon. It takes two hours at the dining table and is done before the chicken comes out."}}),
+  A("C","Reconvene Saturday night","Nothing.","heart",
+    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop \u2014 dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
+ daniel:{sit:"Shabnam turns thirteen tonight and grandma has been cooking since two. There's a biology quiz tomorrow. The whole family is at the table by seven, including the uncle who majored in bio.", choices:[
+  A("A","Study before dinner","The smell from the kitchen.","book",
+    {chal:"homework30",
+     pass:{st:"in",say:"You know it cold by six. Uncle Kian drills you at the table anyway, between the rice and the gondi, and you don't miss one."},
+     fail:{st:"in",say:"You blank on mitosis and Uncle Kian re-explains it twice, the second time using the cake as the cell. You'll walk in tomorrow knowing it better than the textbook does."}}),
+  A("B","Dinner first, study after","Staying up until 9:30.","clock",
+    {auto:{st:"in",say:"Grandma sends you home at 8:30 with a thermos of tea for studying. Done by 9:30, and the thermos is still warm."}}),
+  A("C","Skip the party and study","Nothing, it turns out.","heart",
+    {auto:{st:"in",say:"By eight, half the party has migrated to your desk: a plate from dad, cake from two cousins, a call from grandma to confirm the plate arrived. There is frosting on your quiz notes."}})]},
  mei:{sit:"The B+ posts at 9:01. Nobody knocks. By 9:40 there is a confirmation email for a second tutor, Saturdays at 8 AM, and no one has said the grade out loud.", choices:[
   A("A","Accept the second tutor","Saturday mornings.","book",
     {auto:{st:"strug",say:"You say thank you, because that is what gets said. There are now zero unscheduled hours in your week; you counted twice."}}),
@@ -1055,6 +1109,8 @@ const PRIV = {
   alejandra: "Family donates the gym scoreboard — nobody was going to mark her late."
 };
 const TARDY_WHY = {
+  rebecca:"Nobody in her house had ever needed a backup plan, so there wasn't one.",
+  daniel:"The one thing all week that nobody in the family could fix.",
   lucia:"She had been carrying three siblings for three days before the music ever started.",
   mei:"Two years of six-hour nights came due at exactly the wrong moment.",
   fatima:"She had been fasting since dawn and running a household since before that.",
@@ -1227,7 +1283,7 @@ function seedMid(classSize, round) {
     const o = pick(id, "strug");
     g.roster[id].hist.push({ round: 1, k: o.k, st: "strug", say: o.say });
   });
-  ["david", "alejandra", "priya", "chase", "mei", "rajesh", "jamal"].forEach(id => {
+  ["david", "alejandra", "priya", "chase", "mei", "rajesh", "jamal", "rebecca", "daniel"].forEach(id => {
     const o = pick(id, "in");
     g.roster[id].hist.push({ round: 1, k: o.k, st: "in", say: o.say });
   });
@@ -1564,7 +1620,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
         {CAST.map(x => <Sprite key={x.id} id={x.id} px={3} />)}
       </div>
       <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: v("--ink-3"), letterSpacing: ".04em" }}>
-        EIGHTEEN FAMILIES. THE SAME FIRST BELL.</p>
+        TWENTY FAMILIES. THE SAME FIRST BELL.</p>
       <Actions>
         <button className="btn" onClick={() => go("setup")}>START GAME</button>
         <button className="btn btn-ghost" onClick={() => setShowIndex(true)}>SCREEN INDEX</button>
