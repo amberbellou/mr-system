@@ -1042,16 +1042,16 @@ V.title = () => screen("BOOT", "v1.0", `
 V.setup = () => screen("SETUP", "class size", `
   <p class="eyebrow">STEP 1 OF 2</p>
   <h2 class="screen-title">HOW MANY STUDENTS<br>ARE IN THE ROOM?</h2>
-  <p style="max-width:58ch;color:${cssVar("--ink-2")}">Ten families are played by hand. Everyone else is grouped
-    into families in the background and their outcomes are resolved by the same rules.</p>
+  <p style="max-width:58ch;color:${cssVar("--ink-2")}">The ${CAST.length} named families are played by hand.
+    Everyone else is grouped into families in the background and their outcomes are resolved by the same rules.</p>
   <div class="setup-row">
     <div class="stepper">
       <button data-act="size" data-d="-5" aria-label="Fewer students">&minus;</button>
       <output id="sizeOut">${S.classSize}</output>
       <button data-act="size" data-d="5" aria-label="More students">+</button>
     </div>
-    <span class="pill">PLAYED BY HAND <b>10</b></span>
-    <span class="pill">BACKGROUND <b id="bgOut">${S.classSize-10}</b></span>
+    <span class="pill">PLAYED BY HAND <b>${CAST.length}</b></span>
+    <span class="pill">BACKGROUND <b id="bgOut">${S.classSize-CAST.length}</b></span>
     <span class="pill">FAMILY GROUPS <b id="fgOut">${Math.ceil(S.classSize/5)}</b></span>
   </div>
   <p class="hint">Range 30&ndash;60. Groups of five.</p>
@@ -1433,8 +1433,14 @@ let PACK = clone(DEFAULT_PACK);
 function mergePack(p){
   const d = clone(DEFAULT_PACK);
   if (!p || typeof p !== "object") return d;
-  ["pass","cast","rounds","dilemmas","challenges","priv","tardyWhy"].forEach(k => {
-    if (p[k] != null) d[k] = clone(p[k]);
+  ["pass","cast","rounds"].forEach(k => { if (p[k] != null) d[k] = clone(p[k]); });
+  /* per-key merges: a pack saved before new characters or challenges shipped
+     keeps its edits AND picks up everything it has never heard of */
+  if (p.dilemmas) [1,2,3].forEach(r => {
+    if (p.dilemmas[r]) d.dilemmas[r] = Object.assign({}, d.dilemmas[r], clone(p.dilemmas[r]));
+  });
+  ["challenges","priv","tardyWhy"].forEach(k => {
+    if (p[k]) d[k] = Object.assign({}, d[k], clone(p[k]));
   });
   if (p.text) d.text = Object.assign(clone(DEFAULT_PACK.text), clone(p.text));
   return d;

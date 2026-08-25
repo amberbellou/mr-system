@@ -1321,8 +1321,8 @@ export default function MrSystem({ initialClassSize = 40 }) {
       <p className="eyebrow">STEP 1 OF 2</p>
       <h2 className="screen-title">HOW MANY STUDENTS<br />ARE IN THE ROOM?</h2>
       <p style={{ maxWidth: "58ch", color: v("--ink-2") }}>
-        Ten families are played by hand. Everyone else is grouped into families in the background and their
-        outcomes are resolved by the same rules.</p>
+        The {CAST.length} named families are played by hand. Everyone else is grouped into families in the
+        background and their outcomes are resolved by the same rules.</p>
       <div className="setup-row">
         <div className="stepper">
           <button aria-label="Fewer students"
