@@ -1179,7 +1179,8 @@ export default function MrSystem({ initialClassSize = 40 }) {
     update(n => {
       const ch = CAST[n.qi], c = dilemmaFor(n, ch.id).choices[i];
       if (c.auto) { applyOutcome(n, ch, c, c.auto, null); return; }
-      n.chal = { def: CHALLENGES[c.chal], left: CHALLENGES[c.chal].secs,
+      const def = CHALLENGES[c.chal];
+      n.chal = { def, left: def.secs, endAt: Date.now() + def.secs * 1000,
                  answers: {}, step: 0, choice: c, chId: ch.id };
       n.phase = "challenge";
     });
@@ -1200,12 +1201,14 @@ export default function MrSystem({ initialClassSize = 40 }) {
     const id = setInterval(() => {
       setG(prev => {
         if (prev.phase !== "challenge" || !prev.chal) return prev;
+        const left = Math.max(0, Math.ceil((prev.chal.endAt - Date.now()) / 1000));
+        if (left === prev.chal.left && left > 0) return prev;
         const n = structuredClone(prev);
-        n.chal.left -= 1;
-        if (n.chal.left <= 0) finishChallenge(n, scoreChallenge(n, listRef.current));
+        n.chal.left = left;
+        if (left <= 0) finishChallenge(n, scoreChallenge(n, listRef.current));
         return n;
       });
-    }, 1000);
+    }, 250);
     return () => clearInterval(id);
   }, [g.phase, chalKey]);
 
@@ -1238,7 +1241,9 @@ export default function MrSystem({ initialClassSize = 40 }) {
         const n = seedMid(size, 1); n.round = 1; n.qi = ORDER.indexOf("marcus");
         n.roster.marcus.st = "in";
         const c = DILEMMAS[1].marcus.choices[0];
-        n.chal = { def: CHALLENGES[c.chal], left: CHALLENGES[c.chal].secs, answers: {}, step: 0, choice: c, chId: "marcus" };
+        n.chal = { def: CHALLENGES[c.chal], left: CHALLENGES[c.chal].secs,
+                   endAt: Date.now() + CHALLENGES[c.chal].secs * 1000,
+                   answers: {}, step: 0, choice: c, chId: "marcus" };
         n.phase = "challenge"; return n;
       }
       if (p === "outcome") {

@@ -1829,7 +1829,9 @@ function advance(){ S.qi++; nextQuestion(); }
 function choose(i){
   const ch = CAST[S.qi], d = dilemmaFor(ch.id), c = d.choices[i];
   if (c.auto){ resolve(ch, c, c.auto, null); return; }
-  S.chal = {def: CHALLENGES[c.chal], left: CHALLENGES[c.chal].secs, answers: {}, step: 0, choice: c, ch: ch};
+  const def = CHALLENGES[c.chal];
+  S.chal = {def: def, left: def.secs, endAt: Date.now() + def.secs * 1000,
+            answers: {}, step: 0, choice: c, ch: ch};
   go("challenge");
 }
 function resolve(ch, choice, out, chalNote){
@@ -1877,6 +1879,7 @@ function startTimer(){
   const clock = document.getElementById("clock"), tbar = document.getElementById("tbar");
   const paint = () => {
     if (!clock) return;
+    t.left = Math.max(0, Math.ceil((t.endAt - Date.now()) / 1000));
     const frac = t.left / t.def.secs;
     const cls = frac > .5 ? "" : frac > .25 ? "warn" : "crit";
     clock.className = "clock " + cls; clock.textContent = t.left;
@@ -1884,9 +1887,9 @@ function startTimer(){
   };
   paint();
   tick = setInterval(() => {
-    t.left--; paint();
+    paint();
     if (t.left <= 0){ clearTick(); finishChallenge(scoreChallenge()); }
-  }, 1000);
+  }, 250);
 }
 
 /* ---- voting ---- */
@@ -2083,7 +2086,9 @@ function jumpTo(p, id){
   if (p === "challenge"){ seedMid(1); S.round = 1; S.qi = ORDER.indexOf("marcus");
     S.roster.marcus.st = "in";
     const c = DILEMMAS[1].marcus.choices[0];
-    S.chal = {def:CHALLENGES[c.chal], left:CHALLENGES[c.chal].secs, answers:{}, step:0, choice:c, ch:BY_ID.marcus};
+    S.chal = {def:CHALLENGES[c.chal], left:CHALLENGES[c.chal].secs,
+              endAt: Date.now() + CHALLENGES[c.chal].secs * 1000,
+              answers:{}, step:0, choice:c, ch:BY_ID.marcus};
     return go("challenge"); }
   if (p === "outcome"){ seedMid(1); S.round = 1;
     const c = DILEMMAS[1].lucia.choices[1];
