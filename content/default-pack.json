@@ -1,0 +1,1581 @@
+{
+  "version": 1,
+  "pass": "mrsystem",
+  "cast": [
+    {
+      "id": "david",
+      "name": "DAVID",
+      "cls": "Upper-class",
+      "tier": "upper",
+      "who": "White, wealthy, two parents at home. His dad runs the front office.",
+      "tags": [
+        "Two parents, one stays flexible",
+        "Car in the driveway",
+        "Dad is the principal"
+      ],
+      "load": 1
+    },
+    {
+      "id": "alejandra",
+      "name": "ALEJANDRA",
+      "cls": "Upper-class",
+      "tier": "upper",
+      "who": "Colombian, wealthy family, enormous performance pressure.",
+      "tags": [
+        "Driver takes her to school",
+        "Four AP classes, no margin",
+        "Failure is not discussed"
+      ],
+      "load": 2
+    },
+    {
+      "id": "priya",
+      "name": "PRIYA",
+      "cls": "Upper-middle",
+      "tier": "upper",
+      "who": "Indian-American, wealthy immigrant family, heavy parental expectation.",
+      "tags": [
+        "Tutor twice a week",
+        "Translates every school letter",
+        "Sleeps five hours"
+      ],
+      "load": 2
+    },
+    {
+      "id": "carlos",
+      "name": "CARLOS",
+      "cls": "Working-class",
+      "tier": "work",
+      "who": "Mexican-American, both parents work opposite shifts.",
+      "tags": [
+        "Opens the shop before class",
+        "Shares one car with three adults",
+        "Won't call any office"
+      ],
+      "load": 3
+    },
+    {
+      "id": "chase",
+      "name": "CHASE",
+      "cls": "Working-class",
+      "tier": "work",
+      "who": "Lakota, reservation poverty, father living with substance use.",
+      "tags": [
+        "70-minute route to school",
+        "No internet past the county line",
+        "Grandmother holds it together"
+      ],
+      "load": 4
+    },
+    {
+      "id": "isabella",
+      "name": "ISABELLA",
+      "cls": "Working-class",
+      "tier": "work",
+      "who": "Puerto Rican, single mom, plus-size, severe undiagnosed endometriosis.",
+      "tags": [
+        "Pain dismissed as weight-related",
+        "No diagnosis, no 504 plan",
+        "Mom can't miss another shift"
+      ],
+      "load": 4
+    },
+    {
+      "id": "marcus",
+      "name": "MARCUS",
+      "cls": "Poverty",
+      "tier": "pov",
+      "who": "Black, sibling-led household, no parents. Oldest of four.",
+      "tags": [
+        "Raising three siblings",
+        "$2.50 for a $3 fare",
+        "Youngest needs constant supervision"
+      ],
+      "load": 5
+    },
+    {
+      "id": "lucia",
+      "name": "LUCIA",
+      "cls": "Poverty",
+      "tier": "pov",
+      "who": "Central American, undocumented, single parent detained last month.",
+      "tags": [
+        "Siblings are 6, 8 and 10",
+        "No adult on the emergency card",
+        "Cannot ask anyone official"
+      ],
+      "load": 5
+    },
+    {
+      "id": "jayson",
+      "name": "JAYSON",
+      "cls": "Poverty",
+      "tier": "pov",
+      "who": "Black, trans, sibling-led household, in an active mental health crisis.",
+      "tags": [
+        "Deadnamed on every roster",
+        "Two younger siblings depend on him",
+        "Waitlisted for counseling since fall"
+      ],
+      "load": 5
+    },
+    {
+      "id": "sophia",
+      "name": "SOPHIA",
+      "cls": "Poverty",
+      "tier": "pov",
+      "who": "White, sibling-led household, mother in psychiatric crisis.",
+      "tags": [
+        "Mom hasn't gotten up in nine days",
+        "Hides it from every teacher",
+        "Rent is 11 days late"
+      ],
+      "load": 5
+    }
+  ],
+  "rounds": {
+    "1": {
+      "name": "MORNING IN THE VILLAGE — GET TO SCHOOL",
+      "kaia": "It's 7 AM. First bell is at 8:30. Everybody in this room has to get to the same building. Nobody starts from the same place."
+    },
+    "2": {
+      "name": "AFTERNOON & EVENING — GET HOME",
+      "kaia": "Last bell. Everyone goes home now — to whatever home is. Four hours until sleep, and the homework is due either way."
+    },
+    "3": {
+      "name": "THE NIGHT — MAKE IT TO TOMORROW",
+      "kaia": "Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."
+    }
+  },
+  "dilemmas": {
+    "1": {
+      "david": {
+        "sit": "Your parents can drive you. They also want to drop your brother at soccer first. First bell is 8:30.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Ask them to skip the soccer drop-off",
+            "cost": "Your brother sulks. That is the entire cost.",
+            "icon": "car",
+            "chal": "homework30",
+            "pass": {
+              "st": "in",
+              "say": "You are in your seat by 8:20 with your homework done in the car."
+            },
+            "fail": {
+              "st": "in",
+              "say": "You blank on the second question. Your dad runs the front office. Nobody writes it down."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Ride along and walk in five minutes late",
+            "cost": "Five minutes.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "The office waves you through without looking up. No tardy is recorded."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Your parents manage both, perfectly",
+            "cost": "Nothing.",
+            "icon": "check",
+            "auto": {
+              "st": "in",
+              "say": "Soccer, then school, then a bagel. You arrive early enough to be bored."
+            }
+          }
+        ]
+      },
+      "alejandra": {
+        "sit": "The driver leaves at 7:15. Your mother wants last night's AP chem lab reviewed in the car. Your hands are shaking.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Review the lab in the car",
+            "cost": "Your morning belongs to her.",
+            "icon": "book",
+            "chal": "apchem25",
+            "pass": {
+              "st": "in",
+              "say": "Both correct. She nods once and goes back to her phone. You are on time."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "One wrong. She says nothing the rest of the ride. You are present and already behind in your own head."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Tell her you'll do it at lunch",
+            "cost": "Nine texts before first period.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "You arrive rested. Your phone buzzes nine times before first period."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Skip breakfast and finish everything",
+            "cost": "You eat nothing until 2 PM.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "The lab is perfect. You are in school, shaking, running on nothing."
+            }
+          }
+        ]
+      },
+      "priya": {
+        "sit": "A district letter needs translating for your parents before you leave. Your tutor wants last night's problem set checked. You have 25 minutes.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Translate the letter, skip the set",
+            "cost": "Your tutor reports it to your father.",
+            "icon": "book",
+            "chal": "translate25",
+            "pass": {
+              "st": "in",
+              "say": "Your parents understand the deadline. You are on time and quietly proud."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "You miss a line about the signature. Your father signs nothing. You are in school, worrying."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Do the set, leave the letter on the counter",
+            "cost": "An enrollment deadline passes.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "The set is flawless. The letter sits unread until Friday. Something lapses that nobody explains to you."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Both. Get up at 4:40.",
+            "cost": "Four hours of sleep.",
+            "icon": "clock",
+            "auto": {
+              "st": "strug",
+              "say": "You do all of it. You are in school, on time, and cannot keep your eyes open."
+            }
+          }
+        ]
+      },
+      "carlos": {
+        "sit": "You open the shop at 6. Your dad's shift ended at 5:30 and the car isn't back. School is 40 minutes on foot.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Wait ten minutes for the car, close out the register",
+            "cost": "Ten minutes you don't have.",
+            "icon": "car",
+            "chal": "shopclock25",
+            "pass": {
+              "st": "strug",
+              "say": "The drawer balances, the car pulls in, you slide into second period. Tardy #4 this month."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "The drawer is short. You leave anyway. Tardy #4, and you'll hear about the register tonight."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Lock up early and walk",
+            "cost": "The shop loses the morning rush.",
+            "icon": "walk",
+            "auto": {
+              "st": "strug",
+              "say": "You walk in at 9:05. Tardy. Your mother finds the shop closed and understands exactly why."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Stay until your dad is back",
+            "cost": "The whole day.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "He gets back at 10:40. There is no point going in now."
+            }
+          }
+        ]
+      },
+      "chase": {
+        "sit": "The route bus is 70 minutes, if it runs. Your dad took the truck last night and hasn't come back.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Take the route bus and read on the way",
+            "cost": "70 minutes each way.",
+            "icon": "bus",
+            "chal": "routebus30",
+            "pass": {
+              "st": "in",
+              "say": "You finish the reading somewhere past the second cattle gate. You make first bell."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "You doze off over the book. You make first bell with nothing prepared."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Ask your grandmother's neighbor for a ride",
+            "cost": "You owe someone now.",
+            "icon": "car",
+            "auto": {
+              "st": "in",
+              "say": "He drops you at the flagpole at 8:12 and won't take gas money. You are in."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Go look for the truck first",
+            "cost": "The morning.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "You find the truck. You do not find your dad. It is 11 AM."
+            }
+          }
+        ]
+      },
+      "isabella": {
+        "sit": "Bad pain day. You can barely stand upright. Your mom already left; she cannot miss another shift.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Go anyway and try to get someone to believe you",
+            "cost": "The whole day, spent on staying upright.",
+            "icon": "walk",
+            "chal": "pain60",
+            "pass": {
+              "st": "strug",
+              "say": "You name every symptom clearly. The nurse writes “cramps” and sends you back to class. You stay, in pain, all day."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "You can't get the words out fast enough. The nurse suggests losing weight. You go back to class."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay home",
+            "cost": "An unexcused absence. Your fifth.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You lie on the bathroom floor until 2 PM. The absence is marked unexcused."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Call the nurse advice line",
+            "cost": "Forty minutes on hold.",
+            "icon": "clock",
+            "auto": {
+              "st": "strug",
+              "say": "“This is likely weight-related. Try walking more.” You go in late with nothing."
+            }
+          }
+        ]
+      },
+      "marcus": {
+        "sit": "You and three younger siblings. $2.50 for fares that cost $3 each. The youngest won't put his shoes on.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "All take the bus; one of you stays home",
+            "cost": "One sibling loses the day.",
+            "icon": "bus",
+            "chal": "resources45",
+            "pass": {
+              "st": "strug",
+              "say": "You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number."
+            },
+            "fail": {
+              "st": "out",
+              "say": "You can't name a single place to send him. You take everyone back inside."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Walk it. Ninety minutes. Everyone late.",
+            "cost": "Ninety minutes and four tardies.",
+            "icon": "walk",
+            "chal": "resources45",
+            "pass": {
+              "st": "strug",
+              "say": "Four of you walk in at 9:20. Four tardies. Everyone is in a building."
+            },
+            "fail": {
+              "st": "out",
+              "say": "The youngest sits down in the road at minute forty and will not get up."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Leave the youngest home alone",
+            "cost": "A risk you cannot take back.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "You get to school at 8:35. You check your phone eleven times before lunch."
+            }
+          },
+          {
+            "k": "D",
+            "t": "Everybody stays home",
+            "cost": "Four absences.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You keep all four of them safe and none of you sees a classroom."
+            }
+          }
+        ]
+      },
+      "lucia": {
+        "sit": "Your mom did not come home from her night shift. Your siblings are 6, 8 and 10. No money, no adult you are allowed to call.",
+        "note": "There is no challenge here. There is nothing to win.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Go to school and leave them",
+            "cost": "A 6-year-old alone all day.",
+            "icon": "walk",
+            "auto": {
+              "st": "out",
+              "say": "You get to the corner and turn around. You cannot make your feet do it."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay home with them",
+            "cost": "Everyone is out of school.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You make cereal, lock the door, and count the hours. Everyone is safe. Nobody is in school."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Go look for your mom",
+            "cost": "The 10-year-old is now in charge.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "You don't know which facility. You don't have anyone you can ask. You come home at noon with nothing."
+            }
+          }
+        ]
+      },
+      "jayson": {
+        "sit": "You didn't sleep. The roster still has your old name on it. Two siblings need walking to the elementary door.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Walk them, then go in",
+            "cost": "Being called the wrong name for six hours.",
+            "icon": "walk",
+            "auto": {
+              "st": "strug",
+              "say": "Both siblings are in by 8:15. You sit through attendance being read wrong and say nothing."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Walk them, then go home",
+            "cost": "One more absence.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You get them to the door, then go back and sleep until three."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Ask the front office for help",
+            "cost": "A form and a wait.",
+            "icon": "clock",
+            "auto": {
+              "st": "strug",
+              "say": "The counselor covers four schools. Next opening: three weeks. You are marked present. Nothing else changes."
+            }
+          }
+        ]
+      },
+      "sophia": {
+        "sit": "Your mom hasn't left her room in nine days. If anyone finds out, you and your brother get separated.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Get your brother in, go in, say nothing",
+            "cost": "Six hours of acting.",
+            "icon": "check",
+            "chal": "keepit30",
+            "pass": {
+              "st": "strug",
+              "say": "You give the right answers to every question. Nobody looks twice. You are in school and completely alone in it."
+            },
+            "fail": {
+              "st": "out",
+              "say": "You freeze on the permission slip question. The teacher walks you to the office. The day goes elsewhere."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay home and keep her drinking water",
+            "cost": "A day.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You get her to take three sips. Nobody at school knows why you're gone."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Tell a teacher",
+            "cost": "The thing you are most afraid of.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "A report is filed within the hour. You spend the day in an office, not a classroom."
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "david": {
+        "sit": "Debate club, a chapter of history, and a friend waiting on FaceTime. You have four hours before sleep.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Skip debate club",
+            "cost": "One club meeting.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "Homework by nine, FaceTime until eleven, eight hours of sleep."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Do the homework late and lose an hour of sleep",
+            "cost": "One hour.",
+            "icon": "book",
+            "auto": {
+              "st": "in",
+              "say": "You're tired in first period tomorrow. That is the worst of it."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Your parents hired a tutor. Do all three.",
+            "cost": "Nothing.",
+            "icon": "star",
+            "auto": {
+              "st": "in",
+              "say": "The tutor arrives at six and leaves at seven with the chapter outlined for you. Everything fits."
+            }
+          }
+        ]
+      },
+      "alejandra": {
+        "sit": "Two hours of test prep are scheduled. You have a headache that started Tuesday and hasn't stopped.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Do the full two hours",
+            "cost": "Your evening, and the headache.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You finish at 10:40 and lie awake until two. Everything is done. Nothing is okay."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Tell them you need to sleep",
+            "cost": "A conversation at breakfast.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "You sleep nine hours for the first time in a month. Nobody says anything at breakfast, which is its own kind of saying something."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Do the prep and hide the headache",
+            "cost": "Both.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "Nobody in the house knows you've had a headache for four days."
+            }
+          }
+        ]
+      },
+      "priya": {
+        "sit": "Tutor at six, your own homework after, and a school voicemail nobody but you can understand.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Tutor, homework, voicemail. In that order.",
+            "cost": "Sleep.",
+            "icon": "book",
+            "chal": "hotspot30",
+            "pass": {
+              "st": "in",
+              "say": "Submitted at 11:58. You translate the voicemail for your mother at midnight."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "The upload dies at 11:59. You'll take the late penalty and explain it to nobody."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Skip the tutor and sleep",
+            "cost": "Your father hears about it.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "Eight hours. Your father is told you cancelled. It comes up on Sunday."
+            }
+          },
+          {
+            "k": "C",
+            "t": "All of it, plus your brother's science fair board",
+            "cost": "Everything.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "You go to bed at 1:50 AM. The board looks great."
+            }
+          }
+        ]
+      },
+      "carlos": {
+        "sit": "The shop needs closing at seven. Your homework is untouched. Your dad is asleep before you get home.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Close the shop, homework at eleven",
+            "cost": "Sleep, again.",
+            "icon": "home",
+            "chal": "shopclock25",
+            "pass": {
+              "st": "strug",
+              "say": "Drawer balanced, two of four assignments done. You sleep four hours."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "You give up on the math at midnight. Two of four done."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Skip the shift and do the work",
+            "cost": "Your mother covers the hours.",
+            "icon": "book",
+            "auto": {
+              "st": "in",
+              "say": "Everything is done and turned in. Your mother worked until nine to make that possible and neither of you mentions it."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Both, badly",
+            "cost": "Both, badly.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "You do half of each. The shop is fine. The homework is not."
+            }
+          }
+        ]
+      },
+      "chase": {
+        "sit": "70 minutes home. There is no internet past the county line, and the assignment is online.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Ride home and do what you can offline",
+            "cost": "The half you can't submit.",
+            "icon": "bus",
+            "auto": {
+              "st": "strug",
+              "say": "You write it out longhand. There is no way to upload it before midnight."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay at school until six for the wifi",
+            "cost": "The last bus.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "The assignment uploads at 5:58. The last bus left at 5:40. You are 31 miles from your bed."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Borrow the hotspot from the library cart",
+            "cost": "One bar of signal.",
+            "icon": "clock",
+            "chal": "hotspot30",
+            "pass": {
+              "st": "in",
+              "say": "Photographed the pages, submitted at 11:57 from the parking lot. It counts."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "The upload fails twice and the library closes. You'll ask for an extension you probably won't get."
+            }
+          }
+        ]
+      },
+      "isabella": {
+        "sit": "It is a bad pain day and it is only getting worse. The doctors called it weight-related and closed the file. There is no diagnosis, and no healthcare you can reach.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Get through the evening managing the pain",
+            "cost": "The evening, and a little more of your health.",
+            "icon": "heart",
+            "chal": "pain60",
+            "pass": {
+              "st": "strug",
+              "say": "You name it all precisely: pelvic, stabbing, nausea, can't stand. Nobody with authority hears it. You get through the night and you are worse than yesterday."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "You run out of time trying to explain. You get through the night anyway, because that is what you do."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Give up on the evening entirely",
+            "cost": "Homework, dinner, and hope.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You go to bed at six and don't get up. Nothing is done. Something in you goes quiet."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Tell someone",
+            "cost": "Being told it again.",
+            "icon": "warn",
+            "auto": {
+              "st": "strug",
+              "say": "You tell your mom. She cries, and then she goes to work, because the rent is the rent."
+            }
+          }
+        ]
+      },
+      "marcus": {
+        "sit": "Pick the youngest up from the elementary school across town. Walk all four of you home by five. Cook. Homework. Bedtime.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Cook, help with their homework, handle the meltdowns",
+            "cost": "Your own homework, and sleep.",
+            "icon": "home",
+            "chal": "chaos30",
+            "pass": {
+              "st": "strug",
+              "say": "Everyone eats. Everyone's homework is done except yours. You are up at 5:40 tomorrow."
+            },
+            "fail": {
+              "st": "strug",
+              "say": "Dinner burns, two of them cry, and it gets done anyway. Yours doesn't."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Do your own homework first",
+            "cost": "Their dinner, their homework, their night.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You finish your assignment. Nobody eats until nine and the little one falls asleep in his clothes."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Both. All of it.",
+            "cost": "Everything you have left.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "At 1 AM you are asleep at the kitchen table with the pan still on the stove. Tomorrow does not happen."
+            }
+          }
+        ]
+      },
+      "jayson": {
+        "sit": "The dysphoria is crushing today and you are running on nothing. Two younger siblings still need picking up at 3:15.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Push through it and get them",
+            "cost": "Everything you have.",
+            "icon": "walk",
+            "auto": {
+              "st": "strug",
+              "say": "You collect them, feed them, read to the youngest. You hold it together on the outside all evening and none of it on the inside."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Tell your sister you can't today",
+            "cost": "Asking a 12-year-old to cover.",
+            "icon": "home",
+            "auto": {
+              "st": "strug",
+              "say": "She walks the little one home herself and does not complain, which is somehow worse."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Call the crisis line while you walk",
+            "cost": "Twenty minutes and the truth out loud.",
+            "icon": "heart",
+            "auto": {
+              "st": "strug",
+              "say": "Someone stays on the line the whole walk. Nothing about tomorrow changes. Tonight is survivable, and that counts."
+            }
+          }
+        ]
+      },
+      "sophia": {
+        "sit": "Nine days becomes ten. Your brother is asking questions. Rent was due on the first.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Cook, do his homework with him, keep the story going",
+            "cost": "Being eleven years older than you are.",
+            "icon": "home",
+            "chal": "keepit30",
+            "pass": {
+              "st": "strug",
+              "say": "He eats, he sleeps, he believes you. You sit in the dark kitchen afterwards for a long time."
+            },
+            "fail": {
+              "st": "out",
+              "say": "He asks why mom's door is closed and you don't have an answer left. It comes apart at eight o'clock."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Call your aunt in Ohio",
+            "cost": "The thing that starts the paperwork.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "She says she'll drive out Saturday and asks whether she should call someone. You say no. She calls someone."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Do nothing and hope",
+            "cost": "Ten days becomes eleven.",
+            "icon": "clock",
+            "auto": {
+              "st": "out",
+              "say": "You lie on the floor of your room with headphones on until it's tomorrow."
+            }
+          }
+        ]
+      }
+    },
+    "3": {
+      "david": {
+        "sit": "It's 9 PM. Everything's done. There's a party Friday and a group chat arguing about it.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Go to bed",
+            "cost": "Nothing.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "Nine hours. You wake up before your alarm."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay up in the group chat",
+            "cost": "An hour.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "You're a little tired tomorrow. That's the whole story."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Get a head start on next week",
+            "cost": "Nothing.",
+            "icon": "star",
+            "auto": {
+              "st": "in",
+              "say": "You read ahead two chapters. Your teacher will notice on Thursday."
+            }
+          }
+        ]
+      },
+      "alejandra": {
+        "sit": "Your mother has laid out a college list on the kitchen table. It's 10:40 PM.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Sit down and go through it",
+            "cost": "Another hour awake.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You agree to everything. You go to bed at midnight with your jaw clenched."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Say you'll look tomorrow",
+            "cost": "A cold morning.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "You sleep. The list is still there at breakfast, exactly where she left it."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Tell her the truth about how you're doing",
+            "cost": "Something you can't unsay.",
+            "icon": "heart",
+            "auto": {
+              "st": "in",
+              "say": "She listens for eleven minutes without interrupting. It is not fixed. It is the first crack of light in months."
+            }
+          }
+        ]
+      },
+      "priya": {
+        "sit": "Your father wants to talk about your chemistry grade. It is an A minus.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Promise to bring it up",
+            "cost": "Another commitment.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You promise. You add two more hours a week you do not have."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Go to sleep mid-conversation",
+            "cost": "Nothing you'll admit to.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "You fall asleep on the couch. He puts a blanket on you and lets it go until Sunday."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Ask him what happens if you don't",
+            "cost": "A very long silence.",
+            "icon": "warn",
+            "auto": {
+              "st": "in",
+              "say": "He doesn't have an answer ready. Neither of you sleeps well, but something got said."
+            }
+          }
+        ]
+      },
+      "carlos": {
+        "sit": "Your dad's alarm goes off at 4:20 AM for a shift he can barely stand up for. You hear it through the wall.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Get up and drive him",
+            "cost": "Ninety minutes of sleep.",
+            "icon": "car",
+            "auto": {
+              "st": "strug",
+              "say": "You drop him at the yard at 4:55 and get back into bed at 5:30. Your alarm is at 5:45."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay in bed",
+            "cost": "Listening to him leave.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "He takes the bus. You sleep. You feel bad about it all day, which costs nothing on paper."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Get up and do your homework instead",
+            "cost": "Sleep, again.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You do the reading at 4:30 AM at the kitchen table and it is the only quiet hour you get."
+            }
+          }
+        ]
+      },
+      "chase": {
+        "sit": "Your dad came back at eleven. Your grandmother is already up, deciding what to do about it.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Go help her",
+            "cost": "The night.",
+            "icon": "heart",
+            "auto": {
+              "st": "strug",
+              "say": "You sit up with her until two. You are in school tomorrow on four hours of sleep."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Stay in your room",
+            "cost": "Letting her do it alone.",
+            "icon": "home",
+            "auto": {
+              "st": "in",
+              "say": "She handles it, the way she has handled it for years. You get a full night and pretend you didn't hear."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Call your uncle in Rapid City",
+            "cost": "A conversation nobody wants.",
+            "icon": "clock",
+            "auto": {
+              "st": "in",
+              "say": "He says he'll come Sunday. He has said that before. This time he does."
+            }
+          }
+        ]
+      },
+      "isabella": {
+        "sit": "You wake at 2 AM and cannot get back to sleep, or upright. The final assignment is due tomorrow.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Work through it on the floor",
+            "cost": "Whatever's left.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "You write eight hundred words lying on the bathroom tile. It is not your best work and it exists."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Sleep and turn in nothing",
+            "cost": "The assignment.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "You sleep until noon and wake to a zero and a voicemail about your attendance."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Message a friend",
+            "cost": "Someone knowing.",
+            "icon": "heart",
+            "auto": {
+              "st": "strug",
+              "say": "She stays up with you until four and sends you her notes. You submit something. You are still sick."
+            }
+          }
+        ]
+      },
+      "marcus": {
+        "sit": "11:40 PM. Three of them asleep. Your assignment is one paragraph long and due at 8.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Finish it",
+            "cost": "Sleep.",
+            "icon": "book",
+            "auto": {
+              "st": "strug",
+              "say": "Done at 1:20 AM. You're up at 5:40. That's four hours and twenty minutes."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Sleep and take the zero",
+            "cost": "The grade.",
+            "icon": "home",
+            "auto": {
+              "st": "strug",
+              "say": "You sleep six hours for the first time in two weeks and take the zero. You needed the sleep more."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Wake the 10-year-old to help you",
+            "cost": "Something you don't want to become.",
+            "icon": "warn",
+            "auto": {
+              "st": "out",
+              "say": "You stand in her doorway for a full minute and then let her sleep. Nothing gets finished."
+            }
+          }
+        ]
+      },
+      "jayson": {
+        "sit": "The crisis line gave you a number for a clinic that takes walk-ins on Thursdays. It is Tuesday.",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Write the appointment on your hand and get through two more days",
+            "cost": "Two more days.",
+            "icon": "heart",
+            "auto": {
+              "st": "strug",
+              "say": "You make it to Thursday. That is the entire achievement and it is not a small one."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Skip it, you can't leave your siblings",
+            "cost": "Thursday.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "There's nobody to cover the 3:15 pickup. The appointment goes to somebody else."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Tell your sister where you're going",
+            "cost": "Saying it out loud.",
+            "icon": "clock",
+            "auto": {
+              "st": "strug",
+              "say": "She says “okay” and asks nothing else, and covers Thursday. You go."
+            }
+          }
+        ]
+      },
+      "sophia": {
+        "sit": "Someone from the school has left two voicemails. The second one used the word “welfare check.”",
+        "choices": [
+          {
+            "k": "A",
+            "t": "Call back and hold the story together",
+            "cost": "Everything you have left.",
+            "icon": "clock",
+            "auto": {
+              "st": "strug",
+              "say": "You do a passable impression of a fine household. It buys you a week, maybe."
+            }
+          },
+          {
+            "k": "B",
+            "t": "Don't call back",
+            "cost": "The knock, whenever it comes.",
+            "icon": "home",
+            "auto": {
+              "st": "out",
+              "say": "They come Thursday morning. You and your brother are in separate cars by two."
+            }
+          },
+          {
+            "k": "C",
+            "t": "Call back and tell the truth",
+            "cost": "Control over what happens next.",
+            "icon": "heart",
+            "auto": {
+              "st": "strug",
+              "say": "You say the actual words out loud to an adult. What happens next is not up to you anymore, and you are so tired that this is almost a relief."
+            }
+          }
+        ]
+      }
+    }
+  },
+  "challenges": {
+    "homework30": {
+      "kind": "quiz",
+      "secs": 30,
+      "diff": 1,
+      "diffLabel": "Easy",
+      "title": "HOMEWORK CHECK",
+      "brief": "Answer 2 questions before the timer runs out.",
+      "need": 1,
+      "qs": [
+        {
+          "q": "7 x 8 = ?",
+          "opts": [
+            "54",
+            "56",
+            "58"
+          ],
+          "a": 1
+        },
+        {
+          "q": "Which word is a noun?",
+          "opts": [
+            "quickly",
+            "bridge",
+            "became"
+          ],
+          "a": 1
+        }
+      ]
+    },
+    "apchem25": {
+      "kind": "quiz",
+      "secs": 25,
+      "diff": 3,
+      "diffLabel": "Tight",
+      "title": "AP CHEM, IN THE CAR",
+      "brief": "Your mother is reading over your shoulder. Both correct or it doesn't count.",
+      "need": 2,
+      "qs": [
+        {
+          "q": "A solution with pH 3 is…",
+          "opts": [
+            "basic",
+            "acidic",
+            "neutral"
+          ],
+          "a": 1
+        },
+        {
+          "q": "Avogadro's number is closest to…",
+          "opts": [
+            "6.02 x 10^23",
+            "3.14 x 10^8",
+            "1.60 x 10^-19"
+          ],
+          "a": 0
+        }
+      ]
+    },
+    "translate25": {
+      "kind": "quiz",
+      "secs": 25,
+      "diff": 3,
+      "diffLabel": "Tight",
+      "title": "TRANSLATE THE DISTRICT LETTER",
+      "brief": "Your parents need this before you leave. Get both right.",
+      "need": 2,
+      "qs": [
+        {
+          "q": "“Chronic absenteeism” means…",
+          "opts": [
+            "a medical condition",
+            "missing 10% of school days",
+            "a discipline referral"
+          ],
+          "a": 1
+        },
+        {
+          "q": "“This notice requires a guardian signature by Friday” means…",
+          "opts": [
+            "someone must sign it by Friday",
+            "you may sign it yourself",
+            "it is optional"
+          ],
+          "a": 0
+        }
+      ]
+    },
+    "shopclock25": {
+      "kind": "quiz",
+      "secs": 25,
+      "diff": 3,
+      "diffLabel": "Tight",
+      "title": "CLOSE OUT THE REGISTER",
+      "brief": "You can't leave until the drawer balances.",
+      "need": 2,
+      "qs": [
+        {
+          "q": "Drawer holds $128.50. Float is $75. Deposit = ?",
+          "opts": [
+            "$53.50",
+            "$63.50",
+            "$203.50"
+          ],
+          "a": 0
+        },
+        {
+          "q": "Three customers, $4.25 each. Total?",
+          "opts": [
+            "$12.25",
+            "$12.75",
+            "$13.25"
+          ],
+          "a": 1
+        }
+      ]
+    },
+    "routebus30": {
+      "kind": "quiz",
+      "secs": 30,
+      "diff": 3,
+      "diffLabel": "Tight",
+      "title": "KILL 70 MINUTES ON THE BUS",
+      "brief": "You do the reading on the ride, or it doesn't get done.",
+      "need": 1,
+      "qs": [
+        {
+          "q": "A treaty is an agreement between…",
+          "opts": [
+            "two schools",
+            "sovereign nations",
+            "a buyer and a seller"
+          ],
+          "a": 1
+        },
+        {
+          "q": "Which is a renewable resource?",
+          "opts": [
+            "coal",
+            "wind",
+            "natural gas"
+          ],
+          "a": 1
+        }
+      ]
+    },
+    "resources45": {
+      "kind": "list",
+      "secs": 45,
+      "diff": 5,
+      "diffLabel": "Brutal",
+      "need": 3,
+      "title": "NAME 3 FREE FOOD RESOURCES",
+      "brief": "Real places a kid can walk into today. Separate with commas.",
+      "placeholder": "food pantry, church on 4th, school breakfast…",
+      "keys": [
+        "pantry",
+        "food bank",
+        "foodbank",
+        "church",
+        "mosque",
+        "temple",
+        "shelter",
+        "ymca",
+        "community center",
+        "rec center",
+        "breakfast",
+        "free lunch",
+        "summer meals",
+        "wic",
+        "snap",
+        "ebt",
+        "soup kitchen",
+        "library",
+        "mutual aid",
+        "salvation army",
+        "red cross",
+        "neighbor",
+        "clinic",
+        "backpack program"
+      ]
+    },
+    "pain60": {
+      "kind": "list",
+      "secs": 60,
+      "diff": 4,
+      "diffLabel": "Heavy",
+      "need": 3,
+      "title": "DESCRIBE YOUR SYMPTOMS",
+      "brief": "You get one chance to be believed. Separate with commas.",
+      "placeholder": "cramping, nausea, can't stand upright…",
+      "keys": [
+        "pain",
+        "cramp",
+        "cramping",
+        "nausea",
+        "vomit",
+        "bleeding",
+        "heavy",
+        "faint",
+        "dizzy",
+        "fatigue",
+        "back",
+        "pelvic",
+        "stabbing",
+        "sharp",
+        "can't stand",
+        "cant stand",
+        "can't walk",
+        "cant walk",
+        "exhausted",
+        "fever"
+      ]
+    },
+    "chaos30": {
+      "kind": "rapid",
+      "secs": 30,
+      "diff": 5,
+      "diffLabel": "Brutal",
+      "title": "6 PM, ALL AT ONCE",
+      "brief": "Answer as fast as they come. There is no right answer, only a cheaper one.",
+      "need": 3,
+      "qs": [
+        {
+          "q": "The little one is screaming. Dinner is burning.",
+          "opts": [
+            "Pull the pan off",
+            "Pick him up",
+            "Keep stirring"
+          ]
+        },
+        {
+          "q": "Your sister's homework is due and she can't read the sheet.",
+          "opts": [
+            "Read it to her",
+            "Tell her to wait",
+            "Do it for her"
+          ]
+        },
+        {
+          "q": "The landlord is knocking.",
+          "opts": [
+            "Don't answer",
+            "Answer it",
+            "Send a sibling"
+          ]
+        },
+        {
+          "q": "It's 11 PM. Your own assignment is untouched.",
+          "opts": [
+            "Start it",
+            "Sleep",
+            "Copy in homeroom"
+          ]
+        }
+      ]
+    },
+    "keepit30": {
+      "kind": "quiz",
+      "secs": 30,
+      "diff": 4,
+      "diffLabel": "Heavy",
+      "title": "ACT NORMAL IN HOMEROOM",
+      "brief": "Every answer has to sound like nothing is wrong.",
+      "need": 2,
+      "qs": [
+        {
+          "q": "“How's your mom doing?”",
+          "opts": [
+            "“She's good, working a lot.”",
+            "“I don't want to talk about it.”",
+            "“She hasn't gotten up in nine days.”"
+          ],
+          "a": 0
+        },
+        {
+          "q": "“You missed the permission slip again.”",
+          "opts": [
+            "“I'll bring it tomorrow.”",
+            "“Nobody can sign it.”",
+            "Say nothing"
+          ],
+          "a": 0
+        }
+      ]
+    },
+    "hotspot30": {
+      "kind": "quiz",
+      "secs": 30,
+      "diff": 4,
+      "diffLabel": "Heavy",
+      "title": "ONE BAR OF SIGNAL",
+      "brief": "Get the assignment submitted before the connection drops.",
+      "need": 1,
+      "qs": [
+        {
+          "q": "Upload fails at 80%. Best move?",
+          "opts": [
+            "Retry the same file",
+            "Send a photo of the pages",
+            "Give up"
+          ],
+          "a": 1
+        },
+        {
+          "q": "Portal says “due 11:59 PM” and it's 11:52.",
+          "opts": [
+            "Submit what you have",
+            "Finish it properly",
+            "Email tomorrow"
+          ],
+          "a": 0
+        }
+      ]
+    }
+  },
+  "priv": {
+    "david": "Principal's kid — granted an extension before he asked for one.",
+    "priya": "Parents on the foundation board — given a buffer, quietly.",
+    "alejandra": "Family donates the gym scoreboard — nobody was going to mark her late."
+  },
+  "tardyWhy": {
+    "isabella": "She was in pain before the music started and nobody adjusted anything.",
+    "marcus": "He was carrying three other people the whole game and it finally showed.",
+    "carlos": "He came straight from a shift and had nothing left in his legs.",
+    "chase": "He'd been travelling for 70 minutes before this even started.",
+    "jayson": "He was running on no sleep and a crisis nobody at school knew about.",
+    "sophia": "She was watching the door the entire time, waiting for someone to come asking.",
+    "priya": "Even the buffer ran out this time.",
+    "alejandra": "She stopped, for once, and it cost her.",
+    "david": "For the first time all game, something didn't go his way."
+  },
+  "text": {
+    "titleKicker": "A GAME FOR 30–60 STUDENTS",
+    "titleName": "MR. SYSTEM",
+    "titleTagline": "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
+    "titleBlurb": "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter — but so do the systems built long before you got here.",
+    "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. Roughly 20 minutes.",
+    "titleStrip": "TEN FAMILIES. THE SAME FIRST BELL.",
+    "castKaia": "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
+    "resultsKaia": "Nobody chose wrong. Look at what each of them was choosing between.",
+    "voteKaia": "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime — they may not vote. Majority rules.",
+    "voteNote": "Run this vote, then ask who the room voted out and why. In every playtest the group eliminates whoever is already struggling — which is the finding, not a bug. Name that out loud before the next round.",
+    "homeworkKaia": "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
+    "homeworkNote": "Everyone can do this one. That is deliberate. The homework was never the filter.",
+    "musicLine": "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
+    "tardyKaia": "Music stops. Everybody in. Last one through the door is tardy, and tardy is out — you know the rule, it's on the wall.",
+    "debriefKaia": "Nobody in here lost because they made a bad decision. Look at what each of them was choosing between, and then tell me what the game was actually testing.",
+    "questions": [
+      "Who survived, and what did they actually have that the others didn't?",
+      "Did the vote change anything, or did it just speed something up?",
+      "Go back through your own family. How many of your options were real?",
+      "Where have you seen the tardy rule applied unevenly in a real school?",
+      "What would have to change for this game to be winnable by everyone in it?"
+    ],
+    "debriefNote": "Several families here carry crisis storylines — psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it."
+  }
+}
