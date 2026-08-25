@@ -410,36 +410,36 @@
         ]
       },
       "jamal": {
-        "sit": "Fajr is at 6:15. Your dad's shift started at five; your mom's doesn't end until seven. Breakfast, the prayer rug, and the 7:25 bus all want the same forty minutes.",
+        "sit": "Suhoor has to happen before Fajr at 6:15, and after that there is nothing until sunset. Your dad's shift started at five; your mom's doesn't end until seven. The bus is at 7:25.",
         "choices": [
           {
             "k": "A",
-            "t": "Pray, skip breakfast",
-            "cost": "Breakfast.",
+            "t": "Sleep to 6:10, pray, skip suhoor",
+            "cost": "Nothing until sunset, on no food since last night.",
             "icon": "heart",
             "auto": {
               "st": "in",
-              "say": "You make the prayer and you make the bus. By second period the whiteboard is just shapes and your stomach is the loudest thing in the row."
+              "say": "You make the prayer and you make the bus. By second period the whiteboard is just shapes, and sunset is nine hours away."
             }
           },
           {
             "k": "B",
-            "t": "Skip the prayer",
-            "cost": "The first of five.",
+            "t": "Sleep through both",
+            "cost": "The first prayer of five, and the only meal until dark.",
             "icon": "check",
             "auto": {
               "st": "in",
-              "say": "You eat and you're in your seat by 7:55. You spend first period deciding you'll make it up later, and second period, and third."
+              "say": "You sleep to seven and make the bus with your eyes half open. You spend first period deciding you'll make it all up later, and second period, and third."
             }
           },
           {
             "k": "C",
-            "t": "Up at 5:45. All of it.",
-            "cost": "Thirty minutes of sleep.",
+            "t": "Up at 5:30. Suhoor, Fajr, bus.",
+            "cost": "Forty-five minutes of sleep.",
             "icon": "clock",
             "auto": {
               "st": "in",
-              "say": "Prayer at 6:15, eggs at 6:40, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."
+              "say": "Eggs at 5:35, prayer at 6:15, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."
             }
           }
         ]
@@ -2164,7 +2164,7 @@
             "icon": "warn",
             "auto": {
               "st": "out",
-              "say": "You stand in her doorway for a full minute and then let her sleep. Nothing gets finished."
+              "say": "You stand in her doorway for a full minute and then let her sleep. You sit down against the wall to think, and it is 9:15 when you open your eyes. Nobody in this apartment makes it in today."
             }
           }
         ]

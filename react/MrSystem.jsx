@@ -662,13 +662,13 @@ const DILEMMAS = {
     {auto:{st:"in",say:"You make first bell. At lunch she texts a photo of the page she signed and asks what \"arbitration\" means."}}),
   A("C","Ask the landlord to call back at 4","The landlord's tone.","warn",
     {auto:{st:"in",say:"He says fine in a way that means it isn't. You're on time, and you spend the whole day rehearsing the call in your head."}})]},
- jamal:{sit:"Fajr is at 6:15. Your dad's shift started at five; your mom's doesn't end until seven. Breakfast, the prayer rug, and the 7:25 bus all want the same forty minutes.", choices:[
-  A("A","Pray, skip breakfast","Breakfast.","heart",
-    {auto:{st:"in",say:"You make the prayer and you make the bus. By second period the whiteboard is just shapes and your stomach is the loudest thing in the row."}}),
-  A("B","Skip the prayer","The first of five.","check",
-    {auto:{st:"in",say:"You eat and you're in your seat by 7:55. You spend first period deciding you'll make it up later, and second period, and third."}}),
-  A("C","Up at 5:45. All of it.","Thirty minutes of sleep.","clock",
-    {auto:{st:"in",say:"Prayer at 6:15, eggs at 6:40, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
+ jamal:{sit:"Suhoor has to happen before Fajr at 6:15, and after that there is nothing until sunset. Your dad's shift started at five; your mom's doesn't end until seven. The bus is at 7:25.", choices:[
+  A("A","Sleep to 6:10, pray, skip suhoor","Nothing until sunset, on no food since last night.","heart",
+    {auto:{st:"in",say:"You make the prayer and you make the bus. By second period the whiteboard is just shapes, and sunset is nine hours away."}}),
+  A("B","Sleep through both","The first prayer of five, and the only meal until dark.","check",
+    {auto:{st:"in",say:"You sleep to seven and make the bus with your eyes half open. You spend first period deciding you'll make it all up later, and second period, and third."}}),
+  A("C","Up at 5:30. Suhoor, Fajr, bus.","Forty-five minutes of sleep.","clock",
+    {auto:{st:"in",say:"Eggs at 5:35, prayer at 6:15, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
  aisha:{sit:"Mom left for inventory at 5:40. Getting dressed means finding what fits, what covers, and what the hallway won't have something to say about. The bus is at 7:52.", choices:[
   A("A","Take the time to get it right","Ten minutes, recorded.","clock",
     {auto:{st:"in",say:"You walk in at 8:40 feeling like yourself. The office writes down the tardy without looking up."}}),
@@ -1014,7 +1014,7 @@ const DILEMMAS = {
  marcus:{sit:"11:40 PM. Three of them asleep. Your assignment is one paragraph long and due at 8.", choices:[
   A("A","Finish it","Sleep.","book",{auto:{st:"strug",say:"Done at 1:20 AM. You're up at 5:40. That's four hours and twenty minutes."}}),
   A("B","Sleep and take the zero","The grade.","home",{auto:{st:"strug",say:"You sleep six hours for the first time in two weeks and take the zero. You needed the sleep more."}}),
-  A("C","Wake the 10-year-old to help you","Something you don't want to become.","warn",{auto:{st:"out",say:"You stand in her doorway for a full minute and then let her sleep. Nothing gets finished."}})]},
+  A("C","Wake the 10-year-old to help you","Something you don't want to become.","warn",{auto:{st:"out",say:"You stand in her doorway for a full minute and then let her sleep. You sit down against the wall to think, and it is 9:15 when you open your eyes. Nobody in this apartment makes it in today."}})]},
  lucia:{sit:"Third night. What is left in the kitchen is a bag of rice and half a jar of peanut butter.", choices:[
   A("A","Ration it and say nothing","Your share.","home",
     {auto:{st:"strug",say:"You feed them and tell them you already ate. It gets you to Thursday, maybe."}}),
@@ -1139,10 +1139,11 @@ function applyOutcome(g, ch, choice, out, chalNote) {
 }
 function scoreChallenge(g, listText) {
   const t = g.chal, def = t.def;
+  const cap = def.kind === "list" ? def.need : Math.max(1, Math.min(def.need, (def.qs || []).length));
   if (def.kind === "quiz") {
     let ok = 0;
     def.qs.forEach((q, i) => { if (t.answers[i] === q.a) ok++; });
-    return ok >= def.need;
+    return ok >= cap;
   }
   if (def.kind === "list") {
     const raw = (listText || "").toLowerCase();
@@ -1150,7 +1151,7 @@ function scoreChallenge(g, listText) {
     const hits = def.keys.filter(k => raw.indexOf(k) >= 0).length;
     return Math.max(toks.length, hits) >= def.need;
   }
-  return t.step >= def.need;
+  return t.step >= cap;
 }
 function challengeNote(def, t, passed) {
   if (def.kind === "list")
@@ -1164,6 +1165,7 @@ function challengeNote(def, t, passed) {
 }
 function runVote(g) {
   const living = alive(g);
+  if (!g.voteSel || !living.some(c => c.id === g.voteSel)) { g.voteSel = null; return; }
   const weight = ch => {
     const r = g.roster[ch.id];
     let w = 1;
@@ -1205,16 +1207,20 @@ function seedMid(classSize, round) {
   const g = newGame(classSize);
   g.round = round || 2;
   const pick = (id, want) => {
-    const cs = DILEMMAS[1][id].choices;
+    const cs = (DILEMMAS[1][id] || { choices: [] }).choices;
     for (const c of cs) if (c.auto && c.auto.st === want) return { k: c.k, say: c.auto.say };
     for (const c of cs) if (c.pass && c.pass.st === want) return { k: c.k, say: c.pass.say };
     for (const c of cs) if (c.fail && c.fail.st === want) return { k: c.k, say: c.fail.say };
     return { k: "A", say: "Made it in, at a cost nobody recorded." };
   };
   ["lucia", "jayson"].forEach(id => {
-    g.roster[id].st = "out"; g.roster[id].outRound = 1;
-    g.roster[id].why = "Round 1 — every option led out";
-    g.roster[id].hist.push({ round: 1, k: "B", st: "out", say: DILEMMAS[1][id].choices[1].auto.say });
+    const r = g.roster[id];
+    r.st = "out"; r.outRound = 1;
+    r.why = "Round 1 — every option led out";
+    const dd = DILEMMAS[1][id];
+    const c = dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0]);
+    const say = (c && (c.auto ? c.auto.say : (c.fail && c.fail.say))) || "Out before the first bell.";
+    r.hist.push({ round: 1, k: c ? c.k : "?", st: "out", say });
   });
   ["marcus", "isabella", "carlos", "sophia", "amina", "fatima", "ling", "aisha", "kavi"].forEach(id => {
     g.roster[id].st = "strug";
@@ -1408,6 +1414,13 @@ export default function MrSystem({ initialClassSize = 40 }) {
 
   useEffect(() => { window.scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }); }, [g.phase, g.qi]);
 
+  useEffect(() => {
+    if (!showIndex) return undefined;
+    const h = e => { if (e.key === "Escape") setShowIndex(false); };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [showIndex]);
+
   /* ---- round flow ---- */
   const nextQuestion = () => update(n => {
     let i = n.qi;
@@ -1485,18 +1498,27 @@ export default function MrSystem({ initialClassSize = 40 }) {
         n.roster[id || "david"].st = "in"; n.phase = "dilemma"; return n;
       }
       if (p === "challenge") {
-        const n = seedMid(size, 1); n.round = 1; n.qi = ORDER.indexOf("marcus");
-        n.roster.marcus.st = "in";
-        const c = DILEMMAS[1].marcus.choices[0];
-        n.chal = { def: CHALLENGES[c.chal], left: CHALLENGES[c.chal].secs,
-                   endAt: Date.now() + CHALLENGES[c.chal].secs * 1000,
-                   answers: {}, step: 0, choice: c, chId: "marcus" };
+        const n = seedMid(size, 1); n.round = 1;
+        let hit = null;
+        for (const cid of ORDER) {
+          const dd = DILEMMAS[1][cid]; if (!dd) continue;
+          const c = dd.choices.find(x => x.chal && CHALLENGES[x.chal]);
+          if (c) { hit = { id: cid, c }; break; }
+        }
+        if (!hit) { n.qi = 0; n.phase = "dilemma"; return n; }
+        n.qi = ORDER.indexOf(hit.id); n.roster[hit.id].st = "in";
+        const def = CHALLENGES[hit.c.chal];
+        n.chal = { def, left: def.secs, endAt: Date.now() + def.secs * 1000,
+                   answers: {}, step: 0, choice: hit.c, chId: hit.id };
         n.phase = "challenge"; return n;
       }
       if (p === "outcome") {
         const n = seedMid(size, 1); n.round = 1;
-        const c = DILEMMAS[1].lucia.choices[1];
-        n.pending = { id: "lucia", k: "B", title: c.t, say: c.auto.say, st: "out",
+        const dd = DILEMMAS[1].lucia;
+        const c = dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0]);
+        if (!c) { n.qi = 0; n.phase = "dilemma"; return n; }
+        n.pending = { id: "lucia", k: c.k, title: c.t,
+                      say: c.auto ? c.auto.say : (c.fail ? c.fail.say : ""), st: "out",
                       chalNote: "There was no challenge. There was nothing to win." };
         n.phase = "outcome"; return n;
       }
@@ -1560,10 +1582,10 @@ export default function MrSystem({ initialClassSize = 40 }) {
       <div className="setup-row">
         <div className="stepper">
           <button aria-label="Fewer students"
-            onClick={() => setG(newGame(Math.max(30, g.classSize - 5)))}>&minus;</button>
+            onClick={() => setG(() => { const n = newGame(Math.max(30, g.classSize - 5)); n.phase = "setup"; return n; })}>&minus;</button>
           <output>{g.classSize}</output>
           <button aria-label="More students"
-            onClick={() => setG(newGame(Math.min(60, g.classSize + 5)))}>+</button>
+            onClick={() => setG(() => { const n = newGame(Math.min(60, g.classSize + 5)); n.phase = "setup"; return n; })}>+</button>
         </div>
         <span className="pill">PLAYED BY HAND <b>{CAST.length}</b></span>
         <span className="pill">BACKGROUND <b>{g.classSize - CAST.length}</b></span>
@@ -1856,6 +1878,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
             : "You voted for someone else. The room went the other way. That is also how this works."}</Kaia>
           <Actions>
             <button className="btn" onClick={() => update(n => {
+              n.voteSel = null;
               if (n.round < 3) { n.round++; n.qi = 0; n.phase = "intro"; }
               else { n.round = 4; n.drew = false; n.phase = "homework"; }
             })}>{g.round < 3 ? "ROUND " + (g.round + 1) : "FINAL ROUND"}</button>
@@ -2128,8 +2151,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
         {Current()}
       </div>
       {showIndex && (
-        <div className="idx" role="dialog" aria-modal="true" aria-label="Screen index"
-          onKeyDown={e => { if (e.key === "Escape") setShowIndex(false); }}>
+        <div className="idx" role="dialog" aria-modal="true" aria-label="Screen index">
           <div className="idx-panel">
             <p className="eyebrow">FOR REVIEW</p>
             <h2 className="screen-title" style={{ fontSize: 14 }}>SCREEN INDEX</h2>

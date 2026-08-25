@@ -727,13 +727,13 @@ let DILEMMAS = {
     {auto:{st:"in",say:"You make first bell. At lunch she texts a photo of the page she signed and asks what \"arbitration\" means."}}),
   A("C","Ask the landlord to call back at 4","The landlord's tone.","warn",
     {auto:{st:"in",say:"He says fine in a way that means it isn't. You're on time, and you spend the whole day rehearsing the call in your head."}})]},
- jamal:{sit:"Fajr is at 6:15. Your dad's shift started at five; your mom's doesn't end until seven. Breakfast, the prayer rug, and the 7:25 bus all want the same forty minutes.", choices:[
-  A("A","Pray, skip breakfast","Breakfast.","heart",
-    {auto:{st:"in",say:"You make the prayer and you make the bus. By second period the whiteboard is just shapes and your stomach is the loudest thing in the row."}}),
-  A("B","Skip the prayer","The first of five.","check",
-    {auto:{st:"in",say:"You eat and you're in your seat by 7:55. You spend first period deciding you'll make it up later, and second period, and third."}}),
-  A("C","Up at 5:45. All of it.","Thirty minutes of sleep.","clock",
-    {auto:{st:"in",say:"Prayer at 6:15, eggs at 6:40, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
+ jamal:{sit:"Suhoor has to happen before Fajr at 6:15, and after that there is nothing until sunset. Your dad's shift started at five; your mom's doesn't end until seven. The bus is at 7:25.", choices:[
+  A("A","Sleep to 6:10, pray, skip suhoor","Nothing until sunset, on no food since last night.","heart",
+    {auto:{st:"in",say:"You make the prayer and you make the bus. By second period the whiteboard is just shapes, and sunset is nine hours away."}}),
+  A("B","Sleep through both","The first prayer of five, and the only meal until dark.","check",
+    {auto:{st:"in",say:"You sleep to seven and make the bus with your eyes half open. You spend first period deciding you'll make it all up later, and second period, and third."}}),
+  A("C","Up at 5:30. Suhoor, Fajr, bus.","Forty-five minutes of sleep.","clock",
+    {auto:{st:"in",say:"Eggs at 5:35, prayer at 6:15, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
  aisha:{sit:"Mom left for inventory at 5:40. Getting dressed means finding what fits, what covers, and what the hallway won't have something to say about. The bus is at 7:52.", choices:[
   A("A","Take the time to get it right","Ten minutes, recorded.","clock",
     {auto:{st:"in",say:"You walk in at 8:40 feeling like yourself. The office writes down the tardy without looking up."}}),
@@ -1079,7 +1079,7 @@ let DILEMMAS = {
  marcus:{sit:"11:40 PM. Three of them asleep. Your assignment is one paragraph long and due at 8.", choices:[
   A("A","Finish it","Sleep.","book",{auto:{st:"strug",say:"Done at 1:20 AM. You're up at 5:40. That's four hours and twenty minutes."}}),
   A("B","Sleep and take the zero","The grade.","home",{auto:{st:"strug",say:"You sleep six hours for the first time in two weeks and take the zero. You needed the sleep more."}}),
-  A("C","Wake the 10-year-old to help you","Something you don't want to become.","warn",{auto:{st:"out",say:"You stand in her doorway for a full minute and then let her sleep. Nothing gets finished."}})]},
+  A("C","Wake the 10-year-old to help you","Something you don't want to become.","warn",{auto:{st:"out",say:"You stand in her doorway for a full minute and then let her sleep. You sit down against the wall to think, and it is 9:15 when you open your eyes. Nobody in this apartment makes it in today."}})]},
  lucia:{sit:"Third night. What is left in the kitchen is a bag of rice and half a jar of peanut butter.", choices:[
   A("A","Ration it and say nothing","Your share.","home",
     {auto:{st:"strug",say:"You feed them and tell them you already ate. It gets you to Thursday, maybe."}}),
@@ -1667,7 +1667,9 @@ let PACK = clone(DEFAULT_PACK);
 function mergePack(p){
   const d = clone(DEFAULT_PACK);
   if (!p || typeof p !== "object") return d;
-  ["pass","cast","rounds"].forEach(k => { if (p[k] != null) d[k] = clone(p[k]); });
+  ["pass","rounds"].forEach(k => { if (p[k] != null) d[k] = clone(p[k]); });
+  if (Array.isArray(p.cast))
+    d.cast = d.cast.map(c => Object.assign({}, c, clone(p.cast.find(x => x.id === c.id) || {})));
   /* per-key merges: a pack saved before new characters or challenges shipped
      keeps its edits AND picks up everything it has never heard of */
   if (p.dilemmas) [1,2,3].forEach(r => {
@@ -2020,6 +2022,9 @@ function edImport(){
   try {
     const parsed = JSON.parse(box.value);
     ED.draft = mergePack(parsed);
+    if (!ED.draft.cast.some(c => c.id === ED.sel.ch)) ED.sel.ch = ED.draft.cast[0].id;
+    if (!ED.draft.dilemmas[1][ED.sel.dil]) ED.sel.dil = ED.draft.cast[0].id;
+    if (!ED.draft.challenges[ED.sel.chal]) ED.sel.chal = Object.keys(ED.draft.challenges)[0];
     ED.msg = "Imported. Press Apply & save to switch the game over to it.";
   } catch (e) { ED.msg = "That isn't valid JSON \u2014 check for a missing comma or bracket."; }
   renderEd();
@@ -2100,10 +2105,11 @@ function finishChallenge(passed){
 }
 function scoreChallenge(){
   const t = S.chal, def = t.def;
+  const cap = def.kind === "list" ? def.need : Math.max(1, Math.min(def.need, (def.qs || []).length));
   if (def.kind === "quiz"){
     let ok = 0;
     def.qs.forEach((q,i) => { if (t.answers[i] === q.a) ok++; });
-    return ok >= def.need;
+    return ok >= cap;
   }
   if (def.kind === "list"){
     const el = document.getElementById("listIn");
@@ -2112,7 +2118,7 @@ function scoreChallenge(){
     const hits = def.keys.filter(k => raw.indexOf(k) >= 0).length;
     return Math.max(toks.length, hits) >= def.need;
   }
-  return t.step >= def.need;
+  return t.step >= cap;
 }
 function startTimer(){
   const t = S.chal; if (!t) return;
@@ -2135,6 +2141,7 @@ function startTimer(){
 /* ---- voting ---- */
 function runVote(){
   const alive = ALIVE();
+  if (!S.voteSel || !alive.some(c => c.id === S.voteSel)){ S.voteSel = null; render(); return; }
   const weight = ch => {
     const r = S.roster[ch.id];
     let w = 1;
@@ -2164,6 +2171,7 @@ function runVote(){
   go("voteres");
 }
 function afterVote(){
+  S.voteSel = null;
   if (S.round < 3){ S.round++; S.qi = 0; go("intro"); }
   else { S.round = 4; go("homework"); }
 }
@@ -2302,11 +2310,14 @@ function openIndex(){
 function seedMid(round){
   resetGame(S.classSize);
   S.round = round || 2;
-  ["lucia","jayson"].forEach(id => { S.roster[id].st = "out"; S.roster[id].outRound = 1;
-    S.roster[id].why = "Round 1 \u2014 every option led out";
-    S.roster[id].hist.push({round:1,k:"B",st:"out",say:DILEMMAS[1][id].choices[1].auto.say}); });
+  ["lucia","jayson"].forEach(id => { const r = S.roster[id]; r.st = "out"; r.outRound = 1;
+    r.why = "Round 1 \u2014 every option led out";
+    const dd = DILEMMAS[1][id];
+    const c = dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0]);
+    const say = (c && (c.auto ? c.auto.say : (c.fail && c.fail.say))) || "Out before the first bell.";
+    r.hist.push({round:1, k: c ? c.k : "\u2014", st:"out", say:say}); });
   const pick = (id, want) => {
-    const cs = DILEMMAS[1][id].choices;
+    const cs = (DILEMMAS[1][id] || {choices:[]}).choices;
     for (const c of cs) if (c.auto && c.auto.st === want) return {k:c.k, say:c.auto.say};
     for (const c of cs) if (c.pass && c.pass.st === want) return {k:c.k, say:c.pass.say};
     for (const c of cs) if (c.fail && c.fail.st === want) return {k:c.k, say:c.fail.say};
@@ -2323,16 +2334,22 @@ function jumpTo(p, id){
   if (p === "intro"){ seedMid(2); return go("intro"); }
   if (p === "dilemma"){ seedMid(1); S.round = 1; S.qi = ORDER.indexOf(id||"david");
     S.roster[id||"david"].st = "in"; return go("dilemma"); }
-  if (p === "challenge"){ seedMid(1); S.round = 1; S.qi = ORDER.indexOf("marcus");
-    S.roster.marcus.st = "in";
-    const c = DILEMMAS[1].marcus.choices[0];
-    S.chal = {def:CHALLENGES[c.chal], left:CHALLENGES[c.chal].secs,
-              endAt: Date.now() + CHALLENGES[c.chal].secs * 1000,
-              answers:{}, step:0, choice:c, ch:BY_ID.marcus};
+  if (p === "challenge"){ seedMid(1); S.round = 1;
+    let hit = null;
+    for (const cid of ORDER){ const dd = DILEMMAS[1][cid]; if (!dd) continue;
+      const c = dd.choices.find(x => x.chal && CHALLENGES[x.chal]);
+      if (c){ hit = {id:cid, c:c}; break; } }
+    if (!hit){ S.qi = 0; return go("dilemma"); }
+    S.qi = ORDER.indexOf(hit.id); S.roster[hit.id].st = "in";
+    const def = CHALLENGES[hit.c.chal];
+    S.chal = {def:def, left:def.secs, endAt: Date.now() + def.secs * 1000,
+              answers:{}, step:0, choice:hit.c, ch:BY_ID[hit.id]};
     return go("challenge"); }
   if (p === "outcome"){ seedMid(1); S.round = 1;
-    const c = DILEMMAS[1].lucia.choices[1];
-    S.pending = {id:"lucia", k:"B", title:c.t, say:c.auto.say, st:"out",
+    const dd = DILEMMAS[1].lucia;
+    const c = (dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0])) || null;
+    if (!c){ S.qi = 0; return go("dilemma"); }
+    S.pending = {id:"lucia", k:c.k, title:c.t, say:(c.auto ? c.auto.say : (c.fail ? c.fail.say : "")), st:"out",
       chalNote:"There was no challenge. There was nothing to win."};
     return go("outcome"); }
   if (p === "results"){ seedMid(1); S.round = 1; return go("results"); }
@@ -2435,7 +2452,11 @@ edroot.addEventListener("click", e => {
     if (def.kind === "quiz") q.a = 0;
     def.qs.push(q); return renderEd();
   }
-  if (a === "delq"){ D.challenges[ED.sel.chal].qs.splice(+b.dataset.i, 1); return renderEd(); }
+  if (a === "delq"){
+    const dc = D.challenges[ED.sel.chal];
+    dc.qs.splice(+b.dataset.i, 1);
+    if (dc.kind !== "list") dc.need = Math.max(1, Math.min(dc.need, dc.qs.length));
+    return renderEd(); }
   if (a === "addq2"){ D.text.questions.push("New reflection question"); return renderEd(); }
   if (a === "delq2"){ D.text.questions.splice(+b.dataset.i, 1); return renderEd(); }
 });
