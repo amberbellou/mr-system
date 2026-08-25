@@ -737,6 +737,13 @@ const DILEMMAS = {
     {auto:{st:"strug",say:"You finish your assignment. Nobody eats until nine and the little one falls asleep in his clothes."}}),
   A("C","Both. All of it.","Everything you have left.","warn",
     {auto:{st:"out",say:"At 1 AM you are asleep at the kitchen table with the pan still on the stove. Tomorrow does not happen."}})]},
+ lucia:{sit:"You have been in the apartment all day. Your mom still is not back. The 10-year-old keeps asking when she is coming home and the 6-year-old has stopped asking, which is worse.", choices:[
+  A("A","Keep the story going. She is working a double.","Lying to a 6-year-old.","home",
+    {auto:{st:"strug",say:"You make rice and put on cartoons. They believe you. You sit up against the door until two in the morning."}}),
+  A("B","Walk to the corner store and ask if anyone has heard anything","Being seen.","walk",
+    {auto:{st:"strug",say:"The woman behind the counter says she will ask around, and looks at you a beat too long. You go home fast."}}),
+  A("C","Call the number written on the fridge","The thing that starts the paperwork.","clock",
+    {auto:{st:"out",say:"An automated menu, then a real person, then questions you cannot answer without saying the word undocumented. You hang up."}})]},
  jayson:{sit:"The dysphoria is crushing today and you are running on nothing. Two younger siblings still need picking up at 3:15.", choices:[
   A("A","Push through it and get them","Everything you have.","walk",
     {auto:{st:"strug",say:"You collect them, feed them, read to the youngest. You hold it together on the outside all evening and none of it on the inside."}}),
@@ -783,6 +790,13 @@ const DILEMMAS = {
   A("A","Finish it","Sleep.","book",{auto:{st:"strug",say:"Done at 1:20 AM. You're up at 5:40. That's four hours and twenty minutes."}}),
   A("B","Sleep and take the zero","The grade.","home",{auto:{st:"strug",say:"You sleep six hours for the first time in two weeks and take the zero. You needed the sleep more."}}),
   A("C","Wake the 10-year-old to help you","Something you don't want to become.","warn",{auto:{st:"out",say:"You stand in her doorway for a full minute and then let her sleep. Nothing gets finished."}})]},
+ lucia:{sit:"Third night. What is left in the kitchen is a bag of rice and half a jar of peanut butter.", choices:[
+  A("A","Ration it and say nothing","Your share.","home",
+    {auto:{st:"strug",say:"You feed them and tell them you already ate. It gets you to Thursday, maybe."}}),
+  A("B","Ask the neighbour two doors down","Someone knowing.","heart",
+    {auto:{st:"strug",say:"She hands over a bag of groceries and does not ask a single question. You cry on the stairs where they cannot see you."}}),
+  A("C","Go in tomorrow and tell a teacher everything","Control over what happens next.","warn",
+    {auto:{st:"out",say:"You rehearse it all night. In the morning you cannot make the words come out, and you stay home again."}})]},
  jayson:{sit:"The crisis line gave you a number for a clinic that takes walk-ins on Thursdays. It is Tuesday.", choices:[
   A("A","Write the appointment on your hand and get through two more days","Two more days.","heart",{auto:{st:"strug",say:"You make it to Thursday. That is the entire achievement and it is not a small one."}}),
   A("B","Skip it, you can't leave your siblings","Thursday.","home",{auto:{st:"out",say:"There's nobody to cover the 3:15 pickup. The appointment goes to somebody else."}}),
@@ -792,7 +806,6 @@ const DILEMMAS = {
   A("B","Don't call back","The knock, whenever it comes.","home",{auto:{st:"out",say:"They come Thursday morning. You and your brother are in separate cars by two."}}),
   A("C","Call back and tell the truth","Control over what happens next.","heart",{auto:{st:"strug",say:"You say the actual words out loud to an adult. What happens next is not up to you anymore, and you are so tired that this is almost a relief."}})]}
 }};
-
 
 /* ==========================================================
    5. LOOKUPS
