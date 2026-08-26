@@ -238,12 +238,15 @@ const SLIDES = [
     <div class="sprites-row">${CAST.map(c => `<span data-sp="${c.id}" data-px="3"></span>`).join("")}</div>
     <p class="mono" style="font-size:clamp(11px,1.2vw,14px);color:var(--ink-3)">
       A game for 30–60 students · 35–45 minutes · click →</p>
+    <p class="mono" style="font-size:clamp(10px,1.05vw,12.5px);color:var(--ink-3);margin-top:4px">
+      A final project for [COURSE NAME] — designed by [NAME], built with a lot of index cards.</p>
   </div>`},
 { id:"intro", name:"Introduction", build: () => `
   <p class="slide-eyebrow">2 · INTRODUCTION</p>
   <h2>THE SAME FIRST BELL</h2>
   <div class="body">
-    <p class="bigline">Let students FEEL how the same rules land differently depending on where you start.</p>
+    <p class="bigline">We wanted a room full of people to live one school morning under different rules
+      — and then talk about why the rules felt so different.</p>
     <div class="bellviz">
       ${[["ayesha",6,"one crosswalk"],["david",24,"a ride, door to door"],
          ["fatima",58,"two school runs first, fasting"],["marcus",95,"ninety minutes on foot, four kids"]]
@@ -264,8 +267,8 @@ const SLIDES = [
   <p class="slide-eyebrow">3 · THE CONCEPT</p>
   <h2>LOUP GAROU, RESKINNED</h2>
   <div class="body">
-    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person;
-      the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.</p>
+    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person,
+      but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.</p>
     <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(6px,1vw,14px);align-items:stretch">
       <div class="beat"><b>MORNING</b><span>Get to school</span></div>
       <div class="beat-vote">▶ VOTE</div>
@@ -282,9 +285,9 @@ const SLIDES = [
   <h2>TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.</h2>
   <div class="body">
     <div class="cards">${["david","mei","carlos","isabella","marie","marcus","lucia","amina"].map(miniCard).join("")}</div>
-    <p class="caption">Load 1/5 to 5/5 — <b>how heavy the morning is before a single choice gets made.</b>
-      Class cuts across every identity: the deck spans race, faith, family structure, disability, and status,
-      so the same identity never means the same experience.</p>
+    <p class="caption">Load 1/5 to 5/5: <b>how heavy the morning is before a single choice gets made.</b>
+      Same identity, different class, completely different morning. The deck is built so you can watch
+      that happen.</p>
   </div>`},
 { id:"round", name:"How a Round Works", build: () => `
   <p class="slide-eyebrow">5 · HOW A ROUND WORKS</p>
@@ -314,8 +317,9 @@ const SLIDES = [
   <h2>THE DIFFICULTY IS RIGGED. ON PURPOSE.</h2>
   <div class="body">
     <div class="grid2">${chalPanel("homework30")}${chalPanel("resources45")}</div>
-    <p class="caption"><b>Failing costs David nothing.</b> His fail line ends "nobody writes anything down."
-      <b>Failing sends Marcus's sibling home.</b> Same clock on the wall, different stakes on the table.</p>
+    <p class="caption"><b>Failing costs David nothing</b> — his fail line literally ends
+      "nobody writes anything down." <b>Failing sends Marcus's sibling home.</b> The clock is identical.
+      What failing costs is not.</p>
   </div>`},
 { id:"danger", name:"Mr. System Strikes", build: () => `
   <p class="slide-eyebrow">8 · THE DANGER LAYER</p>
@@ -323,8 +327,9 @@ const SLIDES = [
   <div class="body">
     <div class="mrsys"><b>MR. SYSTEM</b><p>${esc(marcusDanger ? marcusDanger.standard.say : "")}</p></div>
     <p class="caption">Danger only attaches to <b>exposure</b> — the unguarded crossing, the siblings home
-      alone, the ride nobody is expecting. It never punishes the choice; it prices the unprotected position
-      the choice was forced into. Professors set it to <b>off</b>, <b>standard</b>, or <b>unsparing</b>.</p>
+      alone, the ride nobody is expecting. It doesn't punish the choice. It goes after the kid the choice
+      left uncovered: no adult watching, no money waiting, no one expecting them at the other end.
+      Professors set it to <b>off</b>, <b>standard</b>, or <b>unsparing</b>.</p>
   </div>`},
 { id:"vote", name:"The Vote", build: () => `
   <p class="slide-eyebrow">9 · THE VOTE</p>
@@ -369,7 +374,9 @@ const SLIDES = [
           <span class="rn" style="left:14%"><span data-sp="carlos" data-px="2"></span><i>running</i></span>
           <span class="rn" style="left:40%"><span data-sp="isabella" data-px="2"></span><i>running</i></span>
           <span class="rn" style="left:64%"><span data-sp="ayesha" data-px="2"></span><i>⭐ not rushing</i></span>
-        </div></div>
+        </div>
+        <p class="mono" style="font-size:clamp(9px,1vw,11.5px);color:var(--ink-3);margin-top:7px;font-style:italic">
+          Musical chairs, but the chairs are attendance policy.</p></div>
       <div class="panel" style="border-color:var(--st-star)"><b class="px" style="font-size:clamp(8px,1vw,10px);color:var(--st-star)">⭐ SPECIAL TREATMENT</b>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:8px">${esc(PRIV.ayesha || "")}</p>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:6px">${esc(PRIV.david || "")}</p></div>
@@ -392,10 +399,12 @@ const SLIDES = [
         <div class="pbar"><i style="width:10%;background:var(--st-in)"></i><i style="width:12%;background:var(--st-strug)"></i><i style="width:78%;background:var(--st-out)"></i></div>
         <span class="pbar-v" style="color:var(--st-out)">~15–30%</span></div>
     </div>
-    <div class="kbox" style="max-width:76ch">"Lucia's Round 1 had three options and all three ended out of
-      school. She was eliminated before she made a decision. That is what a barrier is."</div>
-    <div class="kbox" style="max-width:76ch">"The room eliminated the struggling families. Mr. System had
-      recommended most of them. It felt like due process. It was a suggestion box with one suggestion."</div>
+    <div class="kbox" style="max-width:76ch">Lucia's Round 1 had three options and all three ended out of
+      school. She was eliminated before she made a decision. That is what a barrier is.
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+    <div class="kbox" style="max-width:76ch">The room eliminated the struggling families. Mr. System had
+      recommended most of them. It felt like due process. It was a suggestion box with one suggestion.
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
   </div>`},
 { id:"reflect", name:"Let's Reflect", build: () => `
   <p class="slide-eyebrow">13 · LET'S REFLECT</p>
@@ -412,18 +421,19 @@ const SLIDES = [
   <h2>THINGS WE DESIGNED INTO THE GAME</h2>
   <div class="body">
     <div class="grid3">
-      <div class="takeaway"><span class="tk-ic" data-ic="note" data-px="4"></span><b>COST LINES</b>The
-        argument lives in what each choice charges — "Nothing." against "A risk you cannot take back."</div>
-      <div class="takeaway"><span class="tk-ic" data-ic="clock" data-px="4"></span><b>RIGGED CHALLENGES</b>Difficulty
-        follows class. Failing up is free; failing down prices a sibling.</div>
-      <div class="takeaway"><span class="tk-ic" data-ic="x" data-px="4"></span><b>THE VOTE</b>Democracy that
-        punishes visible struggle — and a memo that steers it in procedural language.</div>
-      <div class="takeaway"><span class="tk-ic" data-ic="warn" data-px="4"></span><b>DANGER = EXPOSURE</b>Mr. System
-        only strikes where no adult, no money, and no margin were covering the kid.</div>
-      <div class="takeaway"><span class="tk-ic" data-ic="star" data-px="4"></span><b>THE FINISH LINE</b>Some
-        students never had to run. The star cards say so out loud, at the end.</div>
-      <div class="takeaway"><span class="tk-ic" data-ic="book" data-px="4"></span><b>THE DEBRIEF</b>The room
-        enacts the pattern, then gets handed the chart of what it just did.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="note" data-px="4"></span><b>COST LINES</b>We put
+        the argument in the price tags — "Nothing." against "A risk you cannot take back."</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="clock" data-px="4"></span><b>RIGGED CHALLENGES</b>We
+        rigged the difficulty to follow class. Failing up is free; failing down prices a sibling.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="x" data-px="4"></span><b>THE VOTE</b>We gave the room
+        a democracy and watched it punish whoever was already struggling. Then we gave Mr. System a memo to
+        make it feel official.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="warn" data-px="4"></span><b>DANGER = EXPOSURE</b>We let
+        Mr. System strike only where no adult, no money, and no margin were covering the kid.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="star" data-px="4"></span><b>THE FINISH LINE</b>We built
+        a finish line some students never had to run for — and star cards that say so out loud.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="book" data-px="4"></span><b>THE DEBRIEF</b>We end by
+        handing the room a chart of what it just did to itself.</div>
     </div>
   </div>`},
 { id:"run", name:"How to Run It", build: () => `
@@ -432,7 +442,7 @@ const SLIDES = [
   <div class="body">
     <div class="pipe">
       <span class="step">🎮 Play this demo</span><span class="arrow">→</span>
-      <span class="step">✏️ PROF EDIT (passcode: mrsystem)</span><span class="arrow">→</span>
+      <span class="step">✏️ PROF EDIT (passcode is in the facilitator guide)</span><span class="arrow">→</span>
       <span class="step">🖨 PRINT PACK — the real notecard game</span>
     </div>
     <div class="timing" role="img" aria-label="Run of show: deal 5, round one 10, vote 3, round two 8, vote 3, round three 6, vote 3, final 6, debrief 10 minutes">
@@ -446,6 +456,7 @@ const SLIDES = [
       character; pick your danger mode. Never end on an elimination.</p>
     <p class="caption mono">Play: amberbellou.github.io/mr-system · Code + facilitator guide:
       github.com/amberbellou/mr-system</p>
+    <p class="caption" style="font-style:italic">Be nicer to the Marcuses in your building.</p>
     <div style="display:flex;gap:14px;align-items:flex-end">
       <h2 class="px" style="font-size:clamp(16px,3vw,30px);margin:0;text-shadow:4px 4px 0 var(--clay)">THANKS FOR PLAYING</h2>
       <canvas id="corgi" width="84" height="66" style="image-rendering:pixelated" role="img" aria-label="A pixel corgi standing on a brick"></canvas>
