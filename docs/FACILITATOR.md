@@ -69,10 +69,10 @@ neighborhood — not the not-happening.
 ## How the demo's vote works
 
 In the digital demo, your family casts one real vote; every other surviving family's vote is
-simulated from playtest behavior. The simulation weights votes toward families that are already
-struggling (+2.6), in the poverty/crisis band (+2.2), or working-class (+0.9), and slightly away
-from upper-class families (−0.55). Ties break toward the more burdened family — a stated design
-decision, because that is what rooms do. The demo says this on the vote-result screen.
+simulated. The weights encode a design prediction, not observed data: votes lean toward families
+that are already struggling (+2.6), in the poverty/crisis band (+2.2), or working-class (+0.9),
+and slightly away from upper-class families (−0.55). Ties break toward the more burdened family, a
+stated design decision. The demo says this on the vote-result screen.
 
 **In the in-person game there is no simulation:** every family casts a real vote, and Mr. System's
 memo does the steering instead.
@@ -81,10 +81,10 @@ memo does the steering instead.
 
 This is the part to handle carefully.
 
-Every group votes one student out after each round. In playtesting the room reliably eliminates
-whoever is already struggling — the family with the most visible problems, the one who was late,
-the one everybody can see is failing. That is the finding. It is not a bug and it is not the
-students being cruel.
+Every group votes one student out after each round. The vote is a trap on purpose: expect the room
+to eliminate whoever is already struggling, the family with the most visible problems, the one who
+was late, the one everybody can see is failing. The demo's simulation is built to do the same. When
+it happens, it is not a bug and it is not the students being cruel.
 
 **Name it out loud after the first vote, before you move on.** Ask:
 

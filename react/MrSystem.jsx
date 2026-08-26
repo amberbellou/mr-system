@@ -1900,7 +1900,7 @@ const TEXT = {
   castKaia: "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
   resultsKaia: "Nobody chose wrong. Look at what each of them was choosing between.",
   voteKaia: "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime \u2014 they may not vote. Majority rules.",
-  voteNote: "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why \u2014 in every playtest the group eliminates whoever is already struggling, which is the finding, not a bug. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
+  voteNote: "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why. The vote is a trap on purpose: the demo's simulated families reliably turn on whoever is already struggling, and a live room is expected to do the same. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
   homeworkKaia: "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
   homeworkNote: "Everyone can do this one. That is deliberate. The homework was never the filter.",
   musicLine: "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
@@ -3018,10 +3018,10 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           <span className="pill">YOUR VOTE <b>{g.voteSel ? BY_ID[g.voteSel].name : "—"}</b></span>
         </Actions>
         <div className="note"><b>Facilitator note.</b> Read the recommendations aloud in a neutral
-          administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who
-          the room voted out and why &mdash; in every playtest the group eliminates whoever is already
-          struggling, which is the finding, not a bug. In debrief, ask who the absurd charges targeted and
-          who got theirs withdrawn.</div>
+          administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask
+          who the room voted out and why. The vote is a trap on purpose: the demo's simulated families
+          reliably turn on whoever is already struggling, and a live room is expected to do the same. In
+          debrief, ask who the absurd charges targeted and who got theirs withdrawn.</div>
       </Screen>
     </Layout>
   ); };
@@ -3043,8 +3043,8 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             ))}
           </div>
           <p className="hint" style={{ fontFamily: "'IBM Plex Mono',monospace" }}>Your family cast one
-            vote. The other families' votes are simulated from playtest behavior {"\u2014"} rooms reliably
-            turn on whoever is already struggling.</p>
+            vote. The other families' votes are simulated, and the simulation is built to do what a live
+            room is expected to do: turn on whoever is already struggling.</p>
           <hr className="hr" />
           {g.voteLink && <div className="linkline" role="alert"><b>MR. SYSTEM</b><p>{g.voteLink}</p></div>}
           <div className="res r-out">

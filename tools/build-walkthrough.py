@@ -342,8 +342,9 @@ const SLIDES = [
     <div class="ghost-strip"><span class="lbl">ELIMINATED — MIMING, NOT VOTING</span>
       <span class="ghost"><span data-sp="lucia" data-px="2" data-ghost="1"></span>LUCIA</span>
       <span class="ghost"><span data-sp="jayson" data-px="2" data-ghost="1"></span>JAYSON</span></div>
-    <div class="callout">In every playtest, the room votes out whoever is already struggling.
-      That's not a bug — it's the single most teachable moment in the game.</div>
+    <div class="callout">The vote is a trap on purpose. The demo's simulated families reliably turn
+      on whoever is already struggling, and a live room is expected to do the same. When it happens, it
+      is the most teachable moment in the game.</div>
   </div>`},
 { id:"memo", name:"The Memo", build: () => {
   const pat = findPattern("isabella"), abs = findAbsurd("Hummed"), wd = findWithdrawn("david");
