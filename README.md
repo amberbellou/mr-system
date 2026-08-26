@@ -39,6 +39,14 @@ Read **[docs/FACILITATOR.md](docs/FACILITATOR.md)** first. Several families carr
 storylines, and the elimination vote needs debriefing in the room. There is a content warning and
 a suggested framing in there.
 
+## Printing the physical game
+
+The site is the demo; the real game is notecards. **PRINT PACK** (top right) generates role cards,
+round cards, challenge cards, Kaia's script book (with answer keys and dice instructions for danger
+events), Mr. System's memo sheets, the status board, ghost tents, star cards, vote slips, and a
+one-page run of show — all from the current content pack and roster, so PROF EDIT localization
+flows straight onto paper. Bring one d6.
+
 ## Editing the content
 
 Everything on screen — dilemmas, choices, outcomes, characters, challenges, timers, every line of

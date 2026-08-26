@@ -94,6 +94,24 @@ If you are tight: run rounds 1 and 2, skip round 3, go to the final round. Keep 
 also read only a subset of families aloud each round and let the class-status panel carry the rest —
 every family still resolves on the dashboard either way.
 
+## The print pack
+
+The site is the demo; the game is played by hand. **PRINT PACK** (top right, next to PROF EDIT)
+generates every physical material from the current content and the roster you chose at setup — so
+if you localized dilemmas in PROF EDIT, your printouts are localized too. One Print / Save as PDF
+covers the whole pack, or print sections separately from the dropdown.
+
+- **Cardstock:** role cards, round cards, challenge cards, and the star cards. Everything else on paper.
+- **Bring one d6.** Wherever the digital game rolls a danger event, Kaia's script prints a die
+  instruction instead ("roll a d6; 1–2 → read the MR. SYSTEM box"). Standard text is printed in the
+  box; the unsparing variant sits in a footnote so your danger-mode choice works on paper.
+- Round cards never show outcomes — the reveal is Kaia's move, read from the script book. Don't
+  hand the script to players.
+- The pack includes spare copies of the poverty/crisis role cards. Cards get lost; those characters
+  cannot be missing.
+- Memo sheets have blank name lines on the grounded charges: fill in a currently-struggling family
+  before reading, in your best administrative voice.
+
 ## Changing the content
 
 **PROF EDIT**, top right, passcode `mrsystem` (change it on the Content pack tab).

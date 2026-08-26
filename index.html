@@ -476,6 +476,132 @@ a{color:var(--clay)}
   color:var(--ink-2);margin-bottom:16px}
 .ed-warn b{color:var(--ink)}
 .mini.is-live{background:var(--violet);color:#FFF6EA;border-color:var(--violet)}
+
+/* ============ PRINT PACK ============ */
+#printroot{display:none}
+body.printing .app,body.printing #sky,body.printing #edroot,body.printing #overlay{display:none}
+body.printing{background:#8a8a8a}
+body.printing #printroot{display:block}
+.pp-bar{position:sticky;top:0;z-index:80;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  background:#141C26;color:#E8EDF4;padding:10px 16px;font-family:"IBM Plex Sans",sans-serif}
+.pp-bar b{font-family:"Press Start 2P",monospace;font-size:9px;letter-spacing:1px}
+.pp-bar select{font-family:"IBM Plex Mono",monospace;font-size:12px;padding:5px 8px;
+  background:#F4E9D2;color:#141C26;border:2px solid #05080C}
+.pp-btn{font-family:"Press Start 2P",monospace;font-size:9px;cursor:pointer;
+  border:2px solid #E8EDF4;background:transparent;color:#E8EDF4;padding:8px 11px}
+.pp-btn:hover{background:#E8EDF4;color:#141C26}
+.pp-note{font-size:12px;opacity:.75}
+
+/* sheets: dark-on-light always, theme-independent */
+.sheet{width:7.7in;min-height:9.9in;margin:18px auto;background:#fff;color:#111;
+  padding:.45in;box-shadow:0 3px 18px rgba(0,0,0,.4);box-sizing:border-box;
+  font-family:"IBM Plex Sans",sans-serif;font-size:10.5pt;line-height:1.45;position:relative}
+.sheet h2{font-family:"Press Start 2P",monospace;font-size:13pt;margin:0 0 10px;color:#111}
+.sheet h3{font-family:"Press Start 2P",monospace;font-size:9pt;margin:16px 0 8px;color:#111;
+  border-bottom:2px solid #111;padding-bottom:5px}
+.pp-eyebrow{font-family:"Press Start 2P",monospace;font-size:6.5pt;letter-spacing:2px;color:#555;margin:0 0 8px}
+.pp-foot{position:absolute;bottom:.28in;left:.45in;right:.45in;display:flex;justify-content:space-between;
+  font-family:"IBM Plex Mono",monospace;font-size:7.5pt;color:#777}
+
+/* card grids */
+.pgrid2{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.pcard{border:1.5px dotted #999;padding:.16in;box-sizing:border-box;display:flex;flex-direction:column;
+  overflow:hidden;position:relative;background:#fff}
+.pcard-role{height:4.35in}
+.pcard-round{height:4.35in}
+.pcard-chal{height:4.35in}
+.pcard-h{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.pcard-name{font-family:"Press Start 2P",monospace;font-size:10pt}
+.pcard-chip{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:7.5pt;font-weight:600;
+  text-transform:uppercase;letter-spacing:.05em;border:1.5px solid #111;padding:1px 6px;margin-top:4px}
+.pcard-who{font-size:9pt;color:#333;margin:2px 0 6px}
+.pcard-tags{list-style:none;margin:0;padding:0;font-size:8.5pt;color:#333}
+.pcard-tags li{padding-left:11px;position:relative;margin-bottom:2px}
+.pcard-tags li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;background:#111}
+.pcard-load{font-family:"IBM Plex Mono",monospace;font-size:9pt;letter-spacing:2px;margin-top:auto;padding-top:6px}
+.pcard-footer{border-top:1.5px solid #111;margin-top:6px;padding-top:5px;font-size:7.5pt;
+  font-style:italic;color:#444}
+.ptab{position:absolute;top:0;right:0;background:#111;color:#fff;
+  font-family:"Press Start 2P",monospace;font-size:8pt;padding:5px 8px}
+.pcard-sit{font-size:9.5pt;margin:4px 0 8px;line-height:1.4}
+.pchoice{display:flex;gap:8px;margin-bottom:6px;font-size:9pt;line-height:1.35}
+.pchoice b{font-family:"Press Start 2P",monospace;font-size:8pt;flex:none;border:1.5px solid #111;
+  width:.22in;height:.22in;display:flex;align-items:center;justify-content:center}
+.pchoice .pcost{display:block;font-family:"IBM Plex Mono",monospace;font-size:7.5pt;color:#555;margin-top:1px}
+.pchoice .pchal-mark{display:block;font-size:7.5pt;font-weight:600;margin-top:1px}
+.ptimer{font-family:"Press Start 2P",monospace;font-size:26pt;text-align:center;margin:8px 0;
+  border:3px solid #111;padding:8px}
+.pneed{font-family:"IBM Plex Mono",monospace;font-size:9pt;font-weight:600;text-align:center;margin-bottom:8px}
+.pq{border-left:3px solid #111;padding-left:8px;margin-bottom:7px;font-size:8.5pt}
+.pq b{display:block}
+.pq span{color:#333}
+
+/* script book */
+.script-fam{border:1.5px solid #111;padding:8px 10px;margin-bottom:10px}
+.script-fam h4{font-family:"Press Start 2P",monospace;font-size:8pt;margin:0 0 6px}
+.script-line{display:flex;gap:8px;font-size:9pt;margin-bottom:5px;line-height:1.4}
+.script-line b{font-family:"Press Start 2P",monospace;font-size:7.5pt;flex:none;padding-top:1px}
+.script-st{font-family:"IBM Plex Mono",monospace;font-size:7.5pt;font-weight:700;white-space:nowrap}
+.pkaia{border-left:4px solid #111;background:#f0f0f0;padding:8px 12px;font-style:italic;
+  font-size:10pt;margin:0 0 12px}
+.pdice{border:1.5px dashed #111;background:#f7f7f7;padding:6px 9px;margin:4px 0;
+  font-size:8.5pt;font-weight:600}
+.pmrsys{border:3px solid #111;padding:7px 10px;margin:4px 0 8px;font-size:9pt}
+.pmrsys b{font-family:"Press Start 2P",monospace;font-size:7pt;display:block;margin-bottom:4px}
+.pmrsys .pfn{font-size:7.5pt;color:#444;border-top:1px solid #999;margin-top:5px;padding-top:4px;font-weight:400}
+.pnote{border:1.5px solid #111;background:#f0f0f0;padding:7px 10px;font-size:8.5pt;margin:8px 0}
+.pcheck{list-style:none;margin:6px 0;padding:0;font-size:9.5pt}
+.pcheck li{padding-left:18px;position:relative;margin-bottom:4px}
+.pcheck li::before{content:"\2610";position:absolute;left:0}
+
+/* memo sheets */
+.pmemo-line{display:flex;gap:8px;align-items:baseline;border-bottom:1px dotted #999;
+  padding:7px 0;font-size:9.5pt}
+.pmemo-line .blank{border-bottom:1.5px solid #111;min-width:1.4in;display:inline-block}
+.pmemo-line .pol{font-family:"IBM Plex Mono",monospace;font-size:8pt;color:#555;white-space:nowrap}
+.pmemo-line.withdrawn{text-decoration:line-through}
+.pmemo-line.withdrawn .excuse{text-decoration:none;font-family:"IBM Plex Mono",monospace;
+  font-size:8pt;font-weight:600}
+
+/* table pieces */
+.pboard{width:100%;border-collapse:collapse;font-size:8.5pt}
+.pboard th,.pboard td{border:1.5px solid #111;padding:5px 6px;text-align:left}
+.pboard th{font-family:"Press Start 2P",monospace;font-size:6.5pt}
+.pboard td.pb-name{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:8.5pt}
+.ptent{height:3.2in;border:1.5px dotted #999;position:relative;display:flex;flex-direction:column}
+.ptent-half{height:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  font-family:"Press Start 2P",monospace;font-size:9pt;text-align:center;padding:0 .2in}
+.ptent-half small{font-family:"IBM Plex Sans",sans-serif;font-size:8.5pt;text-transform:none}
+.ptent-half.flip{transform:rotate(180deg);border-bottom:1px dashed #999}
+.pstar{border:4px double #111;padding:.18in;height:2.6in;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:8px}
+.pstar-name{font-family:"Press Start 2P",monospace;font-size:10pt}
+.pstar-line{font-size:9.5pt;font-style:italic}
+.pslip{border:1.5px dotted #999;padding:.12in;font-family:"IBM Plex Mono",monospace;font-size:8.5pt;
+  height:1.5in;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.pslip .blank{border-bottom:1.5px solid #111;display:inline-block;min-width:1.2in}
+.prun{width:100%;border-collapse:collapse;font-size:9.5pt}
+.prun th,.prun td{border:1.5px solid #111;padding:6px 8px;text-align:left;vertical-align:top}
+.prun th{font-family:"Press Start 2P",monospace;font-size:6.5pt}
+.ptoc{list-style:none;margin:14px 0;padding:0;font-size:11pt}
+.ptoc li{display:flex;gap:8px;margin-bottom:7px}
+.ptoc b{font-family:"Press Start 2P",monospace;font-size:8pt}
+
+@media print{
+  body,body.printing{background:#fff !important}
+  .pp-bar{display:none !important}
+  .sheet{width:auto;min-height:0;margin:0;box-shadow:none;page-break-after:always}
+  .pcard,.script-fam,.pmemo-line,.pmrsys,.pdice,.pstar,.ptent,.pslip{break-inside:avoid;page-break-inside:avoid}
+}
+#printroot[data-show]:not([data-show="all"]) .sheet{display:none}
+#printroot[data-show="roles"] .sheet[data-sec="roles"],
+#printroot[data-show="rounds"] .sheet[data-sec="rounds"],
+#printroot[data-show="challenges"] .sheet[data-sec="challenges"],
+#printroot[data-show="script"] .sheet[data-sec="script"],
+#printroot[data-show="memos"] .sheet[data-sec="memos"],
+#printroot[data-show="table"] .sheet[data-sec="table"],
+#printroot[data-show="run"] .sheet[data-sec="run"],
+#printroot[data-show="cover"] .sheet[data-sec="cover"]{display:block}
 </style>
 </head>
 <body>
@@ -490,6 +616,7 @@ a{color:var(--clay)}
 </div>
 <div id="overlay"></div>
 <div id="edroot"></div>
+<div id="printroot" data-show="all"></div>
 
 <script>
 (() => {
@@ -521,11 +648,12 @@ function drawSprite(cv, ch, opts){
   opts = opts || {};
   const rows = TEMPLATES[ch.tmpl] || BASE;
   const pal = opts.ghost ? GHOST_PAL : Object.assign({E:"#141C26"}, ch.pal);
-  const w = 12, h = 14, px = opts.px || 3;
-  cv.width = w*px; cv.height = h*px;
+  const w = 12, h = 14, px = opts.px || 3, pad = opts.outline ? 1 : 0;
+  cv.width = (w + pad*2)*px; cv.height = (h + pad*2)*px;
   const g = cv.getContext("2d");
   g.imageSmoothingEnabled = false;
   g.clearRect(0,0,cv.width,cv.height);
+  const cells = [];
   for (let y=0; y<h; y++){
     const row = rows[y] || "";
     for (let x=0; x<w; x++){
@@ -535,10 +663,17 @@ function drawSprite(cv, ch, opts){
       if (ch.glasses && y===4 && (x===4||x===7)) c = "E";
       const col = pal[c] || pal.T;
       if (!col) continue;
-      g.fillStyle = col;
-      g.fillRect(x*px, y*px, px, px);
+      cells.push([x,y,col]);
     }
   }
+  if (opts.outline){
+    g.fillStyle = "#000";
+    cells.forEach(([x,y]) => {
+      [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dx,dy]) =>
+        g.fillRect((x+dx+pad)*px, (y+dy+pad)*px, px, px));
+    });
+  }
+  cells.forEach(([x,y,col]) => { g.fillStyle = col; g.fillRect((x+pad)*px, (y+pad)*px, px, px); });
   if (opts.ghost) cv.style.opacity = ".6";
   return cv;
 }
@@ -1371,6 +1506,348 @@ let CHARGES = {
   {charge:"{NAME} left campus during lunch.", excuse:"Reclassified as an off-site enrichment interval."}
  ]
 };
+
+
+/* ==========================================================
+   4.7 PRINT PACK
+   Generates the physical notecard game from live data.
+   Pure over globals resolved at call time; used by both builds.
+   ========================================================== */
+const pesc = x => String(x == null ? "" : x).replace(/[&<>"]/g,
+  m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+function hydratePrint(el){
+  el.querySelectorAll("[data-psprite]").forEach(n => {
+    if (n.firstChild) return;
+    const ch = BY_ID[n.dataset.psprite]; if (!ch) return;
+    const cv = document.createElement("canvas");
+    drawSprite(cv, ch, {px: +(n.dataset.px || 6), outline: true});
+    cv.style.width = (cv.width / 3) + "px";
+    cv.style.imageRendering = "pixelated";
+    cv.setAttribute("role", "img");
+    cv.setAttribute("aria-label", "Pixel portrait of " + ch.name);
+    n.appendChild(cv);
+  });
+}
+const PP_STATUS = {in: "IN SCHOOL", strug: "STRUGGLING", out: "OUT"};
+function ppLoad(load){
+  let out = "";
+  for (let i = 1; i <= 5; i++) out += i <= load ? "\u25a0" : "\u25a1";
+  return out + "  LOAD " + load + "/5";
+}
+function ppDiceFaces(pr){ return Math.max(1, Math.min(5, Math.round((pr || 0) * 6))); }
+function ppSheet(sec, title, eyebrow, body, foot){
+  return `<section class="sheet" data-sec="${sec}">
+    <p class="pp-eyebrow">${pesc(eyebrow)}</p>
+    ${title ? `<h2>${pesc(title)}</h2>` : ""}
+    ${body}
+    <div class="pp-foot"><span>MR. SYSTEM \u2014 PRINT PACK</span><span>${pesc(foot || "")}</span></div>
+  </section>`;
+}
+function chunk(arr, n){
+  const out = [];
+  for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n));
+  return out;
+}
+
+function buildPrintPack(opts){
+  const active = CAST.filter(c => opts.activeIds.indexOf(c.id) >= 0);
+  const groups = Math.ceil(opts.classSize / 5);
+  const per = Math.ceil(active.length / groups);
+  const modeLabel = SETTINGS.rosterMode.toUpperCase() + " \u00b7 " + active.length + " families";
+  const sheets = [];
+
+  /* ---- cover + TOC ---- */
+  sheets.push(ppSheet("cover", "MR. SYSTEM", "THE PHYSICAL GAME \u2014 PRINT PACK", `
+    <p style="font-size:11pt;max-width:5.6in">Everything the room needs to play by hand. Print this pack,
+      bring a die, painter's tape, a bin, pens, and a timer \u2014 the game is the notecards; the site is
+      only the demo.</p>
+    <div class="pnote"><b>This pack was generated from:</b> ${pesc(opts.customized
+      ? "a CUSTOMIZED content pack (PROF EDIT changes included)" : "the default content pack")}
+      \u00b7 roster ${pesc(modeLabel)} \u00b7 class size ${opts.classSize} \u00b7 danger mode
+      ${pesc(SETTINGS.dangerMode.toUpperCase())} \u00b7 ${pesc(opts.dateStr)}</div>
+    <h3>CONTENTS</h3>
+    <ul class="ptoc">
+      <li><b>1</b> Role cards \u2014 one per family, dealt once, kept all game (cardstock)</li>
+      <li><b>2</b> Round cards \u2014 the dilemmas, drawn each round (cardstock)</li>
+      <li><b>3</b> Challenge cards (cardstock)</li>
+      <li><b>4</b> Kaia's script book \u2014 the narrator's binder (paper)</li>
+      <li><b>5</b> Mr. System's memo sheets \u2014 one per vote (paper)</li>
+      <li><b>6</b> Table pieces \u2014 status board, ghost tents, star cards, vote slips</li>
+      <li><b>7</b> Run of show \u2014 one page for the podium</li>
+    </ul>
+    <div class="pnote">${pesc(TEXT.titleWarn || "")}</div>`,
+    "cover"));
+
+  /* ---- 1. role cards ---- */
+  const roleCard = ch => `<div class="pcard pcard-role">
+    <div class="pcard-h"><span data-psprite="${ch.id}" data-px="6"></span>
+      <div><div class="pcard-name">${pesc(ch.name)}</div>
+        <span class="pcard-chip">${pesc(ch.cls)}</span></div></div>
+    <p class="pcard-who">${pesc(ch.who)}</p>
+    <ul class="pcard-tags">${ch.tags.map(t => `<li>${pesc(t)}</li>`).join("")}</ul>
+    <div class="pcard-load">${ppLoad(ch.load)}</div>
+    <div class="pcard-footer">You are this family for the whole game. You choose. Mr. System decides
+      what it costs.</div>
+  </div>`;
+  chunk(active, 4).forEach((four, i) => {
+    sheets.push(ppSheet("roles", i === 0 ? "ROLE CARDS" : "", "SECTION 1 \u2014 ROLE CARDS \u00b7 CUT ALONG DOTTED LINES",
+      `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 p" + (i + 1)));
+  });
+  const povActive = active.filter(c => c.tier === "pov");
+  if (povActive.length)
+    chunk(povActive, 4).forEach((four, i) => {
+      sheets.push(ppSheet("roles", "", "SECTION 1 \u2014 SPARE COPIES \u00b7 POVERTY/CRISIS BLOCK (CARDS GET LOST; THESE CANNOT BE MISSING)",
+        `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 spares p" + (i + 1)));
+    });
+
+  /* ---- 2. round cards (NO OUTCOMES, NO DANGER TELLS) ---- */
+  const roundCard = (ch, d, r) => `<div class="pcard pcard-round">
+    <span class="ptab">R${r}</span>
+    <div class="pcard-name" style="font-size:9pt;margin-bottom:2px">${pesc(ch.name)}</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:7pt;color:#555;margin-bottom:5px">${pesc(ROUND_NAME[r])}</div>
+    <p class="pcard-sit">${pesc(d.sit)}</p>
+    ${d.note ? `<p style="font-size:8pt;font-weight:700;margin:0 0 6px">${pesc(d.note)}</p>` : ""}
+    ${d.choices.map(c => `<div class="pchoice"><b>${pesc(c.k)}</b>
+      <span>${pesc(c.t)}<span class="pcost">COST: ${pesc(c.cost)}</span>
+      ${c.chal ? `<span class="pchal-mark">\u26a1 This choice triggers a challenge card.</span>` : ""}</span>
+    </div>`).join("")}
+    <div class="pcard-footer" style="margin-top:auto">Argue it. Commit to a letter out loud. Kaia has the rest.</div>
+  </div>`;
+  [1, 2, 3].forEach(r => {
+    const cards = active.filter(ch => DILEMMAS[r] && DILEMMAS[r][ch.id])
+      .map(ch => roundCard(ch, DILEMMAS[r][ch.id], r));
+    chunk(cards, 2).forEach((two, i) => {
+      sheets.push(ppSheet("rounds", i === 0 ? "ROUND " + r + " CARDS" : "",
+        "SECTION 2 \u2014 ROUND CARDS \u00b7 " + pesc(ROUND_NAME[r]),
+        `<div class="pgrid2">${two.join("")}</div>`, "round " + r + " \u00b7 p" + (i + 1)));
+    });
+  });
+
+  /* ---- 3. challenge cards ---- */
+  const usedChals = new Set();
+  [1,2,3].forEach(r => active.forEach(ch => {
+    const d = DILEMMAS[r] && DILEMMAS[r][ch.id];
+    if (d) d.choices.forEach(c => { if (c.chal && CHALLENGES[c.chal]) usedChals.add(c.chal); });
+  }));
+  const chalCard = key => {
+    const c = CHALLENGES[key];
+    const need = c.kind === "quiz" ? `Need ${Math.min(c.need, c.qs.length)} of ${c.qs.length}`
+      : c.kind === "list" ? `Name any ${c.need}`
+      : `Handle ${Math.min(c.need, c.qs.length)} of ${c.qs.length}`;
+    let body = "";
+    if (c.kind === "quiz")
+      body = c.qs.map((q, i) => `<div class="pq"><b>Q${i + 1}. ${pesc(q.q)}</b>
+        <span>${q.opts.map(o => pesc(o)).join(" \u00b7 ")}</span></div>`).join("");
+    else if (c.kind === "list")
+      body = `<div class="pq"><b>${pesc(c.brief)}</b><span>Answers are judged from Kaia's key.</span></div>`;
+    else
+      body = `<div class="pq"><b>Rapid fire.</b><span>Kaia fires the prompts; answer instantly;
+        there is no right answer, only a cheaper one.</span></div>`;
+    return `<div class="pcard pcard-chal">
+      <div class="pcard-name" style="font-size:9pt">${pesc(c.title)}</div>
+      ${c.kind !== "list" ? `<p class="pcard-who">${pesc(c.brief)}</p>` : ""}
+      <div class="ptimer">${c.secs}s</div>
+      <div class="pneed">${pesc(need)}</div>
+      ${body}
+      <div class="pcard-footer" style="margin-top:auto">Kaia runs the timer. When it ends, it ends.</div>
+    </div>`;
+  };
+  chunk([...usedChals], 2).forEach((two, i) => {
+    sheets.push(ppSheet("challenges", i === 0 ? "CHALLENGE CARDS" : "",
+      "SECTION 3 \u2014 CHALLENGE CARDS \u00b7 ANSWER KEYS LIVE IN KAIA'S SCRIPT",
+      `<div class="pgrid2">${two.map(chalCard).join("")}</div>`, "challenges \u00b7 p" + (i + 1)));
+  });
+
+  /* ---- 4. Kaia's script book ---- */
+  sheets.push(ppSheet("script", "KAIA'S SCRIPT BOOK", "SECTION 4 \u2014 THE NARRATOR'S BINDER", `
+    <h3>SETUP</h3>
+    <p style="font-size:10pt">${groups} groups \u00d7 ${opts.classSize} students \u2014 each group is dealt
+      ${per > 1 ? "1\u2013" + per : "one"} role card${per > 1 ? "s" : ""} and <b>is</b> that family.
+      One vote per family, cast by a spokesperson. ${active.length} families in play
+      (${pesc(modeLabel)}).</p>
+    <h3>MATERIALS</h3>
+    <ul class="pcheck">
+      <li>This pack, cut and sorted \u00b7 painter's tape for the red lines \u00b7 a bin for homework</li>
+      <li>Blank paper and pens \u00b7 a speaker \u00b7 a visible timer \u00b7 <b>one d6</b></li>
+      <li>The status board taped up or projected \u00b7 ghost tents and star cards within reach</li>
+    </ul>
+    <h3>SAFETY \u2014 BEFORE THE FIRST ROUND</h3>
+    <div class="pnote">Write on the board and leave up all session:<br>
+      <b>Counselor: ______________________ \u00b7 988 Suicide &amp; Crisis Lifeline</b><br><br>
+      Say aloud: players may pass on any character, no explanation needed. Danger mode for this
+      session: <b>${pesc(SETTINGS.dangerMode.toUpperCase())}</b> \u2014 if it is not OFF, say that the
+      game can depict traffic injury and threats to unsupervised kids.</div>
+    <div class="pkaia">${pesc(TEXT.castKaia)}</div>`, "script \u00b7 setup"));
+
+  [1, 2, 3].forEach(r => {
+    const fams = active.filter(ch => DILEMMAS[r] && DILEMMAS[r][ch.id]);
+    const famBlocks = fams.map(ch => {
+      const d = DILEMMAS[r][ch.id];
+      const lines = d.choices.map(c => {
+        let core;
+        if (c.chal && CHALLENGES[c.chal]){
+          const def = CHALLENGES[c.chal];
+          let key = "";
+          if (def.kind === "quiz")
+            key = ` <span class="script-st">[KEY: ${def.qs.map((q, i) => "Q" + (i + 1) + "=" + pesc(q.opts[q.a])).join("; ")}]</span>`;
+          else if (def.kind === "list")
+            key = ` <span class="script-st">[ACCEPT: ${pesc((def.keys || []).slice(0, 10).join(", "))}\u2026]</span>`;
+          else
+            key = ` <span class="script-st">[PROMPTS: ${def.qs.map(q => pesc(q.q)).join(" \u2022 ")}]</span>`;
+          core = `\u26a1 <i>${pesc(def.title)}</i>${key}<br>
+            PASS \u2192 ${pesc(c.pass.say)} <span class="script-st">(\u2192 ${PP_STATUS[c.pass.st]})</span><br>
+            FAIL \u2192 ${pesc(c.fail.say)} <span class="script-st">(\u2192 ${PP_STATUS[c.fail.st]})</span>`;
+        } else {
+          core = `${pesc(c.auto.say)} <span class="script-st">(\u2192 ${PP_STATUS[c.auto.st]})</span>`;
+        }
+        let danger = "";
+        if (c.danger && c.danger.standard){
+          const faces = ppDiceFaces(c.danger.p);
+          danger = `<div class="pdice">\u1f3b2 If they chose ${pesc(c.k)}: roll a d6.
+              ${faces === 1 ? "On a 1" : "1\u2013" + faces} \u2192 read the MR. SYSTEM box.
+              ${faces === 1 ? "2\u20136" : (faces + 1) + "\u20136"} \u2192 read the normal outcome.</div>
+            <div class="pmrsys"><b>\u26a0 MR. SYSTEM</b>${pesc(c.danger.standard.say)}
+              <span class="script-st">(\u2192 ${PP_STATUS[c.danger.standard.st]})</span>
+              ${c.danger.unsparing ? `<div class="pfn">Unsparing variant: ${pesc(c.danger.unsparing.say)}
+                (\u2192 ${PP_STATUS[c.danger.unsparing.st]})</div>` : ""}</div>`;
+        }
+        return `<div class="script-line"><b>${pesc(c.k)}</b><span>${core}</span></div>${danger}`;
+      }).join("");
+      return `<div class="script-fam"><h4>${pesc(ch.name)}</h4>${lines}</div>`;
+    });
+    chunk(famBlocks, 3).forEach((three, i) => {
+      sheets.push(ppSheet("script", i === 0 ? "SCRIPT \u2014 ROUND " + r : "",
+        "SECTION 4 \u2014 " + pesc(ROUND_NAME[r]),
+        (i === 0 ? `<div class="pkaia">${pesc(ROUND_KAIA[r])}</div>` : "") + three.join(""),
+        "script \u00b7 round " + r + " \u00b7 p" + (i + 1)));
+    });
+    sheets.push(ppSheet("script", "", "SECTION 4 \u2014 THE ROUND " + r + " VOTE", `
+      <div class="pkaia">${pesc(TEXT.voteKaia)}</div>
+      <p style="font-size:10pt">Hand out vote slips. Ghosts stand and mime; their votes are not
+        collected. Read the round ${r} memo sheet first, in a neutral administrative voice.</p>
+      <div class="pnote"><b>Facilitator note.</b> ${pesc(TEXT.voteNote)}</div>`,
+      "script \u00b7 vote " + r));
+  });
+
+  const privActive = Object.keys(PRIV).filter(id => opts.activeIds.indexOf(id) >= 0);
+  sheets.push(ppSheet("script", "SCRIPT \u2014 FINAL ROUND", "SECTION 4 \u2014 HOMEWORK, MUSIC, TARDY", `
+    <h3>PHASE 1 \u2014 HOMEWORK</h3>
+    <div class="pkaia">${pesc(TEXT.homeworkKaia)}</div>
+    <p style="font-size:10pt">Blank paper, pens, the bin. ${pesc(TEXT.homeworkNote)}</p>
+    <h3>PHASE 2 \u2014 THE MUSIC</h3>
+    <div class="pkaia">${pesc(TEXT.musicLine)}</div>
+    <p style="font-size:10pt">Tape three red lines on the floor. Play music; count down about 12 seconds,
+      out loud, on no fixed schedule. Privileged students (\u2605 below) do not have to run.</p>
+    <h3>PHASE 3 \u2014 THE TIMER GOES OFF</h3>
+    <div class="pkaia">${pesc(TEXT.tardyKaia)}</div>
+    <p style="font-size:10pt">In the room, "last one in" is decided by who was carrying the most.
+      Let it be whoever it actually is \u2014 then read their line:</p>
+    ${active.map(ch => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(ch.name)}</b>
+      <span style="font-size:8.5pt">${pesc(TARDY_WHY[ch.id] || "The distance was never the same for everyone.")}</span></div>`).join("")}
+    <h3>SPECIAL TREATMENT \u2014 READ, THEN HAND OVER THE STAR CARDS</h3>
+    ${privActive.length ? privActive.map(id => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(BY_ID[id].name)}</b>
+      <span style="font-size:8.5pt">${pesc(PRIV[id])}</span></div>`).join("")
+      : `<p style="font-size:9pt">No privileged students in this roster.</p>`}`,
+    "script \u00b7 final"));
+
+  sheets.push(ppSheet("script", "SCRIPT \u2014 DEBRIEF", "SECTION 4 \u2014 THE PATTERN", `
+    <div class="pkaia">${pesc(TEXT.debriefKaia)}</div>
+    <h3>ASK THE ROOM</h3>
+    <ol style="font-size:10pt;padding-left:.25in">${(TEXT.questions || []).map(q => `<li style="margin-bottom:6px">${pesc(q)}</li>`).join("")}</ol>
+    <h3>PROMPTS \u2014 READ WHERE THEY APPLY</h3>
+    <ul class="pcheck" style="font-size:9pt">
+      <li>If a danger event fired: "The same street was only dangerous for the kids who had to cross it alone."</li>
+      <li>If the room followed the memo: "It felt like due process. It was a suggestion box with one suggestion."</li>
+      <li>If a withdrawn charge appeared: "Two students committed the same offense this week. One is eliminated. One was 'jogging with purpose.'"</li>
+      <li>If Grace and Marcus both played: "Grace burned dinner and the building charged her parents' card. The identical evening in Marcus's kitchen is a CPS file."</li>
+      <li>If Isabella and Alejandra both played: "They have the same disease. The difference between them is not medical."</li>
+      <li>If Marie survived: "Community is infrastructure. It is also unpaid, and it is also not enough on its own."</li>
+    </ul>
+    <div class="pnote">${pesc(TEXT.debriefNote)}</div>`, "script \u00b7 debrief"));
+
+  /* ---- 5. memo sheets ---- */
+  const bespokePatterns = (CHARGES.patterns || []).filter(x => x.forId && opts.activeIds.indexOf(x.forId) >= 0);
+  const genericPatterns = (CHARGES.patterns || []).filter(x => !x.forId);
+  const absurdAll = CHARGES.absurd || [];
+  const bespokeWithdrawn = (CHARGES.withdrawn || []).filter(x => x.forId && opts.activeIds.indexOf(x.forId) >= 0);
+  const aishaCharge = (CHARGES.patterns || []).find(x => x.forId === "aisha");
+  for (let m = 0; m < 3; m++){
+    const lines = [];
+    if (m === 0 && aishaCharge){
+      const aishaActive = opts.activeIds.indexOf("aisha") >= 0;
+      lines.push(`<div class="pmemo-line"><b>${aishaActive ? "AISHA" : '<span class="blank"></span>'}</b>
+        <span>\u2014 ${pesc(aishaActive ? aishaCharge.text : aishaCharge.text.replace(/\bher\b/g, "their"))}</span>
+        <span class="pol">(Policy ${pesc(aishaCharge.policy)})</span></div>`);
+    }
+    bespokePatterns.filter(x => x.forId !== "aisha").slice(m * 2, m * 2 + 2).forEach(x => {
+      lines.push(`<div class="pmemo-line"><b>${pesc(BY_ID[x.forId].name)}</b>
+        <span>\u2014 ${pesc(x.text)} <i style="font-size:8pt;color:#666">(read only if currently struggling)</i></span>
+        <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
+    });
+    genericPatterns.slice(m, m + 2).forEach(x => {
+      lines.push(`<div class="pmemo-line"><span class="blank"></span>
+        <span>\u2014 ${pesc(fmtCharge("", x.text)).replace(/^\s*\u2014?\s*/, "")}
+          <i style="font-size:8pt;color:#666">(fill in a currently-struggling family before reading)</i></span>
+        <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
+    });
+    absurdAll.slice(m * 5, m * 5 + 4).forEach(x => {
+      lines.push(`<div class="pmemo-line"><span class="blank"></span>
+        <span>\u2014 ${pesc(x.text)}</span>
+        <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
+    });
+    bespokeWithdrawn.slice(m, m + 1).forEach(x => {
+      lines.push(`<div class="pmemo-line withdrawn"><b>${pesc(BY_ID[x.forId].name)}</b>
+        <span>\u2014 ${pesc(x.charge)}</span>
+        <span class="excuse">WITHDRAWN: ${pesc(x.excuse)}</span></div>`);
+    });
+    sheets.push(ppSheet("memos", "\u1f4cb MR. SYSTEM RECOMMENDS", "SECTION 5 \u2014 MEMO FOR VOTE " + (m + 1), `
+      <p style="font-size:9.5pt;font-style:italic;color:#444">${pesc(CHARGES.memoIntro)}</p>
+      ${lines.join("")}
+      <div class="pnote" style="margin-top:14px">Read in a neutral administrative voice. Do not
+        editorialize. The room will.</div>`, "memo " + (m + 1)));
+  }
+
+  /* ---- 6. table pieces ---- */
+  sheets.push(ppSheet("table", "STATUS BOARD", "SECTION 6 \u2014 TAPE UP OR PROJECT; MARK BY HAND", `
+    <table class="pboard"><tr><th>FAMILY</th><th>R1</th><th>VOTE</th><th>R2</th><th>VOTE</th><th>R3</th><th>VOTE</th><th>FINAL</th></tr>
+      ${active.map(ch => `<tr><td class="pb-name">${pesc(ch.name)}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`).join("")}
+    </table>
+    <p style="font-size:9pt;margin-top:10px">\u1f7e2 IN \u00b7 \u1f7e1 STRUGGLING \u00b7 \u1f534 OUT
+      \u00b7 \u1f47b GHOST \u00b7 \u2b50 SPECIAL TREATMENT</p>`, "status board"));
+  const tent = `<div class="ptent">
+    <div class="ptent-half flip"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div>
+    <div class="ptent-half"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div></div>`;
+  sheets.push(ppSheet("table", "GHOST TENTS", "SECTION 6 \u2014 FOLD ALONG THE DASHED LINE; HAND TO ELIMINATED FAMILIES",
+    `<div class="pgrid2">${tent}${tent}${tent}${tent}</div>`, "ghost tents"));
+  if (privActive.length)
+    sheets.push(ppSheet("table", "SPECIAL TREATMENT", "SECTION 6 \u2014 STAR CARDS \u00b7 HAND OUT DURING THE FINAL-ROUND REVEAL",
+      `<div class="pgrid2">${privActive.map(id => `<div class="pstar">
+        <div>\u2b50</div><div class="pstar-name">${pesc(BY_ID[id].name)}</div>
+        <div class="pstar-line">${pesc(PRIV[id])}</div></div>`).join("")}</div>`, "star cards"));
+  const slip = `<div class="pslip"><span>FAMILY: <span class="blank"></span></span>
+    <span>VOTES TO ELIMINATE: <span class="blank"></span></span></div>`;
+  sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u2014 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
+    `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">${Array.from({length:12}).map(() => slip).join("")}</div>`,
+    "vote slips"));
+
+  /* ---- 7. run of show ---- */
+  sheets.push(ppSheet("run", "RUN OF SHOW", "SECTION 7 \u2014 ONE PAGE FOR THE PODIUM", `
+    <table class="prun"><tr><th>PHASE</th><th>TIME</th><th>NOTES</th></tr>
+      <tr><td>Deal + intro</td><td>5 min</td><td>Safety block first. Board: counselor + 988.</td></tr>
+      <tr><td>Round 1 dilemmas</td><td>8\u201310 min</td><td>Keep families arguing out loud. The die stays hidden until it is needed.</td></tr>
+      <tr><td>Vote 1</td><td>3 min</td><td><b>Don't skip:</b> name the pattern aloud \u2014 the room eliminates whoever is already struggling.</td></tr>
+      <tr><td>Round 2</td><td>8 min</td><td></td></tr>
+      <tr><td>Vote 2</td><td>3 min</td><td>The withdrawn charge lands here. Let the room notice on its own first.</td></tr>
+      <tr><td>Round 3</td><td>6 min</td><td></td></tr>
+      <tr><td>Vote 3</td><td>3 min</td><td></td></tr>
+      <tr><td>Final round</td><td>6 min</td><td>Homework \u2192 music \u2192 tardy \u2192 star cards.
+        <b>Don't skip:</b> never end on an elimination.</td></tr>
+      <tr><td>Debrief</td><td>10+ min</td><td><b>Don't skip:</b> close on "what would have to be true
+        about this school for Marcus's morning to be survivable."</td></tr>
+    </table>`, "run of show"));
+
+  return sheets.join("");
+}
 
 /* ==========================================================
    5. STATE
@@ -2421,6 +2898,41 @@ function renderEd(){
       <span class="ed-msg">${esc(ED.msg || "")}</span>
     </div></div></div>`;
 }
+const printroot = document.getElementById("printroot");
+function openPrintPack(){
+  const sheets = buildPrintPack({
+    classSize: S.classSize,
+    activeIds: activeIds(),
+    customized: isEdited(),
+    dateStr: new Date().toLocaleDateString()
+  });
+  printroot.innerHTML = `<div class="pp-bar">
+      <b>PRINT PACK</b>
+      <select data-act="ppsec" aria-label="Section to print">
+        <option value="all">Whole pack</option>
+        <option value="cover">Cover + contents</option>
+        <option value="roles">1 \u00b7 Role cards</option>
+        <option value="rounds">2 \u00b7 Round cards</option>
+        <option value="challenges">3 \u00b7 Challenge cards</option>
+        <option value="script">4 \u00b7 Kaia's script book</option>
+        <option value="memos">5 \u00b7 Memo sheets</option>
+        <option value="table">6 \u00b7 Table pieces</option>
+        <option value="run">7 \u00b7 Run of show</option>
+      </select>
+      <button class="pp-btn" data-act="ppprint">PRINT / SAVE AS PDF</button>
+      <span class="pp-note">Cardstock: sections 1, 2, 3, and the star cards. Paper: everything else.
+        Letter or A4, portrait.</span>
+      <button class="pp-btn" data-act="ppclose" style="margin-left:auto">CLOSE</button>
+    </div>` + sheets;
+  printroot.setAttribute("data-show", "all");
+  document.body.classList.add("printing");
+  hydratePrint(printroot);
+  window.scrollTo(0, 0);
+}
+function closePrintPack(){
+  document.body.classList.remove("printing");
+  printroot.innerHTML = "";
+}
 function openEditor(){
   ED.open = true;
   ED.draft = clone(PACK);
@@ -2507,6 +3019,7 @@ function renderHud(){
   hud.innerHTML = `${showing ? `<span class="pill">ROUND <b>${S.round>3?"FINAL":S.round}</b></span>
     <span class="pill">IN <b>${c.in}</b></span><span class="pill">OUT <b>${c.out}</b></span>` : ""}
     <button class="mini" data-act="theme" title="Switch between morning and dusk">${themeIsDark() ? "DUSK" : "MORNING"}</button>
+    <button class="mini" data-act="printpack" title="Generate the physical notecard game from the current content">PRINT PACK</button>
     <button class="mini${isEdited() ? " is-live" : ""}" data-act="prof"
       title="${isEdited() ? "Running an edited content pack" : "Rewrite the game's content"}">PROF EDIT</button>
     <button class="mini" data-act="index">SCREEN INDEX</button>
@@ -2812,6 +3325,9 @@ document.addEventListener("click", e => {
     document.documentElement.setAttribute("data-theme", themeIsDark() ? "light" : "dark");
     render();
   }
+  else if (a === "printpack"){ openPrintPack(); }
+  else if (a === "ppprint"){ window.print(); }
+  else if (a === "ppclose"){ closePrintPack(); }
   else if (a === "prof"){ openEditor(); }
   else if (a === "index"){ openIndex(); }
   else if (a === "closeindex"){ overlay.innerHTML = ""; }
@@ -2820,6 +3336,7 @@ document.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && overlay.innerHTML) overlay.innerHTML = "";
   if (e.key === "Escape" && ED.open) closeEditor();
+  if (e.key === "Escape" && document.body.classList.contains("printing")) closePrintPack();
   if (e.key === "Enter" && ED.open && !ED.unlocked){
     e.preventDefault();
     const btn = edroot.querySelector('[data-ed="unlock"]');
@@ -2930,6 +3447,10 @@ function jumpTo(p, id){
 
 
 /* ---- editor events ---- */
+printroot.addEventListener("change", e => {
+  const sel = e.target.closest('[data-act="ppsec"]');
+  if (sel) printroot.setAttribute("data-show", sel.value);
+});
 edroot.addEventListener("input", e => {
   const el = e.target.closest("[data-path]");
   if (!el || !ED.draft) return;
