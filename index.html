@@ -2033,6 +2033,7 @@ V.title = () => screen("BOOT", "v1.0", `
     ${esc(TEXT.titleStrip)}</p>
   ${TEXT.titleWarn ? `<p style="max-width:60ch;font-size:12.5px;color:${cssVar("--ink-3")};margin-top:14px">${esc(TEXT.titleWarn)}</p>` : ""}
   <div class="actions"><button class="btn" data-act="go" data-to="setup">START GAME</button>
+    <a class="btn btn-ghost" href="walkthrough.html" style="text-decoration:none;display:inline-block">SEE HOW IT PLAYS \u2192</a>
     <button class="btn btn-ghost" data-act="index">SCREEN INDEX</button></div>`);
 
 function estMinutes(n){ const lo = Math.round(n*1.6+10), hi = Math.round(n*2.2+14);

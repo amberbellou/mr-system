@@ -3,6 +3,7 @@
 A classroom game about systemic inequality in education, for 30–60 students in one room.
 
 **▶ Play it: https://amberbellou.github.io/mr-system/**
+**🎞 See how it plays (walkthrough deck for professors): https://amberbellou.github.io/mr-system/walkthrough.html**
 
 Twenty-four families try to get to school, get home, and make it to tomorrow. Everyone follows
 the same rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
@@ -68,6 +69,7 @@ a text editor and paste it in.
 
 ```
 index.html                  the whole game — one file, no build step, no dependencies
+walkthrough.html            the 15-slide walkthrough deck (regenerate: tools/build-walkthrough.py)
 content/default-pack.json   the default content pack
 react/MrSystem.jsx          the same game as a React component
 docs/FACILITATOR.md         how to run it, content warnings, debrief guidance
