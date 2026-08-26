@@ -399,7 +399,7 @@
               },
               "unsparing": {
                 "st": "strug",
-                "say": "The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety, and you walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone in her hand and the neighborhood she is lost in. It did not buy the not-happening."
+                "say": "The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety. You walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone and the safe neighborhood. It could not buy the ride going right."
               }
             }
           },
@@ -410,7 +410,7 @@
             "icon": "bus",
             "auto": {
               "st": "in",
-              "say": "The 14, the transfer at Croft, the 9 — a route you taught yourself in September off a screenshot. You're at the gate by 8:20 with a croissant from the place by the second stop."
+              "say": "Back in September you taught yourself this route off a screenshot — the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."
             }
           },
           {
@@ -671,7 +671,7 @@
               "p": 0.12,
               "standard": {
                 "st": "out",
-                "say": "The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, the hospital calls your mother off the ward, and the front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."
+                "say": "The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, and the hospital calls your mother off the ward. The front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."
               },
               "unsparing": {
                 "st": "out",
@@ -751,7 +751,7 @@
             "icon": "check",
             "auto": {
               "st": "in",
-              "say": "You sleep to seven and make the bus with your eyes half open. You spend first period deciding you'll make it all up later, and second period, and third."
+              "say": "Sleep wins until seven. You make the bus with your eyes half open, and spend first period deciding you'll make it all up later, and second period, and third."
             }
           },
           {
@@ -786,7 +786,7 @@
             "icon": "bus",
             "auto": {
               "st": "in",
-              "say": "You make the 7:52 in the first thing your hands touch. You spend all six periods tugging at the hem."
+              "say": "7:52, and you're on it, in the first thing your hands touch. You spend all six periods tugging at the hem."
             }
           },
           {
@@ -821,7 +821,7 @@
             "icon": "heart",
             "auto": {
               "st": "strug",
-              "say": "Your father goes quiet. Your mother says something about layoffs, then “focus on your studies,” and drives you to school so you won't be late. Nobody says the name. Either one."
+              "say": "Your father goes quiet. Your mother says something about layoffs, then “focus on your studies,” and drives you to school so you won't be late. The name goes unsaid. Either one."
             }
           },
           {
@@ -831,7 +831,7 @@
             "icon": "ghost",
             "auto": {
               "st": "strug",
-              "say": "You answer to anything and correct no one. It is the smoothest morning in weeks. Nobody in either building talks to Kavi, which was the plan."
+              "say": "All morning you answer to anything and correct no one. It is the smoothest morning in weeks. Neither building says a word to Kavi, which was the plan."
             }
           }
         ]
@@ -856,7 +856,7 @@
             "icon": "clock",
             "auto": {
               "st": "in",
-              "say": "You catch the 7:40 alone and make first bell. All day you do the math on how she gets down the stairs by herself."
+              "say": "Alone on the 7:40, you make first bell. All day you do the math on how she gets down the stairs by herself."
             }
           },
           {
@@ -866,7 +866,7 @@
             "icon": "warn",
             "auto": {
               "st": "in",
-              "say": "You both make the 7:40. She took the stairs too fast and pays for it at every stop. She says nothing about being hurried, in either language."
+              "say": "Both of you make the 7:40. She took the stairs too fast and pays for it at every stop. She says nothing about being hurried, in either language."
             }
           },
           {
@@ -876,7 +876,7 @@
             "icon": "home",
             "auto": {
               "st": "out",
-              "say": "You stay and settle her hip with the heating pad. She apologizes all morning. When the attendance letter comes, you will be the one who translates it."
+              "say": "Heating pad against her hip, you stay. She apologizes all morning. When the attendance letter comes, you will be the one who translates it."
             }
           }
         ]
@@ -896,7 +896,7 @@
             },
             "fail": {
               "st": "in",
-              "say": "You blank on the second question. Nobody writes anything down; nobody ever has."
+              "say": "On the second question, you blank. Nobody writes anything down; nobody ever has."
             }
           },
           {
@@ -996,7 +996,7 @@
             "icon": "clock",
             "auto": {
               "st": "strug",
-              "say": "You do all of it. You are in school, on time, and cannot keep your eyes open."
+              "say": "All of it gets done. You are in school, on time, and cannot keep your eyes open."
             }
           }
         ]
@@ -1016,7 +1016,7 @@
             },
             "fail": {
               "st": "strug",
-              "say": "The drawer is short. You leave anyway. Tardy #4, and you'll hear about the register tonight."
+              "say": "Short drawer. You leave anyway. Tardy #4, and you'll hear about the register tonight."
             }
           },
           {
@@ -1088,7 +1088,7 @@
             "icon": "warn",
             "auto": {
               "st": "out",
-              "say": "You find the truck. You do not find your dad. It is 11 AM."
+              "say": "By 11 AM you have found the truck. Your dad is not with it."
             }
           }
         ]
@@ -1108,7 +1108,7 @@
             },
             "fail": {
               "st": "strug",
-              "say": "You can't get the words out fast enough. The nurse suggests losing weight. You go back to class."
+              "say": "Words won't come out fast enough. The nurse suggests losing weight. You go back to class."
             }
           },
           {
@@ -1282,11 +1282,11 @@
             "chal": "keepit30",
             "pass": {
               "st": "strug",
-              "say": "You give the right answers to every question. Nobody looks twice. You are in school and completely alone in it."
+              "say": "You give the right answers to every question. Not one teacher looks twice. You are in school and completely alone in it."
             },
             "fail": {
               "st": "out",
-              "say": "You freeze on the permission slip question. The teacher walks you to the office. The day goes elsewhere."
+              "say": "One question about a permission slip, and you freeze. The teacher walks you to the office. The day goes elsewhere."
             }
           },
           {
@@ -1296,7 +1296,7 @@
             "icon": "home",
             "auto": {
               "st": "out",
-              "say": "You get her to take three sips. Nobody at school knows why you're gone."
+              "say": "Three sips is all she'll take. School marks you absent and asks nothing else."
             }
           },
           {
@@ -1368,7 +1368,7 @@
             "icon": "check",
             "auto": {
               "st": "in",
-              "say": "The driver knows the building code by now. You eat at the island with a video propped against the fruit bowl nobody refills."
+              "say": "By now the driver knows the building code. You eat at the island with a video propped against the fruit bowl no adult has been home to refill."
             }
           },
           {
@@ -1378,7 +1378,7 @@
             "icon": "book",
             "auto": {
               "st": "strug",
-              "say": "You write for five careful hours with nobody to read the prompt back to you. At 11:05 you check the rubric — compare, not argue — five pages in the wrong direction."
+              "say": "You write for five careful hours alone with the prompt. At 11:05 you check the rubric — compare, not argue — five pages in the wrong direction."
             }
           }
         ]
@@ -1448,7 +1448,7 @@
             "icon": "clock",
             "auto": {
               "st": "strug",
-              "say": "You hold the door for the coffee urn and Sister Yvette locks up at 7:10. Home has all the quiet the hall doesn't, and the envelope on the counter stays face-down; nobody opens it while you're in the room."
+              "say": "You hold the door for the coffee urn and Sister Yvette locks up at 7:10. Home has all the quiet the hall doesn't, and the envelope on the counter stays face-down, unopened while you're in the room."
             }
           }
         ]
@@ -1588,7 +1588,7 @@
             "icon": "warn",
             "auto": {
               "st": "strug",
-              "say": "You stir with the essay propped against the flour jar. Dinner is late, the essay is 400 words of filler, and sundown is still two hours away."
+              "say": "Essay propped against the flour jar, you stir. Dinner is late, the essay is 400 words of filler, and sundown is still two hours away."
             }
           }
         ]
@@ -1678,7 +1678,7 @@
             "icon": "book",
             "auto": {
               "st": "in",
-              "say": "The quadratics finally click. You keep the count in the back of your planner, where nobody checks."
+              "say": "The quadratics finally click. You keep the count in the back of your planner, on a page no teacher will ever ask to see."
             }
           },
           {
@@ -1698,7 +1698,7 @@
             "icon": "note",
             "auto": {
               "st": "in",
-              "say": "The vice principal is kind about it for the whole eleven minutes and writes herself a note. There is an empty conference room by the gym, and no one who can find the key."
+              "say": "For the whole eleven minutes the vice principal is kind about it, and writes herself a note. There is an empty conference room by the gym, and no one who can find the key."
             }
           }
         ]
@@ -1723,7 +1723,7 @@
             "icon": "book",
             "auto": {
               "st": "strug",
-              "say": "You spend fourth period behind the last shelf in the library. The cut posts to the system before you're back in fifth; the zero posts Friday."
+              "say": "Fourth period goes by behind the last shelf in the library. The cut posts to the system before you're back in fifth; the zero posts Friday."
             }
           },
           {
@@ -1733,7 +1733,7 @@
             "icon": "note",
             "auto": {
               "st": "strug",
-              "say": "You name all of it, calmly, with dates. The vice principal says “kids will be kids” and asks, before you go, whether the scarf comes off for gym."
+              "say": "Calmly, with dates, you name all of it. The vice principal says “kids will be kids” and asks, before you go, whether the scarf comes off for gym."
             }
           }
         ]
@@ -1863,7 +1863,7 @@
             },
             "fail": {
               "st": "in",
-              "say": "You fumble the words at lunch and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."
+              "say": "At lunch you fumble the words and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."
             }
           },
           {
@@ -1883,7 +1883,7 @@
             "icon": "note",
             "auto": {
               "st": "in",
-              "say": "You tell your mother between meetings. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."
+              "say": "Between meetings, you tell your mother. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."
             }
           }
         ]
@@ -1903,7 +1903,7 @@
             },
             "fail": {
               "st": "strug",
-              "say": "The upload dies at 11:59. You'll take the late penalty and explain it to nobody."
+              "say": "The upload dies at 11:59. You'll take the late penalty and keep the explanation to yourself."
             }
           },
           {
@@ -1963,7 +1963,7 @@
             "icon": "warn",
             "auto": {
               "st": "strug",
-              "say": "You do half of each. The shop is fine. The homework is not."
+              "say": "Half of each gets done. The shop is fine. The homework is not."
             }
           }
         ]
@@ -2003,7 +2003,7 @@
             },
             "fail": {
               "st": "strug",
-              "say": "The upload fails twice and the library closes. You'll ask for an extension you probably won't get."
+              "say": "Twice the upload fails, and then the library closes. You'll ask for an extension you probably won't get."
             }
           }
         ]
@@ -2023,7 +2023,7 @@
             },
             "fail": {
               "st": "strug",
-              "say": "You run out of time trying to explain. You get through the night anyway, because that is what you do."
+              "say": "Time runs out while you're still explaining. You get through the night anyway, because that is what you do."
             }
           },
           {
@@ -2073,7 +2073,7 @@
             "icon": "book",
             "auto": {
               "st": "strug",
-              "say": "You finish your assignment. Nobody eats until nine and the little one falls asleep in his clothes."
+              "say": "You finish your assignment. Dinner happens at nine, and the little one falls asleep in his clothes."
             }
           },
           {
@@ -2118,7 +2118,7 @@
               },
               "unsparing": {
                 "st": "out",
-                "say": "The 6-year-old opens the door because the man says he knows your mother. What happens next takes ninety seconds and ends with the neighbor two doors down shouting from her doorway, and then he is gone, and everyone is physically unhurt. Nothing in this apartment is ever unlocked casually again."
+                "say": "The 6-year-old opens the door because the man says he knows your mother. What happens next takes ninety seconds, and it ends with the neighbor two doors down shouting from her doorway. Then he is gone, and everyone is physically unhurt. Nothing in this apartment is ever unlocked casually again."
               }
             }
           },
@@ -2256,7 +2256,7 @@
             "icon": "note",
             "auto": {
               "st": "in",
-              "say": "Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 — nobody has ever checked one of your forms, and nobody starts today."
+              "say": "Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 — not one of your forms has ever been checked, and today is no different."
             }
           },
           {
@@ -3488,7 +3488,7 @@
     "titleName": "MR. SYSTEM",
     "titleTagline": "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
     "titleBlurb": "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter — but so do the systems built long before you got here.",
-    "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. Roughly 20 minutes.",
+    "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode — longer if the debrief gets good.",
     "titleStrip": "TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.",
     "titleWarn": "Content note: this game depicts systemic harm — including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
     "castDeal": "Your group is dealt a family card, and your group IS that family. Argue the dilemma together, take the challenge together, send one spokesperson to every vote. One vote per family, not per student.",

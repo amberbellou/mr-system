@@ -6,7 +6,7 @@ A classroom game about systemic inequality in education, for 30–60 students in
 **🎞 See how it plays (walkthrough deck for professors): https://amberbellou.github.io/mr-system/walkthrough.html**
 
 Twenty-four families try to get to school, get home, and make it to tomorrow. Everyone follows
-the same rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
+the same rules. Almost nobody gets the same result. The game runs about 35 minutes in core mode and ends on a debrief
 screen that shows the class what just happened to them.
 
 ---
