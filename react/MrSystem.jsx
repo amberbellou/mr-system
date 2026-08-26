@@ -389,6 +389,99 @@ a{color:var(--clay)}
 .idx-b em{font-family:"Press Start 2P",monospace;font-size:8px;color:var(--clay);font-style:normal}
 .idx-b:hover em{color:#5A2A0E}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* MR. SYSTEM interruption */
+.mrsys{display:flex;gap:12px;border:3px solid var(--alarm);border-left-width:9px;
+  background:var(--panel-3);padding:14px 15px;margin:18px 0 14px}
+.mrsys-who{font-family:"Press Start 2P",monospace;font-size:8px;color:var(--alarm);
+  flex:none;padding-top:3px;letter-spacing:1px;animation:blink 1.1s steps(2,end) infinite}
+.mrsys-say{font-size:15.5px;color:var(--ink);font-weight:500}
+
+/* Mr. System's memo (vote screen) */
+.memo{border:3px solid var(--edge);background:var(--panel-2);margin-bottom:20px}
+.memo-head{display:flex;align-items:center;gap:9px;background:var(--edge);color:#E8EDF4;
+  padding:8px 12px;font-family:"Press Start 2P",monospace;font-size:8px;letter-spacing:1px}
+.memo-intro{padding:11px 14px 4px;font-size:13px;font-style:italic;color:var(--ink-2)}
+.memo-list{list-style:none;margin:0;padding:8px 14px 13px;display:flex;flex-direction:column;gap:9px}
+.memo-item{font-size:14px;line-height:1.5}
+.memo-item b{font-family:"Press Start 2P",monospace;font-size:9px;letter-spacing:.5px}
+.memo-pol{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.memo-item.is-withdrawn{color:var(--st-star)}
+.memo-item.is-withdrawn .memo-struck{text-decoration:line-through;text-decoration-thickness:2px}
+.memo-item.is-withdrawn em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.04em}
+.vcard-flag{margin-left:auto;flex:none;font-size:13px}
+
+/* roster mode picker */
+.modes{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:14px 0 4px}
+.mode{text-align:left;cursor:pointer;border:3px solid var(--edge);background:var(--panel-2);
+  color:var(--ink);padding:12px 13px;font-family:inherit}
+.mode:hover{background:var(--gold);color:#141C26}
+.mode[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.mode b{display:block;font-family:"Press Start 2P",monospace;font-size:10px;margin-bottom:7px}
+.mode span{display:block;font-size:12.5px;line-height:1.45;opacity:.9}
+.roster-picks{display:grid;gap:5px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border:3px dashed var(--hairline);padding:12px;margin-top:12px}
+.rpick{display:flex;gap:7px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  font-weight:600;cursor:pointer;border:2px solid transparent;padding:3px 5px}
+.rpick:hover{border-color:var(--edge)}
+.rpick input{accent-color:var(--clay)}
+.deal{border-left:5px solid var(--sky);background:var(--panel-2);padding:12px 14px;margin-top:16px;
+  font-size:14px;color:var(--ink-2)}
+.deal b{color:var(--ink)}
+
+/* ============ PROFESSOR EDITOR ============ */
+.ed-open{position:fixed;inset:0;z-index:70;background:rgba(10,16,24,.82);display:flex;justify-content:flex-end}
+.ed{background:var(--panel);border-left:4px solid var(--edge);width:min(660px,100%);height:100%;
+  display:flex;flex-direction:column;box-shadow:-10px 0 0 rgba(0,0,0,.25)}
+.ed-head{background:var(--edge);color:#E8EDF4;padding:12px 16px;display:flex;align-items:center;gap:12px;
+  font-family:"Press Start 2P",monospace;font-size:9px;letter-spacing:1px;flex:none}
+.ed-head button{margin-left:auto;font-family:"Press Start 2P",monospace;font-size:9px;cursor:pointer;
+  border:2px solid #E8EDF4;background:transparent;color:#E8EDF4;padding:7px 10px}
+.ed-head button:hover{background:#E8EDF4;color:var(--edge)}
+.ed-tabs{display:flex;flex-wrap:wrap;gap:2px;padding:10px 12px 0;background:var(--panel-2);
+  border-bottom:3px solid var(--edge);flex:none}
+.ed-tab{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;cursor:pointer;border:2px solid var(--edge);border-bottom:0;
+  background:transparent;color:var(--ink-2);padding:8px 11px}
+.ed-tab:hover{background:var(--gold);color:#141C26}
+.ed-tab[aria-selected="true"]{background:var(--panel);color:var(--ink);position:relative;top:3px}
+.ed-body{flex:1;overflow-y:auto;padding:20px 18px 30px}
+.ed-foot{flex:none;border-top:3px solid var(--edge);background:var(--panel-2);padding:12px 16px;
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ed-msg{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-2);flex:1;min-width:120px}
+.ed-h{font-family:"Press Start 2P",monospace;font-size:10px;color:var(--clay);letter-spacing:1px;
+  margin:22px 0 12px;padding-bottom:8px;border-bottom:3px dotted var(--hairline)}
+.ed-h:first-child{margin-top:0}
+.ed-sub{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ink-3);margin:16px 0 8px}
+.ef{display:block;margin-bottom:13px}
+.ef>span{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);margin-bottom:5px}
+.ef>em{display:block;font-style:normal;font-size:11.5px;color:var(--ink-3);margin-top:4px}
+.ef input,.ef textarea,.ef select{width:100%;font-family:"IBM Plex Sans",sans-serif;font-size:14.5px;
+  color:var(--ink);background:var(--panel);border:2px solid var(--edge);padding:8px 9px}
+.ef textarea{font-size:14px;line-height:1.5;resize:vertical}
+.ef input[type="number"]{width:90px}
+.ef select{cursor:pointer}
+.ed-row{display:flex;gap:10px;flex-wrap:wrap}
+.ed-row>.ef{flex:1;min-width:130px}
+.ed-card{border:3px solid var(--edge);background:var(--panel-2);padding:13px;margin-bottom:14px}
+.ed-card-h{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.ed-card-h b{font-family:"Press Start 2P",monospace;font-size:10px}
+.ed-mini{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;cursor:pointer;border:2px solid var(--edge);background:var(--panel);
+  color:var(--ink);padding:5px 9px}
+.ed-mini:hover{background:var(--gold);color:#141C26}
+.ed-mini.danger:hover{background:var(--alarm);color:#FFF3F0}
+.ed-mini[disabled]{opacity:.4;cursor:not-allowed}
+.ed-lock{max-width:420px;margin:40px auto;text-align:center}
+.ed-json{width:100%;font-family:"IBM Plex Mono",monospace;font-size:11.5px;line-height:1.5;
+  color:var(--ink);background:var(--panel-2);border:2px solid var(--edge);padding:10px;resize:vertical}
+.ed-warn{border-left:5px solid var(--clay);background:var(--panel-2);padding:12px 14px;font-size:13.5px;
+  color:var(--ink-2);margin-bottom:16px}
+.ed-warn b{color:var(--ink)}
+.mini.is-live{background:var(--violet);color:#FFF6EA;border-color:var(--violet)}
 `;
 
 /* ==========================================================
@@ -483,12 +576,12 @@ function cssVar(n){ return getComputedStyle(document.documentElement).getPropert
    ========================================================== */
 const CAST = [
 {id:"david", name:"DAVID", cls:"Upper-class", tier:"upper", pri:true,
- who:"White, wealthy, two parents at home. His dad runs the front office.",
- tags:["Two parents, one stays flexible","Car in the driveway","Dad is the principal"],
+ who:"White, wealthy, two parents at home. The new library wing has his last name over the door.",
+ tags:["Two parents, one stays flexible","Car in the driveway","Family name over the library door"],
  load:1, tmpl:"base", pal:{H:"#3B2A1C",S:"#F2CBA0",T:"#2F6FB0",P:"#2C3A4C",B:"#1B222B"}},
 {id:"alejandra", name:"ALEJANDRA", cls:"Upper-class", tier:"upper", pri:true,
  who:"Colombian, wealthy family, enormous performance pressure.",
- tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed"],
+ tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis \u2014 diagnosed in one year, managed on a schedule"],
  load:2, tmpl:"long", pal:{H:"#241A14",S:"#D9A374",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
 {id:"priya", name:"PRIYA", cls:"Upper-middle", tier:"upper",
  who:"Indian-American, wealthy immigrant family, heavy parental expectation.",
@@ -506,6 +599,14 @@ const CAST = [
  who:"Persian-American, Jewish, family import business. His grandmother lives four blocks away and cooks for everyone.",
  tags:["Dad and two uncles run the business","Grandma cooks four blocks away","A cousin in every grade","Someone is always free"],
  load:1, tmpl:"base", pal:{H:"#14100A",S:"#CE9367",T:"#20805E",P:"#2F3E52",B:"#1B222B"}},
+{id:"ayesha", name:"AYESHA", cls:"Upper-middle", tier:"upper",
+ who:"Black. Her mother is the principal. They live across the street from the school, and half her homework has been done in the front office.",
+ tags:["Mom runs the building","Lives across the street","A desk in the office when she needs one","Every teacher knows her name first"],
+ load:1, tmpl:"long", pal:{H:"#0E0A07",S:"#6B4326",T:"#8A3D63",P:"#2C3A4C",B:"#1B222B"}},
+{id:"grace", name:"GRACE", cls:"Upper-middle", tier:"upper",
+ who:"Congolese-American. Both parents are physicians who recertified twice on two continents and are almost never home. She has a credit card, a phone, and an empty apartment.",
+ tags:["Both parents on hospital schedules","No relatives closer than Kinshasa","A credit card for emergencies, used for dinners","Figures everything out alone, eventually"],
+ load:2, tmpl:"long", pal:{H:"#0B0805",S:"#5C3A22",T:"#2FA0A8",P:"#2F3E52",B:"#1B222B"}},
 {id:"carlos", name:"CARLOS", cls:"Working-class", tier:"work",
  who:"Mexican-American, both parents work opposite shifts.",
  tags:["Opens the shop before class","Shares one car with three adults","Won't call any office"],
@@ -542,6 +643,14 @@ const CAST = [
  who:"Indian-American, non-binary, two parents in shaky IT jobs. Out at school, not at home.",
  tags:["Out at school, not at home","Deadname at the dinner table","Two IT jobs, both shaky","Clubs count as distractions"],
  load:4, tmpl:"long", pal:{H:"#2E7D6B",S:"#B57F52",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
+{id:"tyler", name:"TYLER", cls:"Working-class", tier:"work",
+ who:"White. His dad's moods run the house. Money isn't the problem at home; the house is.",
+ tags:["Reads the driveway before going in","Long sleeves in May","A gym excuse in his own handwriting","Walks past the counselor's door daily"],
+ load:5, tmpl:"base", pal:{H:"#8A6A3E",S:"#EAC099",T:"#5B6770",P:"#2C3A4C",B:"#1B222B"}},
+{id:"marie", name:"MARIE", cls:"Working-class", tier:"work",
+ who:"Haitian-American. Her mother does overnight home-health shifts caring for somebody else's grandmother. Church fills in most of the gaps, and there are a lot of gaps.",
+ tags:["Mom works overnights, sleeps at 8 AM","Kreyol at home, English everywhere else","Sister Yvette drives the church van","Status renewal pending, again"],
+ load:3, tmpl:"long", pal:{H:"#0E0A07",S:"#5F3D24",T:"#2E7DD1",P:"#2F3E52",B:"#1B222B"}},
 {id:"marcus", name:"MARCUS", cls:"Poverty", tier:"pov",
  who:"Black, sibling-led household, no parents. Oldest of four.",
  tags:["Raising three siblings","$2.50 for a $3 fare","Youngest needs constant supervision"],
@@ -638,6 +747,36 @@ evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVER
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 const DILEMMAS = {
 1:{
+ ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away \u2014 from your bedroom window you can read the marquee. The only question is when to cross.", choices:[
+  A("A","Go in with mom at 7:00","Hearing the morning announcements twice.","star",
+    {auto:{st:"in",say:"The building at 7:00 is dark, quiet, and briefly yours. You take the chair that spins in the front office, and at 8:00 the announcements come over the PA in the same voice that just told you to grab a jacket."}}),
+  A("B","Walk over at 8:15","Nothing.","walk",
+    {auto:{st:"in",say:"One crosswalk, about forty seconds. The guard holds the door open and asks after your mom, whom he already let in at seven."}}),
+  A("C","Sleep to 7:50","Breakfast standing up.","clock",
+    {auto:{st:"in",say:"You watch the first buses unload from the kitchen window, waffle in hand. You cross at 8:24 and are in your seat with five minutes to spare."}})]},
+ grace:{sit:"7:35. Your mother left for the hospital before you were awake; your father never came home from his. School is four miles away, and how you get there is, as always, yours to figure out.", choices:[
+  A("A","Order an Uber","Eleven dollars nobody will notice.","car",
+    {auto:{st:"in",say:"The pin drops on the building across the street and you watch the driver's arrow circle it twice. You walk in at 8:41, rattled; nobody knew you were late until you mentioned it at lunch."},
+     danger:{p:0.2, standard:{st:"strug",say:"The driver misses the turn for the school and does not slow down. You say stop twice before he does. You get out at a light eleven blocks away and walk the rest with your phone in your hand."},
+      unsparing:{st:"strug",say:"The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety, and you walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone in her hand and the neighborhood she is lost in. It did not buy the not-happening."}}}),
+  A("B","Take the bus","The 7:52, in seventeen minutes.","bus",
+    {auto:{st:"in",say:"The 14, the transfer at Croft, the 9 \u2014 a route you taught yourself in September off a screenshot. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
+  A("C","Text your dad for a ride","The reply, whenever it comes.","note",
+    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries \u2014 \u201cLeaving now?\u201d \u2014 and by then you have been at school for three hours."}})]},
+ tyler:{sit:"Last night was a bad one. Your left arm has a mark you didn't have yesterday, and the kitchen is silent in the way that means he's still asleep. First bell is 8:30.", choices:[
+  A("A","Long sleeves, side door","A flannel in seventy-nine degrees.","ghost",
+    {auto:{st:"in",say:"The side door gets you to your seat at 8:27 and nobody looks twice. By third period the radiators are still on, and you take notes with your cuffs pinned under your palms."}}),
+  A("B","Show the nurse your arm","The call home.","warn",
+    {auto:{st:"strug",say:"She closes the door, photographs your arm twice, and asks her questions in a voice that has done this before. By noon there is a case number and an adult whose job is you; by last bell there is a voicemail at the house, and you know what time he gets home."}}),
+  A("C","Come in at second period","First period, unexcused.","clock",
+    {auto:{st:"strug",say:"You sit behind the gas station with a bag of their ice until your arm will go through a sleeve without help. You slide in at 9:22, and the unexcused mark posts before lunch, next to two others from this year."}})]},
+ marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday \u2014 those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
+  A("A","Take the church van","Four stops before school.","bus",
+    {auto:{st:"in",say:"Sister Yvette pulls up at 7:40 with four kids in and the choir tape on low. You're at the gate by 8:20 with somebody's harmony stuck in your head."}}),
+  A("B","Walk, quietly","Twenty-five minutes on foot.","walk",
+    {auto:{st:"in",say:"You carry your shoes to the mat and ease the door to behind you. Twenty-five minutes, a banana eaten walking, and the light under her door was off before you hit the stairs."}}),
+  A("C","Wake her for a ride","Her whole day.","car",
+    {auto:{st:"in",say:"She's up before you finish asking, keys in hand, coat over her scrubs. You're at the curb by 8:15, and she'll pay for those twenty minutes at 3 AM on somebody else's stairs."}})]},
  rebecca:{sit:"Your mom leaves for the clinic at 7:30 and can drop you early. Your dad leaves at 8:05 and passes the school door at 8:25. Both offers stand every morning. First bell is 8:30.", choices:[
   A("A","Go early with mom","Forty minutes of sleep.","car",
     {chal:"homework30",
@@ -674,7 +813,9 @@ const DILEMMAS = {
   A("A","Get her up, fed, dressed, and there","Everything before first bell.","walk",
     {auto:{st:"in",say:"Cereal, shoes, the fight about the shoes. Her door at 7:50, yours at 8:28, and first period spent keeping your eyes open on purpose."}}),
   A("B","Leave her with the neighbor in 4B","A woman you've met twice.","home",
-    {auto:{st:"in",say:"She says yes before you finish the question. You are on time, and you spend all six periods on what you actually know about her: a name, an apartment number."}}),
+    {auto:{st:"in",say:"She says yes before you finish the question. You are on time, and you spend all six periods on what you actually know about her: a name, an apartment number."},
+     danger:{p:0.12, standard:{st:"out",say:"The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, the hospital calls your mother off the ward, and the front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."},
+      unsparing:{st:"out",say:"The woman in 4B steps out, and your sister waits twenty minutes, then goes looking for you in the direction she thinks your school is. A man at the transit stop notices an eight-year-old alone at ten in the morning, a stranger who could have been anyone. This time, he calls the school."}}}),
   A("C","Let her stay home sick","The call to the nursing station.","note",
     {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."}})]},
  ling:{sit:"Your mom got home at 11:40 last night. The landlord calls at 7:30 about the lease renewal, in English. First bell is 8:30, twenty-five minutes away on foot.", choices:[
@@ -692,7 +833,7 @@ const DILEMMAS = {
   A("B","Sleep through both","The first prayer of five, and the only meal until dark.","check",
     {auto:{st:"in",say:"You sleep to seven and make the bus with your eyes half open. You spend first period deciding you'll make it all up later, and second period, and third."}}),
   A("C","Up at 5:30. Suhoor, Fajr, bus.","Forty-five minutes of sleep.","clock",
-    {auto:{st:"in",say:"Eggs at 5:35, prayer at 6:15, bus at 7:25. Everything fits, and by last period you've read the same paragraph four times."}})]},
+    {auto:{st:"in",say:"Eggs at 5:35, prayer at 6:15, bus at 7:25. You wait outside the locked doors until the building decides to open, and by last period you've read the same paragraph four times."}})]},
  aisha:{sit:"Mom left for inventory at 5:40. Getting dressed means finding what fits, what covers, and what the hallway won't have something to say about. The bus is at 7:52.", choices:[
   A("A","Take the time to get it right","Ten minutes, recorded.","clock",
     {auto:{st:"in",say:"You walk in at 8:40 feeling like yourself. The office writes down the tardy without looking up."}}),
@@ -720,7 +861,7 @@ const DILEMMAS = {
   A("A","Ask them to skip the soccer drop-off","Your brother sulks. That is the entire cost.","car",
     {chal:"homework30",
      pass:{st:"in",say:"You are in your seat by 8:20 with your homework done in the car."},
-     fail:{st:"in",say:"You blank on the second question. Your dad runs the front office. Nobody writes it down."}}),
+     fail:{st:"in",say:"You blank on the second question. Nobody writes anything down; nobody ever has."}}),
   A("B","Ride along and walk in five minutes late","Five minutes.","clock",
     {auto:{st:"in",say:"The office waves you through without looking up. No tardy is recorded."}}),
   A("C","Your parents manage both, perfectly","Nothing.","check",
@@ -756,9 +897,11 @@ const DILEMMAS = {
   A("A","Take the route bus and read on the way","70 minutes each way.","bus",
     {chal:"routebus30",
      pass:{st:"in",say:"You finish the reading somewhere past the second cattle gate. You make first bell."},
-     fail:{st:"strug",say:"You doze off over the book. You make first bell with nothing prepared."}}),
+     fail:{st:"strug",say:"An incident on the tracks holds the bus at the crossing for twenty minutes; nobody at school asks what kind. You walk in late with nothing prepared."}}),
   A("B","Ask your grandmother's neighbor for a ride","You owe someone now.","car",
-    {auto:{st:"in",say:"He drops you at the flagpole at 8:12 and won't take gas money. You are in."}}),
+    {auto:{st:"in",say:"He drops you at the flagpole at 8:12 and won't take gas money. You are in."},
+     danger:{p:0.15, standard:{st:"strug",say:"The neighbor's truck dies on the shoulder eleven miles out, and it is two hours before anything else comes down the road. You get to school at noon with your hands too cold to sign the late sheet. Nobody at either end had noticed you were missing."},
+      unsparing:{st:"out",say:"Black ice, on the curve the county doesn't sand. The seat in third period stays empty, and after a week the teacher stops setting handouts on it. The route bus passes the spot twice a day, and for a while the driver slows down there, and then he doesn't.", fatal:true}}}),
   A("C","Go look for the truck first","The morning.","warn",
     {auto:{st:"out",say:"You find the truck. You do not find your dad. It is 11 AM."}})]},
  isabella:{sit:"Bad pain day. You can barely stand upright. Your mom already left; she cannot miss another shift.", choices:[
@@ -778,7 +921,9 @@ const DILEMMAS = {
   A("B","Walk it. Ninety minutes. Everyone late.","Ninety minutes and four tardies.","walk",
     {chal:"resources45",
      pass:{st:"strug",say:"Four of you walk in at 9:20. Four tardies. Everyone is in a building."},
-     fail:{st:"out",say:"The youngest sits down in the road at minute forty and will not get up."}}),
+     fail:{st:"out",say:"The youngest sits down in the road at minute forty and will not get up."},
+     danger:{p:0.3, standard:{st:"out",say:"The light changes while the youngest is still in the street, and a car stops an arm's length short of him. You carry him the rest of the way, and nobody in this family goes anywhere today."},
+      unsparing:{st:"out",say:"The light changes while the youngest is still in the street. The forms ask for a parent or guardian, and there is a long pause at every counter while someone decides what to do with you. At the elementary school across town, a teacher empties a cubby into a grocery bag.", fatal:true}}}),
   A("C","Leave the youngest home alone","A risk you cannot take back.","warn",
     {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch."}}),
   A("D","Everybody stays home","Four absences.","home",
@@ -809,6 +954,34 @@ const DILEMMAS = {
     {auto:{st:"out",say:"A report is filed within the hour. You spend the day in an office, not a classroom."}})]}
 },
 2:{
+ ayesha:{sit:"Last bell at 3:10. Your mom has meetings until five, and the front office keeps a desk for you by the mail cubbies. Home is one crosswalk away, whenever you're ready.", choices:[
+  A("A","Stay till mom's done","The walk home in the dark, all eighty feet of it.","book",
+    {auto:{st:"in",say:"Homework at your desk while the secretaries pass the pretzel jar down. The essay prints double-sided on the office printer, and when the stapler jams, three adults come over to fix it."}}),
+  A("B","Walk home across the street","Nothing.","home",
+    {auto:{st:"in",say:"The crossing guard stops traffic for you at 3:15. You work at the kitchen table, where you can see the light in your mom's office window, and at 5:20 you watch her cross the street toward dinner."}}),
+  A("C","Help sort the mail","An hour of homework, moved to after dinner.","note",
+    {auto:{st:"in",say:"You sort district mail into the teacher cubbies and learn the building by box: who gets the catalogs, who gets the attendance letters. The head secretary pays you from the butterscotch jar and calls you her best hire."}})]},
+ grace:{sit:"3:40, and the apartment is exactly as you left it, because nobody else has been in it. There's an essay due Friday, a fridge holding sparkling water and half a lime, and a card that covers whatever the fridge doesn't.", choices:[
+  A("A","Cook a real dinner","An hour and a recipe video.","home",
+    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid \u2014 without anyone asking what burned."}}),
+  A("B","Order in. Again.","Nothing anyone would notice.","check",
+    {auto:{st:"in",say:"The driver knows the building code by now. You eat at the island with a video propped against the fruit bowl nobody refills."}}),
+  A("C","Start the essay","The evening.","book",
+    {auto:{st:"strug",say:"You write for five careful hours with nobody to read the prompt back to you. At 11:05 you check the rubric \u2014 compare, not argue \u2014 five pages in the wrong direction."}})]},
+ tyler:{sit:"3:10. From the corner you can read the driveway: the truck is home early, nose-in, and the kitchen light is off. You have been reading this driveway since you were nine, and today it isn't saying.", choices:[
+  A("A","Go in now, while it's quiet","The guess.","home",
+    {auto:{st:"in",say:"The side door, socks on the stairs. He's asleep in the recliner with the TV going, and you eat cereal standing at the counter and do homework with your door cracked so you can hear."}}),
+  A("B","Library until close","Five hours of not knowing what you're walking into.","book",
+    {auto:{st:"in",say:"You do every assignment at the table by the radiator and check the driveway from across the street at 8:40. The truck is gone, the kitchen light is on, and your mother has saved you a plate without saying anything about the time."}}),
+  A("C","Go to Jake's without asking","Being missed.","walk",
+    {auto:{st:"strug",say:"Jake's mom sets a fourth plate and refills it before you can ask, which is its own kind of question. She asks twice, lightly, whether anyone knows where you are, and at 9:40 you let yourself into a house where someone does."}})]},
+ marie:{sit:"The hall behind the church opens at 3:30. Long tables, a box of sharpened pencils, Tati Rose reading homework like a lease. Around six, dinner plates appear without being announced. The hall closes at seven.", choices:[
+  A("A","Homework at the tables","Tati Rose's pencil.","book",
+    {auto:{st:"in",say:"Tati Rose is nobody's actual aunt, which has never once stopped her. Your essay goes home two sentences shorter and better for it."}}),
+  A("B","Stay for a plate and the van","The hour after dinner.","bus",
+    {auto:{st:"in",say:"A plate lands in front of you at six: diri kole, a chicken leg, sos pwa from somebody's mother's pot. Sister Yvette drops you home in time to catch your mom before she leaves, bag packed, ten minutes to spare."}}),
+  A("C","Stay till the chairs are stacked","The apartment after seven.","clock",
+    {auto:{st:"strug",say:"You hold the door for the coffee urn and Sister Yvette locks up at 7:10. Home has all the quiet the hall doesn't, and the envelope on the counter stays face-down; nobody opens it while you're in the room."}})]},
  rebecca:{sit:"Home by 3:30. Homework, youth group at seven, the new episode at nine. Four free hours. The only question is the order.", choices:[
   A("A","Homework first, then the show","Youth group, this once.","book",
     {auto:{st:"in",say:"Done by eight at the kitchen table, your dad drifting past to admire your margins. You watch the episode with popcorn and nothing hanging over it."}}),
@@ -890,13 +1063,15 @@ const DILEMMAS = {
     {auto:{st:"in",say:"You're tired in first period tomorrow. That is the worst of it."}}),
   A("C","Your parents hired a tutor. Do all three.","Nothing.","star",
     {auto:{st:"in",say:"The tutor arrives at six and leaves at seven with the chapter outlined for you. Everything fits."}})]},
- alejandra:{sit:"Two hours of test prep are scheduled. You have a headache that started Tuesday and hasn't stopped.", choices:[
-  A("A","Do the full two hours","Your evening, and the headache.","book",
-    {auto:{st:"strug",say:"You finish at 10:40 and lie awake until two. Everything is done. Nothing is okay."}}),
-  A("B","Tell them you need to sleep","A conversation at breakfast.","home",
-    {auto:{st:"in",say:"You sleep nine hours for the first time in a month. Nobody says anything at breakfast, which is its own kind of saying something."}}),
-  A("C","Do the prep and hide the headache","Both.","warn",
-    {auto:{st:"strug",say:"Nobody in the house knows you've had a headache for four days."}})]},
+ alejandra:{sit:"It is a bad pain day, and it arrived on schedule. The doctors called it endometriosis inside a year and opened a file. There is a diagnosis, a plan, and a specialist whose cell number your mother keeps.", choices:[
+  A("A","Go through the day as planned","Two hours of prep, moved to Sunday.","car",
+    {chal:"pain60",
+     pass:{st:"in",say:"You name it once, precisely, the way the specialist taught you. By fifth period the driver has been rerouted; the specialist sees you at 3:40, adjusts the dosage, and has you home for dinner with a note the school never asks to see."},
+     fail:{st:"in",say:"You fumble the words at lunch and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."}}),
+  A("B","Give up on the day entirely","A day of margin you don't have.","home",
+    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls \u2014 it is in your file \u2014 and the test moves to Thursday with nothing next to your name."}}),
+  A("C","Tell someone","The appointment your mother will mention in front of guests.","note",
+    {auto:{st:"in",say:"You tell your mother between meetings. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."}})]},
  priya:{sit:"Tutor at six, your own homework after, and a school voicemail nobody but you can understand.", choices:[
   A("A","Tutor, homework, voicemail. In that order.","Sleep.","book",
     {chal:"hotspot30",
@@ -946,7 +1121,9 @@ const DILEMMAS = {
   A("A","Keep the story going. She is working a double.","Lying to a 6-year-old.","home",
     {auto:{st:"strug",say:"You make rice and put on cartoons. They believe you. You sit up against the door until two in the morning."}}),
   A("B","Walk to the corner store and ask if anyone has heard anything","Being seen.","walk",
-    {auto:{st:"strug",say:"The woman behind the counter says she will ask around, and looks at you a beat too long. You go home fast."}}),
+    {auto:{st:"strug",say:"The woman behind the counter says she will ask around, and looks at you a beat too long. You go home fast."},
+     danger:{p:0.25, standard:{st:"out",say:"You are gone nine minutes. A man knocks the whole time, saying he knows your mother, and the 6-year-old has a hand on the chain before the 10-year-old catches it. You do not leave them again, which means nobody in this apartment goes anywhere at all."},
+      unsparing:{st:"out",say:"The 6-year-old opens the door because the man says he knows your mother. What happens next takes ninety seconds and ends with the neighbor two doors down shouting from her doorway, and then he is gone, and everyone is physically unhurt. Nothing in this apartment is ever unlocked casually again."}}}),
   A("C","Call the number written on the fridge","The thing that starts the paperwork.","clock",
     {auto:{st:"out",say:"An automated menu, then a real person, then questions you cannot answer without saying the word undocumented. You hang up."}})]},
  jayson:{sit:"The dysphoria is crushing today and you are running on nothing. Two younger siblings still need picking up at 3:15.", choices:[
@@ -967,6 +1144,34 @@ const DILEMMAS = {
     {auto:{st:"out",say:"You lie on the floor of your room with headphones on until it's tomorrow."}})]}
 },
 3:{
+ ayesha:{sit:"Past ten. Your mom is at the dining table with one folder and the phone. Through your door you hear her half of it: an attendance hearing, the word \u201cplacement,\u201d and once, \u201cthe one with the three little ones and the bus fares.\u201d", choices:[
+  A("A","Ask her about it","Nothing she can tell you.","note",
+    {auto:{st:"in",say:"She says \u201ca student,\u201d and \u201cI can't talk about it, baby,\u201d and turns the folder so the tab faces away from you. From your bed you hear her dial again at 10:40."}}),
+  A("B","Pretend not to hear","Nothing.","ghost",
+    {auto:{st:"in",say:"You finish tomorrow's reading with your door open anyway. The word \u201cplacement\u201d comes through the wall between two chapters, and you turn the page."}}),
+  A("C","Bring her tea and sit with her","Staying up past eleven.","heart",
+    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence \u2014 \u201che's fifteen, he's raising three kids\u201d \u2014 and then she hangs up and says goodnight twice, once in each voice."}})]},
+ grace:{sit:"9 PM. The field trip form on the counter says a parent or guardian must sign it by first period. Your mother is twelve hours into a shift; your father's phone is going straight to voicemail. The card can't sign.", choices:[
+  A("A","Sign it in her handwriting","Two practice runs on an envelope.","note",
+    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 \u2014 nobody has ever checked one of your forms, and nobody starts today."}}),
+  A("B","Call the hospital and ask for her","Three transfers and a hold.","heart",
+    {auto:{st:"in",say:"A charge nurse finds her between patients: she has four minutes, and the form takes one of them. The other three go to whether you've eaten; her one-line email from the nurses' station is accepted at 8:02 without a question."}}),
+  A("C","Leave it blank","A call from the office.","x",
+    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing \u2014 doctors' schedules, they understand completely, Monday is fine."}})]},
+ tyler:{sit:"It starts at 9:40 the way it starts: a cabinet door, then his voice, then your mother's, lower. Your sister is eight and her room shares a wall with the kitchen. Yours doesn't.", choices:[
+  A("A","Take the couch and the headphones","Hearing it anyway.","ghost",
+    {auto:{st:"strug",say:"You turn the volume to the number that usually works and watch the ceiling until the house changes key. At 11:50 a door closes, then nothing, and you count to one hundred before you let yourself sleep."}}),
+  A("B","Stand in the kitchen doorway","Being between them.","warn",
+    {auto:{st:"out",say:"You put her in her room and pull the door shut behind you, and the hallway is where the rest of the night happens. She sleeps through it; you don't go in tomorrow, and the note excusing it will be in your handwriting, like the others."}}),
+  A("C","Call Aunt Deb","The thing that starts the paperwork.","heart",
+    {auto:{st:"strug",say:"She picks up before the second ring, like she meant it, and stays on the line until the house goes quiet. A caseworker comes Thursday at four; your dad answers her questions in his job-interview voice, and for the first time somebody is writing it down."}})]},
+ marie:{sit:"At 7:25 your mom leaves to sit up all night with somebody else's grandmother, her dinner in a grocery bag. Lock everything, she says in Kreyol, because instructions come in Kreyol. The envelope is still on the counter.", choices:[
+  A("A","Call your cousin Nadine","An hour, easily.","heart",
+    {auto:{st:"in",say:"She picks up on the second ring like she was holding the phone. You do the math worksheet on speaker while she narrates her show, and the apartment sounds like people live in it."}}),
+  A("B","Homework with the TV on","Half your attention.","note",
+    {auto:{st:"strug",say:"The game show keeps the room from going silent and the worksheet gets done in the gaps. Between problems your eyes keep finding the counter, and the envelope has not moved."}}),
+  A("C","Pray the way Grandma taught you","Nothing tonight.","home",
+    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works \u2014 not on the envelope, on the sleep \u2014 and you're out by 9:40."}})]},
  rebecca:{sit:"Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.", choices:[
   A("A","Finish it before candle-lighting","The afternoon.","check",
     {auto:{st:"in",say:"Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."}}),
@@ -1087,6 +1292,75 @@ const DILEMMAS = {
 }};
 
 /* ==========================================================
+   4.5 SETTINGS + CHARGES
+   ========================================================== */
+let SETTINGS = {
+  dangerMode: "standard",          /* off | standard | unsparing */
+  rosterMode: "core",              /* full | core | custom */
+  customRoster: [],
+  chargesEnabled: true,
+  withdrawnEvery: 3
+};
+const CORE_IDS = ["ayesha","rebecca","mei","grace","carlos","isabella","jamal","kavi","marcus","lucia"];
+let CHARGES = {
+ memoIntro: "Filed this morning, before first bell. For your convenience, the following students have been flagged for removal. You are, of course, free to vote however you like. The recommendations are simply available. They are always simply available.",
+ patterns: [
+  {forId:"marcus", text:"Attendance irregularities. Three documented incidents this week. The documentation does not document why.", policy:"12.1"},
+  {forId:"isabella", text:"Repeated visits to the nurse with no diagnosis on file. The pattern suggests avoidance. What is being avoided has not been investigated.", policy:"8.3(c)"},
+  {forId:"fatima", text:"Tardiness, recurring. The reason offered (\u201csiblings\u201d) is not a recognized category.", policy:"12.1, again"},
+  {forId:"lucia", text:"Guardian unreachable at the listed number. Flagged as an enrollment integrity concern. Where the guardian is has not been asked.", policy:"2.2"},
+  {forId:"aisha", text:"Uniform non-compliance, ongoing. The uniform does not come in her size. This has been logged as her fault.", policy:"6.6"},
+  {forId:"tyler", text:"Excuse notes for gym, seven this semester, each signed by a parent. The signatures are under analysis. The reasons are not.", policy:"9.4(a)"},
+  {forId:"jamal", text:"Unauthorized use of a stairwell during tutoring hours. Purpose given as \u201ckneeling.\u201d Stairwells are for traversal.", policy:"3.9"},
+  {forId:"marie", text:"Emergency contact card lists fourteen names, including a pastor. The form provides three lines. The surplus has been flagged for verification.", policy:"2.2(b)"},
+  {forId:"ling", text:"Parent conference missed, twice. Guardian works 2 to 11. Conferences are held at 3. The conflict has been recorded as a lack of engagement.", policy:"5.5"},
+  {text:"{NAME} has established a tardy pattern. The pattern is now part of the record. The record is now the concern.", policy:"12.1 (rev.)"},
+  {text:"{NAME} has submitted incomplete homework on multiple dates. Effort was reported but could not be verified.", policy:"7.2"},
+  {text:"{NAME} displayed a flat affect during morning announcements. Enthusiasm is expected at scheduled times.", policy:"4.1(d)"}
+ ],
+ absurd: [
+  {text:"Hummed during silent reading. The tune is under review.", policy:"4.7(b)", aim:"any"},
+  {text:"Carried a backpack on one shoulder in a designated two-shoulder zone.", policy:"6.1(f)", aim:"any"},
+  {text:"Looked tired in a manner that lowered morale.", policy:"4.1, again", aim:"any"},
+  {text:"Insufficient school spirit. Second documented offense.", policy:"4.4", aim:"any"},
+  {text:"Laughed at an unassigned time.", policy:"4.7(d)", aim:"any"},
+  {text:"Was observed thinking about lunch during math. The method of observation is not subject to appeal.", policy:"7.9", aim:"any"},
+  {text:"Walked with intent. The intent remains unclear. Flagged.", policy:"3.2", aim:"any"},
+  {text:"Tilted a chair onto two legs. Chairs are rated for four.", policy:"11.5(b)", aim:"any"},
+  {text:"Proceeded through the hallway at a speed inconsistent with the posted limit. No limit is posted. Consistency is expected regardless.", policy:"3.4", aim:"any"},
+  {text:"Sharpened a pencil beyond the point of instructional need. The point has been measured.", policy:"7.7 (rev.)", aim:"any"},
+  {text:"Occupied the water fountain for eleven seconds. The recommended duration is on file in the office. It is shorter.", policy:"11.2", aim:"any"},
+  {text:"Failed to meet the daily eye contact quota. The quota is not published, in the interest of fairness.", policy:"10.1(c)", aim:"any"},
+  {text:"Exhibited seasonal enthusiasm outside the approved season. See calendar, appendix F.", policy:"14.6", aim:"any"},
+  {text:"Raised a hand with excessive confidence. The answer was correct, which has been noted separately.", policy:"7.3", aim:"any"},
+  {text:"Returned a library book early, disrupting the return forecast.", policy:"9.1(b)", aim:"any"},
+  {text:"Stacked a chair before the instruction to stack chairs was given. Initiative is scheduled.", policy:"11.5, again", aim:"any"},
+  {text:"Hair achieved a volume not addressed by the handbook. The discrepancy has been assigned to the hair.", policy:"6.2", aim:"pointed"},
+  {text:"Asked \u201cwhy\u201d in a tone. The question itself was within policy.", policy:"10.4", aim:"pointed"},
+  {text:"Brought a lunch that smelled like somewhere else. Somewhere else is not on the approved list.", policy:"13.3", aim:"pointed"},
+  {text:"Staff required three attempts to pronounce the student's name. The lost instructional time has been charged to the student's record.", policy:"1.1(b)", aim:"pointed"},
+  {text:"Posture while seated was described as aggressive in one report, filed from across the room. The chair was found compliant.", policy:"10.6", aim:"pointed"},
+  {text:"Spoke a language other than English at lunch, audibly, to a relative. Lunch is considered instruction-adjacent.", policy:"13.1", aim:"pointed"},
+  {text:"Headwear worn indoors. Filed under accessories, pending a determination of whether it is one.", policy:"6.6(a), again", aim:"pointed"},
+  {text:"Clothing fit the student differently than it fits the handbook illustration. The illustration is one size.", policy:"6.3 (rev.)", aim:"pointed"},
+  {text:"Hair beads were audible during a quiz. Logged under unauthorized noisemakers.", policy:"6.2(d), again", aim:"pointed"},
+  {text:"Submitted fee waiver paperwork at the front desk during peak traffic. Discretion guidance exists and was available on request.", policy:"15.2", aim:"pointed"}
+ ],
+ withdrawn: [
+  {forId:"david", charge:"Running in the hallway.", excuse:"Reclassified: jogging with purpose."},
+  {forId:"ayesha", charge:"Tardy to first period.", excuse:"The principal's office confirms the student was in transit. In transit is not tardy."},
+  {forId:"rebecca", charge:"Talking during announcements.", excuse:"Reclassified as leadership."},
+  {forId:"mei", charge:"Asleep in study hall.", excuse:"Reclassified as deep focus."},
+  {forId:"daniel", charge:"Distributed outside food in homeroom.", excuse:"Reclassified as community engagement. The office kept a sample."},
+  {forId:"grace", charge:"Guardian unreachable at the listed number.", excuse:"The family maintains several residences. No integrity concern identified."},
+  {forId:"priya", charge:"Visible fatigue in first period.", excuse:"Reclassified as evidence of rigor."},
+  {forId:"alejandra", charge:"Private car idling in the bus lane.", excuse:"The lane was not in use at the time."},
+  {charge:"{NAME} used a phone during class.", excuse:"The device was confirmed to be educational. Confirmation was provided by the student."},
+  {charge:"{NAME} left campus during lunch.", excuse:"Reclassified as an off-site enrichment interval."}
+ ]
+};
+
+/* ==========================================================
    5. LOOKUPS
    ========================================================== */
 const ORDER = CAST.map(c => c.id);
@@ -1104,11 +1378,16 @@ const ROUND_KAIA = {
   3: "Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."
 };
 const PRIV = {
-  david: "Principal's kid — granted an extension before he asked for one.",
+  david: "Family funded the library wing — nobody was ever going to mark him late.",
+  ayesha: "Principal's kid — an extension was on her desk before she knew the assignment existed.",
   priya: "Parents on the foundation board — given a buffer, quietly.",
   alejandra: "Family donates the gym scoreboard — nobody was going to mark her late."
 };
 const TARDY_WHY = {
+  ayesha:"The door she had to reach was the one she lives across the street from.",
+  grace:"Nobody had ever once been waiting for her at the door, including today.",
+  tyler:"He was listening for a door the whole time the music played.",
+  marie:"The van was full of younger kids who needed the door held.",
   rebecca:"Nobody in her house had ever needed a backup plan, so there wasn't one.",
   daniel:"The one thing all week that nobody in the family could fix.",
   lucia:"She had been carrying three siblings for three days before the music ever started.",
@@ -1146,25 +1425,38 @@ const CROWD_ODDS = { upper: [0.88, 0.12, 0.0], work: [0.34, 0.45, 0.21], pov: [0
 /* ==========================================================
    6. PURE GAME LOGIC  (operates on a plain state object)
    ========================================================== */
+function activeIds() {
+  const all = CAST.map(c => c.id);
+  if (SETTINGS.rosterMode === "full") return all;
+  if (SETTINGS.rosterMode === "custom") {
+    const sel = (SETTINGS.customRoster || []).filter(id => BY_ID[id]);
+    if (sel.length >= 8 && sel.some(id => BY_ID[id].tier === "pov")) return sel;
+    return all;
+  }
+  const core = CORE_IDS.filter(id => BY_ID[id]);
+  return core.length >= 8 ? core : all;
+}
+const act = g => CAST.filter(c => g.active.indexOf(c.id) >= 0);
 function newGame(classSize) {
   const g = {
     phase: "title", classSize, round: 1, qi: 0,
     roster: {}, crowd: [], pending: null, chal: null,
     voteSel: null, tally: null, eliminated: null,
-    drew: false, tardy: null, musicT: 0
+    drew: false, tardy: null, musicT: 0,
+    active: activeIds(), dangerLog: [], voteN: 0, memo: null, memoLog: [], chargeUsed: []
   };
   CAST.forEach(c => { g.roster[c.id] = { st: "in", hist: [], outRound: null, why: "" }; });
   const mix = ["upper", "upper", "upper", "work", "work", "work", "pov", "pov", "pov", "pov"];
-  const n = Math.max(0, classSize - CAST.length);
+  const n = Math.max(0, classSize - g.active.length);
   g.crowd = Array.from({ length: n }, (_, i) => ({ tier: mix[i % mix.length], st: "in" }));
   return g;
 }
-const alive = g => CAST.filter(c => g.roster[c.id].st !== "out");
-const dead = g => CAST.filter(c => g.roster[c.id].st === "out");
+const alive = g => act(g).filter(c => g.roster[c.id].st !== "out");
+const dead = g => act(g).filter(c => g.roster[c.id].st === "out");
 const dilemmaFor = (g, id) => (DILEMMAS[g.round] || {})[id];
 function counts(g) {
   const c = { in: 0, strug: 0, out: 0 };
-  CAST.forEach(x => c[g.roster[x.id].st]++);
+  act(g).forEach(x => c[g.roster[x.id].st]++);
   g.crowd.forEach(x => c[x.st]++);
   return c;
 }
@@ -1178,7 +1470,7 @@ function stepCrowd(g) {
 function tierStats(g) {
   const t = { upper: { in: 0, strug: 0, out: 0, n: 0 }, work: { in: 0, strug: 0, out: 0, n: 0 },
               pov: { in: 0, strug: 0, out: 0, n: 0 } };
-  CAST.forEach(c => { t[c.tier][g.roster[c.id].st]++; t[c.tier].n++; });
+  act(g).forEach(c => { t[c.tier][g.roster[c.id].st]++; t[c.tier].n++; });
   g.crowd.forEach(p => { t[p.tier][p.st]++; t[p.tier].n++; });
   return t;
 }
@@ -1219,6 +1511,64 @@ function challengeNote(def, t, passed) {
   return passed ? "Challenge passed."
                 : "Challenge failed — and notice what that does and doesn't cost you.";
 }
+function fmtCharge(name, text) {
+  let t = text.replace(/^\{NAME\}\s+/, "");
+  if (t !== text) t = t.charAt(0).toUpperCase() + t.slice(1);
+  return t.replace(/\{NAME\}/g, name);
+}
+function memoPick(g, list, filterFn) {
+  const pool = list.filter(x => g.chargeUsed.indexOf(x.text || x.charge) < 0 && (!filterFn || filterFn(x)));
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+function buildMemo(g) {
+  if (!SETTINGS.chargesEnabled) { g.memo = null; return; }
+  g.voteN++;
+  const aliveA = alive(g);
+  if (!aliveA.length) { g.memo = null; return; }
+  const items = [];
+  const struggling = aliveA.filter(c => g.roster[c.id].st === "strug"
+    || g.roster[c.id].hist.some(h => h.st !== "in"));
+  if (struggling.length) {
+    const bespoke = memoPick(g, CHARGES.patterns, x => x.forId && struggling.some(c => c.id === x.forId));
+    const pick = bespoke || memoPick(g, CHARGES.patterns, x => !x.forId);
+    if (pick) {
+      const who = bespoke ? BY_ID[pick.forId] : struggling[Math.floor(Math.random() * struggling.length)];
+      items.push({ kind: "pattern", id: who.id, name: who.name,
+        text: fmtCharge(who.name, pick.text), policy: pick.policy });
+      g.chargeUsed.push(pick.text);
+    }
+  }
+  const nAbsurd = 1 + Math.floor(Math.random() * 2);
+  for (let i = 0; i < nAbsurd; i++) {
+    const pick = memoPick(g, CHARGES.absurd, null);
+    if (!pick) break;
+    const pool = pick.aim === "pointed"
+      ? (aliveA.filter(c => c.tier !== "upper").length ? aliveA.filter(c => c.tier !== "upper") : aliveA)
+      : aliveA;
+    const who = pool[Math.floor(Math.random() * pool.length)];
+    items.push({ kind: "absurd", id: who.id, name: who.name, text: pick.text, policy: pick.policy });
+    g.chargeUsed.push(pick.text);
+  }
+  const cadence = Math.max(1, SETTINGS.withdrawnEvery || 3);
+  const withdrawnYet = g.memoLog.some(m => m.withdrawn);
+  const fire = (g.voteN % cadence === 0) || (g.voteN === 2 && !withdrawnYet)
+    || (Math.floor(Math.random() * cadence) === 0);
+  const uppers = aliveA.filter(c => c.tier === "upper");
+  if (fire && uppers.length) {
+    const bespoke = memoPick(g, CHARGES.withdrawn, x => x.forId && uppers.some(c => c.id === x.forId));
+    const pick = bespoke || memoPick(g, CHARGES.withdrawn, x => !x.forId);
+    if (pick) {
+      const who = bespoke ? BY_ID[pick.forId] : uppers[Math.floor(Math.random() * uppers.length)];
+      items.push({ kind: "withdrawn", id: who.id, name: who.name,
+        text: fmtCharge(who.name, pick.charge), excuse: pick.excuse });
+      g.chargeUsed.push(pick.charge);
+    }
+  }
+  g.memo = items.length ? { items } : null;
+  g.memoLog.push({ round: g.round,
+    flagged: items.filter(x => x.kind !== "withdrawn").map(x => x.id),
+    withdrawn: items.some(x => x.kind === "withdrawn") });
+}
 function runVote(g) {
   const living = alive(g);
   if (!g.voteSel || !living.some(c => c.id === g.voteSel)) { g.voteSel = null; return; }
@@ -1247,6 +1597,8 @@ function runVote(g) {
   const r = g.roster[g.eliminated];
   r.st = "out"; r.outRound = g.round; r.why = "Voted out in Round " + g.round;
   r.hist.push({ round: g.round, k: "—", st: "out", say: "Voted out by the surviving families." });
+  const lastMemo = g.memoLog[g.memoLog.length - 1];
+  if (lastMemo) lastMemo.hit = lastMemo.flagged.indexOf(g.eliminated) >= 0;
   g.phase = "voteres";
 }
 function pickTardy(g) {
@@ -1261,6 +1613,10 @@ function pickTardy(g) {
 }
 function seedMid(classSize, round) {
   const g = newGame(classSize);
+  g.active = CAST.map(c => c.id);
+  const mix = ["upper", "upper", "upper", "work", "work", "work", "pov", "pov", "pov", "pov"];
+  const n2 = Math.max(0, classSize - g.active.length);
+  g.crowd = Array.from({ length: n2 }, (_, i) => ({ tier: mix[i % mix.length], st: "in" }));
   g.round = round || 2;
   const pick = (id, want) => {
     const cs = (DILEMMAS[1][id] || { choices: [] }).choices;
@@ -1369,7 +1725,7 @@ function Dash({ g, now }) {
           <span style={{ width: pct("out") + "%", background: v("--st-out") }} />
         </div>
         <ul className="roster">
-          {CAST.map(ch => {
+          {act(g).map(ch => {
             const r = g.roster[ch.id], out = r.st === "out";
             return (
               <li key={ch.id} className={"rrow" + (out ? " is-out" : "") + (now === ch.id ? " is-now" : "")}>
@@ -1453,7 +1809,10 @@ function Sky() {
 /* ==========================================================
    8. THE GAME
    ========================================================== */
-export default function MrSystem({ initialClassSize = 40 }) {
+export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode, customRoster } = {}) {
+  if (dangerMode) SETTINGS.dangerMode = dangerMode;
+  if (rosterMode) SETTINGS.rosterMode = rosterMode;
+  if (customRoster) SETTINGS.customRoster = customRoster.slice();
   const themeTick = useThemeTick();
   const [g, setG] = useState(() => newGame(initialClassSize));
   const [showIndex, setShowIndex] = useState(false);
@@ -1479,21 +1838,40 @@ export default function MrSystem({ initialClassSize = 40 }) {
 
   /* ---- round flow ---- */
   const nextQuestion = () => update(n => {
+    const a = act(n);
     let i = n.qi;
-    while (i < CAST.length && n.roster[CAST[i].id].st === "out") i++;
+    while (i < a.length && (n.roster[a[i].id].st === "out" || !dilemmaFor(n, a[i].id))) i++;
     n.qi = i;
-    if (i >= CAST.length) { stepCrowd(n); n.phase = "results"; } else n.phase = "dilemma";
+    if (i >= a.length) { stepCrowd(n); n.phase = "results"; } else n.phase = "dilemma";
   });
   const advance = () => update(n => {
+    const a = act(n);
     let i = n.qi + 1;
-    while (i < CAST.length && n.roster[CAST[i].id].st === "out") i++;
+    while (i < a.length && (n.roster[a[i].id].st === "out" || !dilemmaFor(n, a[i].id))) i++;
     n.qi = i;
-    if (i >= CAST.length) { stepCrowd(n); n.phase = "results"; } else n.phase = "dilemma";
+    if (i >= a.length) { stepCrowd(n); n.phase = "results"; } else n.phase = "dilemma";
   });
   const choose = i => {
     setListText("");
     update(n => {
-      const ch = CAST[n.qi], c = dilemmaFor(n, ch.id).choices[i];
+      const ch = act(n)[n.qi], c = dilemmaFor(n, ch.id).choices[i];
+      if (c.danger && SETTINGS.dangerMode !== "off" && Math.random() < (c.danger.p || 0)) {
+        const v = (SETTINGS.dangerMode === "unsparing" && c.danger.unsparing)
+          ? c.danger.unsparing : c.danger.standard;
+        if (v && v.say) {
+          const r = n.roster[ch.id];
+          r.st = v.st;
+          r.hist.push({ round: n.round, k: c.k, st: v.st, say: v.say, danger: true });
+          if (v.st === "out" && r.outRound === null) {
+            r.outRound = n.round;
+            r.why = "Round " + n.round + " — Mr. System struck: " + c.t;
+          }
+          n.dangerLog.push({ id: ch.id, round: n.round, fatal: !!v.fatal });
+          n.pending = { id: ch.id, k: c.k, title: c.t, say: v.say, st: v.st, danger: true, fatal: !!v.fatal };
+          n.phase = "outcome";
+          return;
+        }
+      }
       if (c.auto) { applyOutcome(n, ch, c, c.auto, null); return; }
       const def = CHALLENGES[c.chal];
       n.chal = { def, left: def.secs, endAt: Date.now() + def.secs * 1000,
@@ -1579,7 +1957,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
         n.phase = "outcome"; return n;
       }
       if (p === "results") { const n = seedMid(size, 1); n.round = 1; n.phase = "results"; return n; }
-      if (p === "vote") { const n = seedMid(size, 1); n.round = 1; n.voteSel = "marcus"; n.phase = "vote"; return n; }
+      if (p === "vote") { const n = seedMid(size, 1); n.round = 1; n.voteSel = "marcus"; buildMemo(n); n.phase = "vote"; return n; }
       if (p === "voteres") { const n = seedMid(size, 1); n.round = 1; n.voteSel = "marcus"; runVote(n); return n; }
       const n = seedMid(size, 3);
       n.round = 4;
@@ -1620,7 +1998,11 @@ export default function MrSystem({ initialClassSize = 40 }) {
         {CAST.map(x => <Sprite key={x.id} id={x.id} px={3} />)}
       </div>
       <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: v("--ink-3"), letterSpacing: ".04em" }}>
-        TWENTY FAMILIES. THE SAME FIRST BELL.</p>
+        TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.</p>
+      <p style={{ maxWidth: "60ch", fontSize: 12.5, color: v("--ink-3"), marginTop: 14 }}>
+        Content note: this game depicts systemic harm {"\u2014"} including, when danger mode is on, traffic
+        injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass
+        on any character.</p>
       <Actions>
         <button className="btn" onClick={() => go("setup")}>START GAME</button>
         <button className="btn btn-ghost" onClick={() => setShowIndex(true)}>SCREEN INDEX</button>
@@ -1628,13 +2010,26 @@ export default function MrSystem({ initialClassSize = 40 }) {
     </Screen>
   );
 
-  const Setup = () => (
-    <Screen title="SETUP" right="class size">
+  const setRoster = (mode) => setG(() => {
+    SETTINGS.rosterMode = mode;
+    if (mode === "custom" && !SETTINGS.customRoster.length) SETTINGS.customRoster = CORE_IDS.slice();
+    const n = newGame(g.classSize); n.phase = "setup"; return n;
+  });
+  const togglePick = (id) => setG(() => {
+    const i = SETTINGS.customRoster.indexOf(id);
+    if (i >= 0) SETTINGS.customRoster.splice(i, 1); else SETTINGS.customRoster.push(id);
+    const n = newGame(g.classSize); n.phase = "setup"; return n;
+  });
+  const Setup = () => {
+    const groups = Math.ceil(g.classSize / 5);
+    const per = Math.ceil(g.active.length / groups);
+    const sel = (SETTINGS.customRoster || []).filter(id => BY_ID[id]);
+    const customBad = SETTINGS.rosterMode === "custom"
+      && !(sel.length >= 8 && sel.some(id => BY_ID[id].tier === "pov"));
+    return (
+    <Screen title="SETUP" right="class size + roster">
       <p className="eyebrow">STEP 1 OF 2</p>
       <h2 className="screen-title">HOW MANY STUDENTS<br />ARE IN THE ROOM?</h2>
-      <p style={{ maxWidth: "58ch", color: v("--ink-2") }}>
-        The {CAST.length} named families are played by hand. Everyone else is grouped into families in the
-        background and their outcomes are resolved by the same rules.</p>
       <div className="setup-row">
         <div className="stepper">
           <button aria-label="Fewer students"
@@ -1643,27 +2038,58 @@ export default function MrSystem({ initialClassSize = 40 }) {
           <button aria-label="More students"
             onClick={() => setG(() => { const n = newGame(Math.min(60, g.classSize + 5)); n.phase = "setup"; return n; })}>+</button>
         </div>
-        <span className="pill">PLAYED BY HAND <b>{CAST.length}</b></span>
-        <span className="pill">BACKGROUND <b>{g.classSize - CAST.length}</b></span>
-        <span className="pill">FAMILY GROUPS <b>{Math.ceil(g.classSize / 5)}</b></span>
+        <span className="pill">PLAYED BY HAND <b>{g.active.length}</b></span>
+        <span className="pill">BACKGROUND <b>{Math.max(0, g.classSize - g.active.length)}</b></span>
+        <span className="pill">FAMILY GROUPS <b>{groups}</b></span>
       </div>
       <p className="hint">Range 30&ndash;60. Groups of five.</p>
+      <hr className="hr" />
+      <h3 className="screen-title" style={{ fontSize: 12 }}>WHICH FAMILIES ARE PLAYED BY HAND?</h3>
+      <div className="modes">
+        <button className="mode" aria-pressed={SETTINGS.rosterMode === "core"} onClick={() => setRoster("core")}>
+          <b>CORE · 10</b><span>A curated ten that keeps the whole argument — every class band,
+          Lucia and Marcus included.</span></button>
+        <button className="mode" aria-pressed={SETTINGS.rosterMode === "full"} onClick={() => setRoster("full")}>
+          <b>FULL · {CAST.length}</b><span>Every named family. Best for long sessions.</span></button>
+        <button className="mode" aria-pressed={SETTINGS.rosterMode === "custom"} onClick={() => setRoster("custom")}>
+          <b>CUSTOM</b><span>Pick your own set — at least 8 families, at least one from the
+          poverty/crisis band.</span></button>
+      </div>
+      {SETTINGS.rosterMode === "custom" && (
+        <div className="roster-picks">
+          {CAST.map(c => (
+            <label className="rpick" key={c.id}>
+              <input type="checkbox" checked={SETTINGS.customRoster.indexOf(c.id) >= 0}
+                onChange={() => togglePick(c.id)} />
+              <span>{c.name}</span>
+              <span style={{ marginLeft: "auto", opacity: .6, fontSize: 10 }}>{TIER_LABEL[c.tier].split(" ")[0]}</span>
+            </label>
+          ))}
+        </div>
+      )}
+      <div className="deal"><b>How the room plays it.</b> {groups} groups × {g.classSize} students —
+        each group is dealt {per > 1 ? `1–${per}` : "one"} family card{per > 1 ? "s" : ""}. Your group
+        <b> is</b> that family: you argue the dilemma together, you take the challenge together, and you send
+        one spokesperson to each vote. One vote per family, not per student.</div>
       <Actions>
-        <button className="btn" onClick={() => go("cast")}>MEET THE FAMILIES</button>
+        <button className="btn" disabled={customBad} onClick={() => go("cast")}>MEET THE FAMILIES</button>
         <span className="spacer" />
         <button className="btn btn-ghost" onClick={() => go("title")}>BACK</button>
       </Actions>
     </Screen>
-  );
+  ); };
 
   const CastScreen = () => (
-    <Screen title="CHARACTER ASSIGNMENT" right={`${g.classSize} students`}>
+    <Screen title="CHARACTER ASSIGNMENT" right={`${act(g).length} of ${CAST.length} families in play`}>
       <p className="eyebrow">STEP 2 OF 2</p>
       <h2 className="screen-title">WHO ARE YOU?</h2>
       <Kaia>Your character decides what your morning looks like before you make a single choice. Some of you
         have it easier. Some of you don't. That is the point.</Kaia>
+      <Kaia>Your group is dealt a family card, and your group IS that family. Argue the dilemma together,
+        take the challenge together, send one spokesperson to every vote. One vote per family, not per
+        student.</Kaia>
       <div className="cast">
-        {CAST.map(ch => (
+        {act(g).map(ch => (
           <div className="ccard" key={ch.id}>
             <div className="ccard-h">
               <Sprite id={ch.id} px={3} />
@@ -1697,7 +2123,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
         <h2 className="screen-title">{ROUND_NAME[g.round]}</h2>
         <Kaia>{ROUND_KAIA[g.round]}</Kaia>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "18px 0" }}>
-          {CAST.map(x => <Sprite key={x.id} id={x.id} px={3} ghost={g.roster[x.id].st === "out"} />)}
+          {act(g).map(x => <Sprite key={x.id} id={x.id} px={3} ghost={g.roster[x.id].st === "out"} />)}
         </div>
         <p style={{ maxWidth: "60ch", color: v("--ink-2") }}>
           {living.length} families are still in this.{" "}
@@ -1708,7 +2134,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
   );
 
   const Dilemma = () => {
-    const ch = CAST[g.qi], d = dilemmaFor(g, ch.id);
+    const ch = act(g)[g.qi], d = dilemmaFor(g, ch.id);
     return (
       <Layout g={g} now={ch.id}>
         <Screen title={`ROUND ${g.round} — DILEMMA`} right={`${ch.name} · ${ch.cls}`}>
@@ -1732,7 +2158,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
               </button>
             ))}
           </div>
-          <p className="hint">Family {g.qi + 1} of {CAST.length} this round.</p>
+          <p className="hint">Family {g.qi + 1} of {act(g).length} this round.</p>
         </Screen>
       </Layout>
     );
@@ -1813,15 +2239,20 @@ export default function MrSystem({ initialClassSize = 40 }) {
     const p = g.pending, ch = BY_ID[p.id];
     return (
       <Layout g={g} now={ch.id}>
-        <Screen title="OUTCOME" right={ch.name}>
+        <Screen title={p.danger ? "INTERRUPTION" : "OUTCOME"} right={ch.name}>
           <p className="eyebrow">ROUND {g.round} &middot; {ch.name} CHOSE {p.k}</p>
           <h2 className="screen-title">{p.title}</h2>
-          <div className={"res r-" + p.st} style={{ marginTop: 18 }}>
+          {p.danger && (
+            <div className="mrsys" role="alert"><span className="mrsys-who">MR. SYSTEM</span>
+              <p className="mrsys-say">{p.say}</p></div>
+          )}
+          <div className={"res r-" + p.st} style={{ marginTop: p.danger ? 4 : 18 }}>
             <span style={{ flex: "none" }}><Sprite id={ch.id} px={4} ghost={p.st === "out"} /></span>
             <div className="res-b">
               <div className="res-n">{ch.name}</div>
-              <p className="res-say">{p.say}</p>
-              <Badge st={p.st} />
+              {!p.danger && <p className="res-say">{p.say}</p>}
+              <Badge st={p.st} label={p.danger
+                ? (p.st === "out" ? "OUT — MR. SYSTEM STRUCK" : "STRUGGLING — NEAR MISS") : undefined} />
               {p.chalNote && <p className="hint" style={{ marginTop: 11 }}>{p.chalNote}</p>}
             </div>
           </div>
@@ -1837,7 +2268,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
         <p className="eyebrow">ALL FAMILIES, AT ONCE</p>
         <h2 className="screen-title">ROUND {g.round} RESULTS</h2>
         <Kaia>Nobody chose wrong. Look at what each of them was choosing between.</Kaia>
-        {CAST.map((ch, i) => {
+        {act(g).map((ch, i) => {
           const r = g.roster[ch.id], last = r.hist[r.hist.length - 1] || { say: "—" };
           return (
             <div className={"res reveal r-" + r.st} key={ch.id} style={{ animationDelay: i * 70 + "ms" }}>
@@ -1853,18 +2284,37 @@ export default function MrSystem({ initialClassSize = 40 }) {
         <hr className="hr" />
         <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 14, fontWeight: 600, letterSpacing: ".03em" }}>
           WHOLE CLASS &mdash; IN {c.in} / STRUGGLING {c.strug} / OUT {c.out} of {g.classSize}</p>
-        <Actions><button className="btn" onClick={() => go("vote")}>CONTINUE TO THE VOTE</button></Actions>
+        <Actions><button className="btn" onClick={() => update(n => { buildMemo(n); n.phase = "vote"; })}>
+          CONTINUE TO THE VOTE</button></Actions>
       </Screen>
     </Layout>
   );
 
-  const Vote = () => (
+  const Vote = () => {
+    const flagged = new Set(g.memo ? g.memo.items.filter(x => x.kind !== "withdrawn").map(x => x.id) : []);
+    return (
     <Layout g={g}>
       <Screen title="VOTING" right={`${living.length} families voting`}>
         <p className="eyebrow">END OF ROUND {g.round}</p>
         <h2 className="screen-title">VOTE TO ELIMINATE</h2>
         <Kaia>Each surviving family sends one spokesperson. One vote each. The families who are already out
           may stand up and mime &mdash; they may not vote. Majority rules.</Kaia>
+        {g.memo && (
+          <div className="memo" role="note" aria-label="Mr. System's recommendations">
+            <div className="memo-head">{"\ud83d\udccb"} MR. SYSTEM RECOMMENDS</div>
+            <p className="memo-intro">{CHARGES.memoIntro}</p>
+            <ul className="memo-list">
+              {g.memo.items.map((it, i) => it.kind === "withdrawn" ? (
+                <li className="memo-item is-withdrawn" key={i}><b>{it.name}</b> {"\u2014"}{" "}
+                  <span className="memo-struck">{it.text}</span>{" "}
+                  <em>WITHDRAWN: {it.excuse}</em></li>
+              ) : (
+                <li className="memo-item" key={i}><b>{it.name}</b> {"\u2014"} {it.text}{" "}
+                  <span className="memo-pol">(Policy {it.policy})</span></li>
+              ))}
+            </ul>
+          </div>
+        )}
         <p style={{ maxWidth: "60ch", marginBottom: 16 }}>
           Pick one student to eliminate. Every other family votes at the same time.</p>
         <div className="votes">
@@ -1876,6 +2326,7 @@ export default function MrSystem({ initialClassSize = 40 }) {
                 <span className="vcard-n">{ch.name}</span>
                 <span className="vcard-s">{ch.cls} &middot; {ST_LABEL[g.roster[ch.id].st]}</span>
               </span>
+              {flagged.has(ch.id) && <span className="vcard-flag" title="Flagged by Mr. System">{"\ud83d\udccb"}</span>}
             </button>
           ))}
         </div>
@@ -1896,12 +2347,14 @@ export default function MrSystem({ initialClassSize = 40 }) {
           <span className="spacer" />
           <span className="pill">YOUR VOTE <b>{g.voteSel ? BY_ID[g.voteSel].name : "—"}</b></span>
         </Actions>
-        <div className="note"><b>Facilitator note.</b> Run this vote, then ask who the room voted out and why.
-          In every playtest the group eliminates whoever is already struggling &mdash; which is the finding,
-          not a bug. Name that out loud before Round {g.round + 1}.</div>
+        <div className="note"><b>Facilitator note.</b> Read the recommendations aloud in a neutral
+          administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who
+          the room voted out and why &mdash; in every playtest the group eliminates whoever is already
+          struggling, which is the finding, not a bug. In debrief, ask who the absurd charges targeted and
+          who got theirs withdrawn.</div>
       </Screen>
     </Layout>
-  );
+  ); };
 
   const VoteRes = () => {
     const el = BY_ID[g.eliminated], max = Math.max(...g.tally.map(t => t.n));
@@ -2080,27 +2533,49 @@ export default function MrSystem({ initialClassSize = 40 }) {
     const t = tierStats(g);
     const pct = (o, k) => (o.n ? Math.round((o[k] / o.n) * 100) : 0);
     const survPct = o => (o.n ? Math.round(((o.in + o.strug) / o.n) * 100) : 0);
-    const davidAllIn = g.roster.david.hist.every(h => h.st === "in");
-    const privLeft = Object.keys(PRIV).filter(id => g.roster[id].st !== "out").length;
+    const on = id => g.active.indexOf(id) >= 0;
+    const privLeft = Object.keys(PRIV).filter(id => on(id) && g.roster[id].st !== "out").length;
     const povLeft = living.filter(x => x.tier === "pov").length;
     const votedOut = ghosts.filter(x => (g.roster[x.id].why || "").indexOf("Voted") === 0);
     const votedUpper = votedOut.filter(x => x.tier === "upper").length;
-    const insights = [
-      davidAllIn
+    const insights = [];
+    if (on("david") && g.roster.david.hist.length)
+      insights.push(g.roster.david.hist.every(h => h.st === "in")
         ? "David made a choice in all three rounds and every single option available to him ended with him in school. His dilemmas were about which good thing to pick."
-        : "Even when David's plan fell apart, the front office didn't write it down.",
-      "Marcus never got to choose between good and bad. He chose which sibling absorbed the cost — and the game charged him for it either way.",
-      "Lucia's Round 1 had three options and all three ended out of school. She was eliminated before she made a decision. That is what a barrier is.",
-      votedOut.length
-        ? `The room voted out ${votedOut.map(x => x.name).join(", ")}${votedUpper ? "" : " — nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
-        : "The vote removed people who were already struggling. It never rescued anyone.",
-      privLeft
-        ? `At the end, ${privLeft} of the survivors had an extension nobody made them ask for. The rule was the same for everyone; the enforcement was not.`
-        : "The last filter wasn't homework. It was who could afford to run.",
-      povLeft === 0
-        ? "Every poverty and crisis family is gone. Not one of them made a bad decision."
-        : `${povLeft} poverty/crisis famil${povLeft === 1 ? "y is" : "ies are"} still standing, on no sleep and no margin.`
-    ];
+        : "Even when David's plan fell apart, the front office didn't write it down.");
+    if (on("marcus"))
+      insights.push("Marcus never got to choose between good and bad. He chose which sibling absorbed the cost — and the game charged him for it either way.");
+    if (on("lucia"))
+      insights.push("Lucia's Round 1 had three options and all three ended out of school. She was eliminated before she made a decision. That is what a barrier is.");
+    insights.push(votedOut.length
+      ? `The room voted out ${votedOut.map(x => x.name).join(", ")}${votedUpper ? "" : " — nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
+      : "The vote removed people who were already struggling. It never rescued anyone.");
+    insights.push(privLeft
+      ? `At the end, ${privLeft} of the survivors had an extension nobody made them ask for. The rule was the same for everyone; the enforcement was not.`
+      : "The last filter wasn't homework. It was who could afford to run.");
+    insights.push(povLeft === 0
+      ? "Every poverty and crisis family is gone. Not one of them made a bad decision."
+      : `${povLeft} poverty/crisis famil${povLeft === 1 ? "y is" : "ies are"} still standing, on no sleep and no margin.`);
+    if (g.dangerLog.length) {
+      insights.push("The same street was only dangerous for the kids who had to cross it alone.");
+      if (g.dangerLog.some(d => d.fatal))
+        insights.push("Somebody died on the way to a building with their name on the attendance sheet. The sheet still says absent.");
+    }
+    const memoed = g.memoLog.filter(m => m.flagged.length);
+    if (memoed.length) {
+      const hits = memoed.filter(m => m.hit).length;
+      insights.push(hits
+        ? `The room eliminated ${votedOut.map(x => x.name).join(", ") || "who it eliminated"}. Mr. System had recommended ${hits} of them. It felt like due process. It was a suggestion box with one suggestion.`
+        : "The room ignored every recommendation. Mr. System filed them anyway. They will be in the folder next year.");
+      if (g.memoLog.some(m => m.withdrawn))
+        insights.push("Two students committed the same offense this week. One is on this screen under ELIMINATED. One was \u2018jogging with purpose.\u2019");
+    }
+    if (on("grace") && on("marcus"))
+      insights.push("Grace burned dinner and the building charged her parents' card. The identical evening in Marcus's kitchen is a CPS file.");
+    if (on("isabella") && on("alejandra"))
+      insights.push("Isabella and Alejandra have the same disease. One has a diagnosis, a 504 plan, and a rescheduled test. The other has a closed file that says weight-related. The difference between them is not medical.");
+    if (on("marie") && g.roster.marie.st !== "out")
+      insights.push("Marie's family has no margin and she is still standing — because forty people decided she would be. Community is infrastructure. It is also unpaid, and it is also not enough on its own.");
     return (
       <Screen title="DEBRIEF" right={`${living.length} of ${CAST.length} named families left`}>
         <p className="eyebrow">GAME OVER</p>
