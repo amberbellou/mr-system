@@ -132,6 +132,22 @@ body{margin:0;background:var(--ground);color:var(--ink);
   font-family:"IBM Plex Mono",monospace;font-size:clamp(8px,.95vw,11px);font-weight:600}
 .timing i{display:flex;align-items:center;justify-content:center;color:#141C26;white-space:nowrap;overflow:hidden}
 .sprites-row{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.bellviz{display:flex;flex-direction:column;gap:clamp(14px,2.6vh,26px);max-width:920px;width:100%;margin-top:6px}
+.bell-row{display:flex;align-items:center;gap:12px}
+.bell-who{display:flex;gap:3px;align-items:center;flex:none;min-width:clamp(80px,10vw,130px)}
+.bell-name{font-family:"Press Start 2P",monospace;font-size:clamp(7px,.9vw,9px);margin-left:4px}
+.bell-line{flex-grow:1;flex-basis:0;height:0;border-top:3px dashed var(--ink-3);position:relative;display:block}
+.bell-gap{flex-basis:0;height:0;display:block}
+.bell-line em{position:absolute;top:-2em;left:2px;font-style:normal;
+  font-family:"IBM Plex Mono",monospace;font-size:clamp(9px,1vw,11.5px);color:var(--ink-2);white-space:nowrap}
+.bell-school{flex:none;display:flex;align-items:center;gap:6px;
+  font-family:"Press Start 2P",monospace;font-size:clamp(7px,.85vw,9px);color:var(--ink-2)}
+.minitrack{position:relative;border:3px solid var(--edge);background:var(--panel-2);
+  height:clamp(64px,10vh,92px);overflow:hidden;margin-top:8px}
+.minitrack .rl{position:absolute;top:0;bottom:0;width:4px;background:var(--alarm);opacity:.8}
+.minitrack .rn{position:absolute;bottom:6px;text-align:center}
+.minitrack .rn i{display:block;font-family:"IBM Plex Mono",monospace;font-size:8px;font-style:normal;color:var(--ink-2)}
+.tk-ic{display:block;margin-bottom:7px}
 .sprites-row canvas{image-rendering:pixelated}
 .beat{background:var(--panel);border:3px solid var(--edge);box-shadow:4px 4px 0 var(--edge);
   padding:clamp(10px,1.8vh,18px);text-align:center}
@@ -225,15 +241,24 @@ const SLIDES = [
   </div>`},
 { id:"intro", name:"Introduction", build: () => `
   <p class="slide-eyebrow">2 · INTRODUCTION</p>
-  <h2>WHY THIS GAME EXISTS</h2>
+  <h2>THE SAME FIRST BELL</h2>
   <div class="body">
-    <p class="bigline">The goal is to let students FEEL how the same rules land differently
-      depending on where you start.</p>
+    <p class="bigline">Let students FEEL how the same rules land differently depending on where you start.</p>
+    <div class="bellviz">
+      ${[["ayesha",6,"one crosswalk"],["david",24,"a ride, door to door"],
+         ["fatima",58,"two school runs first, fasting"],["marcus",95,"ninety minutes on foot, four kids"]]
+        .map(([id,wpc,lbl]) => `<div class="bell-row">
+          <span class="bell-who"><span data-sp="${id}" data-px="3"></span>
+            <span class="bell-name">${BY_ID[id].name}</span></span>
+          <span class="bell-line" style="flex-grow:${wpc}"><em>${lbl}</em></span>
+          <span class="bell-gap" style="flex-grow:${100-wpc}"></span>
+          <span class="bell-school"><span data-ic="home" data-px="3"></span>8:30</span>
+        </div>`).join("")}
+    </div>
     <div class="grid2" style="max-width:900px">
       <div class="qbox">How do systems perpetuate inequity?</div>
       <div class="qbox">What would have to change for everyone to survive the same morning?</div>
     </div>
-    <p class="caption">Nobody is told the thesis. The room enacts it, then the debrief hands it back.</p>
   </div>`},
 { id:"concept", name:"The Concept", build: () => `
   <p class="slide-eyebrow">3 · THE CONCEPT</p>
@@ -339,7 +364,12 @@ const SLIDES = [
         <p style="font-size:clamp(11px,1.25vw,14px);margin-top:8px">${esc(TEXT.homeworkNote)}</p></div>
       <div class="panel"><b class="px" style="font-size:clamp(8px,1vw,10px)">THE RED LINES</b>
         <div class="px" style="font-size:clamp(20px,3vw,32px);color:var(--violet);margin:8px 0">12</div>
-        <p style="font-size:clamp(11px,1.25vw,14px)">${esc(TEXT.musicLine)}</p></div>
+        <div class="minitrack">
+          <span class="rl" style="left:8%"></span><span class="rl" style="left:50%"></span><span class="rl" style="left:92%"></span>
+          <span class="rn" style="left:14%"><span data-sp="carlos" data-px="2"></span><i>running</i></span>
+          <span class="rn" style="left:40%"><span data-sp="isabella" data-px="2"></span><i>running</i></span>
+          <span class="rn" style="left:64%"><span data-sp="ayesha" data-px="2"></span><i>⭐ not rushing</i></span>
+        </div></div>
       <div class="panel" style="border-color:var(--st-star)"><b class="px" style="font-size:clamp(8px,1vw,10px);color:var(--st-star)">⭐ SPECIAL TREATMENT</b>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:8px">${esc(PRIV.ayesha || "")}</p>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:6px">${esc(PRIV.david || "")}</p></div>
@@ -382,18 +412,18 @@ const SLIDES = [
   <h2>THINGS WE DESIGNED INTO THE GAME</h2>
   <div class="body">
     <div class="grid3">
-      <div class="takeaway"><b>COST LINES</b>The argument lives in what each choice charges — "Nothing."
-        against "A risk you cannot take back."</div>
-      <div class="takeaway"><b>RIGGED CHALLENGES</b>Difficulty follows class. Failing up is free;
-        failing down prices a sibling.</div>
-      <div class="takeaway"><b>THE VOTE</b>Democracy that punishes visible struggle — and a memo that
-        steers it in procedural language.</div>
-      <div class="takeaway"><b>DANGER = EXPOSURE</b>Mr. System only strikes where no adult, no money,
-        and no margin were covering the kid.</div>
-      <div class="takeaway"><b>THE FINISH LINE</b>Some students never had to run. The star cards say so
-        out loud, at the end.</div>
-      <div class="takeaway"><b>THE DEBRIEF</b>The room enacts the pattern, then gets handed the chart of
-        what it just did.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="note" data-px="4"></span><b>COST LINES</b>The
+        argument lives in what each choice charges — "Nothing." against "A risk you cannot take back."</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="clock" data-px="4"></span><b>RIGGED CHALLENGES</b>Difficulty
+        follows class. Failing up is free; failing down prices a sibling.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="x" data-px="4"></span><b>THE VOTE</b>Democracy that
+        punishes visible struggle — and a memo that steers it in procedural language.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="warn" data-px="4"></span><b>DANGER = EXPOSURE</b>Mr. System
+        only strikes where no adult, no money, and no margin were covering the kid.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="star" data-px="4"></span><b>THE FINISH LINE</b>Some
+        students never had to run. The star cards say so out loud, at the end.</div>
+      <div class="takeaway"><span class="tk-ic" data-ic="book" data-px="4"></span><b>THE DEBRIEF</b>The room
+        enacts the pattern, then gets handed the chart of what it just did.</div>
     </div>
   </div>`},
 { id:"run", name:"How to Run It", build: () => `
@@ -431,6 +461,9 @@ function renderDeck(){
     ${i === cur ? "" : 'aria-hidden="true"'}>${s.build()}</section>`).join("");
   stage.querySelectorAll("[data-sp]").forEach(n => {
     n.appendChild(spriteEl(n.dataset.sp, +(n.dataset.px || 3), n.dataset.ghost === "1"));
+  });
+  stage.querySelectorAll("[data-ic]").forEach(n => {
+    n.appendChild(icon(n.dataset.ic, +(n.dataset.px || 3), getComputedStyle(n).color));
   });
   drawCorgi();
   paintNav();
