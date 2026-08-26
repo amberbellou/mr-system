@@ -4,8 +4,8 @@ A classroom game about systemic inequality in education, for 30–60 students in
 
 **▶ Play it: https://amberbellou.github.io/mr-system/**
 
-Twenty families try to get to school, get home, and make it to tomorrow. Everyone follows the
-same rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
+Twenty-four families try to get to school, get home, and make it to tomorrow. Everyone follows
+the same rules. Almost nobody gets the same result. The game runs about 20 minutes and ends on a debrief
 screen that shows the class what just happened to them.
 
 ---
@@ -14,15 +14,24 @@ screen that shows the class what just happened to them.
 
 | Phase | What the room does |
 | --- | --- |
-| Setup | Pick a class size (30–60). Twenty named families are played by hand; the rest are grouped and resolved by the same rules in the background. |
-| Rounds 1–3 | Morning, evening, night. Each family faces a dilemma and picks A/B/C. Some choices trigger a timed challenge; some resolve on their own. |
-| The vote | After every round the surviving families vote one student out. Eliminated students stay in the room as ghosts — they can mime, they cannot vote. |
+| Setup | Pick a class size (30–60) and a roster: CORE (a curated ten — the default, fits a class period), FULL (all twenty-four), or CUSTOM. Families not played by hand fold into the background crowd. |
+| Rounds 1–3 | Morning, evening, night. Each family faces a dilemma and picks A/B/C. Some choices trigger a timed challenge; some resolve on their own — and a choice that leaves a kid unprotected can draw an interruption from Mr. System himself (see danger mode below). |
+| The vote | Before every vote, Mr. System files official "recommendations for disqualification" — grounded-sounding charges that only ever target the already-struggling, absurd charges with bureaucratic confidence, and the occasional charge against a thriving student, struck through and withdrawn. Then the surviving families vote one student out. Ghosts mime; they cannot vote. |
 | Final round | Homework is due, then the music starts. Last one in is tardy, and tardy is out. Some students never had to rush. |
 | Debrief | Who survived, who didn't, and a survival rate broken down by class band. |
 
 The point is the shape of the choices, not the choosing. David picks between good outcomes all
 game. Marcus picks which sibling absorbs the cost. Lucia's round 1 has three options and all three
 end out of school — she is eliminated before she makes a decision.
+
+## Danger mode
+
+By default, some choices that leave a kid unsupervised, unaccompanied, or unprotected carry a
+small chance that Mr. System strikes: a near-miss at a crossing with no guard, a breakdown on a
+road where nobody is expecting you. Standard mode narrates injury and near-misses; the kid
+survives. Unsparing mode is the unsoftened version — a kid can die. Off disables every roll.
+The toggle is in PROF EDIT → Endgame. Upper-tier choices never carry danger, with one deliberate,
+severity-buffered exception. Say which mode you are running in your content warning.
 
 ## Running it with students
 

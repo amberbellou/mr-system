@@ -4,8 +4,11 @@
 
 **Say the content warning out loud, and mean it.** The families in this game carry real
 storylines: a parent detained, a mother in psychiatric crisis, a sibling-led household with no
-adults in it, gender dysphoria, chronic pain that doctors dismissed as a weight problem. Some of
-your students are living one of these right now.
+adults in it, gender dysphoria, chronic pain that doctors dismissed as a weight problem, and a
+home where a father's moods run the house (Tyler — his storyline is written with restraint, but
+it is an abuse storyline, and some of your students are living it). If danger mode is on, say so
+too: Mr. System can put a child in the road. Some of your students are living one of these right
+now.
 
 Say plainly:
 
@@ -19,9 +22,30 @@ the 988 Suicide & Crisis Lifeline. Leave them up for the whole session.
 ## Setting up the room
 
 - Groups of five. Each group is a family and sends one spokesperson to the vote.
-- Twenty families are played on screen. Everyone else is resolved in the background by the same rules
+- Pick a roster at setup: CORE (ten families, fits a class period), FULL (all twenty-four), or CUSTOM.
+  Families not played by hand are resolved in the background by the same rules
   — the class-status panel on the right shows the whole room, not just the ten.
 - Project the game. You read Kaia's lines out loud; the room picks A/B/C.
+
+## Mr. System's recommendations
+
+Before each vote, the game files "recommendations for disqualification." Read them aloud in a
+neutral administrative voice. Do not editorialize; the room will do it for you. The grounded-sounding
+charges only ever land on students who are already struggling; the absurd ones are template nonsense
+with bureaucratic confidence, and some of them are recognizable, deniable microaggressions aimed
+where those actually land; the struck-through ones were filed against thriving students and withdrawn
+with an excuse. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.
+
+## Danger mode
+
+When a choice leaves a kid unprotected — no adult, no money, no one expecting them — Mr. System can
+strike: a crossing with no guard, a breakdown on an empty road, a rideshare that misses the turn.
+**Standard** narrates near-misses and injuries; the kid survives. **Unsparing** is the unsoftened
+version: a kid can die, stated in consequences, never described. **Off** disables every roll — the
+toggle is in PROF EDIT → Endgame, and it is your call to make before the session, not during it.
+Danger never attaches to Jayson's mental-health storyline, and never to upper-tier choices, with one
+deliberate, severity-buffered exception whose point is that money bought the phone and the safe
+neighborhood — not the not-happening.
 
 ## The elimination vote
 
@@ -63,8 +87,8 @@ Marcus's morning to be survivable."
 
 ## Timing
 
-With the full twenty-family deck, budget 35–45 minutes of screen time and a full hour for the
-session so the debrief isn't rushed.
+CORE mode (the default ten families) runs 25–35 minutes of screen time. The FULL twenty-four-family
+deck runs closer to an hour; budget accordingly so the debrief isn't rushed.
 
 If you are tight: run rounds 1 and 2, skip round 3, go to the final round. Keep both votes. You can
 also read only a subset of families aloud each round and let the class-status panel carry the rest —
