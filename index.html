@@ -2083,6 +2083,7 @@ V.setup = () => {
     </label>`).join("")}</div>
     <p class="hint" style="color:${customBad?cssVar("--alarm"):cssVar("--ink-2")}">
       ${cv.n} selected${cv.pov?"":" \u00b7 no poverty/crisis family yet"}${cv.n<8?" \u00b7 need at least 8":""}${cv.ok?" \u00b7 "+estMinutes(cv.n):""}</p>` : ""}
+  ${S.rosterNotice ? `<p class="hint" style="color:${cssVar("--alarm")};font-weight:600">${esc(S.rosterNotice)}</p>` : ""}
   <p class="hint">Families not played by hand fold into the background crowd \u2014 the dashboard still
     counts the whole class.</p>
   <div class="deal"><b>How the room plays it.</b> ${groups} groups \u00d7 ${S.classSize} students \u2014
@@ -2220,11 +2221,20 @@ V.results = () => {
     <p style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.03em">
       WHOLE CLASS &mdash; IN ${c.in} &nbsp;/&nbsp; STRUGGLING ${c.strug} &nbsp;/&nbsp; OUT ${c.out}
       &nbsp;of ${S.classSize}</p>
-    <div class="actions"><button class="btn" data-act="go" data-to="vote">CONTINUE TO THE VOTE</button></div>`));
+    ${ALIVE().length <= 1 ? kaia("There is no vote tonight. There is no one left to hold one.") : ""}
+    <div class="actions">${ALIVE().length > 1
+      ? `<button class="btn" data-act="go" data-to="vote">CONTINUE TO THE VOTE</button>`
+      : `<button class="btn" data-act="afterVote">${ALIVE().length === 0 ? "FIRST BELL" : (S.round < 3 ? "ROUND " + (S.round + 1) : "FINAL ROUND")}</button>`}</div>`));
 };
 
 V.vote = () => {
   const alive = ALIVE(), dead = DEAD();
+  if (alive.length <= 1)
+    return withDash(screen("VOTING", "no quorum", `
+      <p class="eyebrow">END OF ROUND ${S.round}</p>
+      <h2 class="screen-title">NO VOTE TONIGHT</h2>
+      ${kaia("There is no vote tonight. There is no one left to hold one.")}
+      <div class="actions"><button class="btn" data-act="afterVote">${alive.length === 0 ? "FIRST BELL" : (S.round < 3 ? "ROUND " + (S.round + 1) : "FINAL ROUND")}</button></div>`));
   const flagged = new Set(S.memo ? S.memo.items.filter(x => x.kind !== "withdrawn").map(x => x.id) : []);
   return withDash(screen("VOTING", `${alive.length} families voting`, `
     <p class="eyebrow">END OF ROUND ${S.round}</p>
@@ -2267,6 +2277,9 @@ V.voteres = () => {
       <span class="tallybar-n">${esc(BY_ID[t.id].name)}</span>
       <span class="tallybar-t"><i style="width:${max?(t.n/max*100):0}%"></i></span>
       <span class="tallybar-c">${t.n}</span></div>`).join("")}</div>
+    <p class="hint" style="font-family:'IBM Plex Mono',monospace">Your family cast one vote. The other
+      families' votes are simulated from playtest behavior \u2014 rooms reliably turn on whoever is already
+      struggling.</p>
     <hr class="hr">
     <div class="res r-out"><span style="flex:none">${SP(el.id,4,true)}</span>
       <div class="res-b"><div class="res-n">${esc(el.name)}</div>
@@ -2278,6 +2291,14 @@ V.voteres = () => {
       : "You voted for someone else. The room went the other way. That is also how this works.")}
     <div class="actions"><button class="btn" data-act="afterVote">${S.round < 3 ? "ROUND "+(S.round+1) : "FINAL ROUND"}</button></div>`));
 };
+
+V.empty = () => withDash(screen("FIRST BELL", "an empty building", `
+  <p class="eyebrow">THE MORNING AFTER</p>
+  <h2 class="screen-title">NOBODY LEFT</h2>
+  ${kaia("Homework was due this morning. The bin stays empty. First bell rings in a building with nobody in it.")}
+  <p style="max-width:60ch;color:${cssVar("--ink-2")};margin-top:14px">Every family is out. The rules are all
+    still in effect, and there is no one left for them to apply to.</p>
+  <div class="actions"><button class="btn" data-act="go" data-to="debrief">SEE THE PATTERN</button></div>`));
 
 /* ---------------- FINAL ROUND ---------------- */
 let PRIV = {david:"Family funded the library wing \u2014 nobody was ever going to mark him late.",
@@ -2901,6 +2922,7 @@ function renderEd(){
 }
 const printroot = document.getElementById("printroot");
 function openPrintPack(){
+  clearTick();
   const sheets = buildPrintPack({
     classSize: S.classSize,
     activeIds: activeIds(),
@@ -2933,14 +2955,16 @@ function openPrintPack(){
 function closePrintPack(){
   document.body.classList.remove("printing");
   printroot.innerHTML = "";
+  render();                       /* restarts music/challenge timers cleanly */
 }
 function openEditor(){
+  clearTick();
   ED.open = true;
   ED.draft = clone(PACK);
   ED.msg = "";
   renderEd();
 }
-function closeEditor(){ ED.open = false; ED.draft = null; renderEd(); }
+function closeEditor(){ ED.open = false; ED.draft = null; renderEd(); render(); }
 
 /* ---- editor mutations ---- */
 function edSwitchChallenge(i, key){
@@ -3224,13 +3248,18 @@ function runVote(){
 }
 function afterVote(){
   S.voteSel = null;
+  if (ALIVE().length === 0){ S.round = 4; go("empty"); return; }
   if (S.round < 3){ S.round++; S.qi = 0; go("intro"); }
   else { S.round = 4; go("homework"); }
 }
 
 /* ---- final round ---- */
+let sketchAbort = null;
 function initSketch(){
   const cv = document.getElementById("sketch"); if (!cv) return;
+  if (sketchAbort) sketchAbort.abort();
+  sketchAbort = new AbortController();
+  const sig = sketchAbort.signal;
   const rect = cv.getBoundingClientRect();
   cv.width = Math.round(rect.width); cv.height = Math.round(rect.height);
   const g = cv.getContext("2d");
@@ -3242,13 +3271,15 @@ function initSketch(){
   const down = e => { drawing = true; S.drew = true; const [x,y] = pos(e); g.beginPath(); g.moveTo(x,y); e.preventDefault(); };
   const move = e => { if (!drawing) return; const [x,y] = pos(e); g.lineTo(x,y); g.stroke(); e.preventDefault(); };
   const up = () => { drawing = false; };
-  cv.addEventListener("mousedown", down); cv.addEventListener("mousemove", move);
-  window.addEventListener("mouseup", up);
-  cv.addEventListener("touchstart", down, {passive:false});
-  cv.addEventListener("touchmove", move, {passive:false});
-  window.addEventListener("touchend", up);
+  cv.addEventListener("mousedown", down, {signal: sig});
+  cv.addEventListener("mousemove", move, {signal: sig});
+  window.addEventListener("mouseup", up, {signal: sig});
+  cv.addEventListener("touchstart", down, {passive:false, signal: sig});
+  cv.addEventListener("touchmove", move, {passive:false, signal: sig});
+  window.addEventListener("touchend", up, {passive:true, signal: sig});
 }
 function startMusic(){
+  clearTick();
   const alive = ALIVE();
   S.musicT = 12;
   const clock = document.getElementById("clock");
@@ -3261,7 +3292,13 @@ function startMusic(){
       el.style.left = Math.max(3, Math.min(90, base + (RM ? 0 : (Math.random()*2-1) * speed))) + "%";
     });
     S.musicT--;
-    if (S.musicT < 0){ clearTick(); pickTardy(); go("tardy"); }
+    if (S.musicT < 0){
+      clearTick();
+      if (ALIVE().length <= 1){ go("debrief"); return; }
+      pickTardy();
+      if (!S.tardy){ go("debrief"); return; }
+      go("tardy");
+    }
   };
   step();
   tick = setInterval(step, RM ? 400 : 700);
@@ -3269,6 +3306,7 @@ function startMusic(){
 function pickTardy(){
   const alive = ALIVE().filter(c => !(S.active.indexOf(c.id) >= 0 && PRIV[c.id]));
   const pool = alive.length ? alive : ALIVE();
+  if (!pool.length){ S.tardy = null; return; }
   const last = pool.slice().sort((a,b) =>
     (b.load + (S.roster[b.id].st === "strug" ? 1.5 : 0)) - (a.load + (S.roster[a.id].st === "strug" ? 1.5 : 0)))[0];
   S.tardy = last.id;
@@ -3288,6 +3326,9 @@ document.addEventListener("click", e => {
     go(b.dataset.to);
   }
   else if (a === "rmode"){
+    const midGame = ["title","setup","cast"].indexOf(S.phase) < 0
+      || Object.values(S.roster).some(r => r.hist.length);
+    if (midGame && !window.confirm("Changing the roster restarts the game. Restart?")){ render(); return; }
     SETTINGS.rosterMode = b.dataset.m;
     if (b.dataset.m === "custom" && !SETTINGS.customRoster.length)
       SETTINGS.customRoster = CORE_IDS.slice();
@@ -3296,7 +3337,16 @@ document.addEventListener("click", e => {
   }
   else if (a === "rpick"){
     const id = b.dataset.id, i = SETTINGS.customRoster.indexOf(id);
-    if (i >= 0) SETTINGS.customRoster.splice(i, 1); else SETTINGS.customRoster.push(id);
+    if (i >= 0){
+      const next = SETTINGS.customRoster.filter(x => x !== id);
+      const hasPov = next.some(x => BY_ID[x] && BY_ID[x].tier === "pov");
+      if (next.length < 8 || !hasPov){
+        S.rosterNotice = "The roster needs at least 8 families, including one from the poverty/crisis band.";
+        render(); return;
+      }
+      SETTINGS.customRoster = next;
+    } else SETTINGS.customRoster.push(id);
+    S.rosterNotice = "";
     PACK.settings = clone(SETTINGS); savePack(PACK);
     resetGame(S.classSize); render();
   }
@@ -3319,7 +3369,7 @@ document.addEventListener("click", e => {
   else if (a === "vote"){ S.voteSel = b.dataset.id; render(); }
   else if (a === "submitvote"){ if (S.voteSel) runVote(); }
   else if (a === "afterVote"){ afterVote(); }
-  else if (a === "submithw"){ go("music"); }
+  else if (a === "submithw"){ if (ALIVE().length === 0){ go("empty"); } else go("music"); }
   else if (a === "clearhw"){ S.drew = false; initSketch(); render(); }
   else if (a === "restart"){ resetGame(S.classSize); go("title"); }
   else if (a === "theme"){
@@ -3612,6 +3662,8 @@ new MutationObserver(repaint).observe(document.documentElement, {attributes:true
    12. BOOT
    ========================================================== */
 applyPack(loadPack() || clone(DEFAULT_PACK));
+window.__ms = { get S(){ return S; }, go: go, render: render, resetGame: resetGame,
+  ALIVE: ALIVE, ACT: ACT };
 resetGame(40);
 skySetup();
 skyDraw();

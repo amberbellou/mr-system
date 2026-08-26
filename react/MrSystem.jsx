@@ -2107,6 +2107,7 @@ function runVote(g) {
 function pickTardy(g) {
   const pool0 = alive(g).filter(c => !PRIV[c.id]);
   const pool = pool0.length ? pool0 : alive(g);
+  if (!pool.length) { g.tardy = null; return; }
   const score = c => c.load + (g.roster[c.id].st === "strug" ? 1.5 : 0);
   const last = pool.slice().sort((a, b) => score(b) - score(a))[0];
   g.tardy = last.id;
@@ -2409,7 +2410,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
   /* ---- challenge countdown ---- */
   const chalKey = g.chal ? g.qi + ":" + g.chal.def.title : "";
   useEffect(() => {
-    if (g.phase !== "challenge") return undefined;
+    if (g.phase !== "challenge" || showPrint) return undefined;
     const id = setInterval(() => {
       setG(prev => {
         if (prev.phase !== "challenge" || !prev.chal) return prev;
@@ -2426,13 +2427,17 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
 
   /* ---- musical chairs countdown ---- */
   useEffect(() => {
-    if (g.phase !== "music") return undefined;
+    if (g.phase !== "music" || showPrint) return undefined;
     const id = setInterval(() => {
       setG(prev => {
         if (prev.phase !== "music") return prev;
         const n = structuredClone(prev);
         n.musicT -= 1;
-        if (n.musicT < 0) { pickTardy(n); n.phase = "tardy"; }
+        if (n.musicT < 0) {
+          if (alive(n).length <= 1) { n.phase = "debrief"; return n; }
+          pickTardy(n);
+          n.phase = n.tardy ? "tardy" : "debrief";
+        }
         return n;
       });
     }, RM ? 400 : 700);
@@ -2528,16 +2533,30 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     </Screen>
   );
 
-  const setRoster = (mode) => setG(() => {
-    SETTINGS.rosterMode = mode;
-    if (mode === "custom" && !SETTINGS.customRoster.length) SETTINGS.customRoster = CORE_IDS.slice();
-    const n = newGame(g.classSize); n.phase = "setup"; return n;
-  });
-  const togglePick = (id) => setG(() => {
+  const [rosterNotice, setRosterNotice] = useState("");
+  const midGame = () => Object.values(g.roster).some(r => r.hist.length);
+  const setRoster = (mode) => {
+    if (midGame() && !window.confirm("Changing the roster restarts the game. Restart?")) return;
+    setG(() => {
+      SETTINGS.rosterMode = mode;
+      if (mode === "custom" && !SETTINGS.customRoster.length) SETTINGS.customRoster = CORE_IDS.slice();
+      const n = newGame(g.classSize); n.phase = "setup"; return n;
+    });
+    setRosterNotice("");
+  };
+  const togglePick = (id) => {
     const i = SETTINGS.customRoster.indexOf(id);
-    if (i >= 0) SETTINGS.customRoster.splice(i, 1); else SETTINGS.customRoster.push(id);
-    const n = newGame(g.classSize); n.phase = "setup"; return n;
-  });
+    if (i >= 0) {
+      const next = SETTINGS.customRoster.filter(x => x !== id);
+      if (next.length < 8 || !next.some(x => BY_ID[x] && BY_ID[x].tier === "pov")) {
+        setRosterNotice("The roster needs at least 8 families, including one from the poverty/crisis band.");
+        return;
+      }
+      SETTINGS.customRoster = next;
+    } else SETTINGS.customRoster.push(id);
+    setRosterNotice("");
+    setG(() => { const n = newGame(g.classSize); n.phase = "setup"; return n; });
+  };
   const Setup = () => {
     const groups = Math.ceil(g.classSize / 5);
     const per = Math.ceil(g.active.length / groups);
@@ -2585,6 +2604,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           ))}
         </div>
       )}
+      {rosterNotice && <p className="hint" style={{ color: v("--alarm"), fontWeight: 600 }}>{rosterNotice}</p>}
       <div className="deal"><b>How the room plays it.</b> {groups} groups × {g.classSize} students —
         each group is dealt {per > 1 ? `1–${per}` : "one"} family card{per > 1 ? "s" : ""}. Your group
         <b> is</b> that family: you argue the dilemma together, you take the challenge together, and you send
@@ -2802,13 +2822,38 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         <hr className="hr" />
         <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 14, fontWeight: 600, letterSpacing: ".03em" }}>
           WHOLE CLASS &mdash; IN {c.in} / STRUGGLING {c.strug} / OUT {c.out} of {g.classSize}</p>
-        <Actions><button className="btn" onClick={() => update(n => { buildMemo(n); n.phase = "vote"; })}>
-          CONTINUE TO THE VOTE</button></Actions>
+        {living.length <= 1 && <Kaia>There is no vote tonight. There is no one left to hold one.</Kaia>}
+        <Actions>{living.length > 1 ? (
+          <button className="btn" onClick={() => update(n => { buildMemo(n); n.phase = "vote"; })}>
+            CONTINUE TO THE VOTE</button>
+        ) : (
+          <button className="btn" onClick={() => update(n => {
+            n.voteSel = null;
+            if (alive(n).length === 0) { n.round = 4; n.phase = "empty"; }
+            else if (n.round < 3) { n.round++; n.qi = 0; n.phase = "intro"; }
+            else { n.round = 4; n.drew = false; n.phase = "homework"; }
+          })}>{living.length === 0 ? "FIRST BELL" : (g.round < 3 ? "ROUND " + (g.round + 1) : "FINAL ROUND")}</button>
+        )}</Actions>
       </Screen>
     </Layout>
   );
 
   const Vote = () => {
+    if (living.length <= 1) return (
+      <Layout g={g}>
+        <Screen title="VOTING" right="no quorum">
+          <p className="eyebrow">END OF ROUND {g.round}</p>
+          <h2 className="screen-title">NO VOTE TONIGHT</h2>
+          <Kaia>There is no vote tonight. There is no one left to hold one.</Kaia>
+          <Actions><button className="btn" onClick={() => update(n => {
+            n.voteSel = null;
+            if (alive(n).length === 0) { n.round = 4; n.phase = "empty"; }
+            else if (n.round < 3) { n.round++; n.qi = 0; n.phase = "intro"; }
+            else { n.round = 4; n.drew = false; n.phase = "homework"; }
+          })}>{living.length === 0 ? "FIRST BELL" : (g.round < 3 ? "ROUND " + (g.round + 1) : "FINAL ROUND")}</button></Actions>
+        </Screen>
+      </Layout>
+    );
     const flagged = new Set(g.memo ? g.memo.items.filter(x => x.kind !== "withdrawn").map(x => x.id) : []);
     return (
     <Layout g={g}>
@@ -2890,6 +2935,9 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
               </div>
             ))}
           </div>
+          <p className="hint" style={{ fontFamily: "'IBM Plex Mono',monospace" }}>Your family cast one
+            vote. The other families' votes are simulated from playtest behavior {"\u2014"} rooms reliably
+            turn on whoever is already struggling.</p>
           <hr className="hr" />
           <div className="res r-out">
             <span style={{ flex: "none" }}><Sprite id={el.id} px={4} ghost /></span>
@@ -2906,7 +2954,8 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           <Actions>
             <button className="btn" onClick={() => update(n => {
               n.voteSel = null;
-              if (n.round < 3) { n.round++; n.qi = 0; n.phase = "intro"; }
+              if (alive(n).length === 0) { n.round = 4; n.phase = "empty"; }
+              else if (n.round < 3) { n.round++; n.qi = 0; n.phase = "intro"; }
               else { n.round = 4; n.drew = false; n.phase = "homework"; }
             })}>{g.round < 3 ? "ROUND " + (g.round + 1) : "FINAL ROUND"}</button>
           </Actions>
@@ -3047,6 +3096,20 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     );
   };
 
+  const Empty = () => (
+    <Layout g={g}>
+      <Screen title="FIRST BELL" right="an empty building">
+        <p className="eyebrow">THE MORNING AFTER</p>
+        <h2 className="screen-title">NOBODY LEFT</h2>
+        <Kaia>Homework was due this morning. The bin stays empty. First bell rings in a building with
+          nobody in it.</Kaia>
+        <p style={{ maxWidth: "60ch", color: v("--ink-2"), marginTop: 14 }}>Every family is out. The rules
+          are all still in effect, and there is no one left for them to apply to.</p>
+        <Actions><button className="btn" onClick={() => go("debrief")}>SEE THE PATTERN</button></Actions>
+      </Screen>
+    </Layout>
+  );
+
   const Debrief = () => {
     const t = tierStats(g);
     const pct = (o, k) => (o.n ? Math.round((o[k] / o.n) * 100) : 0);
@@ -3175,7 +3238,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
 
   const SCREENS = { title: Title, setup: Setup, cast: CastScreen, intro: Intro, dilemma: Dilemma,
     challenge: Challenge, outcome: Outcome, results: Results, vote: Vote, voteres: VoteRes,
-    homework: Homework, music: Music, tardy: Tardy, debrief: Debrief };
+    homework: Homework, music: Music, tardy: Tardy, debrief: Debrief, empty: Empty };
   const Current = SCREENS[g.phase] || Title;
   const inGame = ["intro", "dilemma", "challenge", "outcome", "results", "vote", "voteres",
                   "homework", "music", "tardy"].indexOf(g.phase) >= 0;
