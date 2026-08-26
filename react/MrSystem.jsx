@@ -685,7 +685,8 @@ const ICONS = {
   note: ["....###.","....###.","....#.#.","....#...","..###...",".####...",".###....","........"],
   ghost:["..####..",".######.","#o####o#","########","########","########","#.#..#.#","........"],
   heart:[".##..##.","########","########","########",".######.","..####..","...##...","........"],
-  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."]
+  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."],
+  link: ["........",".##.....","#..#.##.","#..##..#",".##.#..#","..#.##..",".##.....","........"]
 };
 function icon(name, px, color, accent){
   const rows = ICONS[name] || ICONS.warn, p = px||2;
@@ -756,10 +757,12 @@ const CAST = [
 {id:"fatima", name:"FATIMA", cls:"Working-class", tier:"work",
  who:"Egyptian-American, Muslim, single mom on 12-hour nursing shifts. Oldest of three.",
  tags:["Gets two siblings out the door first","Mom on 12-hour nursing shifts","Daily comments about the hijab","Fasting until sundown"],
+ sibs:["her nine-year-old brother", "the seven-year-old"],
  load:4, tmpl:"wrap", pal:{H:"#1A120C",S:"#C98B5E",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#2F6FB0"}},
 {id:"rajesh", name:"RAJESH", cls:"Working-class", tier:"work",
  who:"Indian-American, single immigrant mother, a nurse on early shifts. No family on this continent.",
  tags:["Mom is out the door at 5:30","Gets his sister to school first","No family closer than Hyderabad"],
+ sibs:["his 8-year-old sister"],
  load:4, tmpl:"base", pal:{H:"#17110D",S:"#A9713F",T:"#C4332F",P:"#2C3A4C",B:"#1B222B"}},
 {id:"ling", name:"LING", cls:"Working-class", tier:"work",
  who:"Chinese-American, single mother works restaurant nights. Every form in English goes through her.",
@@ -780,6 +783,7 @@ const CAST = [
 {id:"tyler", name:"TYLER", cls:"Working-class", tier:"work",
  who:"White. His dad's moods run the house. Money isn't the problem at home; the house is.",
  tags:["Reads the driveway before going in","Long sleeves in May","A gym excuse in his own handwriting","Walks past the counselor's door daily"],
+ sibs:["his 8-year-old sister"],
  load:5, tmpl:"base", pal:{H:"#8A6A3E",S:"#EAC099",T:"#5B6770",P:"#2C3A4C",B:"#1B222B"}},
 {id:"marie", name:"MARIE", cls:"Working-class", tier:"work",
  who:"Haitian-American. Her mother does overnight home-health shifts caring for somebody else's grandmother. Church fills in most of the gaps, and there are a lot of gaps.",
@@ -788,23 +792,28 @@ const CAST = [
 {id:"marcus", name:"MARCUS", cls:"Poverty", tier:"pov",
  who:"Black, sibling-led household, no parents. Oldest of four.",
  tags:["Raising three siblings","$2.50 for a $3 fare","Youngest needs constant supervision"],
+ sibs:["his 10-year-old sister", "his middle sibling", "the youngest"],
  load:5, tmpl:"base", pal:{H:"#120C09",S:"#8A5A34",T:"#DFA018",P:"#2C3A4C",B:"#1B222B"}},
 {id:"lucia", name:"LUCIA", cls:"Poverty", tier:"pov",
  who:"Central American, undocumented, single parent detained last month.",
  tags:["Siblings are 6, 8 and 10","No adult on the emergency card","Cannot ask anyone official"],
+ sibs:["the 10-year-old", "the 8-year-old", "the 6-year-old"],
  load:5, tmpl:"wrap", pal:{H:"#1A120C",S:"#C08A5C",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#B85325"}},
 {id:"jayson", name:"JAYSON", cls:"Poverty", tier:"pov",
  who:"Black, trans, sibling-led household, in an active mental health crisis.",
  tags:["Deadnamed on every roster","Two younger siblings depend on him","Waitlisted for counseling since fall"],
+ sibs:["his 12-year-old sister", "the little one"],
  load:5, tmpl:"cap", pal:{H:"#120C09",S:"#7E5232",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B",A:"#C4332F"}},
 {id:"sophia", name:"SOPHIA", cls:"Poverty", tier:"pov",
  who:"White, sibling-led household, mother in psychiatric crisis.",
  tags:["Mom hasn't gotten up in nine days","Hides it from every teacher","Rent is 11 days late"],
+ sibs:["her brother"],
  load:5, tmpl:"long", pal:{H:"#8A6A3E",S:"#EAC099",T:"#7E8B9B",P:"#3A2E22",B:"#1B222B"}}
 ,
 {id:"amina", name:"AMINA", cls:"Poverty", tier:"pov",
  who:"Somali, Muslim, refugee family. Grandma is guardian and speaks little English.",
  tags:["Grandma is guardian and doesn't drive","Translates the doctor, the landlord, the school","Loud knocks mean something else at home","Called a terrorist in the lunch line"],
+ sibs:["the little ones"],
  load:5, tmpl:"wrap", pal:{H:"#120C09",S:"#8A5A34",T:"#2F6FB0",P:"#2F3E52",B:"#1B222B",A:"#6C4E96"}}
 ];
 const BY_ID = Object.fromEntries(CAST.map(c => [c.id, c]));
@@ -951,7 +960,7 @@ const DILEMMAS = {
      danger:{p:0.12, standard:{st:"out",say:"The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, and the hospital calls your mother off the ward. The front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."},
       unsparing:{st:"out",say:"The woman in 4B steps out, and your sister waits twenty minutes, then goes looking for you in the direction she thinks your school is. A man at the transit stop notices an eight-year-old alone at ten in the morning, a stranger who could have been anyone. This time, he calls the school."}}}),
   A("C","Let her stay home sick","The call to the nursing station.","note",
-    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."}})]},
+    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch.",strain:0}})]},
  ling:{sit:"Your mom got home at 11:40 last night. The landlord calls at 7:30 about the lease renewal, in English. First bell is 8:30, twenty-five minutes away on foot.", choices:[
   A("A","Sit at the table and translate the call","Fifteen minutes and a tardy.","clock",
     {chal:"translatecall25",
@@ -1050,7 +1059,7 @@ const DILEMMAS = {
  marcus:{sit:"You and three younger siblings. $2.50 for fares that cost $3 each. The youngest won't put his shoes on.", choices:[
   A("A","All take the bus; one of you stays home","One sibling loses the day.","bus",
     {chal:"resources45",
-     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number."},
+     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number.",strain:2},
      fail:{st:"out",say:"You can't name a single place to send him. You take everyone back inside."}}),
   A("B","Walk it. Ninety minutes. Everyone late.","Ninety minutes and four tardies.","walk",
     {chal:"resources45",
@@ -1059,7 +1068,7 @@ const DILEMMAS = {
      danger:{p:0.3, standard:{st:"out",say:"The light changes while the youngest is still in the street, and a car stops an arm's length short of him. You carry him the rest of the way, and nobody in this family goes anywhere today."},
       unsparing:{st:"out",say:"The light changes while the youngest is still in the street. The forms ask for a parent or guardian, and there is a long pause at every counter while someone decides what to do with you. At the elementary school across town, a teacher empties a cubby into a grocery bag.", fatal:true}}}),
   A("C","Leave the youngest home alone","A risk you cannot take back.","warn",
-    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch."}}),
+    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch.",strain:2}}),
   A("D","Everybody stays home","Four absences.","home",
     {auto:{st:"out",say:"You keep all four of them safe and none of you sees a classroom."}})]},
  lucia:{sit:"Your mom did not come home from her night shift. Your siblings are 6, 8 and 10. No money, no adult you are allowed to call.",
@@ -1264,7 +1273,7 @@ const DILEMMAS = {
   A("A","Push through it and get them","Everything you have.","walk",
     {auto:{st:"strug",say:"You collect them, feed them, read to the youngest. You hold it together on the outside all evening and none of it on the inside."}}),
   A("B","Tell your sister you can't today","Asking a 12-year-old to cover.","home",
-    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse."}}),
+    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse.",strain:0}}),
   A("C","Call the crisis line while you walk","Twenty minutes and the truth out loud.","heart",
     {auto:{st:"strug",say:"Someone stays on the line the whole walk. Nothing about tomorrow changes. Tonight is survivable, and that counts."}})]},
  sophia:{sit:"Nine days becomes ten. Your brother is asking questions. Rent was due on the first.", choices:[
@@ -1433,7 +1442,8 @@ let SETTINGS = {
   rosterMode: "core",              /* full | core | custom */
   customRoster: [],
   chargesEnabled: true,
-  withdrawnEvery: 3
+  withdrawnEvery: 3,
+  leanEnabled: true
 };
 const CORE_IDS = ["ayesha","rebecca","mei","grace","carlos","isabella","jamal","kavi","marcus","lucia"];
 let CHARGES = {
@@ -1569,8 +1579,12 @@ function buildPrintPack(opts){
   const roleCard = ch => `<div class="pcard pcard-role">
     <div class="pcard-h"><span data-psprite="${ch.id}" data-px="6"></span>
       <div><div class="pcard-name">${pesc(ch.name)}</div>
-        <span class="pcard-chip">${pesc(ch.cls)}</span></div></div>
+        <span class="pcard-chip">${pesc(ch.cls)}</span>
+        ${ch.sibs && ch.sibs.length ? `<div style="font-family:'IBM Plex Mono',monospace;font-size:7pt;font-weight:700;margin-top:3px">
+          \u26d3 LINKED FATES ${ch.sibs.map(() => "\u25a0").join(" ")}</div>` : ""}</div></div>
     <p class="pcard-who">${pesc(ch.who)}</p>
+    ${ch.sibs && ch.sibs.length ? `<p style="font-size:7.5pt;color:#444;margin:0 0 4px">Linked: ${pesc(ch.sibs.join(", "))}.
+      If this family goes out, they go out together. One LEAN token.</p>` : ""}
     <ul class="pcard-tags">${ch.tags.map(t => `<li>${pesc(t)}</li>`).join("")}</ul>
     <div class="pcard-load">${ppLoad(ch.load)}</div>
     <div class="pcard-footer">You are this family for the whole game. You choose. Mr. System decides
@@ -1658,6 +1672,12 @@ function buildPrintPack(opts){
       <li>Blank paper and pens \u00b7 a speaker \u00b7 a visible timer \u00b7 <b>one d6</b></li>
       <li>The status board taped up or projected \u00b7 ghost tents and star cards within reach</li>
     </ul>
+    <h3>THE SIBLING LINK (THE CUPID RULE)</h3>
+    <div class="pnote">In Loup Garou, Cupid links two lovers \u2014 if one goes down, so does the other.
+      Here the link is siblings. When a linked family is eliminated, read the link line slowly and name
+      every sibling: <b>"The link holds. [names] go down with them."</b> Each linked family also holds one
+      LEAN ON THE LINK token: after failing a challenge, they may spend it once to turn the fail into a
+      struggle. At the debrief, count people, not families \u2014 the tally sheet tells you how.</div>
     <h3>SAFETY \u2014 BEFORE THE FIRST ROUND</h3>
     <div class="pnote">Write on the board and leave up all session:<br>
       <b>Counselor: ______________________ \u00b7 988 Suicide &amp; Crisis Lifeline</b><br><br>
@@ -1716,6 +1736,7 @@ function buildPrintPack(opts){
       "script \u00b7 vote " + r));
   });
 
+  const linkedActive = active.filter(c => c.sibs && c.sibs.length);
   const privActive = Object.keys(PRIV).filter(id => opts.activeIds.indexOf(id) >= 0);
   sheets.push(ppSheet("script", "SCRIPT \u2014 FINAL ROUND", "SECTION 4 \u2014 HOMEWORK, MUSIC, TARDY", `
     <h3>PHASE 1 \u2014 HOMEWORK</h3>
@@ -1739,6 +1760,13 @@ function buildPrintPack(opts){
 
   sheets.push(ppSheet("script", "SCRIPT \u2014 DEBRIEF", "SECTION 4 \u2014 THE PATTERN", `
     <div class="pkaia">${pesc(TEXT.debriefKaia)}</div>
+    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u2014 THE TALLY</h3>
+    <p style="font-size:9.5pt">Count the eliminated families on the status board, then add their linked
+      siblings and read both numbers to the room:</p>
+    ${linkedActive.map(c => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(c.name)}</b>
+      <span style="font-size:8.5pt">+${c.sibs.length} \u2014 ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
+    <p style="font-size:9.5pt;font-weight:700">"Families eliminated: ___. People eliminated: ___.
+      The board only ever counted the families."</p>` : ""}
     <h3>ASK THE ROOM</h3>
     <ol style="font-size:10pt;padding-left:.25in">${(TEXT.questions || []).map(q => `<li style="margin-bottom:6px">${pesc(q)}</li>`).join("")}</ol>
     <h3>PROMPTS \u2014 READ WHERE THEY APPLY</h3>
@@ -1811,6 +1839,13 @@ function buildPrintPack(opts){
       `<div class="pgrid2">${privActive.map(id => `<div class="pstar">
         <div>\u2b50</div><div class="pstar-name">${pesc(BY_ID[id].name)}</div>
         <div class="pstar-line">${pesc(PRIV[id])}</div></div>`).join("")}</div>`, "star cards"));
+  if (linkedActive.length)
+    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u2014 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
+      `<div class="pgrid2">${linkedActive.map(c => `<div class="pstar" style="border-style:dashed">
+        <div>\u26d3</div><div class="pstar-name">${pesc(c.name)}</div>
+        <div class="pstar-line">LEAN ON THE LINK \u2014 spend after a failed challenge to make it a
+          struggle instead. A sibling covers. The token does not come back.</div></div>`).join("")}</div>`,
+      "lean tokens"));
   const slip = `<div class="pslip"><span>FAMILY: <span class="blank"></span></span>
     <span>VOTES TO ELIMINATE: <span class="blank"></span></span></div>`;
   sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u2014 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
@@ -1948,7 +1983,8 @@ function newGame(classSize) {
     drew: false, tardy: null, musicT: 0,
     active: activeIds(), dangerLog: [], voteN: 0, memo: null, memoLog: [], chargeUsed: []
   };
-  CAST.forEach(c => { g.roster[c.id] = { st: "in", hist: [], outRound: null, why: "" }; });
+  CAST.forEach(c => { g.roster[c.id] = { st: "in", hist: [], outRound: null, why: "",
+    leanUsed: false, strained: [], linkAnnounced: false }; });
   const mix = ["upper", "upper", "upper", "work", "work", "work", "pov", "pov", "pov", "pov"];
   const n = Math.max(0, classSize - g.active.length);
   g.crowd = Array.from({ length: n }, (_, i) => ({ tier: mix[i % mix.length], st: "in" }));
@@ -1977,7 +2013,22 @@ function tierStats(g) {
   g.crowd.forEach(p => { t[p.tier][p.st]++; t[p.tier].n++; });
   return t;
 }
-function applyOutcome(g, ch, choice, out, chalNote) {
+function sibList(ch) {
+  const sibs = ch.sibs || [];
+  if (!sibs.length) return "";
+  if (sibs.length === 1) return sibs[0];
+  return sibs.slice(0, -1).join(", ") + " and " + sibs[sibs.length - 1];
+}
+function linkLine(g, ch) {
+  const r = g.roster[ch.id];
+  if (!ch.sibs || !ch.sibs.length || r.linkAnnounced) return "";
+  r.linkAnnounced = true;
+  const verb = ch.sibs.length === 1 && ch.sibs[0].indexOf(" ones") < 0 ? "goes" : "go";
+  return "The link holds. " + sibList(ch).charAt(0).toUpperCase() + sibList(ch).slice(1)
+    + " " + verb + " down with them.";
+}
+const SIB_WORDS = /youngest|sibling|sister|brother|little one/i;
+function applyOutcome(g, ch, choice, out, chalNote, failed) {
   const r = g.roster[ch.id];
   r.st = out.st;
   r.hist.push({ round: g.round, k: choice.k, st: out.st, say: out.say });
@@ -1985,7 +2036,14 @@ function applyOutcome(g, ch, choice, out, chalNote) {
     r.outRound = g.round;
     r.why = "Round " + g.round + " — chose: " + choice.t;
   }
-  g.pending = { id: ch.id, k: choice.k, title: choice.t, say: out.say, st: out.st, chalNote };
+  let strained = false;
+  if (out.strain != null && ch.sibs && r.strained.indexOf(out.strain) < 0) {
+    r.strained.push(out.strain);
+    strained = true;
+  }
+  g.pending = { id: ch.id, k: choice.k, title: choice.t, say: out.say, st: out.st, chalNote,
+    failed: !!failed, strained,
+    link: out.st === "out" ? linkLine(g, ch) : "" };
   g.phase = "outcome";
 }
 function scoreChallenge(g, listText) {
@@ -2102,6 +2160,7 @@ function runVote(g) {
   r.hist.push({ round: g.round, k: "—", st: "out", say: "Voted out by the surviving families." });
   const lastMemo = g.memoLog[g.memoLog.length - 1];
   if (lastMemo) lastMemo.hit = lastMemo.flagged.indexOf(g.eliminated) >= 0;
+  g.voteLink = linkLine(g, BY_ID[g.eliminated]);
   g.phase = "voteres";
 }
 function pickTardy(g) {
@@ -2114,6 +2173,7 @@ function pickTardy(g) {
   const r = g.roster[last.id];
   r.st = "out"; r.outRound = 4; r.why = "Final round — tardy";
   r.hist.push({ round: 4, k: "—", st: "out", say: "Last one in when the music stopped." });
+  g.tardyLink = linkLine(g, last);
 }
 function seedMid(classSize, round) {
   const g = newGame(classSize);
@@ -2235,6 +2295,10 @@ function Dash({ g, now }) {
               <li key={ch.id} className={"rrow" + (out ? " is-out" : "") + (now === ch.id ? " is-now" : "")}>
                 <Sprite id={ch.id} px={2} ghost={out} />
                 <span className="rrow-name">{ch.name}</span>
+                {ch.sibs && ch.sibs.length > 0 && (
+                  <span className="pips">{ch.sibs.map((_, i) => <i key={i} className={"pip" +
+                    (out || r.strained.indexOf(i) >= 0 ? " is-ghost" : "")} />)}</span>
+                )}
                 <Icon name={iconFor(r.st)} className="rrow-dot" color={ST_VAR[r.st]} />
                 <span className="sr">{ST_LABEL[r.st]}</span>
               </li>
@@ -2386,7 +2450,13 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             r.why = "Round " + n.round + " — Mr. System struck: " + c.t;
           }
           n.dangerLog.push({ id: ch.id, round: n.round, fatal: !!v.fatal });
-          n.pending = { id: ch.id, k: c.k, title: c.t, say: v.say, st: v.st, danger: true, fatal: !!v.fatal };
+          let dlink = "";
+          if (v.st === "out") {
+            if (SIB_WORDS.test(v.say)) r.linkAnnounced = true;
+            else dlink = linkLine(n, ch);
+          }
+          n.pending = { id: ch.id, k: c.k, title: c.t, say: v.say, st: v.st, danger: true,
+            fatal: !!v.fatal, link: dlink };
           n.phase = "outcome";
           return;
         }
@@ -2403,9 +2473,22 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     const note = challengeNote(def, t, passed);
     const ch = BY_ID[t.chId];
     n.chal = null;
-    applyOutcome(n, ch, t.choice, out, note);
+    applyOutcome(n, ch, t.choice, out, note, !passed);
   };
   const submitChallenge = () => update(n => finishChallenge(n, scoreChallenge(n, listRef.current)));
+  const spendLean = () => update(n => {
+    const ch = BY_ID[n.pending.id], r = n.roster[ch.id];
+    if (!ch.sibs || r.leanUsed || !n.pending.failed || n.pending.danger || !SETTINGS.leanEnabled) return;
+    r.leanUsed = true;
+    r.st = "strug";
+    if (r.outRound === n.round) { r.outRound = null; r.why = ""; }
+    r.linkAnnounced = false;
+    const say = "A sibling covers. Homework gets checked by a fifteen-year-old, dinner happens, the day survives. The token does not come back.";
+    if (r.hist.length) r.hist[r.hist.length - 1] = Object.assign({}, r.hist[r.hist.length - 1],
+      { st: "strug", say, lean: true });
+    n.pending = Object.assign({}, n.pending, { st: "strug", say, failed: false, link: "",
+      chalNote: "LEAN ON THE LINK — spent. This family's one token is gone." });
+  });
 
   /* ---- challenge countdown ---- */
   const chalKey = g.chal ? g.qi + ":" + g.chal.def.title : "";
@@ -2637,6 +2720,17 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
               </div>
             </div>
             <p style={{ fontSize: 13.5, color: v("--ink-2"), lineHeight: 1.45 }}>{ch.who}</p>
+            {ch.sibs && ch.sibs.length > 0 && (
+              <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 7, flexWrap: "wrap" }}>
+                <span className="linktag"><Icon name="link" px={2} />LINKED FATES</span>
+                <span className="pips" title={ch.sibs.join(", ")}>
+                  {ch.sibs.map((_, i) => <i key={i} className={"pip" +
+                    (g.roster[ch.id].st === "out" || g.roster[ch.id].strained.indexOf(i) >= 0 ? " is-ghost" : "")} />)}
+                </span>
+                {SETTINGS.leanEnabled && <span className={"leanchip" + (g.roster[ch.id].leanUsed ? " spent" : "")}>
+                  LEAN ON THE LINK {"\u00d7"}1</span>}
+              </div>
+            )}
             <ul className="ccard-tags">{ch.tags.map(t => <li key={t}>{t}</li>)}</ul>
             <div className="meter" role="img" aria-label={`Morning difficulty ${ch.load} of 5`}>
               {[1, 2, 3, 4, 5].map(i => <i key={i} className={i <= ch.load ? "on" : ""} />)}
@@ -2784,6 +2878,9 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             <div className="mrsys" role="alert"><span className="mrsys-who">MR. SYSTEM</span>
               <p className="mrsys-say">{p.say}</p></div>
           )}
+          {p.link && (
+            <div className="linkline" role="alert"><b>MR. SYSTEM</b><p>{p.link}</p></div>
+          )}
           <div className={"res r-" + p.st} style={{ marginTop: p.danger ? 4 : 18 }}>
             <span style={{ flex: "none" }}><Sprite id={ch.id} px={4} ghost={p.st === "out"} /></span>
             <div className="res-b">
@@ -2791,9 +2888,19 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
               {!p.danger && <p className="res-say">{p.say}</p>}
               <Badge st={p.st} label={p.danger
                 ? (p.st === "out" ? "OUT — MR. SYSTEM STRUCK" : "STRUGGLING — NEAR MISS") : undefined} />
+              {p.strained && <p className="strainmark" style={{ marginTop: 10 }}>LINK STRAINED {"\u2014"} a
+                sibling's pip goes grey for the rest of the game.</p>}
               {p.chalNote && <p className="hint" style={{ marginTop: 11 }}>{p.chalNote}</p>}
             </div>
           </div>
+          {p.failed && !p.danger && ch.sibs && ch.sibs.length > 0 && SETTINGS.leanEnabled
+            && !g.roster[ch.id].leanUsed && (
+            <Actions>
+              <button className="btn" style={{ background: v("--grass") }} onClick={spendLean}>
+                LEAN ON THE LINK {"\u2014"} SPEND THE TOKEN</button>
+              <span className="pill">Converts this fail into a struggle. Once per game.</span>
+            </Actions>
+          )}
           <Actions><button className="btn" onClick={advance}>NEXT FAMILY</button></Actions>
         </Screen>
       </Layout>
@@ -2939,6 +3046,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             vote. The other families' votes are simulated from playtest behavior {"\u2014"} rooms reliably
             turn on whoever is already struggling.</p>
           <hr className="hr" />
+          {g.voteLink && <div className="linkline" role="alert"><b>MR. SYSTEM</b><p>{g.voteLink}</p></div>}
           <div className="res r-out">
             <span style={{ flex: "none" }}><Sprite id={el.id} px={4} ghost /></span>
             <div className="res-b">
@@ -3057,6 +3165,8 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           <h2 className="screen-title">THE TIMER GOES OFF</h2>
           <Kaia>Music stops. Everybody in. Last one through the door is tardy, and tardy is out &mdash; you
             know the rule, it's on the wall.</Kaia>
+          {g.tardyLink && <div className="linkline" role="alert" style={{ marginTop: 18 }}>
+            <b>MR. SYSTEM</b><p>{g.tardyLink}</p></div>}
           <div className="res r-out" style={{ marginTop: 18 }}>
             <span style={{ flex: "none" }}><Sprite id={t.id} px={4} ghost /></span>
             <div className="res-b">
@@ -3137,6 +3247,26 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     insights.push(povLeft === 0
       ? "Every poverty and crisis family is gone. Not one of them made a bad decision."
       : `${povLeft} poverty/crisis famil${povLeft === 1 ? "y is" : "ies are"} still standing, on no sleep and no margin.`);
+    const linkedAct = act(g).filter(c => c.sibs && c.sibs.length);
+    if (linkedAct.length) {
+      const famOut = ghosts.length;
+      let peopleOut = 0;
+      act(g).forEach(c => {
+        const r = g.roster[c.id];
+        if (r.st === "out") peopleOut += 1 + (c.sibs ? c.sibs.length : 0);
+        else peopleOut += (r.strained || []).length;
+      });
+      if (peopleOut > famOut)
+        insights.push(`Families eliminated: ${famOut}. People eliminated: ${peopleOut}. The chart above only ever counts the families.`);
+      const notWhole = act(g).filter(c => g.roster[c.id].st !== "out" && (g.roster[c.id].strained || []).length);
+      if (notWhole.length)
+        insights.push(`${notWhole.map(c => c.name).join(" and ")} made it to the end. The household${notWhole.length > 1 ? "s" : ""} did not arrive whole.`);
+      if (votedOut.some(c => c.sibs && c.sibs.length)) {
+        const vFam = votedOut.length;
+        const vPeople = votedOut.reduce((a, c) => a + 1 + (c.sibs ? c.sibs.length : 0), 0);
+        insights.push(`${vFam} famil${vFam === 1 ? "y was" : "ies were"} voted out. ${vPeople} people left the school. The room only ever saw the ${vFam}.`);
+      }
+    }
     if (g.dangerLog.length) {
       insights.push("The same street was only dangerous for the kids who had to cross it alone.");
       if (g.dangerLog.some(d => d.fatal))

@@ -325,7 +325,8 @@ const ICONS = {
   note: ["....###.","....###.","....#.#.","....#...","..###...",".####...",".###....","........"],
   ghost:["..####..",".######.","#o####o#","########","########","########","#.#..#.#","........"],
   heart:[".##..##.","########","########","########",".######.","..####..","...##...","........"],
-  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."]
+  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."],
+  link: ["........",".##.....","#..#.##.","#..##..#",".##.#..#","..#.##..",".##.....","........"]
 };
 function icon(name, px, color, accent){
   const rows = ICONS[name] || ICONS.warn, p = px||2;
@@ -396,10 +397,12 @@ let CAST = [
 {id:"fatima", name:"FATIMA", cls:"Working-class", tier:"work",
  who:"Egyptian-American, Muslim, single mom on 12-hour nursing shifts. Oldest of three.",
  tags:["Gets two siblings out the door first","Mom on 12-hour nursing shifts","Daily comments about the hijab","Fasting until sundown"],
+ sibs:["her nine-year-old brother", "the seven-year-old"],
  load:4, tmpl:"wrap", pal:{H:"#1A120C",S:"#C98B5E",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#2F6FB0"}},
 {id:"rajesh", name:"RAJESH", cls:"Working-class", tier:"work",
  who:"Indian-American, single immigrant mother, a nurse on early shifts. No family on this continent.",
  tags:["Mom is out the door at 5:30","Gets his sister to school first","No family closer than Hyderabad"],
+ sibs:["his 8-year-old sister"],
  load:4, tmpl:"base", pal:{H:"#17110D",S:"#A9713F",T:"#C4332F",P:"#2C3A4C",B:"#1B222B"}},
 {id:"ling", name:"LING", cls:"Working-class", tier:"work",
  who:"Chinese-American, single mother works restaurant nights. Every form in English goes through her.",
@@ -420,6 +423,7 @@ let CAST = [
 {id:"tyler", name:"TYLER", cls:"Working-class", tier:"work",
  who:"White. His dad's moods run the house. Money isn't the problem at home; the house is.",
  tags:["Reads the driveway before going in","Long sleeves in May","A gym excuse in his own handwriting","Walks past the counselor's door daily"],
+ sibs:["his 8-year-old sister"],
  load:5, tmpl:"base", pal:{H:"#8A6A3E",S:"#EAC099",T:"#5B6770",P:"#2C3A4C",B:"#1B222B"}},
 {id:"marie", name:"MARIE", cls:"Working-class", tier:"work",
  who:"Haitian-American. Her mother does overnight home-health shifts caring for somebody else's grandmother. Church fills in most of the gaps, and there are a lot of gaps.",
@@ -428,23 +432,28 @@ let CAST = [
 {id:"marcus", name:"MARCUS", cls:"Poverty", tier:"pov",
  who:"Black, sibling-led household, no parents. Oldest of four.",
  tags:["Raising three siblings","$2.50 for a $3 fare","Youngest needs constant supervision"],
+ sibs:["his 10-year-old sister", "his middle sibling", "the youngest"],
  load:5, tmpl:"base", pal:{H:"#120C09",S:"#8A5A34",T:"#DFA018",P:"#2C3A4C",B:"#1B222B"}},
 {id:"lucia", name:"LUCIA", cls:"Poverty", tier:"pov",
  who:"Central American, undocumented, single parent detained last month.",
  tags:["Siblings are 6, 8 and 10","No adult on the emergency card","Cannot ask anyone official"],
+ sibs:["the 10-year-old", "the 8-year-old", "the 6-year-old"],
  load:5, tmpl:"wrap", pal:{H:"#1A120C",S:"#C08A5C",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#B85325"}},
 {id:"jayson", name:"JAYSON", cls:"Poverty", tier:"pov",
  who:"Black, trans, sibling-led household, in an active mental health crisis.",
  tags:["Deadnamed on every roster","Two younger siblings depend on him","Waitlisted for counseling since fall"],
+ sibs:["his 12-year-old sister", "the little one"],
  load:5, tmpl:"cap", pal:{H:"#120C09",S:"#7E5232",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B",A:"#C4332F"}},
 {id:"sophia", name:"SOPHIA", cls:"Poverty", tier:"pov",
  who:"White, sibling-led household, mother in psychiatric crisis.",
  tags:["Mom hasn't gotten up in nine days","Hides it from every teacher","Rent is 11 days late"],
+ sibs:["her brother"],
  load:5, tmpl:"long", pal:{H:"#8A6A3E",S:"#EAC099",T:"#7E8B9B",P:"#3A2E22",B:"#1B222B"}}
 ,
 {id:"amina", name:"AMINA", cls:"Poverty", tier:"pov",
  who:"Somali, Muslim, refugee family. Grandma is guardian and speaks little English.",
  tags:["Grandma is guardian and doesn't drive","Translates the doctor, the landlord, the school","Loud knocks mean something else at home","Called a terrorist in the lunch line"],
+ sibs:["the little ones"],
  load:5, tmpl:"wrap", pal:{H:"#120C09",S:"#8A5A34",T:"#2F6FB0",P:"#2F3E52",B:"#1B222B",A:"#6C4E96"}}
 ];
 let BY_ID = Object.fromEntries(CAST.map(c => [c.id, c]));
@@ -591,7 +600,7 @@ let DILEMMAS = {
      danger:{p:0.12, standard:{st:"out",say:"The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, and the hospital calls your mother off the ward. The front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."},
       unsparing:{st:"out",say:"The woman in 4B steps out, and your sister waits twenty minutes, then goes looking for you in the direction she thinks your school is. A man at the transit stop notices an eight-year-old alone at ten in the morning, a stranger who could have been anyone. This time, he calls the school."}}}),
   A("C","Let her stay home sick","The call to the nursing station.","note",
-    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."}})]},
+    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch.",strain:0}})]},
  ling:{sit:"Your mom got home at 11:40 last night. The landlord calls at 7:30 about the lease renewal, in English. First bell is 8:30, twenty-five minutes away on foot.", choices:[
   A("A","Sit at the table and translate the call","Fifteen minutes and a tardy.","clock",
     {chal:"translatecall25",
@@ -690,7 +699,7 @@ let DILEMMAS = {
  marcus:{sit:"You and three younger siblings. $2.50 for fares that cost $3 each. The youngest won't put his shoes on.", choices:[
   A("A","All take the bus; one of you stays home","One sibling loses the day.","bus",
     {chal:"resources45",
-     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number."},
+     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number.",strain:2},
      fail:{st:"out",say:"You can't name a single place to send him. You take everyone back inside."}}),
   A("B","Walk it. Ninety minutes. Everyone late.","Ninety minutes and four tardies.","walk",
     {chal:"resources45",
@@ -699,7 +708,7 @@ let DILEMMAS = {
      danger:{p:0.3, standard:{st:"out",say:"The light changes while the youngest is still in the street, and a car stops an arm's length short of him. You carry him the rest of the way, and nobody in this family goes anywhere today."},
       unsparing:{st:"out",say:"The light changes while the youngest is still in the street. The forms ask for a parent or guardian, and there is a long pause at every counter while someone decides what to do with you. At the elementary school across town, a teacher empties a cubby into a grocery bag.", fatal:true}}}),
   A("C","Leave the youngest home alone","A risk you cannot take back.","warn",
-    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch."}}),
+    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch.",strain:2}}),
   A("D","Everybody stays home","Four absences.","home",
     {auto:{st:"out",say:"You keep all four of them safe and none of you sees a classroom."}})]},
  lucia:{sit:"Your mom did not come home from her night shift. Your siblings are 6, 8 and 10. No money, no adult you are allowed to call.",
@@ -904,7 +913,7 @@ let DILEMMAS = {
   A("A","Push through it and get them","Everything you have.","walk",
     {auto:{st:"strug",say:"You collect them, feed them, read to the youngest. You hold it together on the outside all evening and none of it on the inside."}}),
   A("B","Tell your sister you can't today","Asking a 12-year-old to cover.","home",
-    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse."}}),
+    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse.",strain:0}}),
   A("C","Call the crisis line while you walk","Twenty minutes and the truth out loud.","heart",
     {auto:{st:"strug",say:"Someone stays on the line the whole walk. Nothing about tomorrow changes. Tonight is survivable, and that counts."}})]},
  sophia:{sit:"Nine days becomes ten. Your brother is asking questions. Rent was due on the first.", choices:[
@@ -1073,7 +1082,8 @@ let SETTINGS = {
   rosterMode: "core",              /* full | core | custom */
   customRoster: [],
   chargesEnabled: true,
-  withdrawnEvery: 3
+  withdrawnEvery: 3,
+  leanEnabled: true
 };
 const CORE_IDS = ["ayesha","rebecca","mei","grace","carlos","isabella","jamal","kavi","marcus","lucia"];
 let CHARGES = {
@@ -1264,7 +1274,9 @@ const SLIDES = [
   <h2>LOUP GAROU, RESKINNED</h2>
   <div class="body">
     <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person,
-      but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.</p>
+      but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.
+      And where Loup Garou has Cupid linking two lovers, we link siblings: if a family goes down, everyone
+      in it goes down, named out loud.</p>
     <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(6px,1vw,14px);align-items:stretch">
       <div class="beat"><b>MORNING</b><span>Get to school</span></div>
       <div class="beat-vote">▶ VOTE</div>
@@ -1395,6 +1407,9 @@ const SLIDES = [
         <div class="pbar"><i style="width:10%;background:var(--st-in)"></i><i style="width:12%;background:var(--st-strug)"></i><i style="width:78%;background:var(--st-out)"></i></div>
         <span class="pbar-v" style="color:var(--st-out)">~15–30%</span></div>
     </div>
+    <div class="kbox" style="max-width:76ch">Families eliminated: six. People eliminated: fourteen.
+      The chart above only ever counts the families.
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">Lucia's Round 1 had three options and all three ended out of
       school. She was eliminated before she made a decision. That is what a barrier is.
       <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>

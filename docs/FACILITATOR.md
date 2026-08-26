@@ -27,6 +27,25 @@ the 988 Suicide & Crisis Lifeline. Leave them up for the whole session.
   — the class-status panel on the right shows the whole room, not just the ten.
 - Project the game. You read Kaia's lines out loud; the room picks A/B/C.
 
+## The sibling link (the Cupid rule)
+
+In Loup Garou, Cupid links two lovers — if one goes down, so does the other. Here the link is
+siblings. Linked families show their siblings as pips on the role card, and three things follow:
+
+- **They go down together.** When a linked family is eliminated — by choice, danger, vote, or the
+  tardy rule — read the link line and name every sibling, slowly. It is the heaviest moment in the
+  room. Do not rush it.
+- **Spending a sibling costs you.** Choices that sacrifice a sibling in the story grey that pip for
+  the rest of the game. No extra penalty — the writing already priced it — but the household does
+  not arrive whole, and the debrief counts it.
+- **They carry each other once.** Each linked family holds one LEAN ON THE LINK token: after a
+  failed challenge, they may spend it to turn the fail into a struggle. It cannot save them from a
+  vote, a danger event, or the tardy rule. One per game. It is the only buff in the game, and it
+  belongs to linked families because it is true: siblings carry each other.
+
+Save the people-count reveal for the debrief, not mid-game: count the eliminated families, add
+their siblings, and read both numbers. The gap between them is the rule's whole argument.
+
 ## Mr. System's recommendations
 
 Before each vote, the game files "recommendations for disqualification." Read them aloud in a

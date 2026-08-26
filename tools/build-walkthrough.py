@@ -268,7 +268,9 @@ const SLIDES = [
   <h2>LOUP GAROU, RESKINNED</h2>
   <div class="body">
     <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person,
-      but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.</p>
+      but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.
+      And where Loup Garou has Cupid linking two lovers, we link siblings: if a family goes down, everyone
+      in it goes down, named out loud.</p>
     <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(6px,1vw,14px);align-items:stretch">
       <div class="beat"><b>MORNING</b><span>Get to school</span></div>
       <div class="beat-vote">▶ VOTE</div>
@@ -399,6 +401,9 @@ const SLIDES = [
         <div class="pbar"><i style="width:10%;background:var(--st-in)"></i><i style="width:12%;background:var(--st-strug)"></i><i style="width:78%;background:var(--st-out)"></i></div>
         <span class="pbar-v" style="color:var(--st-out)">~15–30%</span></div>
     </div>
+    <div class="kbox" style="max-width:76ch">Families eliminated: six. People eliminated: fourteen.
+      The chart above only ever counts the families.
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">Lucia's Round 1 had three options and all three ended out of
       school. She was eliminated before she made a decision. That is what a barrier is.
       <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>

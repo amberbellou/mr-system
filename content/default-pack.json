@@ -13,7 +13,8 @@
         "Car in the driveway",
         "Family name over the library door"
       ],
-      "load": 1
+      "load": 1,
+      "sibs": []
     },
     {
       "id": "alejandra",
@@ -27,7 +28,8 @@
         "Failure is not discussed",
         "Endometriosis — diagnosed in one year, managed on a schedule"
       ],
-      "load": 2
+      "load": 2,
+      "sibs": []
     },
     {
       "id": "priya",
@@ -40,7 +42,8 @@
         "Translates every school letter",
         "Sleeps five hours"
       ],
-      "load": 2
+      "load": 2,
+      "sibs": []
     },
     {
       "id": "mei",
@@ -54,7 +57,8 @@
         "Perfection is assumed, not praised",
         "Sleeps six hours"
       ],
-      "load": 3
+      "load": 3,
+      "sibs": []
     },
     {
       "id": "rebecca",
@@ -68,7 +72,8 @@
         "Hebrew school on Sundays",
         "Carpool always covered"
       ],
-      "load": 1
+      "load": 1,
+      "sibs": []
     },
     {
       "id": "daniel",
@@ -82,7 +87,8 @@
         "A cousin in every grade",
         "Someone is always free"
       ],
-      "load": 1
+      "load": 1,
+      "sibs": []
     },
     {
       "id": "ayesha",
@@ -96,7 +102,8 @@
         "A desk in the office when she needs one",
         "Every teacher knows her name first"
       ],
-      "load": 1
+      "load": 1,
+      "sibs": []
     },
     {
       "id": "grace",
@@ -110,7 +117,8 @@
         "A credit card for emergencies, used for dinners",
         "Figures everything out alone, eventually"
       ],
-      "load": 2
+      "load": 2,
+      "sibs": []
     },
     {
       "id": "carlos",
@@ -123,7 +131,8 @@
         "Shares one car with three adults",
         "Won't call any office"
       ],
-      "load": 3
+      "load": 3,
+      "sibs": []
     },
     {
       "id": "chase",
@@ -136,7 +145,8 @@
         "No internet past the county line",
         "Grandmother holds it together"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": []
     },
     {
       "id": "isabella",
@@ -149,7 +159,8 @@
         "No diagnosis, no 504 plan",
         "Mom can't miss another shift"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": []
     },
     {
       "id": "fatima",
@@ -163,7 +174,11 @@
         "Daily comments about the hijab",
         "Fasting until sundown"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": [
+        "her nine-year-old brother",
+        "the seven-year-old"
+      ]
     },
     {
       "id": "rajesh",
@@ -176,7 +191,10 @@
         "Gets his sister to school first",
         "No family closer than Hyderabad"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": [
+        "his 8-year-old sister"
+      ]
     },
     {
       "id": "ling",
@@ -190,7 +208,8 @@
         "Cooks her own dinner",
         "Homework after everything else"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": []
     },
     {
       "id": "jamal",
@@ -203,7 +222,8 @@
         "No prayer space at school",
         "Coach doesn't get Ramadan"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": []
     },
     {
       "id": "aisha",
@@ -217,7 +237,8 @@
         "PE uniform stops two sizes short",
         "Comments from every direction"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": []
     },
     {
       "id": "kavi",
@@ -231,7 +252,8 @@
         "Two IT jobs, both shaky",
         "Clubs count as distractions"
       ],
-      "load": 4
+      "load": 4,
+      "sibs": []
     },
     {
       "id": "tyler",
@@ -245,7 +267,10 @@
         "A gym excuse in his own handwriting",
         "Walks past the counselor's door daily"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "his 8-year-old sister"
+      ]
     },
     {
       "id": "marie",
@@ -259,7 +284,8 @@
         "Sister Yvette drives the church van",
         "Status renewal pending, again"
       ],
-      "load": 3
+      "load": 3,
+      "sibs": []
     },
     {
       "id": "marcus",
@@ -272,7 +298,12 @@
         "$2.50 for a $3 fare",
         "Youngest needs constant supervision"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "his 10-year-old sister",
+        "his middle sibling",
+        "the youngest"
+      ]
     },
     {
       "id": "lucia",
@@ -285,7 +316,12 @@
         "No adult on the emergency card",
         "Cannot ask anyone official"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "the 10-year-old",
+        "the 8-year-old",
+        "the 6-year-old"
+      ]
     },
     {
       "id": "jayson",
@@ -298,7 +334,11 @@
         "Two younger siblings depend on him",
         "Waitlisted for counseling since fall"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "his 12-year-old sister",
+        "the little one"
+      ]
     },
     {
       "id": "sophia",
@@ -311,7 +351,10 @@
         "Hides it from every teacher",
         "Rent is 11 days late"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "her brother"
+      ]
     },
     {
       "id": "amina",
@@ -325,7 +368,10 @@
         "Loud knocks mean something else at home",
         "Called a terrorist in the lunch line"
       ],
-      "load": 5
+      "load": 5,
+      "sibs": [
+        "the little ones"
+      ]
     }
   ],
   "rounds": {
@@ -686,7 +732,8 @@
             "icon": "note",
             "auto": {
               "st": "strug",
-              "say": "You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."
+              "say": "You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch.",
+              "strain": 0
             }
           }
         ]
@@ -1144,7 +1191,8 @@
             "chal": "resources45",
             "pass": {
               "st": "strug",
-              "say": "You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number."
+              "say": "You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number.",
+              "strain": 2
             },
             "fail": {
               "st": "out",
@@ -1185,7 +1233,8 @@
             "icon": "warn",
             "auto": {
               "st": "strug",
-              "say": "You get to school at 8:35. You check your phone eleven times before lunch."
+              "say": "You get to school at 8:35. You check your phone eleven times before lunch.",
+              "strain": 2
             }
           },
           {
@@ -2154,7 +2203,8 @@
             "icon": "home",
             "auto": {
               "st": "strug",
-              "say": "She walks the little one home herself and does not complain, which is somehow worse."
+              "say": "She walks the little one home herself and does not complain, which is somehow worse.",
+              "strain": 0
             }
           },
           {
@@ -3515,7 +3565,8 @@
     "rosterMode": "core",
     "customRoster": [],
     "chargesEnabled": true,
-    "withdrawnEvery": 3
+    "withdrawnEvery": 3,
+    "leanEnabled": true
   },
   "charges": {
     "memoIntro": "Filed this morning, before first bell. For your convenience, the following students have been flagged for removal. You are, of course, free to vote however you like. The recommendations are simply available. They are always simply available.",

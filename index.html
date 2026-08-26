@@ -405,6 +405,24 @@ a{color:var(--clay)}
 .memo-item.is-withdrawn em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
   font-weight:600;letter-spacing:.04em}
 .vcard-flag{margin-left:auto;flex:none;font-size:13px}
+.pips{display:flex;gap:3px;align-items:center}
+.pip{width:8px;height:8px;background:var(--sky);border:1.5px solid var(--edge);flex:none}
+.pip.is-ghost{background:var(--st-ghost);opacity:.55}
+.linktag{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;
+  font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--violet);
+  border:2px solid var(--violet);padding:1px 6px;text-transform:uppercase}
+.linktag canvas{image-rendering:pixelated}
+.leanchip{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;
+  font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  border:2px dashed var(--grass);color:var(--grass);padding:2px 7px}
+.leanchip.spent{border-color:var(--st-ghost);color:var(--st-ghost);text-decoration:line-through}
+.linkline{display:flex;gap:12px;border:3px solid var(--violet);border-left-width:9px;
+  background:var(--panel-2);padding:12px 15px;margin:0 0 12px}
+.linkline b{font-family:"Press Start 2P",monospace;font-size:8px;color:var(--violet);
+  flex:none;padding-top:3px;letter-spacing:1px}
+.linkline p{font-size:15px;font-weight:600}
+.strainmark{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;color:var(--st-strug);
+  letter-spacing:.05em}
 
 /* roster mode picker */
 .modes{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:14px 0 4px}
@@ -698,7 +716,8 @@ const ICONS = {
   note: ["....###.","....###.","....#.#.","....#...","..###...",".####...",".###....","........"],
   ghost:["..####..",".######.","#o####o#","########","########","########","#.#..#.#","........"],
   heart:[".##..##.","########","########","########",".######.","..####..","...##...","........"],
-  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."]
+  book: [".##..##.","######.#","#....#.#","#....#.#","#....#.#","#....#.#","######.#",".##..##."],
+  link: ["........",".##.....","#..#.##.","#..##..#",".##.#..#","..#.##..",".##.....","........"]
 };
 function icon(name, px, color, accent){
   const rows = ICONS[name] || ICONS.warn, p = px||2;
@@ -769,10 +788,12 @@ let CAST = [
 {id:"fatima", name:"FATIMA", cls:"Working-class", tier:"work",
  who:"Egyptian-American, Muslim, single mom on 12-hour nursing shifts. Oldest of three.",
  tags:["Gets two siblings out the door first","Mom on 12-hour nursing shifts","Daily comments about the hijab","Fasting until sundown"],
+ sibs:["her nine-year-old brother", "the seven-year-old"],
  load:4, tmpl:"wrap", pal:{H:"#1A120C",S:"#C98B5E",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#2F6FB0"}},
 {id:"rajesh", name:"RAJESH", cls:"Working-class", tier:"work",
  who:"Indian-American, single immigrant mother, a nurse on early shifts. No family on this continent.",
  tags:["Mom is out the door at 5:30","Gets his sister to school first","No family closer than Hyderabad"],
+ sibs:["his 8-year-old sister"],
  load:4, tmpl:"base", pal:{H:"#17110D",S:"#A9713F",T:"#C4332F",P:"#2C3A4C",B:"#1B222B"}},
 {id:"ling", name:"LING", cls:"Working-class", tier:"work",
  who:"Chinese-American, single mother works restaurant nights. Every form in English goes through her.",
@@ -793,6 +814,7 @@ let CAST = [
 {id:"tyler", name:"TYLER", cls:"Working-class", tier:"work",
  who:"White. His dad's moods run the house. Money isn't the problem at home; the house is.",
  tags:["Reads the driveway before going in","Long sleeves in May","A gym excuse in his own handwriting","Walks past the counselor's door daily"],
+ sibs:["his 8-year-old sister"],
  load:5, tmpl:"base", pal:{H:"#8A6A3E",S:"#EAC099",T:"#5B6770",P:"#2C3A4C",B:"#1B222B"}},
 {id:"marie", name:"MARIE", cls:"Working-class", tier:"work",
  who:"Haitian-American. Her mother does overnight home-health shifts caring for somebody else's grandmother. Church fills in most of the gaps, and there are a lot of gaps.",
@@ -801,23 +823,28 @@ let CAST = [
 {id:"marcus", name:"MARCUS", cls:"Poverty", tier:"pov",
  who:"Black, sibling-led household, no parents. Oldest of four.",
  tags:["Raising three siblings","$2.50 for a $3 fare","Youngest needs constant supervision"],
+ sibs:["his 10-year-old sister", "his middle sibling", "the youngest"],
  load:5, tmpl:"base", pal:{H:"#120C09",S:"#8A5A34",T:"#DFA018",P:"#2C3A4C",B:"#1B222B"}},
 {id:"lucia", name:"LUCIA", cls:"Poverty", tier:"pov",
  who:"Central American, undocumented, single parent detained last month.",
  tags:["Siblings are 6, 8 and 10","No adult on the emergency card","Cannot ask anyone official"],
+ sibs:["the 10-year-old", "the 8-year-old", "the 6-year-old"],
  load:5, tmpl:"wrap", pal:{H:"#1A120C",S:"#C08A5C",T:"#3B8F55",P:"#2F3E52",B:"#1B222B",A:"#B85325"}},
 {id:"jayson", name:"JAYSON", cls:"Poverty", tier:"pov",
  who:"Black, trans, sibling-led household, in an active mental health crisis.",
  tags:["Deadnamed on every roster","Two younger siblings depend on him","Waitlisted for counseling since fall"],
+ sibs:["his 12-year-old sister", "the little one"],
  load:5, tmpl:"cap", pal:{H:"#120C09",S:"#7E5232",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B",A:"#C4332F"}},
 {id:"sophia", name:"SOPHIA", cls:"Poverty", tier:"pov",
  who:"White, sibling-led household, mother in psychiatric crisis.",
  tags:["Mom hasn't gotten up in nine days","Hides it from every teacher","Rent is 11 days late"],
+ sibs:["her brother"],
  load:5, tmpl:"long", pal:{H:"#8A6A3E",S:"#EAC099",T:"#7E8B9B",P:"#3A2E22",B:"#1B222B"}}
 ,
 {id:"amina", name:"AMINA", cls:"Poverty", tier:"pov",
  who:"Somali, Muslim, refugee family. Grandma is guardian and speaks little English.",
  tags:["Grandma is guardian and doesn't drive","Translates the doctor, the landlord, the school","Loud knocks mean something else at home","Called a terrorist in the lunch line"],
+ sibs:["the little ones"],
  load:5, tmpl:"wrap", pal:{H:"#120C09",S:"#8A5A34",T:"#2F6FB0",P:"#2F3E52",B:"#1B222B",A:"#6C4E96"}}
 ];
 let BY_ID = Object.fromEntries(CAST.map(c => [c.id, c]));
@@ -964,7 +991,7 @@ let DILEMMAS = {
      danger:{p:0.12, standard:{st:"out",say:"The woman in 4B steps out at 9:15 and does not come back. The school calls about your sister's absence, and the hospital calls your mother off the ward. The front office pulls you out of second period to go and get your sister. She has spent three hours alone in a stranger's apartment, sitting where she could see the door."},
       unsparing:{st:"out",say:"The woman in 4B steps out, and your sister waits twenty minutes, then goes looking for you in the direction she thinks your school is. A man at the transit stop notices an eight-year-old alone at ten in the morning, a stranger who could have been anyone. This time, he calls the school."}}}),
   A("C","Let her stay home sick","The call to the nursing station.","note",
-    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch."}})]},
+    {auto:{st:"strug",say:"You are in your seat on time. At 10:40 her school calls your mom's floor, and tonight is decided before lunch.",strain:0}})]},
  ling:{sit:"Your mom got home at 11:40 last night. The landlord calls at 7:30 about the lease renewal, in English. First bell is 8:30, twenty-five minutes away on foot.", choices:[
   A("A","Sit at the table and translate the call","Fifteen minutes and a tardy.","clock",
     {chal:"translatecall25",
@@ -1063,7 +1090,7 @@ let DILEMMAS = {
  marcus:{sit:"You and three younger siblings. $2.50 for fares that cost $3 each. The youngest won't put his shoes on.", choices:[
   A("A","All take the bus; one of you stays home","One sibling loses the day.","bus",
     {chal:"resources45",
-     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number."},
+     pass:{st:"strug",say:"You get three of you there by 8:50. Your youngest is home alone with a plan and a phone number.",strain:2},
      fail:{st:"out",say:"You can't name a single place to send him. You take everyone back inside."}}),
   A("B","Walk it. Ninety minutes. Everyone late.","Ninety minutes and four tardies.","walk",
     {chal:"resources45",
@@ -1072,7 +1099,7 @@ let DILEMMAS = {
      danger:{p:0.3, standard:{st:"out",say:"The light changes while the youngest is still in the street, and a car stops an arm's length short of him. You carry him the rest of the way, and nobody in this family goes anywhere today."},
       unsparing:{st:"out",say:"The light changes while the youngest is still in the street. The forms ask for a parent or guardian, and there is a long pause at every counter while someone decides what to do with you. At the elementary school across town, a teacher empties a cubby into a grocery bag.", fatal:true}}}),
   A("C","Leave the youngest home alone","A risk you cannot take back.","warn",
-    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch."}}),
+    {auto:{st:"strug",say:"You get to school at 8:35. You check your phone eleven times before lunch.",strain:2}}),
   A("D","Everybody stays home","Four absences.","home",
     {auto:{st:"out",say:"You keep all four of them safe and none of you sees a classroom."}})]},
  lucia:{sit:"Your mom did not come home from her night shift. Your siblings are 6, 8 and 10. No money, no adult you are allowed to call.",
@@ -1277,7 +1304,7 @@ let DILEMMAS = {
   A("A","Push through it and get them","Everything you have.","walk",
     {auto:{st:"strug",say:"You collect them, feed them, read to the youngest. You hold it together on the outside all evening and none of it on the inside."}}),
   A("B","Tell your sister you can't today","Asking a 12-year-old to cover.","home",
-    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse."}}),
+    {auto:{st:"strug",say:"She walks the little one home herself and does not complain, which is somehow worse.",strain:0}}),
   A("C","Call the crisis line while you walk","Twenty minutes and the truth out loud.","heart",
     {auto:{st:"strug",say:"Someone stays on the line the whole walk. Nothing about tomorrow changes. Tonight is survivable, and that counts."}})]},
  sophia:{sit:"Nine days becomes ten. Your brother is asking questions. Rent was due on the first.", choices:[
@@ -1446,7 +1473,8 @@ let SETTINGS = {
   rosterMode: "core",              /* full | core | custom */
   customRoster: [],
   chargesEnabled: true,
-  withdrawnEvery: 3
+  withdrawnEvery: 3,
+  leanEnabled: true
 };
 const CORE_IDS = ["ayesha","rebecca","mei","grace","carlos","isabella","jamal","kavi","marcus","lucia"];
 let CHARGES = {
@@ -1582,8 +1610,12 @@ function buildPrintPack(opts){
   const roleCard = ch => `<div class="pcard pcard-role">
     <div class="pcard-h"><span data-psprite="${ch.id}" data-px="6"></span>
       <div><div class="pcard-name">${pesc(ch.name)}</div>
-        <span class="pcard-chip">${pesc(ch.cls)}</span></div></div>
+        <span class="pcard-chip">${pesc(ch.cls)}</span>
+        ${ch.sibs && ch.sibs.length ? `<div style="font-family:'IBM Plex Mono',monospace;font-size:7pt;font-weight:700;margin-top:3px">
+          \u26d3 LINKED FATES ${ch.sibs.map(() => "\u25a0").join(" ")}</div>` : ""}</div></div>
     <p class="pcard-who">${pesc(ch.who)}</p>
+    ${ch.sibs && ch.sibs.length ? `<p style="font-size:7.5pt;color:#444;margin:0 0 4px">Linked: ${pesc(ch.sibs.join(", "))}.
+      If this family goes out, they go out together. One LEAN token.</p>` : ""}
     <ul class="pcard-tags">${ch.tags.map(t => `<li>${pesc(t)}</li>`).join("")}</ul>
     <div class="pcard-load">${ppLoad(ch.load)}</div>
     <div class="pcard-footer">You are this family for the whole game. You choose. Mr. System decides
@@ -1671,6 +1703,12 @@ function buildPrintPack(opts){
       <li>Blank paper and pens \u00b7 a speaker \u00b7 a visible timer \u00b7 <b>one d6</b></li>
       <li>The status board taped up or projected \u00b7 ghost tents and star cards within reach</li>
     </ul>
+    <h3>THE SIBLING LINK (THE CUPID RULE)</h3>
+    <div class="pnote">In Loup Garou, Cupid links two lovers \u2014 if one goes down, so does the other.
+      Here the link is siblings. When a linked family is eliminated, read the link line slowly and name
+      every sibling: <b>"The link holds. [names] go down with them."</b> Each linked family also holds one
+      LEAN ON THE LINK token: after failing a challenge, they may spend it once to turn the fail into a
+      struggle. At the debrief, count people, not families \u2014 the tally sheet tells you how.</div>
     <h3>SAFETY \u2014 BEFORE THE FIRST ROUND</h3>
     <div class="pnote">Write on the board and leave up all session:<br>
       <b>Counselor: ______________________ \u00b7 988 Suicide &amp; Crisis Lifeline</b><br><br>
@@ -1729,6 +1767,7 @@ function buildPrintPack(opts){
       "script \u00b7 vote " + r));
   });
 
+  const linkedActive = active.filter(c => c.sibs && c.sibs.length);
   const privActive = Object.keys(PRIV).filter(id => opts.activeIds.indexOf(id) >= 0);
   sheets.push(ppSheet("script", "SCRIPT \u2014 FINAL ROUND", "SECTION 4 \u2014 HOMEWORK, MUSIC, TARDY", `
     <h3>PHASE 1 \u2014 HOMEWORK</h3>
@@ -1752,6 +1791,13 @@ function buildPrintPack(opts){
 
   sheets.push(ppSheet("script", "SCRIPT \u2014 DEBRIEF", "SECTION 4 \u2014 THE PATTERN", `
     <div class="pkaia">${pesc(TEXT.debriefKaia)}</div>
+    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u2014 THE TALLY</h3>
+    <p style="font-size:9.5pt">Count the eliminated families on the status board, then add their linked
+      siblings and read both numbers to the room:</p>
+    ${linkedActive.map(c => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(c.name)}</b>
+      <span style="font-size:8.5pt">+${c.sibs.length} \u2014 ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
+    <p style="font-size:9.5pt;font-weight:700">"Families eliminated: ___. People eliminated: ___.
+      The board only ever counted the families."</p>` : ""}
     <h3>ASK THE ROOM</h3>
     <ol style="font-size:10pt;padding-left:.25in">${(TEXT.questions || []).map(q => `<li style="margin-bottom:6px">${pesc(q)}</li>`).join("")}</ol>
     <h3>PROMPTS \u2014 READ WHERE THEY APPLY</h3>
@@ -1824,6 +1870,13 @@ function buildPrintPack(opts){
       `<div class="pgrid2">${privActive.map(id => `<div class="pstar">
         <div>\u2b50</div><div class="pstar-name">${pesc(BY_ID[id].name)}</div>
         <div class="pstar-line">${pesc(PRIV[id])}</div></div>`).join("")}</div>`, "star cards"));
+  if (linkedActive.length)
+    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u2014 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
+      `<div class="pgrid2">${linkedActive.map(c => `<div class="pstar" style="border-style:dashed">
+        <div>\u26d3</div><div class="pstar-name">${pesc(c.name)}</div>
+        <div class="pstar-line">LEAN ON THE LINK \u2014 spend after a failed challenge to make it a
+          struggle instead. A sibling covers. The token does not come back.</div></div>`).join("")}</div>`,
+      "lean tokens"));
   const slip = `<div class="pslip"><span>FAMILY: <span class="blank"></span></span>
     <span>VOTES TO ELIMINATE: <span class="blank"></span></span></div>`;
   sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u2014 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
@@ -1881,7 +1934,8 @@ function resetGame(size){
   S.active = activeIds();
   S.dangerLog = []; S.voteN = 0; S.memo = null; S.memoLog = []; S.chargeUsed = new Set();
   S.roster = {};
-  CAST.forEach(c => S.roster[c.id] = {st:"in", hist:[], outRound:null, why:""});
+  CAST.forEach(c => S.roster[c.id] = {st:"in", hist:[], outRound:null, why:"",
+    leanUsed:false, strained:[], linkAnnounced:false});
   const n = Math.max(0, S.classSize - S.active.length);
   const mix = ["upper","upper","upper","work","work","work","pov","pov","pov","pov"];
   S.crowd = Array.from({length:n}, (_,i) => ({tier:mix[i % mix.length], st:"in"}));
@@ -1951,6 +2005,8 @@ function dash(opts){
     return `<li class="rrow ${out?"is-out":""} ${opts.now===ch.id?"is-now":""}">
       ${SP(ch.id, 2, out)}
       <span class="rrow-name">${esc(ch.name)}</span>
+      ${ch.sibs && ch.sibs.length ? `<span class="pips">${ch.sibs.map((_,i) =>
+        `<i class="pip${out || r.strained.indexOf(i) >= 0 ? " is-ghost" : ""}"></i>`).join("")}</span>` : ""}
       <span class="rrow-dot" style="color:${cssVar(ST_VAR[r.st])}" title="${ST_LABEL[r.st]}">
         ${IC(iconFor(r.st), 2)}</span>
       <span class="sr">${ST_LABEL[r.st]}</span></li>`;
@@ -2104,6 +2160,12 @@ V.cast = () => screen("CHARACTER ASSIGNMENT", `${ACT().length} of ${CAST.length}
       <div class="ccard-h">${SP(ch.id,3)}<div><div class="ccard-n">${esc(ch.name)}</div>
         <span class="chip ${TIER_CLASS[ch.tier]}" style="margin-top:5px">${esc(ch.cls)}</span></div></div>
       <p style="font-size:13.5px;color:${cssVar("--ink-2")};line-height:1.45">${esc(ch.who)}</p>
+      ${ch.sibs && ch.sibs.length ? `<div style="display:flex;gap:8px;align-items:center;margin-top:7px;flex-wrap:wrap">
+        <span class="linktag">${IC("link",2)}LINKED FATES</span>
+        <span class="pips" title="${esc(ch.sibs.join(", "))}">${ch.sibs.map((_,i) =>
+          `<i class="pip${S.roster[ch.id] && (S.roster[ch.id].st === "out" || S.roster[ch.id].strained.indexOf(i) >= 0) ? " is-ghost" : ""}"></i>`).join("")}</span>
+        ${SETTINGS.leanEnabled ? `<span class="leanchip${S.roster[ch.id] && S.roster[ch.id].leanUsed ? " spent" : ""}">LEAN ON THE LINK \u00d71</span>` : ""}
+      </div>` : ""}
       <ul class="ccard-tags">${ch.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
       <div class="meter" role="img" aria-label="Morning difficulty ${ch.load} of 5">
         ${[1,2,3,4,5].map(i => `<i class="${i<=ch.load?"on":""}"></i>`).join("")}
@@ -2192,13 +2254,19 @@ V.outcome = () => {
     <h2 class="screen-title">${esc(p.title)}</h2>
     ${p.danger ? `<div class="mrsys" role="alert"><span class="mrsys-who">MR. SYSTEM</span>
       <p class="mrsys-say">${esc(p.say)}</p></div>` : ""}
+    ${p.link ? `<div class="linkline" role="alert"><b>MR. SYSTEM</b><p>${esc(p.link)}</p></div>` : ""}
     <div class="res r-${p.st}" style="margin-top:${p.danger ? 4 : 18}px">
       <span style="flex:none">${SP(ch.id, 4, p.st === "out")}</span>
       <div class="res-b"><div class="res-n">${esc(ch.name)}</div>
         ${p.danger ? "" : `<p class="res-say">${esc(p.say)}</p>`}
         ${badge(p.st, p.danger ? (p.st === "out" ? "OUT \u2014 MR. SYSTEM STRUCK" : "STRUGGLING \u2014 NEAR MISS") : p.label)}
+        ${p.strained ? `<p class="strainmark" style="margin-top:10px">LINK STRAINED \u2014 a sibling's pip goes grey for the rest of the game.</p>` : ""}
         ${p.chalNote ? `<p class="hint" style="margin-top:11px">${esc(p.chalNote)}</p>` : ""}
       </div></div>
+    ${p.failed && !p.danger && ch.sibs && ch.sibs.length && SETTINGS.leanEnabled && !S.roster[ch.id].leanUsed
+      ? `<div class="actions" style="margin-top:14px">
+          <button class="btn" data-act="lean" style="background:${cssVar("--grass")}">LEAN ON THE LINK \u2014 SPEND THE TOKEN</button>
+          <span class="pill">Converts this fail into a struggle. Once per game.</span></div>` : ""}
     <div class="actions"><button class="btn" data-act="nextq">NEXT FAMILY</button></div>`), ch.id);
 };
 
@@ -2281,6 +2349,7 @@ V.voteres = () => {
       families' votes are simulated from playtest behavior \u2014 rooms reliably turn on whoever is already
       struggling.</p>
     <hr class="hr">
+    ${S.voteLink ? `<div class="linkline" role="alert"><b>MR. SYSTEM</b><p>${esc(S.voteLink)}</p></div>` : ""}
     <div class="res r-out"><span style="flex:none">${SP(el.id,4,true)}</span>
       <div class="res-b"><div class="res-n">${esc(el.name)}</div>
         <p class="res-say">Voted out in Round ${S.round}. ${esc(el.name)} is now a ghost: present in the room,
@@ -2363,6 +2432,7 @@ V.tardy = () => {
     <p class="eyebrow">FINAL ROUND \u00b7 PHASE 3 OF 3</p>
     <h2 class="screen-title">THE TIMER GOES OFF</h2>
     ${kaia(TEXT.tardyKaia)}
+    ${S.tardyLink ? `<div class="linkline" role="alert" style="margin-top:18px"><b>MR. SYSTEM</b><p>${esc(S.tardyLink)}</p></div>` : ""}
     <div class="res r-out" style="margin-top:18px"><span style="flex:none">${SP(t.id,4,true)}</span>
       <div class="res-b"><div class="res-n">${esc(t.name)} \u2014 TARDY</div>
         <p class="res-say">${esc(t.name)} got in last and is eliminated. ${esc(TARDY_WHY[t.id] || "The distance was never the same for everyone.")}</p>
@@ -2445,6 +2515,27 @@ V.debrief = () => {
   insights.push(povLeft === 0
     ? "Every poverty and crisis family is gone. Not one of them made a bad decision."
     : `${povLeft} poverty/crisis famil${povLeft===1?"y is":"ies are"} still standing, on no sleep and no margin.`);
+  /* the sibling link: people, not families */
+  const linked = ACT().filter(c => c.sibs && c.sibs.length);
+  if (linked.length){
+    const famOut = dead.length;
+    let peopleOut = 0;
+    ACT().forEach(c => {
+      const r = S.roster[c.id];
+      if (r.st === "out") peopleOut += 1 + (c.sibs ? c.sibs.length : 0);
+      else peopleOut += (r.strained || []).length;
+    });
+    if (peopleOut > famOut)
+      insights.push(`Families eliminated: ${famOut}. People eliminated: ${peopleOut}. The chart above only ever counts the families.`);
+    const notWhole = ACT().filter(c => S.roster[c.id].st !== "out" && (S.roster[c.id].strained || []).length);
+    if (notWhole.length)
+      insights.push(`${notWhole.map(c => c.name).join(" and ")} made it to the end. The household${notWhole.length > 1 ? "s" : ""} did not arrive whole.`);
+    if (votedOut.some(c => c.sibs && c.sibs.length)){
+      const vFam = votedOut.length;
+      const vPeople = votedOut.reduce((a, c) => a + 1 + (c.sibs ? c.sibs.length : 0), 0);
+      insights.push(`${vFam} famil${vFam === 1 ? "y was" : "ies were"} voted out. ${vPeople} people left the school. The room only ever saw the ${vFam}.`);
+    }
+  }
   /* danger layer */
   if (S.dangerLog.length){
     insights.push("The same street was only dangerous for the kids who had to cross it alone.");
@@ -2521,14 +2612,15 @@ V.debrief = () => {
 const PACK_KEY = "mrsystem.pack.v1";
 const clone = o => JSON.parse(JSON.stringify(o));
 const BASE_CAST = CAST.map(c => Object.assign({}, c));
-const CAST_FIELDS = ["name","cls","tier","who","tags","load"];
+const CAST_FIELDS = ["name","cls","tier","who","tags","load","sibs"];
 
 function packFromLive(){
   return {
     version: 1,
     pass: "mrsystem",
     cast: CAST.map(c => ({id:c.id, name:c.name, cls:c.cls, tier:c.tier, who:c.who,
-                          tags:c.tags.slice(), load:c.load})),
+                          tags:c.tags.slice(), load:c.load,
+                          sibs:(c.sibs || []).slice()})),
     rounds: {1:{name:ROUND_NAME[1], kaia:ROUND_KAIA[1]},
              2:{name:ROUND_NAME[2], kaia:ROUND_KAIA[2]},
              3:{name:ROUND_NAME[3], kaia:ROUND_KAIA[3]}},
@@ -2743,6 +2835,13 @@ function edPane(){
         [["upper","Upper-class"],["work","Working-class"],["pov","Poverty / crisis"]],
         "Drives the colour of their chip and which band they count in on the debrief chart.")}
       ${fArea("One-line description", "cast." + i + ".who", c.who, 2)}
+      <div class="ed-sub">Siblings (the link) \u2014 leave empty for an unlinked family</div>
+      ${(c.sibs || []).map((sb, si) => `<div class="ed-row" style="align-items:flex-end">
+        ${fText("Sibling " + (si + 1), "cast." + i + ".sibs." + si, sb,
+          si === 0 ? "Named out loud when the family goes down." : "")}
+        <button class="ed-mini danger" data-ed="delsib" data-i="${si}" style="margin-bottom:13px">Remove</button></div>`).join("")}
+      <button class="ed-mini" data-ed="addsib">+ Add a sibling</button>
+      <div style="height:14px"></div>
       <div class="ed-sub">Identity markers</div>
       ${c.tags.map((tg, ti) => `<div class="ed-row" style="align-items:flex-end">
         ${fText("Marker " + (ti + 1), "cast." + i + ".tags." + ti, tg)}
@@ -2802,6 +2901,10 @@ function edPane(){
         Standard narrates near-misses and injuries \u2014 the kid survives. Unsparing is the unsoftened
         version: a kid can die. Off disables every roll. Say which mode you are using in your content
         warning before the first round.</div>
+      ${fSel("Lean on the link", "settings.leanEnabled", (D.settings || {}).leanEnabled !== false ? "on" : "off",
+        [["on","On \u2014 each linked family may convert one failed challenge"],
+         ["off","Off \u2014 no tokens"]],
+        "The only buff in the game, and it belongs to linked families alone.")}
       ${fSel("Danger mode", "settings.dangerMode", (D.settings || {}).dangerMode || "standard",
         [["off","Off \u2014 no danger events"],["standard","Standard \u2014 near-misses and injuries"],
          ["unsparing","Unsparing \u2014 the full severity"]])}
@@ -3052,6 +3155,23 @@ function renderHud(){
 }
 function go(p){ S.phase = p; render(); }
 
+/* ---- the sibling link ---- */
+function sibList(ch){
+  const sibs = ch.sibs || [];
+  if (!sibs.length) return "";
+  if (sibs.length === 1) return sibs[0];
+  return sibs.slice(0, -1).join(", ") + " and " + sibs[sibs.length - 1];
+}
+function linkLine(ch){
+  const r = S.roster[ch.id];
+  if (!ch.sibs || !ch.sibs.length || r.linkAnnounced) return "";
+  r.linkAnnounced = true;
+  const verb = ch.sibs.length === 1 && ch.sibs[0].indexOf(" ones") < 0 ? "goes" : "go";
+  return "The link holds. " + sibList(ch).charAt(0).toUpperCase() + sibList(ch).slice(1)
+    + " " + verb + " down with them.";
+}
+const SIB_WORDS = /youngest|sibling|sister|brother|little one/i;
+
 /* ---- round flow ---- */
 const playable = id => S.roster[id].st !== "out" && !!dilemmaFor(id);
 function nextQuestion(){
@@ -3076,7 +3196,12 @@ function choose(i){
         r.why = "Round " + S.round + " \u2014 Mr. System struck: " + c.t;
       }
       S.dangerLog.push({id:ch.id, round:S.round, fatal:!!v.fatal});
-      S.pending = {id:ch.id, k:c.k, title:c.t, say:v.say, st:v.st, danger:true, fatal:!!v.fatal};
+      let dlink = "";
+      if (v.st === "out"){
+        if (SIB_WORDS.test(v.say)) r.linkAnnounced = true;   /* the narration already covers them */
+        else dlink = linkLine(ch);
+      }
+      S.pending = {id:ch.id, k:c.k, title:c.t, say:v.say, st:v.st, danger:true, fatal:!!v.fatal, link:dlink};
       go("outcome");
       return;
     }
@@ -3087,7 +3212,7 @@ function choose(i){
             answers: {}, step: 0, choice: c, ch: ch};
   go("challenge");
 }
-function resolve(ch, choice, out, chalNote){
+function resolve(ch, choice, out, chalNote, failed){
   const r = S.roster[ch.id];
   r.st = out.st;
   r.hist.push({round:S.round, k:choice.k, st:out.st, say:out.say});
@@ -3095,7 +3220,14 @@ function resolve(ch, choice, out, chalNote){
     r.outRound = S.round;
     r.why = "Round " + S.round + " \u2014 chose: " + choice.t;
   }
-  S.pending = {id:ch.id, k:choice.k, title:choice.t, say:out.say, st:out.st, chalNote:chalNote};
+  let strained = false;
+  if (out.strain != null && ch.sibs && r.strained.indexOf(out.strain) < 0){
+    r.strained.push(out.strain);
+    strained = true;
+  }
+  S.pending = {id:ch.id, k:choice.k, title:choice.t, say:out.say, st:out.st, chalNote:chalNote,
+    failed: !!failed, strained: strained,
+    link: out.st === "out" ? linkLine(ch) : ""};
   go("outcome");
 }
 function finishChallenge(passed){
@@ -3109,7 +3241,7 @@ function finishChallenge(passed){
                 : `You got through ${t.step} of ${def.qs.length}. The rest happened without you.`)
       : (passed ? `Challenge passed.` : `Challenge failed \u2014 and notice what that does and doesn't cost you.`);
   S.chal = null;
-  resolve(t.ch, c, out, note);
+  resolve(t.ch, c, out, note, !passed);
 }
 function scoreChallenge(){
   const t = S.chal, def = t.def;
@@ -3244,6 +3376,7 @@ function runVote(){
   r.hist.push({round:S.round, k:"\u2014", st:"out", say:"Voted out by the surviving families."});
   const lastMemo = S.memoLog[S.memoLog.length - 1];
   if (lastMemo) lastMemo.hit = lastMemo.flagged.indexOf(S.eliminated) >= 0;
+  S.voteLink = linkLine(BY_ID[S.eliminated]);
   go("voteres");
 }
 function afterVote(){
@@ -3313,6 +3446,7 @@ function pickTardy(){
   const r = S.roster[last.id];
   r.st = "out"; r.outRound = 4; r.why = "Final round \u2014 tardy";
   r.hist.push({round:4, k:"\u2014", st:"out", say:"Last one in when the music stopped."});
+  S.tardyLink = linkLine(last);
 }
 
 /* ==========================================================
@@ -3369,6 +3503,20 @@ document.addEventListener("click", e => {
   else if (a === "vote"){ S.voteSel = b.dataset.id; render(); }
   else if (a === "submitvote"){ if (S.voteSel) runVote(); }
   else if (a === "afterVote"){ afterVote(); }
+  else if (a === "lean"){
+    const ch = BY_ID[S.pending.id], r = S.roster[ch.id];
+    if (!ch.sibs || r.leanUsed || !S.pending.failed || S.pending.danger || !SETTINGS.leanEnabled) return;
+    r.leanUsed = true;
+    r.st = "strug";
+    if (r.outRound === S.round){ r.outRound = null; r.why = ""; }
+    r.linkAnnounced = false;
+    const say = "A sibling covers. Homework gets checked by a fifteen-year-old, dinner happens, the day survives. The token does not come back.";
+    if (r.hist.length) r.hist[r.hist.length - 1] = Object.assign({}, r.hist[r.hist.length - 1],
+      {st:"strug", say:say, lean:true});
+    S.pending = Object.assign({}, S.pending, {st:"strug", say:say, failed:false, link:"", chalNote:
+      "LEAN ON THE LINK \u2014 spent. This family's one token is gone."});
+    render();
+  }
   else if (a === "submithw"){ if (ALIVE().length === 0){ go("empty"); } else go("music"); }
   else if (a === "clearhw"){ S.drew = false; initSketch(); render(); }
   else if (a === "restart"){ resetGame(S.classSize); go("title"); }
@@ -3531,6 +3679,7 @@ edroot.addEventListener("input", e => {
     return setP(ED.draft, path.replace(".__pct", ".p"), n / 100);
   }
   if (path === "settings.chargesEnabled") return setP(ED.draft, path, val === "on");
+  if (path === "settings.leanEnabled") return setP(ED.draft, path, val === "on");
   if (path === "settings.withdrawnEvery") return setP(ED.draft, path, Math.max(1, parseInt(val, 10) || 3));
   setP(ED.draft, path, val);
 });
@@ -3568,6 +3717,12 @@ edroot.addEventListener("click", e => {
   if (a === "export") return edExport();
   if (a === "copy") return edCopy();
   if (a === "import") return edImport();
+  if (a === "addsib"){
+    const cc = D.cast[chIdx()];
+    if (!cc.sibs) cc.sibs = [];
+    cc.sibs.push("a sibling");
+    return renderEd(); }
+  if (a === "delsib"){ D.cast[chIdx()].sibs.splice(+b.dataset.i, 1); return renderEd(); }
   if (a === "addtag"){ D.cast[chIdx()].tags.push("New marker"); return renderEd(); }
   if (a === "deltag"){ D.cast[chIdx()].tags.splice(+b.dataset.i, 1); return renderEd(); }
   if (a === "addchoice"){
