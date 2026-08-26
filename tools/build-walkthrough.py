@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate walkthrough.html — the professor-facing slide deck — from index.html.
+"""Generate walkthrough.html (the professor-facing slide deck) from index.html.
 
 index.html is the source of truth: this tool extracts the game's theme tokens,
 sprite engine, and content data verbatim, so deck text can never drift from game
@@ -234,19 +234,19 @@ const SLIDES = [
     <p class="slide-eyebrow">A GAME ABOUT SYSTEMIC INEQUALITY IN EDUCATION</p>
     <h2 class="px" style="font-size:clamp(28px,6vw,58px);text-shadow:5px 5px 0 var(--clay)">MR. SYSTEM</h2>
     <p class="caption" style="text-align:center">You are a student trying to get to school, get home, and
-      make it to tomorrow. Your choices matter — but so do the systems built long before you got here.</p>
+      make it to tomorrow. Your choices matter, but so do the systems built long before you got here.</p>
     <div class="sprites-row">${CAST.map(c => `<span data-sp="${c.id}" data-px="3"></span>`).join("")}</div>
     <p class="mono" style="font-size:clamp(11px,1.2vw,14px);color:var(--ink-3)">
-      A game for 30–60 students · 35–45 minutes · click →</p>
+      A game for 30 to 60 students · 35 to 45 minutes · click →</p>
     <p class="mono" style="font-size:clamp(10px,1.05vw,12.5px);color:var(--ink-3);margin-top:4px">
-      A final project for [COURSE NAME] — designed by [NAME], built with a lot of index cards.</p>
+      A final project for [COURSE NAME], designed by [NAME], built with a lot of index cards.</p>
   </div>`},
 { id:"intro", name:"Introduction", build: () => `
   <p class="slide-eyebrow">2 · INTRODUCTION</p>
   <h2>THE SAME FIRST BELL</h2>
   <div class="body">
-    <p class="bigline">We wanted a room full of people to live one school morning under different rules
-      — and then talk about why the rules felt so different.</p>
+    <p class="bigline">We wanted a room full of people to live one school morning under different rules,
+      and then talk about why the rules felt so different.</p>
     <div class="bellviz">
       ${[["ayesha",6,"one crosswalk"],["david",24,"a ride, door to door"],
          ["fatima",58,"two school runs first, fasting"],["marcus",95,"ninety minutes on foot, four kids"]]
@@ -267,7 +267,7 @@ const SLIDES = [
   <p class="slide-eyebrow">3 · THE CONCEPT</p>
   <h2>LOUP GAROU, RESKINNED</h2>
   <div class="body">
-    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person,
+    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b>: not a person,
       but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.
       And where Loup Garou has Cupid linking two lovers, we link siblings: if a family goes down, everyone
       in it goes down, named out loud.</p>
@@ -300,7 +300,7 @@ const SLIDES = [
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="callout">← The argument lives in the COST line.</div>
         <p class="caption">The family reads the card together, argues it out loud, and commits to a letter.
-          Only the narrator's script knows what happens next — the reveal is the wolf's move.</p>
+          Only the narrator's script knows what happens next. The reveal is the wolf's move.</p>
       </div>
     </div>
   </div>`},
@@ -319,7 +319,7 @@ const SLIDES = [
   <h2>THE DIFFICULTY IS RIGGED. ON PURPOSE.</h2>
   <div class="body">
     <div class="grid2">${chalPanel("homework30")}${chalPanel("resources45")}</div>
-    <p class="caption"><b>Failing costs David nothing</b> — his fail line literally ends
+    <p class="caption"><b>Failing costs David nothing</b>. His fail line literally ends
       "nobody writes anything down." <b>Failing sends Marcus's sibling home.</b> The clock is identical.
       What failing costs is not.</p>
   </div>`},
@@ -328,7 +328,7 @@ const SLIDES = [
   <h2>MR. SYSTEM STRIKES</h2>
   <div class="body">
     <div class="mrsys"><b>MR. SYSTEM</b><p>${esc(marcusDanger ? marcusDanger.standard.say : "")}</p></div>
-    <p class="caption">Danger only attaches to <b>exposure</b> — the unguarded crossing, the siblings home
+    <p class="caption">Danger only attaches to <b>exposure</b>: the unguarded crossing, the siblings home
       alone, the ride nobody is expecting. It doesn't punish the choice. It goes after the kid the choice
       left uncovered: no adult watching, no money waiting, no one expecting them at the other end.
       Professors set it to <b>off</b>, <b>standard</b>, or <b>unsparing</b>.</p>
@@ -339,7 +339,7 @@ const SLIDES = [
   <div class="body">
     <p class="caption" style="font-style:italic">${esc(TEXT.voteKaia)}</p>
     <div class="cards">${["mei","carlos","isabella","marcus"].map(miniCard).join("")}</div>
-    <div class="ghost-strip"><span class="lbl">ELIMINATED — MIMING, NOT VOTING</span>
+    <div class="ghost-strip"><span class="lbl">GHOSTS · THE WHOLE GROUP, GUARDIANS INCLUDED</span>
       <span class="ghost"><span data-sp="lucia" data-px="2" data-ghost="1"></span>LUCIA</span>
       <span class="ghost"><span data-sp="jayson" data-px="2" data-ghost="1"></span>JAYSON</span></div>
     <div class="callout">The vote is a trap on purpose. The demo's simulated families reliably turn
@@ -355,9 +355,9 @@ const SLIDES = [
     <div class="memo" style="max-width:860px">
       <div class="memo-head">📋 MR. SYSTEM RECOMMENDS</div>
       <ul>
-        <li><b>ISABELLA</b> — ${esc(pat ? pat.text : "")} <span class="pol">(Policy ${esc(pat ? pat.policy : "")})</span></li>
-        <li><b>CARLOS</b> — ${esc(abs.text)} <span class="pol">(Policy ${esc(abs.policy)})</span></li>
-        <li class="wd"><b>DAVID</b> — <span class="struck">${esc(wd ? wd.charge : "")}</span>
+        <li><b>ISABELLA</b>: ${esc(pat ? pat.text : "")} <span class="pol">(Policy ${esc(pat ? pat.policy : "")})</span></li>
+        <li><b>CARLOS</b>: ${esc(abs.text)} <span class="pol">(Policy ${esc(abs.policy)})</span></li>
+        <li class="wd"><b>DAVID</b>: <span class="struck">${esc(wd ? wd.charge : "")}</span>
           <span class="mono" style="font-weight:700">WITHDRAWN: ${esc(wd ? wd.excuse : "")}</span></li>
       </ul>
     </div>
@@ -384,7 +384,7 @@ const SLIDES = [
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:8px">${esc(PRIV.ayesha || "")}</p>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:6px">${esc(PRIV.david || "")}</p></div>
     </div>
-    <p class="caption">Everyone can do the homework — <b>the homework was never the filter.</b>
+    <p class="caption">Everyone can do the homework. <b>The homework was never the filter.</b>
       The last one in when the music stops is tardy, and tardy is out. Three students never had to run.</p>
   </div>`},
 { id:"pattern", name:"The Pattern", build: () => `
@@ -400,17 +400,17 @@ const SLIDES = [
         <span class="pbar-v" style="color:var(--st-strug)">~60%</span></div>
       <div class="pbar-row"><span class="pbar-l">Poverty / crisis</span>
         <div class="pbar"><i style="width:10%;background:var(--st-in)"></i><i style="width:12%;background:var(--st-strug)"></i><i style="width:78%;background:var(--st-out)"></i></div>
-        <span class="pbar-v" style="color:var(--st-out)">~15–30%</span></div>
+        <span class="pbar-v" style="color:var(--st-out)">~15 to 30%</span></div>
     </div>
     <div class="kbox" style="max-width:76ch">Families eliminated: six. People eliminated: fourteen.
       The chart above only ever counts the families.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">Lucia's Round 1 had three options and all three ended out of
       school. She was eliminated before she made a decision. That is what a barrier is.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">The room eliminated the struggling families. Mr. System had
       recommended most of them. It felt like due process. It was a suggestion box with one suggestion.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
   </div>`},
 { id:"reflect", name:"Let's Reflect", build: () => `
   <p class="slide-eyebrow">13 · LET'S REFLECT</p>
@@ -428,7 +428,7 @@ const SLIDES = [
   <div class="body">
     <div class="grid3">
       <div class="takeaway"><span class="tk-ic" data-ic="note" data-px="4"></span><b>COST LINES</b>We put
-        the argument in the price tags — "Nothing." against "A risk you cannot take back."</div>
+        the argument in the price tags: "Nothing." against "A risk you cannot take back."</div>
       <div class="takeaway"><span class="tk-ic" data-ic="clock" data-px="4"></span><b>RIGGED CHALLENGES</b>We
         rigged the difficulty to follow class. Failing up is free; failing down prices a sibling.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="x" data-px="4"></span><b>THE VOTE</b>We gave the room
@@ -437,7 +437,7 @@ const SLIDES = [
       <div class="takeaway"><span class="tk-ic" data-ic="warn" data-px="4"></span><b>DANGER = EXPOSURE</b>We let
         Mr. System strike only where no adult, no money, and no margin were covering the kid.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="star" data-px="4"></span><b>THE FINISH LINE</b>We built
-        a finish line some students never had to run for — and star cards that say so out loud.</div>
+        a finish line some students never had to run for, and star cards that say so out loud.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="book" data-px="4"></span><b>THE DEBRIEF</b>We end by
         handing the room a chart of what it just did to itself.</div>
     </div>
@@ -449,7 +449,7 @@ const SLIDES = [
     <div class="pipe">
       <span class="step">🎮 Play this demo</span><span class="arrow">→</span>
       <span class="step">✏️ PROF EDIT (passcode is in the facilitator guide)</span><span class="arrow">→</span>
-      <span class="step">🖨 PRINT PACK — the real notecard game</span>
+      <span class="step">🖨 PRINT PACK: the real notecard game</span>
     </div>
     <div class="timing" role="img" aria-label="Run of show: deal 5, round one 10, vote 3, round two 8, vote 3, round three 6, vote 3, final 6, debrief 10 minutes">
       <i style="flex:5;background:var(--gold)">DEAL 5</i><i style="flex:10;background:var(--grass);color:#fff">R1 · 10</i>
@@ -570,12 +570,12 @@ SHELL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="A click-through walkthrough of Mr. System, the classroom game about systemic inequality in education.">
-<title>Mr. System — Walkthrough</title>
+<title>Mr. System Walkthrough</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-/* THEME TOKENS — extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
+/* THEME TOKENS: extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
 __TOKENS__
 __DECKCSS__
 </style>
@@ -601,7 +601,7 @@ __DECKCSS__
 </div>
 <p class="sr" id="live" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></p>
 <script>
-/* GAME DATA — extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
+/* GAME DATA: extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
 __DATA__
 __TEXT__
 __PRIV__

@@ -716,7 +716,7 @@ const CAST = [
  load:1, tmpl:"base", pal:{H:"#3B2A1C",S:"#F2CBA0",T:"#2F6FB0",P:"#2C3A4C",B:"#1B222B"}},
 {id:"alejandra", name:"ALEJANDRA", cls:"Upper-class", tier:"upper", pri:true,
  who:"Colombian, wealthy family, enormous performance pressure.",
- tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis \u2014 diagnosed in one year, managed on a schedule"],
+ tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis: diagnosed in one year, managed on a schedule"],
  load:2, tmpl:"long", pal:{H:"#241A14",S:"#D9A374",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
 {id:"priya", name:"PRIYA", cls:"Upper-middle", tier:"upper",
  who:"Indian-American, wealthy immigrant family, heavy parental expectation.",
@@ -890,7 +890,7 @@ evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVER
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 const DILEMMAS = {
 1:{
- ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away \u2014 from your bedroom window you can read the marquee. The only question is when to cross.", choices:[
+ ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away. From your bedroom window you can read the marquee. The only question is when to cross.", choices:[
   A("A","Go in with mom at 7:00","Hearing the morning announcements twice.","star",
     {auto:{st:"in",say:"The building at 7:00 is dark, quiet, and briefly yours. You take the chair that spins in the front office, and at 8:00 the announcements come over the PA in the same voice that just told you to grab a jacket."}}),
   A("B","Walk over at 8:15","Nothing.","walk",
@@ -903,9 +903,9 @@ const DILEMMAS = {
      danger:{p:0.2, standard:{st:"strug",say:"The driver misses the turn for the school and does not slow down. You say stop twice before he does. You get out at a light eleven blocks away and walk the rest with your phone in your hand."},
       unsparing:{st:"strug",say:"The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety. You walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone and the safe neighborhood. It could not buy the ride going right."}}}),
   A("B","Take the bus","The 7:52, in seventeen minutes.","bus",
-    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot \u2014 the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
+    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot: the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
   A("C","Text your dad for a ride","The reply, whenever it comes.","note",
-    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries \u2014 \u201cLeaving now?\u201d \u2014 and by then you have been at school for three hours."}})]},
+    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries, \u201cLeaving now?\u201d, and by then you have been at school for three hours."}})]},
  tyler:{sit:"Last night was a bad one. Your left arm has a mark you didn't have yesterday, and the kitchen is silent in the way that means he's still asleep. First bell is 8:30.", choices:[
   A("A","Long sleeves, side door","A flannel in seventy-nine degrees.","ghost",
     {auto:{st:"in",say:"The side door gets you to your seat at 8:27 and nobody looks twice. By third period the radiators are still on, and you take notes with your cuffs pinned under your palms."}}),
@@ -913,7 +913,7 @@ const DILEMMAS = {
     {auto:{st:"strug",say:"She closes the door, photographs your arm twice, and asks her questions in a voice that has done this before. By noon there is a case number and an adult whose job is you; by last bell there is a voicemail at the house, and you know what time he gets home."}}),
   A("C","Come in at second period","First period, unexcused.","clock",
     {auto:{st:"strug",say:"You sit behind the gas station with a bag of their ice until your arm will go through a sleeve without help. You slide in at 9:22, and the unexcused mark posts before lunch, next to two others from this year."}})]},
- marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday \u2014 those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
+ marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday. Those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
   A("A","Take the church van","Four stops before school.","bus",
     {auto:{st:"in",say:"Sister Yvette pulls up at 7:40 with four kids in and the choir tape on low. You're at the gate by 8:20 with somebody's harmony stuck in your head."}}),
   A("B","Walk, quietly","Twenty-five minutes on foot.","walk",
@@ -1106,11 +1106,11 @@ const DILEMMAS = {
     {auto:{st:"in",say:"You sort district mail into the teacher cubbies and learn the building by box: who gets the catalogs, who gets the attendance letters. The head secretary pays you from the butterscotch jar and calls you her best hire."}})]},
  grace:{sit:"3:40, and the apartment is exactly as you left it, because nobody else has been in it. There's an essay due Friday, a fridge holding sparkling water and half a lime, and a card that covers whatever the fridge doesn't.", choices:[
   A("A","Cook a real dinner","An hour and a recipe video.","home",
-    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid \u2014 without anyone asking what burned."}}),
+    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid: without anyone asking what burned."}}),
   A("B","Order in. Again.","Nothing anyone would notice.","check",
     {auto:{st:"in",say:"By now the driver knows the building code. You eat at the island with a video propped against the fruit bowl no adult has been home to refill."}}),
   A("C","Start the essay","The evening.","book",
-    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric \u2014 compare, not argue \u2014 five pages in the wrong direction."}})]},
+    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric. Compare, not argue. Five pages in the wrong direction."}})]},
  tyler:{sit:"3:10. From the corner you can read the driveway: the truck is home early, nose-in, and the kitchen light is off. You have been reading this driveway since you were nine, and today it isn't saying.", choices:[
   A("A","Go in now, while it's quiet","The guess.","home",
     {auto:{st:"in",say:"The side door, socks on the stairs. He's asleep in the recliner with the TV going, and you eat cereal standing at the counter and do homework with your door cracked so you can hear."}}),
@@ -1212,7 +1212,7 @@ const DILEMMAS = {
      pass:{st:"in",say:"You name it once, precisely, the way the specialist taught you. By fifth period the driver has been rerouted; the specialist sees you at 3:40, adjusts the dosage, and has you home for dinner with a note the school never asks to see."},
      fail:{st:"in",say:"At lunch you fumble the words and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."}}),
   A("B","Give up on the day entirely","A day of margin you don't have.","home",
-    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls \u2014 it is in your file \u2014 and the test moves to Thursday with nothing next to your name."}}),
+    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls, it is in your file, and the test moves to Thursday with nothing next to your name."}}),
   A("C","Tell someone","The appointment your mother will mention in front of guests.","note",
     {auto:{st:"in",say:"Between meetings, you tell your mother. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."}})]},
  priya:{sit:"Tutor at six, your own homework after, and a school voicemail nobody but you can understand.", choices:[
@@ -1293,14 +1293,14 @@ const DILEMMAS = {
   A("B","Pretend not to hear","Nothing.","ghost",
     {auto:{st:"in",say:"You finish tomorrow's reading with your door open anyway. The word \u201cplacement\u201d comes through the wall between two chapters, and you turn the page."}}),
   A("C","Bring her tea and sit with her","Staying up past eleven.","heart",
-    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence \u2014 \u201che's fifteen, he's raising three kids\u201d \u2014 and then she hangs up and says goodnight twice, once in each voice."}})]},
+    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence, \u201che's fifteen, he's raising three kids\u201d, and then she hangs up and says goodnight twice, once in each voice."}})]},
  grace:{sit:"9 PM. The field trip form on the counter says a parent or guardian must sign it by first period. Your mother is twelve hours into a shift; your father's phone is going straight to voicemail. The card can't sign.", choices:[
   A("A","Sign it in her handwriting","Two practice runs on an envelope.","note",
-    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 \u2014 not one of your forms has ever been checked, and today is no different."}}),
+    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15. Not one of your forms has ever been checked, and today is no different."}}),
   A("B","Call the hospital and ask for her","Three transfers and a hold.","heart",
     {auto:{st:"in",say:"A charge nurse finds her between patients: she has four minutes, and the form takes one of them. The other three go to whether you've eaten; her one-line email from the nurses' station is accepted at 8:02 without a question."}}),
   A("C","Leave it blank","A call from the office.","x",
-    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing \u2014 doctors' schedules, they understand completely, Monday is fine."}})]},
+    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing. Doctors' schedules, they understand completely, Monday is fine."}})]},
  tyler:{sit:"It starts at 9:40 the way it starts: a cabinet door, then his voice, then your mother's, lower. Your sister is eight and her room shares a wall with the kitchen. Yours doesn't.", choices:[
   A("A","Take the couch and the headphones","Hearing it anyway.","ghost",
     {auto:{st:"strug",say:"You turn the volume to the number that usually works and watch the ceiling until the house changes key. At 11:50 a door closes, then nothing, and you count to one hundred before you let yourself sleep."}}),
@@ -1314,14 +1314,14 @@ const DILEMMAS = {
   A("B","Homework with the TV on","Half your attention.","note",
     {auto:{st:"strug",say:"The game show keeps the room from going silent and the worksheet gets done in the gaps. Between problems your eyes keep finding the counter, and the envelope has not moved."}}),
   A("C","Pray the way Grandma taught you","Nothing tonight.","home",
-    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works \u2014 not on the envelope, on the sleep \u2014 and you're out by 9:40."}})]},
+    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works: not on the envelope, on the sleep. You're out by 9:40."}})]},
  rebecca:{sit:"Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.", choices:[
   A("A","Finish it before candle-lighting","The afternoon.","check",
     {auto:{st:"in",say:"Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."}}),
   A("B","Leave it for Sunday","Nothing.","home",
     {auto:{st:"in",say:"Shabbat, sleep, Hebrew school, and the project on Sunday afternoon. It takes two hours at the dining table and is done before the chicken comes out."}}),
   A("C","Reconvene Saturday night","Nothing.","heart",
-    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop \u2014 dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
+    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop: dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
  daniel:{sit:"Shabnam turns thirteen tonight and grandma has been cooking since two. There's a biology quiz tomorrow. The whole family is at the table by seven, including the uncle who majored in bio.", choices:[
   A("A","Study before dinner","The smell from the kitchen.","book",
     {chal:"homework30",
@@ -1338,7 +1338,7 @@ const DILEMMAS = {
     {auto:{st:"in",say:"The first open argument your kitchen has ever hosted, and you started it. You win Sunday afternoons; breakfast stays cold for two weeks."}}),
   A("C","Say yes and stop sleeping","Sleep, an hour at a time.","clock",
     {auto:{st:"strug",say:"The B+ is an A by November. You start waking at 3 AM for no reason and tell no one, because the grades are fine, and the grades are the thing that gets checked."}})]},
- fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime \u2014 the whole evening is yours now.", choices:[
+ fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime: the whole evening is yours now.", choices:[
   A("A","Run the evening yourself","Your essay, again.","home",
     {chal:"evening30",
      pass:{st:"strug",say:"You break your fast over the stove, plate them, check a spelling list, run the whole bedtime. At 10:15 you open your own homework and are asleep on your arm by 10:30."},
@@ -1537,7 +1537,7 @@ function ppSheet(sec, title, eyebrow, body, foot){
     <p class="pp-eyebrow">${pesc(eyebrow)}</p>
     ${title ? `<h2>${pesc(title)}</h2>` : ""}
     ${body}
-    <div class="pp-foot"><span>MR. SYSTEM \u2014 PRINT PACK</span><span>${pesc(foot || "")}</span></div>
+    <div class="pp-foot"><span>MR. SYSTEM \u00b7 PRINT PACK</span><span>${pesc(foot || "")}</span></div>
   </section>`;
 }
 function chunk(arr, n){
@@ -1554,9 +1554,9 @@ function buildPrintPack(opts){
   const sheets = [];
 
   /* ---- cover + TOC ---- */
-  sheets.push(ppSheet("cover", "MR. SYSTEM", "THE PHYSICAL GAME \u2014 PRINT PACK", `
+  sheets.push(ppSheet("cover", "MR. SYSTEM", "THE PHYSICAL GAME \u00b7 PRINT PACK", `
     <p style="font-size:11pt;max-width:5.6in">Everything the room needs to play by hand. Print this pack,
-      bring a die, painter's tape, a bin, pens, and a timer \u2014 the game is the notecards; the site is
+      bring a die, painter's tape, a bin, pens, and a timer. The game is the notecards; the site is
       only the demo.</p>
     <div class="pnote"><b>This pack was generated from:</b> ${pesc(opts.customized
       ? "a CUSTOMIZED content pack (PROF EDIT changes included)" : "the default content pack")}
@@ -1564,13 +1564,13 @@ function buildPrintPack(opts){
       ${pesc(SETTINGS.dangerMode.toUpperCase())} \u00b7 ${pesc(opts.dateStr)}</div>
     <h3>CONTENTS</h3>
     <ul class="ptoc">
-      <li><b>1</b> Role cards \u2014 one per family, dealt once, kept all game (cardstock)</li>
-      <li><b>2</b> Round cards \u2014 the dilemmas, drawn each round (cardstock)</li>
+      <li><b>1</b> Role cards: one per family, dealt once, kept all game (cardstock)</li>
+      <li><b>2</b> Round cards: the dilemmas, drawn each round (cardstock)</li>
       <li><b>3</b> Challenge cards (cardstock)</li>
-      <li><b>4</b> Kaia's script book \u2014 the narrator's binder (paper)</li>
-      <li><b>5</b> Mr. System's memo sheets \u2014 one per vote (paper)</li>
-      <li><b>6</b> Table pieces \u2014 status board, ghost tents, star cards, vote slips</li>
-      <li><b>7</b> Run of show \u2014 one page for the podium</li>
+      <li><b>4</b> Kaia's script book: the narrator's binder (paper)</li>
+      <li><b>5</b> Mr. System's memo sheets: one per vote (paper)</li>
+      <li><b>6</b> Table pieces: status board, ghost tents, star cards, vote slips</li>
+      <li><b>7</b> Run of show: one page for the podium</li>
     </ul>
     <div class="pnote">${pesc(TEXT.titleWarn || "")}</div>`,
     "cover"));
@@ -1591,13 +1591,13 @@ function buildPrintPack(opts){
       what it costs.</div>
   </div>`;
   chunk(active, 4).forEach((four, i) => {
-    sheets.push(ppSheet("roles", i === 0 ? "ROLE CARDS" : "", "SECTION 1 \u2014 ROLE CARDS \u00b7 CUT ALONG DOTTED LINES",
+    sheets.push(ppSheet("roles", i === 0 ? "ROLE CARDS" : "", "SECTION 1 \u00b7 ROLE CARDS \u00b7 CUT ALONG DOTTED LINES",
       `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 p" + (i + 1)));
   });
   const povActive = active.filter(c => c.tier === "pov");
   if (povActive.length)
     chunk(povActive, 4).forEach((four, i) => {
-      sheets.push(ppSheet("roles", "", "SECTION 1 \u2014 SPARE COPIES \u00b7 POVERTY/CRISIS BLOCK (CARDS GET LOST; THESE CANNOT BE MISSING)",
+      sheets.push(ppSheet("roles", "", "SECTION 1 \u00b7 SPARE COPIES \u00b7 POVERTY/CRISIS BLOCK (CARDS GET LOST; THESE CANNOT BE MISSING)",
         `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 spares p" + (i + 1)));
     });
 
@@ -1619,7 +1619,7 @@ function buildPrintPack(opts){
       .map(ch => roundCard(ch, DILEMMAS[r][ch.id], r));
     chunk(cards, 2).forEach((two, i) => {
       sheets.push(ppSheet("rounds", i === 0 ? "ROUND " + r + " CARDS" : "",
-        "SECTION 2 \u2014 ROUND CARDS \u00b7 " + pesc(ROUND_NAME[r]),
+        "SECTION 2 \u00b7 ROUND CARDS \u00b7 " + pesc(ROUND_NAME[r]),
         `<div class="pgrid2">${two.join("")}</div>`, "round " + r + " \u00b7 p" + (i + 1)));
     });
   });
@@ -1655,15 +1655,15 @@ function buildPrintPack(opts){
   };
   chunk([...usedChals], 2).forEach((two, i) => {
     sheets.push(ppSheet("challenges", i === 0 ? "CHALLENGE CARDS" : "",
-      "SECTION 3 \u2014 CHALLENGE CARDS \u00b7 ANSWER KEYS LIVE IN KAIA'S SCRIPT",
+      "SECTION 3 \u00b7 CHALLENGE CARDS \u00b7 ANSWER KEYS LIVE IN KAIA'S SCRIPT",
       `<div class="pgrid2">${two.map(chalCard).join("")}</div>`, "challenges \u00b7 p" + (i + 1)));
   });
 
   /* ---- 4. Kaia's script book ---- */
-  sheets.push(ppSheet("script", "KAIA'S SCRIPT BOOK", "SECTION 4 \u2014 THE NARRATOR'S BINDER", `
+  sheets.push(ppSheet("script", "KAIA'S SCRIPT BOOK", "SECTION 4 \u00b7 THE NARRATOR'S BINDER", `
     <h3>SETUP</h3>
-    <p style="font-size:10pt">${groups} groups \u00d7 ${opts.classSize} students \u2014 each group is dealt
-      ${per > 1 ? "1\u2013" + per : "one"} role card${per > 1 ? "s" : ""} and <b>is</b> that family.
+    <p style="font-size:10pt">${groups} groups \u00d7 ${opts.classSize} students. Each group is dealt
+      ${per > 1 ? "1 to " + per : "one"} role card${per > 1 ? "s" : ""} and <b>is</b> that family.
       One vote per family, cast by a spokesperson. ${active.length} families in play
       (${pesc(modeLabel)}).</p>
     <h3>MATERIALS</h3>
@@ -1673,16 +1673,16 @@ function buildPrintPack(opts){
       <li>The status board taped up or projected \u00b7 ghost tents and star cards within reach</li>
     </ul>
     <h3>THE SIBLING LINK (THE CUPID RULE)</h3>
-    <div class="pnote">In Loup Garou, Cupid links two lovers \u2014 if one goes down, so does the other.
+    <div class="pnote">In Loup Garou, Cupid links two lovers: if one goes down, so does the other.
       Here the link is siblings. When a linked family is eliminated, read the link line slowly and name
       every sibling: <b>"The link holds. [names] go down with them."</b> Each linked family also holds one
       LEAN ON THE LINK token: after failing a challenge, they may spend it once to turn the fail into a
-      struggle. At the debrief, count people, not families \u2014 the tally sheet tells you how.</div>
-    <h3>SAFETY \u2014 BEFORE THE FIRST ROUND</h3>
+      struggle. At the debrief, count people, not families. The tally sheet tells you how.</div>
+    <h3>SAFETY \u00b7 BEFORE THE FIRST ROUND</h3>
     <div class="pnote">Write on the board and leave up all session:<br>
       <b>Counselor: ______________________ \u00b7 988 Suicide &amp; Crisis Lifeline</b><br><br>
       Say aloud: players may pass on any character, no explanation needed. Danger mode for this
-      session: <b>${pesc(SETTINGS.dangerMode.toUpperCase())}</b> \u2014 if it is not OFF, say that the
+      session: <b>${pesc(SETTINGS.dangerMode.toUpperCase())}</b>. If it is not OFF, say that the
       game can depict traffic injury and threats to unsupervised kids.</div>
     <div class="pkaia">${pesc(TEXT.castKaia)}</div>`, "script \u00b7 setup"));
 
@@ -1711,8 +1711,8 @@ function buildPrintPack(opts){
         if (c.danger && c.danger.standard){
           const faces = ppDiceFaces(c.danger.p);
           danger = `<div class="pdice">\u1f3b2 If they chose ${pesc(c.k)}: roll a d6.
-              ${faces === 1 ? "On a 1" : "1\u2013" + faces} \u2192 read the MR. SYSTEM box.
-              ${faces === 1 ? "2\u20136" : (faces + 1) + "\u20136"} \u2192 read the normal outcome.</div>
+              ${faces === 1 ? "On a 1" : "1 to " + faces} \u2192 read the MR. SYSTEM box.
+              ${faces === 1 ? "2 to 6" : (faces + 1) + " to 6"} \u2192 read the normal outcome.</div>
             <div class="pmrsys"><b>\u26a0 MR. SYSTEM</b>${pesc(c.danger.standard.say)}
               <span class="script-st">(\u2192 ${PP_STATUS[c.danger.standard.st]})</span>
               ${c.danger.unsparing ? `<div class="pfn">Unsparing variant: ${pesc(c.danger.unsparing.say)}
@@ -1723,12 +1723,12 @@ function buildPrintPack(opts){
       return `<div class="script-fam"><h4>${pesc(ch.name)}</h4>${lines}</div>`;
     });
     chunk(famBlocks, 3).forEach((three, i) => {
-      sheets.push(ppSheet("script", i === 0 ? "SCRIPT \u2014 ROUND " + r : "",
-        "SECTION 4 \u2014 " + pesc(ROUND_NAME[r]),
+      sheets.push(ppSheet("script", i === 0 ? "SCRIPT \u00b7 ROUND " + r : "",
+        "SECTION 4 \u00b7 " + pesc(ROUND_NAME[r]),
         (i === 0 ? `<div class="pkaia">${pesc(ROUND_KAIA[r])}</div>` : "") + three.join(""),
         "script \u00b7 round " + r + " \u00b7 p" + (i + 1)));
     });
-    sheets.push(ppSheet("script", "", "SECTION 4 \u2014 THE ROUND " + r + " VOTE", `
+    sheets.push(ppSheet("script", "", "SECTION 4 \u00b7 THE ROUND " + r + " VOTE", `
       <div class="pkaia">${pesc(TEXT.voteKaia)}</div>
       <p style="font-size:10pt">Hand out vote slips. Ghosts stand and mime; their votes are not
         collected. Read the round ${r} memo sheet first, in a neutral administrative voice.</p>
@@ -1738,38 +1738,38 @@ function buildPrintPack(opts){
 
   const linkedActive = active.filter(c => c.sibs && c.sibs.length);
   const privActive = Object.keys(PRIV).filter(id => opts.activeIds.indexOf(id) >= 0);
-  sheets.push(ppSheet("script", "SCRIPT \u2014 FINAL ROUND", "SECTION 4 \u2014 HOMEWORK, MUSIC, TARDY", `
-    <h3>PHASE 1 \u2014 HOMEWORK</h3>
+  sheets.push(ppSheet("script", "SCRIPT \u00b7 FINAL ROUND", "SECTION 4 \u00b7 HOMEWORK, MUSIC, TARDY", `
+    <h3>PHASE 1 \u00b7 HOMEWORK</h3>
     <div class="pkaia">${pesc(TEXT.homeworkKaia)}</div>
     <p style="font-size:10pt">Blank paper, pens, the bin. ${pesc(TEXT.homeworkNote)}</p>
-    <h3>PHASE 2 \u2014 THE MUSIC</h3>
+    <h3>PHASE 2 \u00b7 THE MUSIC</h3>
     <div class="pkaia">${pesc(TEXT.musicLine)}</div>
     <p style="font-size:10pt">Tape three red lines on the floor. Play music; count down about 12 seconds,
       out loud, on no fixed schedule. Privileged students (\u2605 below) do not have to run.</p>
-    <h3>PHASE 3 \u2014 THE TIMER GOES OFF</h3>
+    <h3>PHASE 3 \u00b7 THE TIMER GOES OFF</h3>
     <div class="pkaia">${pesc(TEXT.tardyKaia)}</div>
     <p style="font-size:10pt">In the room, "last one in" is decided by who was carrying the most.
-      Let it be whoever it actually is \u2014 then read their line:</p>
+      Let it be whoever it actually is, then read their line:</p>
     ${active.map(ch => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(ch.name)}</b>
       <span style="font-size:8.5pt">${pesc(TARDY_WHY[ch.id] || "The distance was never the same for everyone.")}</span></div>`).join("")}
-    <h3>SPECIAL TREATMENT \u2014 READ, THEN HAND OVER THE STAR CARDS</h3>
+    <h3>SPECIAL TREATMENT \u00b7 READ, THEN HAND OVER THE STAR CARDS</h3>
     ${privActive.length ? privActive.map(id => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(BY_ID[id].name)}</b>
       <span style="font-size:8.5pt">${pesc(PRIV[id])}</span></div>`).join("")
       : `<p style="font-size:9pt">No privileged students in this roster.</p>`}`,
     "script \u00b7 final"));
 
-  sheets.push(ppSheet("script", "SCRIPT \u2014 DEBRIEF", "SECTION 4 \u2014 THE PATTERN", `
+  sheets.push(ppSheet("script", "SCRIPT \u00b7 DEBRIEF", "SECTION 4 \u00b7 THE PATTERN", `
     <div class="pkaia">${pesc(TEXT.debriefKaia)}</div>
-    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u2014 THE TALLY</h3>
+    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u00b7 THE TALLY</h3>
     <p style="font-size:9.5pt">Count the eliminated families on the status board, then add their linked
       siblings and read both numbers to the room:</p>
     ${linkedActive.map(c => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(c.name)}</b>
-      <span style="font-size:8.5pt">+${c.sibs.length} \u2014 ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
+      <span style="font-size:8.5pt">+${c.sibs.length}: ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
     <p style="font-size:9.5pt;font-weight:700">"Families eliminated: ___. People eliminated: ___.
       The board only ever counted the families."</p>` : ""}
     <h3>ASK THE ROOM</h3>
     <ol style="font-size:10pt;padding-left:.25in">${(TEXT.questions || []).map(q => `<li style="margin-bottom:6px">${pesc(q)}</li>`).join("")}</ol>
-    <h3>PROMPTS \u2014 READ WHERE THEY APPLY</h3>
+    <h3>PROMPTS \u00b7 READ WHERE THEY APPLY</h3>
     <ul class="pcheck" style="font-size:9pt">
       <li>If a danger event fired: "The same street was only dangerous for the kids who had to cross it alone."</li>
       <li>If the room followed the memo: "It felt like due process. It was a suggestion box with one suggestion."</li>
@@ -1791,31 +1791,31 @@ function buildPrintPack(opts){
     if (m === 0 && aishaCharge){
       const aishaActive = opts.activeIds.indexOf("aisha") >= 0;
       lines.push(`<div class="pmemo-line"><b>${aishaActive ? "AISHA" : '<span class="blank"></span>'}</b>
-        <span>\u2014 ${pesc(aishaActive ? aishaCharge.text : aishaCharge.text.replace(/\bher\b/g, "their"))}</span>
+        <span>${pesc(aishaActive ? aishaCharge.text : aishaCharge.text.replace(/\bher\b/g, "their"))}</span>
         <span class="pol">(Policy ${pesc(aishaCharge.policy)})</span></div>`);
     }
     bespokePatterns.filter(x => x.forId !== "aisha").slice(m * 2, m * 2 + 2).forEach(x => {
       lines.push(`<div class="pmemo-line"><b>${pesc(BY_ID[x.forId].name)}</b>
-        <span>\u2014 ${pesc(x.text)} <i style="font-size:8pt;color:#666">(read only if currently struggling)</i></span>
+        <span>${pesc(x.text)} <i style="font-size:8pt;color:#666">(read only if currently struggling)</i></span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     genericPatterns.slice(m, m + 2).forEach(x => {
       lines.push(`<div class="pmemo-line"><span class="blank"></span>
-        <span>\u2014 ${pesc(fmtCharge("", x.text)).replace(/^\s*\u2014?\s*/, "")}
+        <span>${pesc(fmtCharge("", x.text)).replace(/^\s*\u2014?\s*/, "")}
           <i style="font-size:8pt;color:#666">(fill in a currently-struggling family before reading)</i></span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     absurdAll.slice(m * 5, m * 5 + 4).forEach(x => {
       lines.push(`<div class="pmemo-line"><span class="blank"></span>
-        <span>\u2014 ${pesc(x.text)}</span>
+        <span>${pesc(x.text)}</span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     bespokeWithdrawn.slice(m, m + 1).forEach(x => {
       lines.push(`<div class="pmemo-line withdrawn"><b>${pesc(BY_ID[x.forId].name)}</b>
-        <span>\u2014 ${pesc(x.charge)}</span>
+        <span>${pesc(x.charge)}</span>
         <span class="excuse">WITHDRAWN: ${pesc(x.excuse)}</span></div>`);
     });
-    sheets.push(ppSheet("memos", "\u1f4cb MR. SYSTEM RECOMMENDS", "SECTION 5 \u2014 MEMO FOR VOTE " + (m + 1), `
+    sheets.push(ppSheet("memos", "\u1f4cb MR. SYSTEM RECOMMENDS", "SECTION 5 \u00b7 MEMO FOR VOTE " + (m + 1), `
       <p style="font-size:9.5pt;font-style:italic;color:#444">${pesc(CHARGES.memoIntro)}</p>
       ${lines.join("")}
       <div class="pnote" style="margin-top:14px">Read in a neutral administrative voice. Do not
@@ -1823,7 +1823,7 @@ function buildPrintPack(opts){
   }
 
   /* ---- 6. table pieces ---- */
-  sheets.push(ppSheet("table", "STATUS BOARD", "SECTION 6 \u2014 TAPE UP OR PROJECT; MARK BY HAND", `
+  sheets.push(ppSheet("table", "STATUS BOARD", "SECTION 6 \u00b7 TAPE UP OR PROJECT; MARK BY HAND", `
     <table class="pboard"><tr><th>FAMILY</th><th>R1</th><th>VOTE</th><th>R2</th><th>VOTE</th><th>R3</th><th>VOTE</th><th>FINAL</th></tr>
       ${active.map(ch => `<tr><td class="pb-name">${pesc(ch.name)}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`).join("")}
     </table>
@@ -1832,32 +1832,32 @@ function buildPrintPack(opts){
   const tent = `<div class="ptent">
     <div class="ptent-half flip"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div>
     <div class="ptent-half"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div></div>`;
-  sheets.push(ppSheet("table", "GHOST TENTS", "SECTION 6 \u2014 FOLD ALONG THE DASHED LINE; HAND TO ELIMINATED FAMILIES",
+  sheets.push(ppSheet("table", "GHOST TENTS", "SECTION 6 \u00b7 FOLD AND HAND TO THE WHOLE ELIMINATED GROUP, GUARDIANS INCLUDED",
     `<div class="pgrid2">${tent}${tent}${tent}${tent}</div>`, "ghost tents"));
   if (privActive.length)
-    sheets.push(ppSheet("table", "SPECIAL TREATMENT", "SECTION 6 \u2014 STAR CARDS \u00b7 HAND OUT DURING THE FINAL-ROUND REVEAL",
+    sheets.push(ppSheet("table", "SPECIAL TREATMENT", "SECTION 6 \u00b7 STAR CARDS \u00b7 HAND OUT DURING THE FINAL-ROUND REVEAL",
       `<div class="pgrid2">${privActive.map(id => `<div class="pstar">
         <div>\u2b50</div><div class="pstar-name">${pesc(BY_ID[id].name)}</div>
         <div class="pstar-line">${pesc(PRIV[id])}</div></div>`).join("")}</div>`, "star cards"));
   if (linkedActive.length)
-    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u2014 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
+    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u00b7 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
       `<div class="pgrid2">${linkedActive.map(c => `<div class="pstar" style="border-style:dashed">
         <div>\u26d3</div><div class="pstar-name">${pesc(c.name)}</div>
-        <div class="pstar-line">LEAN ON THE LINK \u2014 spend after a failed challenge to make it a
+        <div class="pstar-line">LEAN ON THE LINK: spend after a failed challenge to make it a
           struggle instead. A sibling covers. The token does not come back.</div></div>`).join("")}</div>`,
       "lean tokens"));
   const slip = `<div class="pslip"><span>FAMILY: <span class="blank"></span></span>
     <span>VOTES TO ELIMINATE: <span class="blank"></span></span></div>`;
-  sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u2014 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
+  sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u00b7 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
     `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">${Array.from({length:12}).map(() => slip).join("")}</div>`,
     "vote slips"));
 
   /* ---- 7. run of show ---- */
-  sheets.push(ppSheet("run", "RUN OF SHOW", "SECTION 7 \u2014 ONE PAGE FOR THE PODIUM", `
+  sheets.push(ppSheet("run", "RUN OF SHOW", "SECTION 7 \u00b7 ONE PAGE FOR THE PODIUM", `
     <table class="prun"><tr><th>PHASE</th><th>TIME</th><th>NOTES</th></tr>
       <tr><td>Deal + intro</td><td>5 min</td><td>Safety block first. Board: counselor + 988.</td></tr>
-      <tr><td>Round 1 dilemmas</td><td>8\u201310 min</td><td>Keep families arguing out loud. The die stays hidden until it is needed.</td></tr>
-      <tr><td>Vote 1</td><td>3 min</td><td><b>Don't skip:</b> name the pattern aloud \u2014 the room eliminates whoever is already struggling.</td></tr>
+      <tr><td>Round 1 dilemmas</td><td>8 to 10 min</td><td>Keep families arguing out loud. The die stays hidden until it is needed.</td></tr>
+      <tr><td>Vote 1</td><td>3 min</td><td><b>Don't skip:</b> name the trap aloud: expect the room to turn on whoever is already struggling.</td></tr>
       <tr><td>Round 2</td><td>8 min</td><td></td></tr>
       <tr><td>Vote 2</td><td>3 min</td><td>The withdrawn charge lands here. Let the room notice on its own first.</td></tr>
       <tr><td>Round 3</td><td>6 min</td><td></td></tr>
@@ -1879,32 +1879,32 @@ const ST_LABEL = { in: "IN SCHOOL", strug: "STRUGGLING", out: "OUT OF SCHOOL" };
 const ST_CLASS = { in: "b-in", strug: "b-strug", out: "b-out" };
 const ST_VAR = { in: "--st-in", strug: "--st-strug", out: "--st-out" };
 const ROUND_NAME = {
-  1: "MORNING IN THE VILLAGE — GET TO SCHOOL",
-  2: "AFTERNOON & EVENING — GET HOME",
-  3: "THE NIGHT — MAKE IT TO TOMORROW"
+  1: "MORNING IN THE VILLAGE · GET TO SCHOOL",
+  2: "AFTERNOON & EVENING · GET HOME",
+  3: "THE NIGHT · MAKE IT TO TOMORROW"
 };
 const ROUND_KAIA = {
   1: "It's 7 AM. First bell is at 8:30. Everybody in this room has to get to the same building. Nobody starts from the same place.",
-  2: "Last bell. Everyone goes home now — to whatever home is. Four hours until sleep, and the homework is due either way.",
+  2: "Last bell. Everyone goes home now, to whatever home is. Four hours until sleep, and the homework is due either way.",
   3: "Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."
 };
 const TEXT = {
-  titleKicker: "A GAME FOR 30\u201360 STUDENTS",
+  titleKicker: "A GAME FOR 30 TO 60 STUDENTS",
   titleName: "MR. SYSTEM",
   titleTagline: "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
-  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter \u2014 but so do the systems built long before you got here.",
-  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode \u2014 longer if the debrief gets good.",
+  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter, but so do the systems built long before you got here.",
+  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode, longer if the debrief gets good.",
   titleStrip: "TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.",
-  titleWarn: "Content note: this game depicts systemic harm \u2014 including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
+  titleWarn: "Content note: this game depicts systemic harm, including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
   castDeal: "Your group is dealt a family card, and your group IS that family. Argue the dilemma together, take the challenge together, send one spokesperson to every vote. One vote per family, not per student.",
   castKaia: "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
   resultsKaia: "Nobody chose wrong. Look at what each of them was choosing between.",
-  voteKaia: "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime \u2014 they may not vote. Majority rules.",
+  voteKaia: "Each surviving family sends one spokesperson. One vote each. When a family is eliminated, the whole group playing it stands as ghosts together, guardians included. They may mime every vote. Their votes are never counted. Majority rules.",
   voteNote: "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why. The vote is a trap on purpose: the demo's simulated families reliably turn on whoever is already struggling, and a live room is expected to do the same. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
   homeworkKaia: "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
   homeworkNote: "Everyone can do this one. That is deliberate. The homework was never the filter.",
   musicLine: "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
-  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out \u2014 you know the rule, it's on the wall.",
+  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out. You know the rule, it's on the wall.",
   debriefKaia: "Nobody in here lost because they made a bad decision. Look at what each of them was choosing between, and then tell me what the game was actually testing.",
   questions: [
     "Who survived, and what did they actually have that the others didn't?",
@@ -1913,13 +1913,13 @@ const TEXT = {
     "Where have you seen the tardy rule applied unevenly in a real school?",
     "What would have to change for this game to be winnable by everyone in it?"
   ],
-  debriefNote: "Several families here carry crisis storylines \u2014 psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
+  debriefNote: "Several families here carry crisis storylines: psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
 };
 const PRIV = {
-  david: "Family funded the library wing — nobody was ever going to mark him late.",
-  ayesha: "Principal's kid — an extension was on her desk before she knew the assignment existed.",
-  priya: "Parents on the foundation board — given a buffer, quietly.",
-  alejandra: "Family donates the gym scoreboard — nobody was going to mark her late."
+  david: "Family funded the library wing. Nobody was ever going to mark him late.",
+  ayesha: "Principal's kid: an extension was on her desk before she knew the assignment existed.",
+  priya: "Parents on the foundation board: given a buffer, quietly.",
+  alejandra: "Family donates the gym scoreboard. Nobody was going to mark her late."
 };
 const TARDY_WHY = {
   ayesha:"The door she had to reach was the one she lives across the street from.",
@@ -1948,15 +1948,15 @@ const TARDY_WHY = {
   david: "For the first time all game, something didn't go his way."
 };
 const INDEX = [
-  ["01", "Title / intro", "title"], ["02", "Setup — class size", "setup"],
+  ["01", "Title / intro", "title"], ["02", "Setup: class size", "setup"],
   ["03", "Character assignment", "cast"], ["04", "Round intro", "intro"],
-  ["05", "Dilemma — David (easy)", "dilemma", "david"],
-  ["06", "Dilemma — Marcus (impossible)", "dilemma", "marcus"],
-  ["07", "Challenge — timed", "challenge", "marcus"],
-  ["08", "Outcome — Lucia", "outcome", "lucia"],
+  ["05", "Dilemma: David (easy)", "dilemma", "david"],
+  ["06", "Dilemma: Marcus (impossible)", "dilemma", "marcus"],
+  ["07", "Challenge: timed", "challenge", "marcus"],
+  ["08", "Outcome: Lucia", "outcome", "lucia"],
   ["09", "Round results", "results"], ["10", "Voting", "vote"], ["11", "Vote result", "voteres"],
-  ["12", "Final — homework", "homework"], ["13", "Final — musical chairs", "music"],
-  ["14", "Final — tardy", "tardy"], ["15", "Debrief", "debrief"]
+  ["12", "Final: homework", "homework"], ["13", "Final: musical chairs", "music"],
+  ["14", "Final: tardy", "tardy"], ["15", "Debrief", "debrief"]
 ];
 const CROWD_ODDS = { upper: [0.88, 0.12, 0.0], work: [0.34, 0.45, 0.21], pov: [0.1, 0.38, 0.52] };
 
@@ -2034,7 +2034,7 @@ function applyOutcome(g, ch, choice, out, chalNote, failed) {
   r.hist.push({ round: g.round, k: choice.k, st: out.st, say: out.say });
   if (out.st === "out" && r.outRound === null) {
     r.outRound = g.round;
-    r.why = "Round " + g.round + " — chose: " + choice.t;
+    r.why = "Round " + g.round + ", chose: " + choice.t;
   }
   let strained = false;
   if (out.strain != null && ch.sibs && r.strained.indexOf(out.strain) < 0) {
@@ -2070,7 +2070,7 @@ function challengeNote(def, t, passed) {
     return passed ? "You handled " + t.step + " of " + def.qs.length + " before the clock ran out."
                   : "You got through " + t.step + " of " + def.qs.length + ". The rest happened without you.";
   return passed ? "Challenge passed."
-                : "Challenge failed — and notice what that does and doesn't cost you.";
+                : "Challenge failed. Notice what that does and doesn't cost you.";
 }
 function fmtCharge(name, text) {
   let t = text.replace(/^\{NAME\}\s+/, "");
@@ -2157,7 +2157,7 @@ function runVote(g) {
   g.eliminated = tally[0].id;
   const r = g.roster[g.eliminated];
   r.st = "out"; r.outRound = g.round; r.why = "Voted out in Round " + g.round;
-  r.hist.push({ round: g.round, k: "—", st: "out", say: "Voted out by the surviving families." });
+  r.hist.push({ round: g.round, k: "·", st: "out", say: "Voted out by the surviving families." });
   const lastMemo = g.memoLog[g.memoLog.length - 1];
   if (lastMemo) lastMemo.hit = lastMemo.flagged.indexOf(g.eliminated) >= 0;
   g.voteLink = linkLine(g, BY_ID[g.eliminated]);
@@ -2171,8 +2171,8 @@ function pickTardy(g) {
   const last = pool.slice().sort((a, b) => score(b) - score(a))[0];
   g.tardy = last.id;
   const r = g.roster[last.id];
-  r.st = "out"; r.outRound = 4; r.why = "Final round — tardy";
-  r.hist.push({ round: 4, k: "—", st: "out", say: "Last one in when the music stopped." });
+  r.st = "out"; r.outRound = 4; r.why = "Final round, tardy";
+  r.hist.push({ round: 4, k: "·", st: "out", say: "Last one in when the music stopped." });
   g.tardyLink = linkLine(g, last);
 }
 function seedMid(classSize, round) {
@@ -2192,7 +2192,7 @@ function seedMid(classSize, round) {
   ["lucia", "jayson"].forEach(id => {
     const r = g.roster[id];
     r.st = "out"; r.outRound = 1;
-    r.why = "Round 1 — every option led out";
+    r.why = "Round 1, every option led out";
     const dd = DILEMMAS[1][id];
     const c = dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0]);
     const say = (c && (c.auto ? c.auto.say : (c.fail && c.fail.say))) || "Out before the first bell.";
@@ -2275,7 +2275,7 @@ function Dash({ g, now }) {
   const pct = k => (total ? (c[k] / total) * 100 : 0);
   return (
     <aside className="dash">
-      <div className="dash-head">CLASS STATUS &mdash; ROUND {g.round}</div>
+      <div className="dash-head">CLASS STATUS · ROUND {g.round}</div>
       <div className="dash-body">
         <div className="tally">
           <div className="tally-cell b-in"><div className="tally-n">{c.in}</div><div className="tally-l">In</div></div>
@@ -2447,7 +2447,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           r.hist.push({ round: n.round, k: c.k, st: v.st, say: v.say, danger: true });
           if (v.st === "out" && r.outRound === null) {
             r.outRound = n.round;
-            r.why = "Round " + n.round + " — Mr. System struck: " + c.t;
+            r.why = "Round " + n.round + ", Mr. System struck: " + c.t;
           }
           n.dangerLog.push({ id: ch.id, round: n.round, fatal: !!v.fatal });
           let dlink = "";
@@ -2487,7 +2487,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     if (r.hist.length) r.hist[r.hist.length - 1] = Object.assign({}, r.hist[r.hist.length - 1],
       { st: "strug", say, lean: true });
     n.pending = Object.assign({}, n.pending, { st: "strug", say, failed: false, link: "",
-      chalNote: "LEAN ON THE LINK — spent. This family's one token is gone." });
+      chalNote: "LEAN ON THE LINK: spent. This family's one token is gone." });
   });
 
   /* ---- challenge countdown ---- */
@@ -2572,7 +2572,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
       });
       if (p === "debrief") {
         n.roster.carlos.st = "out"; n.roster.carlos.outRound = 3;
-        n.roster.carlos.why = "Round 3 — chose the shift";
+        n.roster.carlos.why = "Round 3, chose the shift";
         pickTardy(n); n.phase = "debrief"; return n;
       }
       n.drew = p !== "homework";
@@ -2589,7 +2589,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
 
   const Title = () => (
     <Screen title="BOOT" right="v1.0">
-      <p className="eyebrow">A GAME FOR 30&ndash;60 STUDENTS</p>
+      <p className="eyebrow">A GAME FOR 30 TO 60 STUDENTS</p>
       <h1 className="screen-title"
         style={{ fontSize: "clamp(20px,7vw,40px)", textShadow: "4px 4px 0 " + v("--clay") }}>MR. SYSTEM</h1>
       <p style={{ fontFamily: "'Press Start 2P',monospace", fontSize: 9, lineHeight: 2,
@@ -2597,16 +2597,16 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         A GAME ABOUT SYSTEMIC INEQUALITY<br />IN EDUCATION</p>
       <p style={{ maxWidth: "56ch", fontSize: 16 }}>
         You are a student trying to get to school, get home, and make it to tomorrow. Your choices
-        matter &mdash; but so do the systems built long before you got here.</p>
+        matter, but so do the systems built long before you got here.</p>
       <p style={{ maxWidth: "56ch", fontSize: 16, marginTop: 14, color: v("--ink-2") }}>
-        Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode — longer if the debrief gets good.</p>
+        Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode, longer if the debrief gets good.</p>
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "26px 0 6px" }}>
         {CAST.map(x => <Sprite key={x.id} id={x.id} px={3} />)}
       </div>
       <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: v("--ink-3"), letterSpacing: ".04em" }}>
         TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.</p>
       <p style={{ maxWidth: "60ch", fontSize: 12.5, color: v("--ink-3"), marginTop: 14 }}>
-        Content note: this game depicts systemic harm {"\u2014"} including, when danger mode is on, traffic
+        Content note: this game depicts systemic harm, including, when danger mode is on, traffic
         injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass
         on any character.</p>
       <Actions>
@@ -2662,17 +2662,17 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         <span className="pill">BACKGROUND <b>{Math.max(0, g.classSize - g.active.length)}</b></span>
         <span className="pill">FAMILY GROUPS <b>{groups}</b></span>
       </div>
-      <p className="hint">Range 30&ndash;60. Groups of five.</p>
+      <p className="hint">Range 30 to 60. Groups of five.</p>
       <hr className="hr" />
       <h3 className="screen-title" style={{ fontSize: 12 }}>WHICH FAMILIES ARE PLAYED BY HAND?</h3>
       <div className="modes">
         <button className="mode" aria-pressed={SETTINGS.rosterMode === "core"} onClick={() => setRoster("core")}>
-          <b>CORE · 10</b><span>A curated ten that keeps the whole argument — every class band,
+          <b>CORE · 10</b><span>A curated ten that keeps the whole argument: every class band,
           Lucia and Marcus included.</span></button>
         <button className="mode" aria-pressed={SETTINGS.rosterMode === "full"} onClick={() => setRoster("full")}>
           <b>FULL · {CAST.length}</b><span>Every named family. Best for long sessions.</span></button>
         <button className="mode" aria-pressed={SETTINGS.rosterMode === "custom"} onClick={() => setRoster("custom")}>
-          <b>CUSTOM</b><span>Pick your own set — at least 8 families, at least one from the
+          <b>CUSTOM</b><span>Pick your own set: at least 8 families, at least one from the
           poverty/crisis band.</span></button>
       </div>
       {SETTINGS.rosterMode === "custom" && (
@@ -2688,8 +2688,8 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         </div>
       )}
       {rosterNotice && <p className="hint" style={{ color: v("--alarm"), fontWeight: 600 }}>{rosterNotice}</p>}
-      <div className="deal"><b>How the room plays it.</b> {groups} groups × {g.classSize} students —
-        each group is dealt {per > 1 ? `1–${per}` : "one"} family card{per > 1 ? "s" : ""}. Your group
+      <div className="deal"><b>How the room plays it.</b> {groups} groups × {g.classSize} students.
+        Each group is dealt {per > 1 ? `1 to ${per}` : "one"} family card{per > 1 ? "s" : ""}. Your group
         <b> is</b> that family: you argue the dilemma together, you take the challenge together, and you send
         one spokesperson to each vote. One vote per family, not per student.</div>
       <Actions>
@@ -2759,7 +2759,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         </div>
         <p style={{ maxWidth: "60ch", color: v("--ink-2") }}>
           {living.length} families are still in this.{" "}
-          {ghosts.length ? `${ghosts.length} are watching as ghosts — they can mime, they cannot act.` : ""}</p>
+          {ghosts.length ? `${ghosts.length} are watching as ghosts. They can mime, they cannot act.` : ""}</p>
         <Actions><button className="btn" onClick={nextQuestion}>BEGIN ROUND {g.round}</button></Actions>
       </Screen>
     </Layout>
@@ -2769,7 +2769,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     const ch = act(g)[g.qi], d = dilemmaFor(g, ch.id);
     return (
       <Layout g={g} now={ch.id}>
-        <Screen title={`ROUND ${g.round} — DILEMMA`} right={`${ch.name} · ${ch.cls}`}>
+        <Screen title={`ROUND ${g.round} · DILEMMA`} right={`${ch.name} · ${ch.cls}`}>
           <div style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", marginBottom: 6 }}>
             <span style={{ flex: "none" }}><Sprite id={ch.id} px={5} /></span>
             <div style={{ flex: 1, minWidth: 200 }}>
@@ -2887,8 +2887,8 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
               <div className="res-n">{ch.name}</div>
               {!p.danger && <p className="res-say">{p.say}</p>}
               <Badge st={p.st} label={p.danger
-                ? (p.st === "out" ? "OUT — MR. SYSTEM STRUCK" : "STRUGGLING — NEAR MISS") : undefined} />
-              {p.strained && <p className="strainmark" style={{ marginTop: 10 }}>LINK STRAINED {"\u2014"} a
+                ? (p.st === "out" ? "OUT · MR. SYSTEM STRUCK" : "STRUGGLING · NEAR MISS") : undefined} />
+              {p.strained && <p className="strainmark" style={{ marginTop: 10 }}>LINK STRAINED: a
                 sibling's pip goes grey for the rest of the game.</p>}
               {p.chalNote && <p className="hint" style={{ marginTop: 11 }}>{p.chalNote}</p>}
             </div>
@@ -2897,7 +2897,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             && !g.roster[ch.id].leanUsed && (
             <Actions>
               <button className="btn" style={{ background: v("--grass") }} onClick={spendLean}>
-                LEAN ON THE LINK {"\u2014"} SPEND THE TOKEN</button>
+                LEAN ON THE LINK · SPEND THE TOKEN</button>
               <span className="pill">Converts this fail into a struggle. Once per game.</span>
             </Actions>
           )}
@@ -2914,7 +2914,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         <h2 className="screen-title">ROUND {g.round} RESULTS</h2>
         <Kaia>Nobody chose wrong. Look at what each of them was choosing between.</Kaia>
         {act(g).map((ch, i) => {
-          const r = g.roster[ch.id], last = r.hist[r.hist.length - 1] || { say: "—" };
+          const r = g.roster[ch.id], last = r.hist[r.hist.length - 1] || { say: "·" };
           return (
             <div className={"res reveal r-" + r.st} key={ch.id} style={{ animationDelay: i * 70 + "ms" }}>
               <span style={{ flex: "none" }}><Sprite id={ch.id} px={4} ghost={r.st === "out"} /></span>
@@ -2928,7 +2928,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         })}
         <hr className="hr" />
         <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 14, fontWeight: 600, letterSpacing: ".03em" }}>
-          WHOLE CLASS &mdash; IN {c.in} / STRUGGLING {c.strug} / OUT {c.out} of {g.classSize}</p>
+          WHOLE CLASS · IN {c.in} / STRUGGLING {c.strug} / OUT {c.out} of {g.classSize}</p>
         {living.length <= 1 && <Kaia>There is no vote tonight. There is no one left to hold one.</Kaia>}
         <Actions>{living.length > 1 ? (
           <button className="btn" onClick={() => update(n => { buildMemo(n); n.phase = "vote"; })}>
@@ -2967,19 +2967,18 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
       <Screen title="VOTING" right={`${living.length} families voting`}>
         <p className="eyebrow">END OF ROUND {g.round}</p>
         <h2 className="screen-title">VOTE TO ELIMINATE</h2>
-        <Kaia>Each surviving family sends one spokesperson. One vote each. The families who are already out
-          may stand up and mime &mdash; they may not vote. Majority rules.</Kaia>
+        <Kaia>Each surviving family sends one spokesperson. One vote each. When a family is eliminated, the whole group playing it stand as ghosts together, guardians included. They may mime every vote. Their votes are never counted. Majority rules.</Kaia>
         {g.memo && (
           <div className="memo" role="note" aria-label="Mr. System's recommendations">
             <div className="memo-head">{"\ud83d\udccb"} MR. SYSTEM RECOMMENDS</div>
             <p className="memo-intro">{CHARGES.memoIntro}</p>
             <ul className="memo-list">
               {g.memo.items.map((it, i) => it.kind === "withdrawn" ? (
-                <li className="memo-item is-withdrawn" key={i}><b>{it.name}</b> {"\u2014"}{" "}
+                <li className="memo-item is-withdrawn" key={i}><b>{it.name}</b>:{" "}
                   <span className="memo-struck">{it.text}</span>{" "}
                   <em>WITHDRAWN: {it.excuse}</em></li>
               ) : (
-                <li className="memo-item" key={i}><b>{it.name}</b> {"\u2014"} {it.text}{" "}
+                <li className="memo-item" key={i}><b>{it.name}</b>: {it.text}{" "}
                   <span className="memo-pol">(Policy {it.policy})</span></li>
               ))}
             </ul>
@@ -3002,11 +3001,11 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         </div>
         {ghosts.length > 0 && (
           <div className="mimes">
-            <div className="mimes-h">ELIMINATED &mdash; MIMING, NOT VOTING</div>
+            <div className="mimes-h">GHOSTS · THE WHOLE GROUP, GUARDIANS INCLUDED</div>
             <div className="mime-row">
               {ghosts.map(ch => (
                 <span className="mime" key={ch.id}>
-                  <Sprite id={ch.id} px={2} ghost />{ch.name} &mdash; mimes a vote nobody counts
+                  <Sprite id={ch.id} px={2} ghost />{ch.name}: the whole group mimes, and no vote is counted
                 </span>
               ))}
             </div>
@@ -3015,7 +3014,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         <Actions>
           <button className="btn" disabled={!g.voteSel} onClick={() => update(n => runVote(n))}>SUBMIT VOTE</button>
           <span className="spacer" />
-          <span className="pill">YOUR VOTE <b>{g.voteSel ? BY_ID[g.voteSel].name : "—"}</b></span>
+          <span className="pill">YOUR VOTE <b>{g.voteSel ? BY_ID[g.voteSel].name : "·"}</b></span>
         </Actions>
         <div className="note"><b>Facilitator note.</b> Read the recommendations aloud in a neutral
           administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask
@@ -3074,7 +3073,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
 
   const Homework = () => (
     <Layout g={g}>
-      <Screen title="FINAL ROUND — PHASE 1" right="homework due">
+      <Screen title="FINAL ROUND · PHASE 1" right="homework due">
         <p className="eyebrow">FINAL ROUND &middot; PHASE 1 OF 3</p>
         <h2 className="screen-title">HOMEWORK DUE</h2>
         <Kaia>Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it
@@ -3112,7 +3111,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
 
   const Music = () => (
     <Layout g={g}>
-      <Screen title="FINAL ROUND — PHASE 2" right="musical chairs">
+      <Screen title="FINAL ROUND · PHASE 2" right="musical chairs">
         <p className="eyebrow">FINAL ROUND &middot; PHASE 2 OF 3</p>
         <h2 className="screen-title">THE MUSIC IS PLAYING</h2>
         <div style={{ display: "flex", gap: 18, alignItems: "center", flexWrap: "wrap", margin: "16px 0" }}>
@@ -3160,20 +3159,20 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     const privLeft = Object.keys(PRIV).filter(id => g.roster[id].st !== "out");
     return (
       <Layout g={g}>
-        <Screen title="FINAL ROUND — PHASE 3" right="tardy elimination">
+        <Screen title="FINAL ROUND · PHASE 3" right="tardy elimination">
           <p className="eyebrow">FINAL ROUND &middot; PHASE 3 OF 3</p>
           <h2 className="screen-title">THE TIMER GOES OFF</h2>
-          <Kaia>Music stops. Everybody in. Last one through the door is tardy, and tardy is out &mdash; you
+          <Kaia>Music stops. Everybody in. Last one through the door is tardy, and tardy is out. You
             know the rule, it's on the wall.</Kaia>
           {g.tardyLink && <div className="linkline" role="alert" style={{ marginTop: 18 }}>
             <b>MR. SYSTEM</b><p>{g.tardyLink}</p></div>}
           <div className="res r-out" style={{ marginTop: 18 }}>
             <span style={{ flex: "none" }}><Sprite id={t.id} px={4} ghost /></span>
             <div className="res-b">
-              <div className="res-n">{t.name} — TARDY</div>
+              <div className="res-n">{t.name} · TARDY</div>
               <p className="res-say">{t.name} got in last and is eliminated.{" "}
                 {TARDY_WHY[t.id] || "The distance was never the same for everyone."}</p>
-              <Badge st="out" label="TARDY — ELIMINATED" />
+              <Badge st="out" label="TARDY · ELIMINATED" />
             </div>
           </div>
           <hr className="hr" />
@@ -3235,11 +3234,11 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
         ? "David made a choice in all three rounds and every single option available to him ended with him in school. His dilemmas were about which good thing to pick."
         : "Even when David's plan fell apart, the front office didn't write it down.");
     if (on("marcus"))
-      insights.push("Marcus never got to choose between good and bad. He chose which sibling absorbed the cost — and the game charged him for it either way.");
+      insights.push("Marcus never got to choose between good and bad. He chose which sibling absorbed the cost, and the game charged him for it either way.");
     if (on("lucia"))
       insights.push("Lucia's Round 1 had three options and all three ended out of school. She was eliminated before she made a decision. That is what a barrier is.");
     insights.push(votedOut.length
-      ? `The room voted out ${votedOut.map(x => x.name).join(", ")}${votedUpper ? "" : " — nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
+      ? `The room voted out ${votedOut.map(x => x.name).join(", ")}${votedUpper ? "" : " , nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
       : "The vote removed people who were already struggling. It never rescued anyone.");
     insights.push(privLeft
       ? `At the end, ${privLeft} of the survivors had an extension nobody made them ask for. The rule was the same for everyone; the enforcement was not.`
@@ -3286,7 +3285,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
     if (on("isabella") && on("alejandra"))
       insights.push("Isabella and Alejandra have the same disease. One has a diagnosis, a 504 plan, and a rescheduled test. The other has a closed file that says weight-related. The difference between them is not medical.");
     if (on("marie") && g.roster.marie.st !== "out")
-      insights.push("Marie's family has no margin and she is still standing — because forty people decided she would be. Community is infrastructure. It is also unpaid, and it is also not enough on its own.");
+      insights.push("Marie's family has no margin and she is still standing because forty people decided she would be. Community is infrastructure. It is also unpaid, and it is also not enough on its own.");
     return (
       <Screen title="DEBRIEF" right={`${living.length} of ${CAST.length} named families left`}>
         <p className="eyebrow">GAME OVER</p>
@@ -3299,7 +3298,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
             <ul className="list">
               {living.length ? living.map(x => (
                 <li key={x.id}><Icon name="check" color="--st-in" />
-                  <span><span className="who">{x.name}</span> <span className="why">— {x.cls}</span></span></li>
+                  <span><span className="who">{x.name}</span> <span className="why">· {x.cls}</span></span></li>
               )) : <li className="why">Nobody.</li>}
             </ul>
           </div>
@@ -3309,14 +3308,14 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
               {ghosts.length ? ghosts.map(x => (
                 <li key={x.id}><Icon name="x" color="--st-out" />
                   <span><span className="who">{x.name}</span>
-                    <span className="why"> — {x.cls} · {g.roster[x.id].why || "Round " + g.roster[x.id].outRound}</span>
+                    <span className="why"> · {x.cls} · {g.roster[x.id].why || "Round " + g.roster[x.id].outRound}</span>
                   </span></li>
               )) : <li className="why">Nobody.</li>}
             </ul>
           </div>
         </div>
         <hr className="hr" />
-        <h3 className="screen-title" style={{ fontSize: 13 }}>THE PATTERN — WHOLE CLASS ({g.classSize} STUDENTS)</h3>
+        <h3 className="screen-title" style={{ fontSize: 13 }}>THE PATTERN · WHOLE CLASS ({g.classSize} STUDENTS)</h3>
         <div className="pattern">
           {["upper", "work", "pov"].map(k => (
             <div className="prow" key={k}>
@@ -3354,7 +3353,7 @@ export default function MrSystem({ initialClassSize = 40, dangerMode, rosterMode
           <li>What would have to change for this game to be winnable by everyone in it?</li>
         </ol>
         <div className="note"><b>Before you run this with students.</b> Several families here carry crisis
-          storylines — psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors.
+          storylines: psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors.
           Say up front that players can pass on any character, and have your counselor's name and the 988
           Suicide &amp; Crisis Lifeline written on the board before the first round, not after. Debrief the
           elimination vote in the room; do not let students leave on it.</div>

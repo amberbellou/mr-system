@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="A click-through walkthrough of Mr. System, the classroom game about systemic inequality in education.">
-<title>Mr. System — Walkthrough</title>
+<title>Mr. System Walkthrough</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-/* THEME TOKENS — extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
+/* THEME TOKENS: extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
 :root{
   /* grounds + surfaces (slate-blue-biased neutrals, never pure grey) */
   --ground:#BCD7EE;
@@ -249,7 +249,7 @@ body{margin:0;background:var(--ground);color:var(--ink);
 </div>
 <p class="sr" id="live" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></p>
 <script>
-/* GAME DATA — extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
+/* GAME DATA: extracted verbatim from index.html (source of truth). Regenerate with tools/build-walkthrough.py */
 /* ==========================================================
    1. PIXEL SPRITE ENGINE
    12x14 character sprites + 8x8 icons, drawn to canvas.
@@ -356,7 +356,7 @@ let CAST = [
  load:1, tmpl:"base", pal:{H:"#3B2A1C",S:"#F2CBA0",T:"#2F6FB0",P:"#2C3A4C",B:"#1B222B"}},
 {id:"alejandra", name:"ALEJANDRA", cls:"Upper-class", tier:"upper", pri:true,
  who:"Colombian, wealthy family, enormous performance pressure.",
- tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis \u2014 diagnosed in one year, managed on a schedule"],
+ tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis: diagnosed in one year, managed on a schedule"],
  load:2, tmpl:"long", pal:{H:"#241A14",S:"#D9A374",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
 {id:"priya", name:"PRIYA", cls:"Upper-middle", tier:"upper",
  who:"Indian-American, wealthy immigrant family, heavy parental expectation.",
@@ -530,7 +530,7 @@ evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVER
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 let DILEMMAS = {
 1:{
- ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away \u2014 from your bedroom window you can read the marquee. The only question is when to cross.", choices:[
+ ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away. From your bedroom window you can read the marquee. The only question is when to cross.", choices:[
   A("A","Go in with mom at 7:00","Hearing the morning announcements twice.","star",
     {auto:{st:"in",say:"The building at 7:00 is dark, quiet, and briefly yours. You take the chair that spins in the front office, and at 8:00 the announcements come over the PA in the same voice that just told you to grab a jacket."}}),
   A("B","Walk over at 8:15","Nothing.","walk",
@@ -543,9 +543,9 @@ let DILEMMAS = {
      danger:{p:0.2, standard:{st:"strug",say:"The driver misses the turn for the school and does not slow down. You say stop twice before he does. You get out at a light eleven blocks away and walk the rest with your phone in your hand."},
       unsparing:{st:"strug",say:"The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety. You walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone and the safe neighborhood. It could not buy the ride going right."}}}),
   A("B","Take the bus","The 7:52, in seventeen minutes.","bus",
-    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot \u2014 the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
+    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot: the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
   A("C","Text your dad for a ride","The reply, whenever it comes.","note",
-    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries \u2014 \u201cLeaving now?\u201d \u2014 and by then you have been at school for three hours."}})]},
+    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries, \u201cLeaving now?\u201d, and by then you have been at school for three hours."}})]},
  tyler:{sit:"Last night was a bad one. Your left arm has a mark you didn't have yesterday, and the kitchen is silent in the way that means he's still asleep. First bell is 8:30.", choices:[
   A("A","Long sleeves, side door","A flannel in seventy-nine degrees.","ghost",
     {auto:{st:"in",say:"The side door gets you to your seat at 8:27 and nobody looks twice. By third period the radiators are still on, and you take notes with your cuffs pinned under your palms."}}),
@@ -553,7 +553,7 @@ let DILEMMAS = {
     {auto:{st:"strug",say:"She closes the door, photographs your arm twice, and asks her questions in a voice that has done this before. By noon there is a case number and an adult whose job is you; by last bell there is a voicemail at the house, and you know what time he gets home."}}),
   A("C","Come in at second period","First period, unexcused.","clock",
     {auto:{st:"strug",say:"You sit behind the gas station with a bag of their ice until your arm will go through a sleeve without help. You slide in at 9:22, and the unexcused mark posts before lunch, next to two others from this year."}})]},
- marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday \u2014 those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
+ marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday. Those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
   A("A","Take the church van","Four stops before school.","bus",
     {auto:{st:"in",say:"Sister Yvette pulls up at 7:40 with four kids in and the choir tape on low. You're at the gate by 8:20 with somebody's harmony stuck in your head."}}),
   A("B","Walk, quietly","Twenty-five minutes on foot.","walk",
@@ -746,11 +746,11 @@ let DILEMMAS = {
     {auto:{st:"in",say:"You sort district mail into the teacher cubbies and learn the building by box: who gets the catalogs, who gets the attendance letters. The head secretary pays you from the butterscotch jar and calls you her best hire."}})]},
  grace:{sit:"3:40, and the apartment is exactly as you left it, because nobody else has been in it. There's an essay due Friday, a fridge holding sparkling water and half a lime, and a card that covers whatever the fridge doesn't.", choices:[
   A("A","Cook a real dinner","An hour and a recipe video.","home",
-    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid \u2014 without anyone asking what burned."}}),
+    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid: without anyone asking what burned."}}),
   A("B","Order in. Again.","Nothing anyone would notice.","check",
     {auto:{st:"in",say:"By now the driver knows the building code. You eat at the island with a video propped against the fruit bowl no adult has been home to refill."}}),
   A("C","Start the essay","The evening.","book",
-    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric \u2014 compare, not argue \u2014 five pages in the wrong direction."}})]},
+    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric. Compare, not argue. Five pages in the wrong direction."}})]},
  tyler:{sit:"3:10. From the corner you can read the driveway: the truck is home early, nose-in, and the kitchen light is off. You have been reading this driveway since you were nine, and today it isn't saying.", choices:[
   A("A","Go in now, while it's quiet","The guess.","home",
     {auto:{st:"in",say:"The side door, socks on the stairs. He's asleep in the recliner with the TV going, and you eat cereal standing at the counter and do homework with your door cracked so you can hear."}}),
@@ -852,7 +852,7 @@ let DILEMMAS = {
      pass:{st:"in",say:"You name it once, precisely, the way the specialist taught you. By fifth period the driver has been rerouted; the specialist sees you at 3:40, adjusts the dosage, and has you home for dinner with a note the school never asks to see."},
      fail:{st:"in",say:"At lunch you fumble the words and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."}}),
   A("B","Give up on the day entirely","A day of margin you don't have.","home",
-    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls \u2014 it is in your file \u2014 and the test moves to Thursday with nothing next to your name."}}),
+    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls, it is in your file, and the test moves to Thursday with nothing next to your name."}}),
   A("C","Tell someone","The appointment your mother will mention in front of guests.","note",
     {auto:{st:"in",say:"Between meetings, you tell your mother. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."}})]},
  priya:{sit:"Tutor at six, your own homework after, and a school voicemail nobody but you can understand.", choices:[
@@ -933,14 +933,14 @@ let DILEMMAS = {
   A("B","Pretend not to hear","Nothing.","ghost",
     {auto:{st:"in",say:"You finish tomorrow's reading with your door open anyway. The word \u201cplacement\u201d comes through the wall between two chapters, and you turn the page."}}),
   A("C","Bring her tea and sit with her","Staying up past eleven.","heart",
-    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence \u2014 \u201che's fifteen, he's raising three kids\u201d \u2014 and then she hangs up and says goodnight twice, once in each voice."}})]},
+    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence, \u201che's fifteen, he's raising three kids\u201d, and then she hangs up and says goodnight twice, once in each voice."}})]},
  grace:{sit:"9 PM. The field trip form on the counter says a parent or guardian must sign it by first period. Your mother is twelve hours into a shift; your father's phone is going straight to voicemail. The card can't sign.", choices:[
   A("A","Sign it in her handwriting","Two practice runs on an envelope.","note",
-    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 \u2014 not one of your forms has ever been checked, and today is no different."}}),
+    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15. Not one of your forms has ever been checked, and today is no different."}}),
   A("B","Call the hospital and ask for her","Three transfers and a hold.","heart",
     {auto:{st:"in",say:"A charge nurse finds her between patients: she has four minutes, and the form takes one of them. The other three go to whether you've eaten; her one-line email from the nurses' station is accepted at 8:02 without a question."}}),
   A("C","Leave it blank","A call from the office.","x",
-    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing \u2014 doctors' schedules, they understand completely, Monday is fine."}})]},
+    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing. Doctors' schedules, they understand completely, Monday is fine."}})]},
  tyler:{sit:"It starts at 9:40 the way it starts: a cabinet door, then his voice, then your mother's, lower. Your sister is eight and her room shares a wall with the kitchen. Yours doesn't.", choices:[
   A("A","Take the couch and the headphones","Hearing it anyway.","ghost",
     {auto:{st:"strug",say:"You turn the volume to the number that usually works and watch the ceiling until the house changes key. At 11:50 a door closes, then nothing, and you count to one hundred before you let yourself sleep."}}),
@@ -954,14 +954,14 @@ let DILEMMAS = {
   A("B","Homework with the TV on","Half your attention.","note",
     {auto:{st:"strug",say:"The game show keeps the room from going silent and the worksheet gets done in the gaps. Between problems your eyes keep finding the counter, and the envelope has not moved."}}),
   A("C","Pray the way Grandma taught you","Nothing tonight.","home",
-    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works \u2014 not on the envelope, on the sleep \u2014 and you're out by 9:40."}})]},
+    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works: not on the envelope, on the sleep. You're out by 9:40."}})]},
  rebecca:{sit:"Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.", choices:[
   A("A","Finish it before candle-lighting","The afternoon.","check",
     {auto:{st:"in",say:"Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."}}),
   A("B","Leave it for Sunday","Nothing.","home",
     {auto:{st:"in",say:"Shabbat, sleep, Hebrew school, and the project on Sunday afternoon. It takes two hours at the dining table and is done before the chicken comes out."}}),
   A("C","Reconvene Saturday night","Nothing.","heart",
-    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop \u2014 dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
+    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop: dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
  daniel:{sit:"Shabnam turns thirteen tonight and grandma has been cooking since two. There's a biology quiz tomorrow. The whole family is at the table by seven, including the uncle who majored in bio.", choices:[
   A("A","Study before dinner","The smell from the kitchen.","book",
     {chal:"homework30",
@@ -978,7 +978,7 @@ let DILEMMAS = {
     {auto:{st:"in",say:"The first open argument your kitchen has ever hosted, and you started it. You win Sunday afternoons; breakfast stays cold for two weeks."}}),
   A("C","Say yes and stop sleeping","Sleep, an hour at a time.","clock",
     {auto:{st:"strug",say:"The B+ is an A by November. You start waking at 3 AM for no reason and tell no one, because the grades are fine, and the grades are the thing that gets checked."}})]},
- fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime \u2014 the whole evening is yours now.", choices:[
+ fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime: the whole evening is yours now.", choices:[
   A("A","Run the evening yourself","Your essay, again.","home",
     {chal:"evening30",
      pass:{st:"strug",say:"You break your fast over the stove, plate them, check a spelling list, run the whole bedtime. At 10:15 you open your own homework and are asleep on your arm by 10:30."},
@@ -1147,22 +1147,22 @@ let CHARGES = {
 
 
 let TEXT = {
-  titleKicker: "A GAME FOR 30\u201360 STUDENTS",
+  titleKicker: "A GAME FOR 30 TO 60 STUDENTS",
   titleName: "MR. SYSTEM",
   titleTagline: "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
-  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter \u2014 but so do the systems built long before you got here.",
-  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode \u2014 longer if the debrief gets good.",
+  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter, but so do the systems built long before you got here.",
+  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode, longer if the debrief gets good.",
   titleStrip: "TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.",
-  titleWarn: "Content note: this game depicts systemic harm \u2014 including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
+  titleWarn: "Content note: this game depicts systemic harm, including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
   castDeal: "Your group is dealt a family card, and your group IS that family. Argue the dilemma together, take the challenge together, send one spokesperson to every vote. One vote per family, not per student.",
   castKaia: "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
   resultsKaia: "Nobody chose wrong. Look at what each of them was choosing between.",
-  voteKaia: "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime \u2014 they may not vote. Majority rules.",
+  voteKaia: "Each surviving family sends one spokesperson. One vote each. When a family is eliminated, the whole group playing it stands as ghosts together, guardians included. They may mime every vote. Their votes are never counted. Majority rules.",
   voteNote: "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why. The vote is a trap on purpose: the demo's simulated families reliably turn on whoever is already struggling, and a live room is expected to do the same. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
   homeworkKaia: "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
   homeworkNote: "Everyone can do this one. That is deliberate. The homework was never the filter.",
   musicLine: "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
-  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out \u2014 you know the rule, it's on the wall.",
+  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out. You know the rule, it's on the wall.",
   debriefKaia: "Nobody in here lost because they made a bad decision. Look at what each of them was choosing between, and then tell me what the game was actually testing.",
   questions: [
     "Who survived, and what did they actually have that the others didn't?",
@@ -1171,18 +1171,18 @@ let TEXT = {
     "Where have you seen the tardy rule applied unevenly in a real school?",
     "What would have to change for this game to be winnable by everyone in it?"
   ],
-  debriefNote: "Several families here carry crisis storylines \u2014 psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
+  debriefNote: "Several families here carry crisis storylines: psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
 };
-let PRIV = {david:"Family funded the library wing \u2014 nobody was ever going to mark him late.",
-            ayesha:"Principal's kid \u2014 an extension was on her desk before she knew the assignment existed.",
-              priya:"Parents on the foundation board \u2014 given a buffer, quietly.",
-              alejandra:"Family donates the gym scoreboard \u2014 nobody was going to mark her late."};
-let ROUND_NAME = {1:"MORNING IN THE VILLAGE \u2014 GET TO SCHOOL",
-                    2:"AFTERNOON & EVENING \u2014 GET HOME",
-                    3:"THE NIGHT \u2014 MAKE IT TO TOMORROW"};
+let PRIV = {david:"Family funded the library wing. Nobody was ever going to mark him late.",
+            ayesha:"Principal's kid: an extension was on her desk before she knew the assignment existed.",
+              priya:"Parents on the foundation board: given a buffer, quietly.",
+              alejandra:"Family donates the gym scoreboard. Nobody was going to mark her late."};
+let ROUND_NAME = {1:"MORNING IN THE VILLAGE \u00b7 GET TO SCHOOL",
+                    2:"AFTERNOON & EVENING \u00b7 GET HOME",
+                    3:"THE NIGHT \u00b7 MAKE IT TO TOMORROW"};
 let ROUND_KAIA = {
   1:"It's 7 AM. First bell is at 8:30. Everybody in this room has to get to the same building. Nobody starts from the same place.",
-  2:"Last bell. Everyone goes home now \u2014 to whatever home is. Four hours until sleep, and the homework is due either way.",
+  2:"Last bell. Everyone goes home now, to whatever home is. Four hours until sleep, and the homework is due either way.",
   3:"Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."};
 
 /* ================= DECK ENGINE ================= */
@@ -1240,19 +1240,19 @@ const SLIDES = [
     <p class="slide-eyebrow">A GAME ABOUT SYSTEMIC INEQUALITY IN EDUCATION</p>
     <h2 class="px" style="font-size:clamp(28px,6vw,58px);text-shadow:5px 5px 0 var(--clay)">MR. SYSTEM</h2>
     <p class="caption" style="text-align:center">You are a student trying to get to school, get home, and
-      make it to tomorrow. Your choices matter — but so do the systems built long before you got here.</p>
+      make it to tomorrow. Your choices matter, but so do the systems built long before you got here.</p>
     <div class="sprites-row">${CAST.map(c => `<span data-sp="${c.id}" data-px="3"></span>`).join("")}</div>
     <p class="mono" style="font-size:clamp(11px,1.2vw,14px);color:var(--ink-3)">
-      A game for 30–60 students · 35–45 minutes · click →</p>
+      A game for 30 to 60 students · 35 to 45 minutes · click →</p>
     <p class="mono" style="font-size:clamp(10px,1.05vw,12.5px);color:var(--ink-3);margin-top:4px">
-      A final project for [COURSE NAME] — designed by [NAME], built with a lot of index cards.</p>
+      A final project for [COURSE NAME], designed by [NAME], built with a lot of index cards.</p>
   </div>`},
 { id:"intro", name:"Introduction", build: () => `
   <p class="slide-eyebrow">2 · INTRODUCTION</p>
   <h2>THE SAME FIRST BELL</h2>
   <div class="body">
-    <p class="bigline">We wanted a room full of people to live one school morning under different rules
-      — and then talk about why the rules felt so different.</p>
+    <p class="bigline">We wanted a room full of people to live one school morning under different rules,
+      and then talk about why the rules felt so different.</p>
     <div class="bellviz">
       ${[["ayesha",6,"one crosswalk"],["david",24,"a ride, door to door"],
          ["fatima",58,"two school runs first, fasting"],["marcus",95,"ninety minutes on foot, four kids"]]
@@ -1273,7 +1273,7 @@ const SLIDES = [
   <p class="slide-eyebrow">3 · THE CONCEPT</p>
   <h2>LOUP GAROU, RESKINNED</h2>
   <div class="body">
-    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b> — not a person,
+    <p class="caption">The village is a school day. The wolf is <b>Mr. System</b>: not a person,
       but the thing everyone is actually playing against. Nobody is secretly the wolf. The wolf is the rules.
       And where Loup Garou has Cupid linking two lovers, we link siblings: if a family goes down, everyone
       in it goes down, named out loud.</p>
@@ -1306,7 +1306,7 @@ const SLIDES = [
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="callout">← The argument lives in the COST line.</div>
         <p class="caption">The family reads the card together, argues it out loud, and commits to a letter.
-          Only the narrator's script knows what happens next — the reveal is the wolf's move.</p>
+          Only the narrator's script knows what happens next. The reveal is the wolf's move.</p>
       </div>
     </div>
   </div>`},
@@ -1325,7 +1325,7 @@ const SLIDES = [
   <h2>THE DIFFICULTY IS RIGGED. ON PURPOSE.</h2>
   <div class="body">
     <div class="grid2">${chalPanel("homework30")}${chalPanel("resources45")}</div>
-    <p class="caption"><b>Failing costs David nothing</b> — his fail line literally ends
+    <p class="caption"><b>Failing costs David nothing</b>. His fail line literally ends
       "nobody writes anything down." <b>Failing sends Marcus's sibling home.</b> The clock is identical.
       What failing costs is not.</p>
   </div>`},
@@ -1334,7 +1334,7 @@ const SLIDES = [
   <h2>MR. SYSTEM STRIKES</h2>
   <div class="body">
     <div class="mrsys"><b>MR. SYSTEM</b><p>${esc(marcusDanger ? marcusDanger.standard.say : "")}</p></div>
-    <p class="caption">Danger only attaches to <b>exposure</b> — the unguarded crossing, the siblings home
+    <p class="caption">Danger only attaches to <b>exposure</b>: the unguarded crossing, the siblings home
       alone, the ride nobody is expecting. It doesn't punish the choice. It goes after the kid the choice
       left uncovered: no adult watching, no money waiting, no one expecting them at the other end.
       Professors set it to <b>off</b>, <b>standard</b>, or <b>unsparing</b>.</p>
@@ -1345,7 +1345,7 @@ const SLIDES = [
   <div class="body">
     <p class="caption" style="font-style:italic">${esc(TEXT.voteKaia)}</p>
     <div class="cards">${["mei","carlos","isabella","marcus"].map(miniCard).join("")}</div>
-    <div class="ghost-strip"><span class="lbl">ELIMINATED — MIMING, NOT VOTING</span>
+    <div class="ghost-strip"><span class="lbl">GHOSTS · THE WHOLE GROUP, GUARDIANS INCLUDED</span>
       <span class="ghost"><span data-sp="lucia" data-px="2" data-ghost="1"></span>LUCIA</span>
       <span class="ghost"><span data-sp="jayson" data-px="2" data-ghost="1"></span>JAYSON</span></div>
     <div class="callout">The vote is a trap on purpose. The demo's simulated families reliably turn
@@ -1361,9 +1361,9 @@ const SLIDES = [
     <div class="memo" style="max-width:860px">
       <div class="memo-head">📋 MR. SYSTEM RECOMMENDS</div>
       <ul>
-        <li><b>ISABELLA</b> — ${esc(pat ? pat.text : "")} <span class="pol">(Policy ${esc(pat ? pat.policy : "")})</span></li>
-        <li><b>CARLOS</b> — ${esc(abs.text)} <span class="pol">(Policy ${esc(abs.policy)})</span></li>
-        <li class="wd"><b>DAVID</b> — <span class="struck">${esc(wd ? wd.charge : "")}</span>
+        <li><b>ISABELLA</b>: ${esc(pat ? pat.text : "")} <span class="pol">(Policy ${esc(pat ? pat.policy : "")})</span></li>
+        <li><b>CARLOS</b>: ${esc(abs.text)} <span class="pol">(Policy ${esc(abs.policy)})</span></li>
+        <li class="wd"><b>DAVID</b>: <span class="struck">${esc(wd ? wd.charge : "")}</span>
           <span class="mono" style="font-weight:700">WITHDRAWN: ${esc(wd ? wd.excuse : "")}</span></li>
       </ul>
     </div>
@@ -1390,7 +1390,7 @@ const SLIDES = [
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:8px">${esc(PRIV.ayesha || "")}</p>
         <p style="font-size:clamp(11px,1.2vw,13.5px);margin-top:6px">${esc(PRIV.david || "")}</p></div>
     </div>
-    <p class="caption">Everyone can do the homework — <b>the homework was never the filter.</b>
+    <p class="caption">Everyone can do the homework. <b>The homework was never the filter.</b>
       The last one in when the music stops is tardy, and tardy is out. Three students never had to run.</p>
   </div>`},
 { id:"pattern", name:"The Pattern", build: () => `
@@ -1406,17 +1406,17 @@ const SLIDES = [
         <span class="pbar-v" style="color:var(--st-strug)">~60%</span></div>
       <div class="pbar-row"><span class="pbar-l">Poverty / crisis</span>
         <div class="pbar"><i style="width:10%;background:var(--st-in)"></i><i style="width:12%;background:var(--st-strug)"></i><i style="width:78%;background:var(--st-out)"></i></div>
-        <span class="pbar-v" style="color:var(--st-out)">~15–30%</span></div>
+        <span class="pbar-v" style="color:var(--st-out)">~15 to 30%</span></div>
     </div>
     <div class="kbox" style="max-width:76ch">Families eliminated: six. People eliminated: fourteen.
       The chart above only ever counts the families.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">Lucia's Round 1 had three options and all three ended out of
       school. She was eliminated before she made a decision. That is what a barrier is.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
     <div class="kbox" style="max-width:76ch">The room eliminated the struggling families. Mr. System had
       recommended most of them. It felt like due process. It was a suggestion box with one suggestion.
-      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">— generated on the debrief screen</span></div>
+      <span class="mono" style="display:block;margin-top:7px;font-size:clamp(9px,1vw,11px);color:var(--gold)">generated on the debrief screen</span></div>
   </div>`},
 { id:"reflect", name:"Let's Reflect", build: () => `
   <p class="slide-eyebrow">13 · LET'S REFLECT</p>
@@ -1434,7 +1434,7 @@ const SLIDES = [
   <div class="body">
     <div class="grid3">
       <div class="takeaway"><span class="tk-ic" data-ic="note" data-px="4"></span><b>COST LINES</b>We put
-        the argument in the price tags — "Nothing." against "A risk you cannot take back."</div>
+        the argument in the price tags: "Nothing." against "A risk you cannot take back."</div>
       <div class="takeaway"><span class="tk-ic" data-ic="clock" data-px="4"></span><b>RIGGED CHALLENGES</b>We
         rigged the difficulty to follow class. Failing up is free; failing down prices a sibling.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="x" data-px="4"></span><b>THE VOTE</b>We gave the room
@@ -1443,7 +1443,7 @@ const SLIDES = [
       <div class="takeaway"><span class="tk-ic" data-ic="warn" data-px="4"></span><b>DANGER = EXPOSURE</b>We let
         Mr. System strike only where no adult, no money, and no margin were covering the kid.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="star" data-px="4"></span><b>THE FINISH LINE</b>We built
-        a finish line some students never had to run for — and star cards that say so out loud.</div>
+        a finish line some students never had to run for, and star cards that say so out loud.</div>
       <div class="takeaway"><span class="tk-ic" data-ic="book" data-px="4"></span><b>THE DEBRIEF</b>We end by
         handing the room a chart of what it just did to itself.</div>
     </div>
@@ -1455,7 +1455,7 @@ const SLIDES = [
     <div class="pipe">
       <span class="step">🎮 Play this demo</span><span class="arrow">→</span>
       <span class="step">✏️ PROF EDIT (passcode is in the facilitator guide)</span><span class="arrow">→</span>
-      <span class="step">🖨 PRINT PACK — the real notecard game</span>
+      <span class="step">🖨 PRINT PACK: the real notecard game</span>
     </div>
     <div class="timing" role="img" aria-label="Run of show: deal 5, round one 10, vote 3, round two 8, vote 3, round three 6, vote 3, final 6, debrief 10 minutes">
       <i style="flex:5;background:var(--gold)">DEAL 5</i><i style="flex:10;background:var(--grass);color:#fff">R1 · 10</i>

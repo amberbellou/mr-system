@@ -26,7 +26,7 @@
         "Driver takes her to school",
         "Four AP classes, no margin",
         "Failure is not discussed",
-        "Endometriosis — diagnosed in one year, managed on a schedule"
+        "Endometriosis: diagnosed in one year, managed on a schedule"
       ],
       "load": 2,
       "sibs": []
@@ -376,22 +376,22 @@
   ],
   "rounds": {
     "1": {
-      "name": "MORNING IN THE VILLAGE — GET TO SCHOOL",
+      "name": "MORNING IN THE VILLAGE · GET TO SCHOOL",
       "kaia": "It's 7 AM. First bell is at 8:30. Everybody in this room has to get to the same building. Nobody starts from the same place."
     },
     "2": {
-      "name": "AFTERNOON & EVENING — GET HOME",
-      "kaia": "Last bell. Everyone goes home now — to whatever home is. Four hours until sleep, and the homework is due either way."
+      "name": "AFTERNOON & EVENING · GET HOME",
+      "kaia": "Last bell. Everyone goes home now, to whatever home is. Four hours until sleep, and the homework is due either way."
     },
     "3": {
-      "name": "THE NIGHT — MAKE IT TO TOMORROW",
+      "name": "THE NIGHT · MAKE IT TO TOMORROW",
       "kaia": "Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."
     }
   },
   "dilemmas": {
     "1": {
       "ayesha": {
-        "sit": "Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away — from your bedroom window you can read the marquee. The only question is when to cross.",
+        "sit": "Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away. From your bedroom window you can read the marquee. The only question is when to cross.",
         "choices": [
           {
             "k": "A",
@@ -456,7 +456,7 @@
             "icon": "bus",
             "auto": {
               "st": "in",
-              "say": "Back in September you taught yourself this route off a screenshot — the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."
+              "say": "Back in September you taught yourself this route off a screenshot: the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."
             }
           },
           {
@@ -466,7 +466,7 @@
             "icon": "note",
             "auto": {
               "st": "in",
-              "say": "You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries — “Leaving now?” — and by then you have been at school for three hours."
+              "say": "You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries, “Leaving now?”, and by then you have been at school for three hours."
             }
           }
         ]
@@ -507,7 +507,7 @@
         ]
       },
       "marie": {
-        "sit": "Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday — those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.",
+        "sit": "Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday. Those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.",
         "choices": [
           {
             "k": "A",
@@ -1407,7 +1407,7 @@
             "icon": "home",
             "auto": {
               "st": "in",
-              "say": "The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid — without anyone asking what burned."
+              "say": "The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid: without anyone asking what burned."
             }
           },
           {
@@ -1427,7 +1427,7 @@
             "icon": "book",
             "auto": {
               "st": "strug",
-              "say": "You write for five careful hours alone with the prompt. At 11:05 you check the rubric — compare, not argue — five pages in the wrong direction."
+              "say": "You write for five careful hours alone with the prompt. At 11:05 you check the rubric. Compare, not argue. Five pages in the wrong direction."
             }
           }
         ]
@@ -1922,7 +1922,7 @@
             "icon": "home",
             "auto": {
               "st": "in",
-              "say": "You go to bed at six and don't get up. By morning the absence is excused before anyone calls — it is in your file — and the test moves to Thursday with nothing next to your name."
+              "say": "You go to bed at six and don't get up. By morning the absence is excused before anyone calls, it is in your file, and the test moves to Thursday with nothing next to your name."
             }
           },
           {
@@ -2291,7 +2291,7 @@
             "icon": "heart",
             "auto": {
               "st": "in",
-              "say": "She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence — “he's fifteen, he's raising three kids” — and then she hangs up and says goodnight twice, once in each voice."
+              "say": "She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence, “he's fifteen, he's raising three kids”, and then she hangs up and says goodnight twice, once in each voice."
             }
           }
         ]
@@ -2306,7 +2306,7 @@
             "icon": "note",
             "auto": {
               "st": "in",
-              "say": "Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 — not one of your forms has ever been checked, and today is no different."
+              "say": "Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15. Not one of your forms has ever been checked, and today is no different."
             }
           },
           {
@@ -2326,7 +2326,7 @@
             "icon": "x",
             "auto": {
               "st": "in",
-              "say": "The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing — doctors' schedules, they understand completely, Monday is fine."
+              "say": "The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing. Doctors' schedules, they understand completely, Monday is fine."
             }
           }
         ]
@@ -2396,7 +2396,7 @@
             "icon": "home",
             "auto": {
               "st": "in",
-              "say": "You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works — not on the envelope, on the sleep — and you're out by 9:40."
+              "say": "You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works: not on the envelope, on the sleep. You're out by 9:40."
             }
           }
         ]
@@ -2431,7 +2431,7 @@
             "icon": "heart",
             "auto": {
               "st": "in",
-              "say": "Havdalah ends and the table becomes a workshop — dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."
+              "say": "Havdalah ends and the table becomes a workshop: dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."
             }
           }
         ]
@@ -2512,7 +2512,7 @@
         ]
       },
       "fatima": {
-        "sit": "Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime — the whole evening is yours now.",
+        "sit": "Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime: the whole evening is yours now.",
         "choices": [
           {
             "k": "A",
@@ -3502,10 +3502,10 @@
     }
   },
   "priv": {
-    "david": "Family funded the library wing — nobody was ever going to mark him late.",
-    "ayesha": "Principal's kid — an extension was on her desk before she knew the assignment existed.",
-    "priya": "Parents on the foundation board — given a buffer, quietly.",
-    "alejandra": "Family donates the gym scoreboard — nobody was going to mark her late."
+    "david": "Family funded the library wing. Nobody was ever going to mark him late.",
+    "ayesha": "Principal's kid: an extension was on her desk before she knew the assignment existed.",
+    "priya": "Parents on the foundation board: given a buffer, quietly.",
+    "alejandra": "Family donates the gym scoreboard. Nobody was going to mark her late."
   },
   "tardyWhy": {
     "ayesha": "The door she had to reach was the one she lives across the street from.",
@@ -3534,22 +3534,22 @@
     "david": "For the first time all game, something didn't go his way."
   },
   "text": {
-    "titleKicker": "A GAME FOR 30–60 STUDENTS",
+    "titleKicker": "A GAME FOR 30 TO 60 STUDENTS",
     "titleName": "MR. SYSTEM",
     "titleTagline": "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
-    "titleBlurb": "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter — but so do the systems built long before you got here.",
-    "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode — longer if the debrief gets good.",
+    "titleBlurb": "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter, but so do the systems built long before you got here.",
+    "titleBlurb2": "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode, longer if the debrief gets good.",
     "titleStrip": "TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.",
-    "titleWarn": "Content note: this game depicts systemic harm — including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
+    "titleWarn": "Content note: this game depicts systemic harm, including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
     "castDeal": "Your group is dealt a family card, and your group IS that family. Argue the dilemma together, take the challenge together, send one spokesperson to every vote. One vote per family, not per student.",
     "castKaia": "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
     "resultsKaia": "Nobody chose wrong. Look at what each of them was choosing between.",
-    "voteKaia": "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime — they may not vote. Majority rules.",
+    "voteKaia": "Each surviving family sends one spokesperson. One vote each. When a family is eliminated, the whole group playing it stands as ghosts together, guardians included. They may mime every vote. Their votes are never counted. Majority rules.",
     "voteNote": "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why. The vote is a trap on purpose: the demo's simulated families reliably turn on whoever is already struggling, and a live room is expected to do the same. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
     "homeworkKaia": "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
     "homeworkNote": "Everyone can do this one. That is deliberate. The homework was never the filter.",
     "musicLine": "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
-    "tardyKaia": "Music stops. Everybody in. Last one through the door is tardy, and tardy is out — you know the rule, it's on the wall.",
+    "tardyKaia": "Music stops. Everybody in. Last one through the door is tardy, and tardy is out. You know the rule, it's on the wall.",
     "debriefKaia": "Nobody in here lost because they made a bad decision. Look at what each of them was choosing between, and then tell me what the game was actually testing.",
     "questions": [
       "Who survived, and what did they actually have that the others didn't?",
@@ -3558,7 +3558,7 @@
       "Where have you seen the tardy rule applied unevenly in a real school?",
       "What would have to change for this game to be winnable by everyone in it?"
     ],
-    "debriefNote": "Several families here carry crisis storylines — psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
+    "debriefNote": "Several families here carry crisis storylines: psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
   },
   "settings": {
     "dangerMode": "standard",

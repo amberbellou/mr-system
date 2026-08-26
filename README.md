@@ -1,6 +1,6 @@
 # Mr. System
 
-A classroom game about systemic inequality in education, for 30–60 students in one room.
+A classroom game about systemic inequality in education, for 30 to 60 students in one room.
 
 **▶ Play it: https://amberbellou.github.io/mr-system/**
 **🎞 See how it plays (walkthrough deck for professors): https://amberbellou.github.io/mr-system/walkthrough.html**
@@ -15,22 +15,22 @@ screen that shows the class what just happened to them.
 
 | Phase | What the room does |
 | --- | --- |
-| Setup | Pick a class size (30–60) and a roster: CORE (a curated ten — the default, fits a class period), FULL (all twenty-four), or CUSTOM. Families not played by hand fold into the background crowd. |
-| Rounds 1–3 | Morning, evening, night. Each family faces a dilemma and picks A/B/C. Some choices trigger a timed challenge; some resolve on their own — and a choice that leaves a kid unprotected can draw an interruption from Mr. System himself (see danger mode below). |
-| The vote | Before every vote, Mr. System files official "recommendations for disqualification" — grounded-sounding charges that only ever target the already-struggling, absurd charges with bureaucratic confidence, and the occasional charge against a thriving student, struck through and withdrawn. Then the surviving families vote one student out. Ghosts mime; they cannot vote. |
+| Setup | Pick a class size (30 to 60) and a roster: CORE (a curated ten, the default, fits a class period), FULL (all twenty-four), or CUSTOM. Families not played by hand fold into the background crowd. |
+| Rounds 1 to 3 | Morning, evening, night. Each family faces a dilemma and picks A/B/C. Some choices trigger a timed challenge; some resolve on their own, and a choice that leaves a kid unprotected can draw an interruption from Mr. System himself (see danger mode below). |
+| The vote | Before every vote, Mr. System files official "recommendations for disqualification": grounded-sounding charges that only ever target the already-struggling, absurd charges with bureaucratic confidence, and the occasional charge against a thriving student, struck through and withdrawn. Then the surviving families vote one student out. When a family is eliminated, the whole group playing it stands as ghosts together, guardians included. They may mime every vote. Their votes are never counted. |
 | Final round | Homework is due, then the music starts. Last one in is tardy, and tardy is out. Some students never had to rush. |
 | Debrief | Who survived, who didn't, and a survival rate broken down by class band. |
 
 The point is the shape of the choices, not the choosing. David picks between good outcomes all
 game. Marcus picks which sibling absorbs the cost. Lucia's round 1 has three options and all three
-end out of school — she is eliminated before she makes a decision.
+end out of school. She is eliminated before she makes a decision.
 
 ## Danger mode
 
 By default, some choices that leave a kid unsupervised, unaccompanied, or unprotected carry a
 small chance that Mr. System strikes: a near-miss at a crossing with no guard, a breakdown on a
 road where nobody is expecting you. Standard mode narrates injury and near-misses; the kid
-survives. Unsparing mode is the unsoftened version — a kid can die. Off disables every roll.
+survives. Unsparing mode is the unsoftened version: a kid can die. Off disables every roll.
 The toggle is in PROF EDIT → Endgame. Upper-tier choices never carry danger, with one deliberate,
 severity-buffered exception. Say which mode you are running in your content warning.
 
@@ -45,13 +45,13 @@ a suggested framing in there.
 The site is the demo; the real game is notecards. **PRINT PACK** (top right) generates role cards,
 round cards, challenge cards, Kaia's script book (with answer keys and dice instructions for danger
 events), Mr. System's memo sheets, the status board, ghost tents, star cards, vote slips, and a
-one-page run of show — all from the current content pack and roster, so PROF EDIT localization
+one-page run of show, all from the current content pack and roster, so PROF EDIT localization
 flows straight onto paper. Bring one d6.
 
 ## Editing the content
 
-Everything on screen — dilemmas, choices, outcomes, characters, challenges, timers, every line of
-narration, the reflection questions — is editable from inside the game. Click **PROF EDIT** in the
+Everything on screen is editable from inside the game: dilemmas, choices, outcomes, characters,
+challenges, timers, every line of narration, the reflection questions. Click **PROF EDIT** in the
 top right and enter the passcode (`mrsystem` by default; change it on the Content pack tab).
 
 Edits are saved in your own browser, so what a student opens is never changed by what another
@@ -68,7 +68,7 @@ a text editor and paste it in.
 ## What's in here
 
 ```
-index.html                  the whole game — one file, no build step, no dependencies
+index.html                  the whole game: one file, no build step, no dependencies
 walkthrough.html            the 15-slide walkthrough deck (regenerate: tools/build-walkthrough.py)
 content/default-pack.json   the default content pack
 react/MrSystem.jsx          the same game as a React component

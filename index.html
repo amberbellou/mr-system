@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="A classroom game about systemic inequality in education, for 30-60 students.">
+<meta name="description" content="A classroom game about systemic inequality in education, for 30 to 60 students.">
 <title>Mr. System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -747,7 +747,7 @@ let CAST = [
  load:1, tmpl:"base", pal:{H:"#3B2A1C",S:"#F2CBA0",T:"#2F6FB0",P:"#2C3A4C",B:"#1B222B"}},
 {id:"alejandra", name:"ALEJANDRA", cls:"Upper-class", tier:"upper", pri:true,
  who:"Colombian, wealthy family, enormous performance pressure.",
- tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis \u2014 diagnosed in one year, managed on a schedule"],
+ tags:["Driver takes her to school","Four AP classes, no margin","Failure is not discussed","Endometriosis: diagnosed in one year, managed on a schedule"],
  load:2, tmpl:"long", pal:{H:"#241A14",S:"#D9A374",T:"#6C4E96",P:"#2C3A4C",B:"#1B222B"}},
 {id:"priya", name:"PRIYA", cls:"Upper-middle", tier:"upper",
  who:"Indian-American, wealthy immigrant family, heavy parental expectation.",
@@ -921,7 +921,7 @@ evening30: {kind:"rapid", secs:30, diff:5, diffLabel:"Brutal", title:"7 PM, EVER
 const A = (k,t,cost,ic,extra) => Object.assign({k:k,t:t,cost:cost,icon:ic}, extra);
 let DILEMMAS = {
 1:{
- ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away \u2014 from your bedroom window you can read the marquee. The only question is when to cross.", choices:[
+ ayesha:{sit:"Your mom unlocks the building at 7:00. First bell is 8:30, and school is one crosswalk away. From your bedroom window you can read the marquee. The only question is when to cross.", choices:[
   A("A","Go in with mom at 7:00","Hearing the morning announcements twice.","star",
     {auto:{st:"in",say:"The building at 7:00 is dark, quiet, and briefly yours. You take the chair that spins in the front office, and at 8:00 the announcements come over the PA in the same voice that just told you to grab a jacket."}}),
   A("B","Walk over at 8:15","Nothing.","walk",
@@ -934,9 +934,9 @@ let DILEMMAS = {
      danger:{p:0.2, standard:{st:"strug",say:"The driver misses the turn for the school and does not slow down. You say stop twice before he does. You get out at a light eleven blocks away and walk the rest with your phone in your hand."},
       unsparing:{st:"strug",say:"The driver misses the turn and does not slow down, and the door does not open the first time you try it. You say stop three times, and the third one comes out in a voice you did not know you had. The neighborhood you get out into is one your parents chose for its safety. You walk eleven blocks through it with your phone unlocked in your hand. The money bought the phone and the safe neighborhood. It could not buy the ride going right."}}}),
   A("B","Take the bus","The 7:52, in seventeen minutes.","bus",
-    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot \u2014 the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
+    {auto:{st:"in",say:"Back in September you taught yourself this route off a screenshot: the 14, the transfer at Croft, the 9. You're at the gate by 8:20 with a croissant from the place by the second stop."}}),
   A("C","Text your dad for a ride","The reply, whenever it comes.","note",
-    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries \u2014 \u201cLeaving now?\u201d \u2014 and by then you have been at school for three hours."}})]},
+    {auto:{st:"in",say:"You send it at 7:36, give it ten minutes, and take the bus anyway. At 11:52 he replies from between surgeries, \u201cLeaving now?\u201d, and by then you have been at school for three hours."}})]},
  tyler:{sit:"Last night was a bad one. Your left arm has a mark you didn't have yesterday, and the kitchen is silent in the way that means he's still asleep. First bell is 8:30.", choices:[
   A("A","Long sleeves, side door","A flannel in seventy-nine degrees.","ghost",
     {auto:{st:"in",say:"The side door gets you to your seat at 8:27 and nobody looks twice. By third period the radiators are still on, and you take notes with your cuffs pinned under your palms."}}),
@@ -944,7 +944,7 @@ let DILEMMAS = {
     {auto:{st:"strug",say:"She closes the door, photographs your arm twice, and asks her questions in a voice that has done this before. By noon there is a case number and an adult whose job is you; by last bell there is a voicemail at the house, and you know what time he gets home."}}),
   A("C","Come in at second period","First period, unexcused.","clock",
     {auto:{st:"strug",say:"You sit behind the gas station with a bag of their ice until your arm will go through a sleeve without help. You slide in at 9:22, and the unexcused mark posts before lunch, next to two others from this year."}})]},
- marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday \u2014 those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
+ marie:{sit:"Your mom's key turns at 7:25, twelve hours after it turned the other way. Asleep by eight or sick by Friday. Those are her words. Sister Yvette's van comes up the block at 7:40. First bell is 8:30.", choices:[
   A("A","Take the church van","Four stops before school.","bus",
     {auto:{st:"in",say:"Sister Yvette pulls up at 7:40 with four kids in and the choir tape on low. You're at the gate by 8:20 with somebody's harmony stuck in your head."}}),
   A("B","Walk, quietly","Twenty-five minutes on foot.","walk",
@@ -1137,11 +1137,11 @@ let DILEMMAS = {
     {auto:{st:"in",say:"You sort district mail into the teacher cubbies and learn the building by box: who gets the catalogs, who gets the attendance letters. The head secretary pays you from the butterscotch jar and calls you her best hire."}})]},
  grace:{sit:"3:40, and the apartment is exactly as you left it, because nobody else has been in it. There's an essay due Friday, a fridge holding sparkling water and half a lime, and a card that covers whatever the fridge doesn't.", choices:[
   A("A","Cook a real dinner","An hour and a recipe video.","home",
-    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid \u2014 without anyone asking what burned."}}),
+    {auto:{st:"in",say:"The pan catches at step four, and the building alarm empties all six floors into the parking lot, you still in the oven mitts. The fine posts to your parents' card and is paid the way everything is paid: without anyone asking what burned."}}),
   A("B","Order in. Again.","Nothing anyone would notice.","check",
     {auto:{st:"in",say:"By now the driver knows the building code. You eat at the island with a video propped against the fruit bowl no adult has been home to refill."}}),
   A("C","Start the essay","The evening.","book",
-    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric \u2014 compare, not argue \u2014 five pages in the wrong direction."}})]},
+    {auto:{st:"strug",say:"You write for five careful hours alone with the prompt. At 11:05 you check the rubric. Compare, not argue. Five pages in the wrong direction."}})]},
  tyler:{sit:"3:10. From the corner you can read the driveway: the truck is home early, nose-in, and the kitchen light is off. You have been reading this driveway since you were nine, and today it isn't saying.", choices:[
   A("A","Go in now, while it's quiet","The guess.","home",
     {auto:{st:"in",say:"The side door, socks on the stairs. He's asleep in the recliner with the TV going, and you eat cereal standing at the counter and do homework with your door cracked so you can hear."}}),
@@ -1243,7 +1243,7 @@ let DILEMMAS = {
      pass:{st:"in",say:"You name it once, precisely, the way the specialist taught you. By fifth period the driver has been rerouted; the specialist sees you at 3:40, adjusts the dosage, and has you home for dinner with a note the school never asks to see."},
      fail:{st:"in",say:"At lunch you fumble the words and it does not matter in the slightest. The nurse has your file open before you finish; the driver is rerouted by two; the specialist sees you at 3:40 anyway."}}),
   A("B","Give up on the day entirely","A day of margin you don't have.","home",
-    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls \u2014 it is in your file \u2014 and the test moves to Thursday with nothing next to your name."}}),
+    {auto:{st:"in",say:"You go to bed at six and don't get up. By morning the absence is excused before anyone calls, it is in your file, and the test moves to Thursday with nothing next to your name."}}),
   A("C","Tell someone","The appointment your mother will mention in front of guests.","note",
     {auto:{st:"in",say:"Between meetings, you tell your mother. She makes one call from the hallway, and the specialist's office rings back within the hour, because your mother is your mother."}})]},
  priya:{sit:"Tutor at six, your own homework after, and a school voicemail nobody but you can understand.", choices:[
@@ -1324,14 +1324,14 @@ let DILEMMAS = {
   A("B","Pretend not to hear","Nothing.","ghost",
     {auto:{st:"in",say:"You finish tomorrow's reading with your door open anyway. The word \u201cplacement\u201d comes through the wall between two chapters, and you turn the page."}}),
   A("C","Bring her tea and sit with her","Staying up past eleven.","heart",
-    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence \u2014 \u201che's fifteen, he's raising three kids\u201d \u2014 and then she hangs up and says goodnight twice, once in each voice."}})]},
+    {auto:{st:"in",say:"She takes the tea one-handed, the phone still at her ear, and keeps hold of your hand across the folder. You catch one whole sentence, \u201che's fifteen, he's raising three kids\u201d, and then she hangs up and says goodnight twice, once in each voice."}})]},
  grace:{sit:"9 PM. The field trip form on the counter says a parent or guardian must sign it by first period. Your mother is twelve hours into a shift; your father's phone is going straight to voicemail. The card can't sign.", choices:[
   A("A","Sign it in her handwriting","Two practice runs on an envelope.","note",
-    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15 \u2014 not one of your forms has ever been checked, and today is no different."}}),
+    {auto:{st:"in",say:"Her signature is on a hospital letter in the mail pile; you copy it twice on the envelope, then once on the line. The office stamps it at 8:15. Not one of your forms has ever been checked, and today is no different."}}),
   A("B","Call the hospital and ask for her","Three transfers and a hold.","heart",
     {auto:{st:"in",say:"A charge nurse finds her between patients: she has four minutes, and the form takes one of them. The other three go to whether you've eaten; her one-line email from the nurses' station is accepted at 8:02 without a question."}}),
   A("C","Leave it blank","A call from the office.","x",
-    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing \u2014 doctors' schedules, they understand completely, Monday is fine."}})]},
+    {auto:{st:"in",say:"The office calls your mother at 9:40, gets voicemail, and calls you instead. By the end they are the ones apologizing. Doctors' schedules, they understand completely, Monday is fine."}})]},
  tyler:{sit:"It starts at 9:40 the way it starts: a cabinet door, then his voice, then your mother's, lower. Your sister is eight and her room shares a wall with the kitchen. Yours doesn't.", choices:[
   A("A","Take the couch and the headphones","Hearing it anyway.","ghost",
     {auto:{st:"strug",say:"You turn the volume to the number that usually works and watch the ceiling until the house changes key. At 11:50 a door closes, then nothing, and you count to one hundred before you let yourself sleep."}}),
@@ -1345,14 +1345,14 @@ let DILEMMAS = {
   A("B","Homework with the TV on","Half your attention.","note",
     {auto:{st:"strug",say:"The game show keeps the room from going silent and the worksheet gets done in the gaps. Between problems your eyes keep finding the counter, and the envelope has not moved."}}),
   A("C","Pray the way Grandma taught you","Nothing tonight.","home",
-    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works \u2014 not on the envelope, on the sleep \u2014 and you're out by 9:40."}})]},
+    {auto:{st:"in",say:"You say it in Kreyol, the same words in the same order your grandmother said them. It works the way it always works: not on the envelope, on the sleep. You're out by 9:40."}})]},
  rebecca:{sit:"Candles at 7:12, and homework stops when they're lit. The history project is due Monday. Grandma is already on her way from four blocks over.", choices:[
   A("A","Finish it before candle-lighting","The afternoon.","check",
     {auto:{st:"in",say:"Your mom blocks out the afternoon like a clinic schedule; your dad takes citations. Done at 6:40, in time to help set the table."}}),
   A("B","Leave it for Sunday","Nothing.","home",
     {auto:{st:"in",say:"Shabbat, sleep, Hebrew school, and the project on Sunday afternoon. It takes two hours at the dining table and is done before the chicken comes out."}}),
   A("C","Reconvene Saturday night","Nothing.","heart",
-    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop \u2014 dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
+    {auto:{st:"in",say:"Havdalah ends and the table becomes a workshop: dad on the timeline, mom proofreading, Grandma supervising from the good chair. Done by ten."}})]},
  daniel:{sit:"Shabnam turns thirteen tonight and grandma has been cooking since two. There's a biology quiz tomorrow. The whole family is at the table by seven, including the uncle who majored in bio.", choices:[
   A("A","Study before dinner","The smell from the kitchen.","book",
     {chal:"homework30",
@@ -1369,7 +1369,7 @@ let DILEMMAS = {
     {auto:{st:"in",say:"The first open argument your kitchen has ever hosted, and you started it. You win Sunday afternoons; breakfast stays cold for two weeks."}}),
   A("C","Say yes and stop sleeping","Sleep, an hour at a time.","clock",
     {auto:{st:"strug",say:"The B+ is an A by November. You start waking at 3 AM for no reason and tell no one, because the grades are fine, and the grades are the thing that gets checked."}})]},
- fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime \u2014 the whole evening is yours now.", choices:[
+ fatima:{sit:"Your mom was due home at 6:30. At 6:10 she calls: mandated for a second shift, home after midnight. Iftar, dinner, homework checks, bedtime: the whole evening is yours now.", choices:[
   A("A","Run the evening yourself","Your essay, again.","home",
     {chal:"evening30",
      pass:{st:"strug",say:"You break your fast over the stove, plate them, check a spelling list, run the whole bedtime. At 10:15 you open your own homework and are asleep on your arm by 10:30."},
@@ -1568,7 +1568,7 @@ function ppSheet(sec, title, eyebrow, body, foot){
     <p class="pp-eyebrow">${pesc(eyebrow)}</p>
     ${title ? `<h2>${pesc(title)}</h2>` : ""}
     ${body}
-    <div class="pp-foot"><span>MR. SYSTEM \u2014 PRINT PACK</span><span>${pesc(foot || "")}</span></div>
+    <div class="pp-foot"><span>MR. SYSTEM \u00b7 PRINT PACK</span><span>${pesc(foot || "")}</span></div>
   </section>`;
 }
 function chunk(arr, n){
@@ -1585,9 +1585,9 @@ function buildPrintPack(opts){
   const sheets = [];
 
   /* ---- cover + TOC ---- */
-  sheets.push(ppSheet("cover", "MR. SYSTEM", "THE PHYSICAL GAME \u2014 PRINT PACK", `
+  sheets.push(ppSheet("cover", "MR. SYSTEM", "THE PHYSICAL GAME \u00b7 PRINT PACK", `
     <p style="font-size:11pt;max-width:5.6in">Everything the room needs to play by hand. Print this pack,
-      bring a die, painter's tape, a bin, pens, and a timer \u2014 the game is the notecards; the site is
+      bring a die, painter's tape, a bin, pens, and a timer. The game is the notecards; the site is
       only the demo.</p>
     <div class="pnote"><b>This pack was generated from:</b> ${pesc(opts.customized
       ? "a CUSTOMIZED content pack (PROF EDIT changes included)" : "the default content pack")}
@@ -1595,13 +1595,13 @@ function buildPrintPack(opts){
       ${pesc(SETTINGS.dangerMode.toUpperCase())} \u00b7 ${pesc(opts.dateStr)}</div>
     <h3>CONTENTS</h3>
     <ul class="ptoc">
-      <li><b>1</b> Role cards \u2014 one per family, dealt once, kept all game (cardstock)</li>
-      <li><b>2</b> Round cards \u2014 the dilemmas, drawn each round (cardstock)</li>
+      <li><b>1</b> Role cards: one per family, dealt once, kept all game (cardstock)</li>
+      <li><b>2</b> Round cards: the dilemmas, drawn each round (cardstock)</li>
       <li><b>3</b> Challenge cards (cardstock)</li>
-      <li><b>4</b> Kaia's script book \u2014 the narrator's binder (paper)</li>
-      <li><b>5</b> Mr. System's memo sheets \u2014 one per vote (paper)</li>
-      <li><b>6</b> Table pieces \u2014 status board, ghost tents, star cards, vote slips</li>
-      <li><b>7</b> Run of show \u2014 one page for the podium</li>
+      <li><b>4</b> Kaia's script book: the narrator's binder (paper)</li>
+      <li><b>5</b> Mr. System's memo sheets: one per vote (paper)</li>
+      <li><b>6</b> Table pieces: status board, ghost tents, star cards, vote slips</li>
+      <li><b>7</b> Run of show: one page for the podium</li>
     </ul>
     <div class="pnote">${pesc(TEXT.titleWarn || "")}</div>`,
     "cover"));
@@ -1622,13 +1622,13 @@ function buildPrintPack(opts){
       what it costs.</div>
   </div>`;
   chunk(active, 4).forEach((four, i) => {
-    sheets.push(ppSheet("roles", i === 0 ? "ROLE CARDS" : "", "SECTION 1 \u2014 ROLE CARDS \u00b7 CUT ALONG DOTTED LINES",
+    sheets.push(ppSheet("roles", i === 0 ? "ROLE CARDS" : "", "SECTION 1 \u00b7 ROLE CARDS \u00b7 CUT ALONG DOTTED LINES",
       `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 p" + (i + 1)));
   });
   const povActive = active.filter(c => c.tier === "pov");
   if (povActive.length)
     chunk(povActive, 4).forEach((four, i) => {
-      sheets.push(ppSheet("roles", "", "SECTION 1 \u2014 SPARE COPIES \u00b7 POVERTY/CRISIS BLOCK (CARDS GET LOST; THESE CANNOT BE MISSING)",
+      sheets.push(ppSheet("roles", "", "SECTION 1 \u00b7 SPARE COPIES \u00b7 POVERTY/CRISIS BLOCK (CARDS GET LOST; THESE CANNOT BE MISSING)",
         `<div class="pgrid2">${four.map(roleCard).join("")}</div>`, "roles \u00b7 spares p" + (i + 1)));
     });
 
@@ -1650,7 +1650,7 @@ function buildPrintPack(opts){
       .map(ch => roundCard(ch, DILEMMAS[r][ch.id], r));
     chunk(cards, 2).forEach((two, i) => {
       sheets.push(ppSheet("rounds", i === 0 ? "ROUND " + r + " CARDS" : "",
-        "SECTION 2 \u2014 ROUND CARDS \u00b7 " + pesc(ROUND_NAME[r]),
+        "SECTION 2 \u00b7 ROUND CARDS \u00b7 " + pesc(ROUND_NAME[r]),
         `<div class="pgrid2">${two.join("")}</div>`, "round " + r + " \u00b7 p" + (i + 1)));
     });
   });
@@ -1686,15 +1686,15 @@ function buildPrintPack(opts){
   };
   chunk([...usedChals], 2).forEach((two, i) => {
     sheets.push(ppSheet("challenges", i === 0 ? "CHALLENGE CARDS" : "",
-      "SECTION 3 \u2014 CHALLENGE CARDS \u00b7 ANSWER KEYS LIVE IN KAIA'S SCRIPT",
+      "SECTION 3 \u00b7 CHALLENGE CARDS \u00b7 ANSWER KEYS LIVE IN KAIA'S SCRIPT",
       `<div class="pgrid2">${two.map(chalCard).join("")}</div>`, "challenges \u00b7 p" + (i + 1)));
   });
 
   /* ---- 4. Kaia's script book ---- */
-  sheets.push(ppSheet("script", "KAIA'S SCRIPT BOOK", "SECTION 4 \u2014 THE NARRATOR'S BINDER", `
+  sheets.push(ppSheet("script", "KAIA'S SCRIPT BOOK", "SECTION 4 \u00b7 THE NARRATOR'S BINDER", `
     <h3>SETUP</h3>
-    <p style="font-size:10pt">${groups} groups \u00d7 ${opts.classSize} students \u2014 each group is dealt
-      ${per > 1 ? "1\u2013" + per : "one"} role card${per > 1 ? "s" : ""} and <b>is</b> that family.
+    <p style="font-size:10pt">${groups} groups \u00d7 ${opts.classSize} students. Each group is dealt
+      ${per > 1 ? "1 to " + per : "one"} role card${per > 1 ? "s" : ""} and <b>is</b> that family.
       One vote per family, cast by a spokesperson. ${active.length} families in play
       (${pesc(modeLabel)}).</p>
     <h3>MATERIALS</h3>
@@ -1704,16 +1704,16 @@ function buildPrintPack(opts){
       <li>The status board taped up or projected \u00b7 ghost tents and star cards within reach</li>
     </ul>
     <h3>THE SIBLING LINK (THE CUPID RULE)</h3>
-    <div class="pnote">In Loup Garou, Cupid links two lovers \u2014 if one goes down, so does the other.
+    <div class="pnote">In Loup Garou, Cupid links two lovers: if one goes down, so does the other.
       Here the link is siblings. When a linked family is eliminated, read the link line slowly and name
       every sibling: <b>"The link holds. [names] go down with them."</b> Each linked family also holds one
       LEAN ON THE LINK token: after failing a challenge, they may spend it once to turn the fail into a
-      struggle. At the debrief, count people, not families \u2014 the tally sheet tells you how.</div>
-    <h3>SAFETY \u2014 BEFORE THE FIRST ROUND</h3>
+      struggle. At the debrief, count people, not families. The tally sheet tells you how.</div>
+    <h3>SAFETY \u00b7 BEFORE THE FIRST ROUND</h3>
     <div class="pnote">Write on the board and leave up all session:<br>
       <b>Counselor: ______________________ \u00b7 988 Suicide &amp; Crisis Lifeline</b><br><br>
       Say aloud: players may pass on any character, no explanation needed. Danger mode for this
-      session: <b>${pesc(SETTINGS.dangerMode.toUpperCase())}</b> \u2014 if it is not OFF, say that the
+      session: <b>${pesc(SETTINGS.dangerMode.toUpperCase())}</b>. If it is not OFF, say that the
       game can depict traffic injury and threats to unsupervised kids.</div>
     <div class="pkaia">${pesc(TEXT.castKaia)}</div>`, "script \u00b7 setup"));
 
@@ -1742,8 +1742,8 @@ function buildPrintPack(opts){
         if (c.danger && c.danger.standard){
           const faces = ppDiceFaces(c.danger.p);
           danger = `<div class="pdice">\u1f3b2 If they chose ${pesc(c.k)}: roll a d6.
-              ${faces === 1 ? "On a 1" : "1\u2013" + faces} \u2192 read the MR. SYSTEM box.
-              ${faces === 1 ? "2\u20136" : (faces + 1) + "\u20136"} \u2192 read the normal outcome.</div>
+              ${faces === 1 ? "On a 1" : "1 to " + faces} \u2192 read the MR. SYSTEM box.
+              ${faces === 1 ? "2 to 6" : (faces + 1) + " to 6"} \u2192 read the normal outcome.</div>
             <div class="pmrsys"><b>\u26a0 MR. SYSTEM</b>${pesc(c.danger.standard.say)}
               <span class="script-st">(\u2192 ${PP_STATUS[c.danger.standard.st]})</span>
               ${c.danger.unsparing ? `<div class="pfn">Unsparing variant: ${pesc(c.danger.unsparing.say)}
@@ -1754,12 +1754,12 @@ function buildPrintPack(opts){
       return `<div class="script-fam"><h4>${pesc(ch.name)}</h4>${lines}</div>`;
     });
     chunk(famBlocks, 3).forEach((three, i) => {
-      sheets.push(ppSheet("script", i === 0 ? "SCRIPT \u2014 ROUND " + r : "",
-        "SECTION 4 \u2014 " + pesc(ROUND_NAME[r]),
+      sheets.push(ppSheet("script", i === 0 ? "SCRIPT \u00b7 ROUND " + r : "",
+        "SECTION 4 \u00b7 " + pesc(ROUND_NAME[r]),
         (i === 0 ? `<div class="pkaia">${pesc(ROUND_KAIA[r])}</div>` : "") + three.join(""),
         "script \u00b7 round " + r + " \u00b7 p" + (i + 1)));
     });
-    sheets.push(ppSheet("script", "", "SECTION 4 \u2014 THE ROUND " + r + " VOTE", `
+    sheets.push(ppSheet("script", "", "SECTION 4 \u00b7 THE ROUND " + r + " VOTE", `
       <div class="pkaia">${pesc(TEXT.voteKaia)}</div>
       <p style="font-size:10pt">Hand out vote slips. Ghosts stand and mime; their votes are not
         collected. Read the round ${r} memo sheet first, in a neutral administrative voice.</p>
@@ -1769,38 +1769,38 @@ function buildPrintPack(opts){
 
   const linkedActive = active.filter(c => c.sibs && c.sibs.length);
   const privActive = Object.keys(PRIV).filter(id => opts.activeIds.indexOf(id) >= 0);
-  sheets.push(ppSheet("script", "SCRIPT \u2014 FINAL ROUND", "SECTION 4 \u2014 HOMEWORK, MUSIC, TARDY", `
-    <h3>PHASE 1 \u2014 HOMEWORK</h3>
+  sheets.push(ppSheet("script", "SCRIPT \u00b7 FINAL ROUND", "SECTION 4 \u00b7 HOMEWORK, MUSIC, TARDY", `
+    <h3>PHASE 1 \u00b7 HOMEWORK</h3>
     <div class="pkaia">${pesc(TEXT.homeworkKaia)}</div>
     <p style="font-size:10pt">Blank paper, pens, the bin. ${pesc(TEXT.homeworkNote)}</p>
-    <h3>PHASE 2 \u2014 THE MUSIC</h3>
+    <h3>PHASE 2 \u00b7 THE MUSIC</h3>
     <div class="pkaia">${pesc(TEXT.musicLine)}</div>
     <p style="font-size:10pt">Tape three red lines on the floor. Play music; count down about 12 seconds,
       out loud, on no fixed schedule. Privileged students (\u2605 below) do not have to run.</p>
-    <h3>PHASE 3 \u2014 THE TIMER GOES OFF</h3>
+    <h3>PHASE 3 \u00b7 THE TIMER GOES OFF</h3>
     <div class="pkaia">${pesc(TEXT.tardyKaia)}</div>
     <p style="font-size:10pt">In the room, "last one in" is decided by who was carrying the most.
-      Let it be whoever it actually is \u2014 then read their line:</p>
+      Let it be whoever it actually is, then read their line:</p>
     ${active.map(ch => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(ch.name)}</b>
       <span style="font-size:8.5pt">${pesc(TARDY_WHY[ch.id] || "The distance was never the same for everyone.")}</span></div>`).join("")}
-    <h3>SPECIAL TREATMENT \u2014 READ, THEN HAND OVER THE STAR CARDS</h3>
+    <h3>SPECIAL TREATMENT \u00b7 READ, THEN HAND OVER THE STAR CARDS</h3>
     ${privActive.length ? privActive.map(id => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(BY_ID[id].name)}</b>
       <span style="font-size:8.5pt">${pesc(PRIV[id])}</span></div>`).join("")
       : `<p style="font-size:9pt">No privileged students in this roster.</p>`}`,
     "script \u00b7 final"));
 
-  sheets.push(ppSheet("script", "SCRIPT \u2014 DEBRIEF", "SECTION 4 \u2014 THE PATTERN", `
+  sheets.push(ppSheet("script", "SCRIPT \u00b7 DEBRIEF", "SECTION 4 \u00b7 THE PATTERN", `
     <div class="pkaia">${pesc(TEXT.debriefKaia)}</div>
-    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u2014 THE TALLY</h3>
+    ${linkedActive.length ? `<h3>PEOPLE, NOT FAMILIES \u00b7 THE TALLY</h3>
     <p style="font-size:9.5pt">Count the eliminated families on the status board, then add their linked
       siblings and read both numbers to the room:</p>
     ${linkedActive.map(c => `<div class="script-line"><b style="font-size:6.5pt;min-width:.9in">${pesc(c.name)}</b>
-      <span style="font-size:8.5pt">+${c.sibs.length} \u2014 ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
+      <span style="font-size:8.5pt">+${c.sibs.length}: ${pesc(c.sibs.join(", "))}</span></div>`).join("")}
     <p style="font-size:9.5pt;font-weight:700">"Families eliminated: ___. People eliminated: ___.
       The board only ever counted the families."</p>` : ""}
     <h3>ASK THE ROOM</h3>
     <ol style="font-size:10pt;padding-left:.25in">${(TEXT.questions || []).map(q => `<li style="margin-bottom:6px">${pesc(q)}</li>`).join("")}</ol>
-    <h3>PROMPTS \u2014 READ WHERE THEY APPLY</h3>
+    <h3>PROMPTS \u00b7 READ WHERE THEY APPLY</h3>
     <ul class="pcheck" style="font-size:9pt">
       <li>If a danger event fired: "The same street was only dangerous for the kids who had to cross it alone."</li>
       <li>If the room followed the memo: "It felt like due process. It was a suggestion box with one suggestion."</li>
@@ -1822,31 +1822,31 @@ function buildPrintPack(opts){
     if (m === 0 && aishaCharge){
       const aishaActive = opts.activeIds.indexOf("aisha") >= 0;
       lines.push(`<div class="pmemo-line"><b>${aishaActive ? "AISHA" : '<span class="blank"></span>'}</b>
-        <span>\u2014 ${pesc(aishaActive ? aishaCharge.text : aishaCharge.text.replace(/\bher\b/g, "their"))}</span>
+        <span>${pesc(aishaActive ? aishaCharge.text : aishaCharge.text.replace(/\bher\b/g, "their"))}</span>
         <span class="pol">(Policy ${pesc(aishaCharge.policy)})</span></div>`);
     }
     bespokePatterns.filter(x => x.forId !== "aisha").slice(m * 2, m * 2 + 2).forEach(x => {
       lines.push(`<div class="pmemo-line"><b>${pesc(BY_ID[x.forId].name)}</b>
-        <span>\u2014 ${pesc(x.text)} <i style="font-size:8pt;color:#666">(read only if currently struggling)</i></span>
+        <span>${pesc(x.text)} <i style="font-size:8pt;color:#666">(read only if currently struggling)</i></span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     genericPatterns.slice(m, m + 2).forEach(x => {
       lines.push(`<div class="pmemo-line"><span class="blank"></span>
-        <span>\u2014 ${pesc(fmtCharge("", x.text)).replace(/^\s*\u2014?\s*/, "")}
+        <span>${pesc(fmtCharge("", x.text)).replace(/^\s*\u2014?\s*/, "")}
           <i style="font-size:8pt;color:#666">(fill in a currently-struggling family before reading)</i></span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     absurdAll.slice(m * 5, m * 5 + 4).forEach(x => {
       lines.push(`<div class="pmemo-line"><span class="blank"></span>
-        <span>\u2014 ${pesc(x.text)}</span>
+        <span>${pesc(x.text)}</span>
         <span class="pol">(Policy ${pesc(x.policy)})</span></div>`);
     });
     bespokeWithdrawn.slice(m, m + 1).forEach(x => {
       lines.push(`<div class="pmemo-line withdrawn"><b>${pesc(BY_ID[x.forId].name)}</b>
-        <span>\u2014 ${pesc(x.charge)}</span>
+        <span>${pesc(x.charge)}</span>
         <span class="excuse">WITHDRAWN: ${pesc(x.excuse)}</span></div>`);
     });
-    sheets.push(ppSheet("memos", "\u1f4cb MR. SYSTEM RECOMMENDS", "SECTION 5 \u2014 MEMO FOR VOTE " + (m + 1), `
+    sheets.push(ppSheet("memos", "\u1f4cb MR. SYSTEM RECOMMENDS", "SECTION 5 \u00b7 MEMO FOR VOTE " + (m + 1), `
       <p style="font-size:9.5pt;font-style:italic;color:#444">${pesc(CHARGES.memoIntro)}</p>
       ${lines.join("")}
       <div class="pnote" style="margin-top:14px">Read in a neutral administrative voice. Do not
@@ -1854,7 +1854,7 @@ function buildPrintPack(opts){
   }
 
   /* ---- 6. table pieces ---- */
-  sheets.push(ppSheet("table", "STATUS BOARD", "SECTION 6 \u2014 TAPE UP OR PROJECT; MARK BY HAND", `
+  sheets.push(ppSheet("table", "STATUS BOARD", "SECTION 6 \u00b7 TAPE UP OR PROJECT; MARK BY HAND", `
     <table class="pboard"><tr><th>FAMILY</th><th>R1</th><th>VOTE</th><th>R2</th><th>VOTE</th><th>R3</th><th>VOTE</th><th>FINAL</th></tr>
       ${active.map(ch => `<tr><td class="pb-name">${pesc(ch.name)}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`).join("")}
     </table>
@@ -1863,32 +1863,32 @@ function buildPrintPack(opts){
   const tent = `<div class="ptent">
     <div class="ptent-half flip"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div>
     <div class="ptent-half"><span>\u1f47b GHOST</span><small>May mime. May not act.</small></div></div>`;
-  sheets.push(ppSheet("table", "GHOST TENTS", "SECTION 6 \u2014 FOLD ALONG THE DASHED LINE; HAND TO ELIMINATED FAMILIES",
+  sheets.push(ppSheet("table", "GHOST TENTS", "SECTION 6 \u00b7 FOLD AND HAND TO THE WHOLE ELIMINATED GROUP, GUARDIANS INCLUDED",
     `<div class="pgrid2">${tent}${tent}${tent}${tent}</div>`, "ghost tents"));
   if (privActive.length)
-    sheets.push(ppSheet("table", "SPECIAL TREATMENT", "SECTION 6 \u2014 STAR CARDS \u00b7 HAND OUT DURING THE FINAL-ROUND REVEAL",
+    sheets.push(ppSheet("table", "SPECIAL TREATMENT", "SECTION 6 \u00b7 STAR CARDS \u00b7 HAND OUT DURING THE FINAL-ROUND REVEAL",
       `<div class="pgrid2">${privActive.map(id => `<div class="pstar">
         <div>\u2b50</div><div class="pstar-name">${pesc(BY_ID[id].name)}</div>
         <div class="pstar-line">${pesc(PRIV[id])}</div></div>`).join("")}</div>`, "star cards"));
   if (linkedActive.length)
-    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u2014 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
+    sheets.push(ppSheet("table", "LEAN ON THE LINK", "SECTION 6 \u00b7 ONE TOKEN PER LINKED FAMILY \u00b7 CUT OUT \u00b7 SPENT MEANS GONE",
       `<div class="pgrid2">${linkedActive.map(c => `<div class="pstar" style="border-style:dashed">
         <div>\u26d3</div><div class="pstar-name">${pesc(c.name)}</div>
-        <div class="pstar-line">LEAN ON THE LINK \u2014 spend after a failed challenge to make it a
+        <div class="pstar-line">LEAN ON THE LINK: spend after a failed challenge to make it a
           struggle instead. A sibling covers. The token does not come back.</div></div>`).join("")}</div>`,
       "lean tokens"));
   const slip = `<div class="pslip"><span>FAMILY: <span class="blank"></span></span>
     <span>VOTES TO ELIMINATE: <span class="blank"></span></span></div>`;
-  sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u2014 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
+  sheets.push(ppSheet("table", "VOTE SLIPS", "SECTION 6 \u00b7 TWELVE PER PAGE; PRINT ONE PAGE PER VOTE",
     `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">${Array.from({length:12}).map(() => slip).join("")}</div>`,
     "vote slips"));
 
   /* ---- 7. run of show ---- */
-  sheets.push(ppSheet("run", "RUN OF SHOW", "SECTION 7 \u2014 ONE PAGE FOR THE PODIUM", `
+  sheets.push(ppSheet("run", "RUN OF SHOW", "SECTION 7 \u00b7 ONE PAGE FOR THE PODIUM", `
     <table class="prun"><tr><th>PHASE</th><th>TIME</th><th>NOTES</th></tr>
       <tr><td>Deal + intro</td><td>5 min</td><td>Safety block first. Board: counselor + 988.</td></tr>
-      <tr><td>Round 1 dilemmas</td><td>8\u201310 min</td><td>Keep families arguing out loud. The die stays hidden until it is needed.</td></tr>
-      <tr><td>Vote 1</td><td>3 min</td><td><b>Don't skip:</b> name the pattern aloud \u2014 the room eliminates whoever is already struggling.</td></tr>
+      <tr><td>Round 1 dilemmas</td><td>8 to 10 min</td><td>Keep families arguing out loud. The die stays hidden until it is needed.</td></tr>
+      <tr><td>Vote 1</td><td>3 min</td><td><b>Don't skip:</b> name the trap aloud: expect the room to turn on whoever is already struggling.</td></tr>
       <tr><td>Round 2</td><td>8 min</td><td></td></tr>
       <tr><td>Vote 2</td><td>3 min</td><td>The withdrawn charge lands here. Let the room notice on its own first.</td></tr>
       <tr><td>Round 3</td><td>6 min</td><td></td></tr>
@@ -2013,7 +2013,7 @@ function dash(opts){
   }).join("");
   const crowdCells = S.crowd.map(p =>
     `<i style="background:${cssVar(ST_VAR[p.st])}" title="${ST_LABEL[p.st]}"></i>`).join("");
-  return `<aside class="dash"><div class="dash-head">CLASS STATUS &mdash; ROUND ${S.round}</div>
+  return `<aside class="dash"><div class="dash-head">CLASS STATUS \u00b7 ROUND ${S.round}</div>
     <div class="dash-body">
       <div class="tally">
         <div class="tally-cell b-in"><div class="tally-n">${c.in}</div><div class="tally-l">In</div></div>
@@ -2035,33 +2035,33 @@ function withDash(main, now){ return `<div class="layout"><div>${main}</div>${da
 /* ==========================================================
    7. VIEWS
    ========================================================== */
-let ROUND_NAME = {1:"MORNING IN THE VILLAGE \u2014 GET TO SCHOOL",
-                    2:"AFTERNOON & EVENING \u2014 GET HOME",
-                    3:"THE NIGHT \u2014 MAKE IT TO TOMORROW"};
+let ROUND_NAME = {1:"MORNING IN THE VILLAGE \u00b7 GET TO SCHOOL",
+                    2:"AFTERNOON & EVENING \u00b7 GET HOME",
+                    3:"THE NIGHT \u00b7 MAKE IT TO TOMORROW"};
 let ROUND_KAIA = {
   1:"It's 7 AM. First bell is at 8:30. Everybody in this room has to get to the same building. Nobody starts from the same place.",
-  2:"Last bell. Everyone goes home now \u2014 to whatever home is. Four hours until sleep, and the homework is due either way.",
+  2:"Last bell. Everyone goes home now, to whatever home is. Four hours until sleep, and the homework is due either way.",
   3:"Lights out in the village. Some of you get eight hours. Some of you get the kind of night you don't tell anyone about."};
 
 
 /* every other piece of prose on screen, in one editable place */
 let TEXT = {
-  titleKicker: "A GAME FOR 30\u201360 STUDENTS",
+  titleKicker: "A GAME FOR 30 TO 60 STUDENTS",
   titleName: "MR. SYSTEM",
   titleTagline: "A GAME ABOUT SYSTEMIC INEQUALITY / IN EDUCATION",
-  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter \u2014 but so do the systems built long before you got here.",
-  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode \u2014 longer if the debrief gets good.",
+  titleBlurb: "You are a student trying to get to school, get home, and make it to tomorrow. Your choices matter, but so do the systems built long before you got here.",
+  titleBlurb2: "Three rounds. A vote after each one. Then homework is due and the music starts. About 35 minutes in core mode, longer if the debrief gets good.",
   titleStrip: "TWENTY-FOUR FAMILIES. THE SAME FIRST BELL.",
-  titleWarn: "Content note: this game depicts systemic harm \u2014 including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
+  titleWarn: "Content note: this game depicts systemic harm, including, when danger mode is on, traffic injury and threats to unsupervised kids. Facilitators can turn danger off, and any player can pass on any character.",
   castDeal: "Your group is dealt a family card, and your group IS that family. Argue the dilemma together, take the challenge together, send one spokesperson to every vote. One vote per family, not per student.",
   castKaia: "Your character decides what your morning looks like before you make a single choice. Some of you have it easier. Some of you don't. That is the point.",
   resultsKaia: "Nobody chose wrong. Look at what each of them was choosing between.",
-  voteKaia: "Each surviving family sends one spokesperson. One vote each. The families who are already out may stand up and mime \u2014 they may not vote. Majority rules.",
+  voteKaia: "Each surviving family sends one spokesperson. One vote each. When a family is eliminated, the whole group playing it stands as ghosts together, guardians included. They may mime every vote. Their votes are never counted. Majority rules.",
   voteNote: "Read the recommendations aloud in a neutral administrative voice. Do not editorialize; the room will do it for you. Run the vote, then ask who the room voted out and why. The vote is a trap on purpose: the demo's simulated families reliably turn on whoever is already struggling, and a live room is expected to do the same. In debrief, ask who the absurd charges targeted and who got theirs withdrawn.",
   homeworkKaia: "Everybody still standing: draw something. Anything. Put it in the bin. You have as long as it takes, which for some of you is not very long.",
   homeworkNote: "Everyone can do this one. That is deliberate. The homework was never the filter.",
   musicLine: "Run around the red lines until the music stops. When it stops, get inside. The last one in is tardy.",
-  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out \u2014 you know the rule, it's on the wall.",
+  tardyKaia: "Music stops. Everybody in. Last one through the door is tardy, and tardy is out. You know the rule, it's on the wall.",
   debriefKaia: "Nobody in here lost because they made a bad decision. Look at what each of them was choosing between, and then tell me what the game was actually testing.",
   questions: [
     "Who survived, and what did they actually have that the others didn't?",
@@ -2070,7 +2070,7 @@ let TEXT = {
     "Where have you seen the tardy rule applied unevenly in a real school?",
     "What would have to change for this game to be winnable by everyone in it?"
   ],
-  debriefNote: "Several families here carry crisis storylines \u2014 psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
+  debriefNote: "Several families here carry crisis storylines: psychiatric crisis, detention of a parent, dysphoria, chronic pain dismissed by doctors. Say up front that players can pass on any character, and have your counselor's name and the 988 Suicide & Crisis Lifeline written on the board before the first round, not after. Debrief the elimination vote in the room; do not let students leave on it. If danger mode is on, say so in your content warning: Mr. System can put a child in the road. Danger can be set to off in PROF EDIT."
 };
 
 const V = {};
@@ -2093,7 +2093,7 @@ V.title = () => screen("BOOT", "v1.0", `
     <button class="btn btn-ghost" data-act="index">SCREEN INDEX</button></div>`);
 
 function estMinutes(n){ const lo = Math.round(n*1.6+10), hi = Math.round(n*2.2+14);
-  return lo + "\u2013" + hi + " min + debrief"; }
+  return lo + " to " + hi + " min + debrief"; }
 function customValid(){
   const sel = (SETTINGS.customRoster || []).filter(id => BY_ID[id]);
   return {n: sel.length, pov: sel.some(id => BY_ID[id].tier === "pov"),
@@ -2117,18 +2117,18 @@ V.setup = () => {
     <span class="pill">BACKGROUND <b>${Math.max(0, S.classSize-act.length)}</b></span>
     <span class="pill">FAMILY GROUPS <b>${groups}</b></span>
   </div>
-  <p class="hint">Range 30&ndash;60. Groups of five.</p>
+  <p class="hint">Range 30 to 60. Groups of five.</p>
   <hr class="hr">
   <h3 class="screen-title" style="font-size:12px">WHICH FAMILIES ARE PLAYED BY HAND?</h3>
   <div class="modes">
     <button class="mode" data-act="rmode" data-m="core" aria-pressed="${SETTINGS.rosterMode==="core"}">
-      <b>CORE \u00b7 10</b><span>A curated ten that keeps the whole argument \u2014 every class band,
+      <b>CORE \u00b7 10</b><span>A curated ten that keeps the whole argument: every class band,
       Lucia and Marcus included. ${estMinutes(10)}.</span></button>
     <button class="mode" data-act="rmode" data-m="full" aria-pressed="${SETTINGS.rosterMode==="full"}">
       <b>FULL \u00b7 ${CAST.length}</b><span>Every named family. Best for long sessions.
       ${estMinutes(CAST.length)}.</span></button>
     <button class="mode" data-act="rmode" data-m="custom" aria-pressed="${SETTINGS.rosterMode==="custom"}">
-      <b>CUSTOM</b><span>Pick your own set \u2014 at least 8 families, and at least one from the
+      <b>CUSTOM</b><span>Pick your own set: at least 8 families, and at least one from the
       poverty/crisis band.</span></button>
   </div>
   ${SETTINGS.rosterMode === "custom" ? `<div class="roster-picks">${CAST.map(c => `
@@ -2140,10 +2140,10 @@ V.setup = () => {
     <p class="hint" style="color:${customBad?cssVar("--alarm"):cssVar("--ink-2")}">
       ${cv.n} selected${cv.pov?"":" \u00b7 no poverty/crisis family yet"}${cv.n<8?" \u00b7 need at least 8":""}${cv.ok?" \u00b7 "+estMinutes(cv.n):""}</p>` : ""}
   ${S.rosterNotice ? `<p class="hint" style="color:${cssVar("--alarm")};font-weight:600">${esc(S.rosterNotice)}</p>` : ""}
-  <p class="hint">Families not played by hand fold into the background crowd \u2014 the dashboard still
+  <p class="hint">Families not played by hand fold into the background crowd. The dashboard still
     counts the whole class.</p>
-  <div class="deal"><b>How the room plays it.</b> ${groups} groups \u00d7 ${S.classSize} students \u2014
-    each group is dealt ${per > 1 ? "1\u2013" + per : "one"} family card${per>1?"s":""}. Your group
+  <div class="deal"><b>How the room plays it.</b> ${groups} groups \u00d7 ${S.classSize} students.
+    each group is dealt ${per > 1 ? "1 to " + per : "one"} family card${per>1?"s":""}. Your group
     <b>is</b> that family: you argue the dilemma together, you take the challenge together, and you send
     one spokesperson to each vote. One vote per family, not per student.</div>
   <div class="actions"><button class="btn" data-act="go" data-to="cast" ${customBad?"disabled":""}>MEET THE FAMILIES</button>
@@ -2181,14 +2181,14 @@ V.intro = () => withDash(screen(`ROUND ${S.round}`, ROUND_NAME[S.round], `
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin:18px 0">
     ${ACT().map(c => SP(c.id, 3, S.roster[c.id].st === "out")).join("")}</div>
   <p style="max-width:60ch;color:${cssVar("--ink-2")}">${ALIVE().length} families are still in this.
-    ${DEAD().length ? DEAD().length + " are watching as ghosts \u2014 they can mime, they cannot act." : ""}</p>
+    ${DEAD().length ? DEAD().length + " are watching as ghosts. They can mime, they cannot act." : ""}</p>
   <div class="actions"><button class="btn" data-act="nextq">BEGIN ROUND ${S.round}</button></div>`));
 
 function dilemmaFor(id){ return (DILEMMAS[S.round] || {})[id]; }
 
 V.dilemma = () => {
   const ch = ACT()[S.qi], d = dilemmaFor(ch.id);
-  return withDash(screen(`ROUND ${S.round} \u2014 DILEMMA`, `${esc(ch.name)} \u00b7 ${esc(ch.cls)}`, `
+  return withDash(screen(`ROUND ${S.round} \u00b7 DILEMMA`, `${esc(ch.name)} \u00b7 ${esc(ch.cls)}`, `
     <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:6px">
       <span style="flex:none">${SP(ch.id, 5)}</span>
       <div style="flex:1;min-width:200px">
@@ -2259,20 +2259,20 @@ V.outcome = () => {
       <span style="flex:none">${SP(ch.id, 4, p.st === "out")}</span>
       <div class="res-b"><div class="res-n">${esc(ch.name)}</div>
         ${p.danger ? "" : `<p class="res-say">${esc(p.say)}</p>`}
-        ${badge(p.st, p.danger ? (p.st === "out" ? "OUT \u2014 MR. SYSTEM STRUCK" : "STRUGGLING \u2014 NEAR MISS") : p.label)}
-        ${p.strained ? `<p class="strainmark" style="margin-top:10px">LINK STRAINED \u2014 a sibling's pip goes grey for the rest of the game.</p>` : ""}
+        ${badge(p.st, p.danger ? (p.st === "out" ? "OUT \u00b7 MR. SYSTEM STRUCK" : "STRUGGLING \u00b7 NEAR MISS") : p.label)}
+        ${p.strained ? `<p class="strainmark" style="margin-top:10px">LINK STRAINED: a sibling's pip goes grey for the rest of the game.</p>` : ""}
         ${p.chalNote ? `<p class="hint" style="margin-top:11px">${esc(p.chalNote)}</p>` : ""}
       </div></div>
     ${p.failed && !p.danger && ch.sibs && ch.sibs.length && SETTINGS.leanEnabled && !S.roster[ch.id].leanUsed
       ? `<div class="actions" style="margin-top:14px">
-          <button class="btn" data-act="lean" style="background:${cssVar("--grass")}">LEAN ON THE LINK \u2014 SPEND THE TOKEN</button>
+          <button class="btn" data-act="lean" style="background:${cssVar("--grass")}">LEAN ON THE LINK \u00b7 SPEND THE TOKEN</button>
           <span class="pill">Converts this fail into a struggle. Once per game.</span></div>` : ""}
     <div class="actions"><button class="btn" data-act="nextq">NEXT FAMILY</button></div>`), ch.id);
 };
 
 V.results = () => {
   const rows = ACT().map((ch,i) => {
-    const r = S.roster[ch.id], last = r.hist[r.hist.length-1] || {say:"\u2014"};
+    const r = S.roster[ch.id], last = r.hist[r.hist.length-1] || {say:"\u00b7"};
     const out = r.st === "out";
     return `<div class="res r-${r.st} reveal" style="animation-delay:${i*70}ms">
       <span style="flex:none">${SP(ch.id,4,out)}</span>
@@ -2287,7 +2287,7 @@ V.results = () => {
     ${rows}
     <hr class="hr">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.03em">
-      WHOLE CLASS &mdash; IN ${c.in} &nbsp;/&nbsp; STRUGGLING ${c.strug} &nbsp;/&nbsp; OUT ${c.out}
+      WHOLE CLASS \u00b7 IN ${c.in} &nbsp;/&nbsp; STRUGGLING ${c.strug} &nbsp;/&nbsp; OUT ${c.out}
       &nbsp;of ${S.classSize}</p>
     ${ALIVE().length <= 1 ? kaia("There is no vote tonight. There is no one left to hold one.") : ""}
     <div class="actions">${ALIVE().length > 1
@@ -2312,9 +2312,9 @@ V.vote = () => {
       <div class="memo-head">\ud83d\udccb MR. SYSTEM RECOMMENDS</div>
       <p class="memo-intro">${esc(CHARGES.memoIntro)}</p>
       <ul class="memo-list">${S.memo.items.map(it => it.kind === "withdrawn"
-        ? `<li class="memo-item is-withdrawn"><b>${esc(it.name)}</b> \u2014 <span class="memo-struck">${esc(it.text)}</span>
+        ? `<li class="memo-item is-withdrawn"><b>${esc(it.name)}</b>: <span class="memo-struck">${esc(it.text)}</span>
              <em>WITHDRAWN: ${esc(it.excuse)}</em></li>`
-        : `<li class="memo-item"><b>${esc(it.name)}</b> \u2014 ${esc(it.text)}
+        : `<li class="memo-item"><b>${esc(it.name)}</b>: ${esc(it.text)}
              <span class="memo-pol">(Policy ${esc(it.policy)})</span></li>`).join("")}</ul>
     </div>` : ""}
     <p style="max-width:60ch;margin-bottom:16px">Pick one student to eliminate. Every other family votes at the
@@ -2327,12 +2327,12 @@ V.vote = () => {
         <span class="vcard-s">${esc(ch.cls)} &middot; ${ST_LABEL[r.st]}</span></span>
         ${flagged.has(ch.id) ? `<span class="vcard-flag" title="Flagged by Mr. System" aria-label="Flagged by Mr. System">\ud83d\udccb</span>` : ""}</button>`;
     }).join("")}</div>
-    ${dead.length ? `<div class="mimes"><div class="mimes-h">ELIMINATED &mdash; MIMING, NOT VOTING</div>
+    ${dead.length ? `<div class="mimes"><div class="mimes-h">GHOSTS \u00b7 THE WHOLE GROUP, GUARDIANS INCLUDED</div>
       <div class="mime-row">${dead.map(ch => `<span class="mime">${SP(ch.id,2,true)}
-        ${esc(ch.name)} &mdash; mimes a vote nobody counts</span>`).join("")}</div></div>` : ""}
+        ${esc(ch.name)}: the whole group mimes, and no vote is counted</span>`).join("")}</div></div>` : ""}
     <div class="actions"><button class="btn" data-act="submitvote" ${S.voteSel?"":"disabled"}>SUBMIT VOTE</button>
       <span class="spacer"></span>
-      <span class="pill">YOUR VOTE <b>${S.voteSel ? esc(BY_ID[S.voteSel].name) : "\u2014"}</b></span></div>
+      <span class="pill">YOUR VOTE <b>${S.voteSel ? esc(BY_ID[S.voteSel].name) : "\u00b7"}</b></span></div>
     <div class="note"><b>Facilitator note.</b> ${esc(TEXT.voteNote)}</div>`));
 };
 
@@ -2370,14 +2370,14 @@ V.empty = () => withDash(screen("FIRST BELL", "an empty building", `
   <div class="actions"><button class="btn" data-act="go" data-to="debrief">SEE THE PATTERN</button></div>`));
 
 /* ---------------- FINAL ROUND ---------------- */
-let PRIV = {david:"Family funded the library wing \u2014 nobody was ever going to mark him late.",
-            ayesha:"Principal's kid \u2014 an extension was on her desk before she knew the assignment existed.",
-              priya:"Parents on the foundation board \u2014 given a buffer, quietly.",
-              alejandra:"Family donates the gym scoreboard \u2014 nobody was going to mark her late."};
+let PRIV = {david:"Family funded the library wing. Nobody was ever going to mark him late.",
+            ayesha:"Principal's kid: an extension was on her desk before she knew the assignment existed.",
+              priya:"Parents on the foundation board: given a buffer, quietly.",
+              alejandra:"Family donates the gym scoreboard. Nobody was going to mark her late."};
 
 V.homework = () => {
   const alive = ALIVE();
-  return withDash(screen("FINAL ROUND \u2014 PHASE 1", "homework due", `
+  return withDash(screen("FINAL ROUND \u00b7 PHASE 1", "homework due", `
     <p class="eyebrow">FINAL ROUND \u00b7 PHASE 1 OF 3</p>
     <h2 class="screen-title">HOMEWORK DUE</h2>
     ${kaia(TEXT.homeworkKaia)}
@@ -2402,7 +2402,7 @@ V.homework = () => {
 
 V.music = () => {
   const alive = ALIVE();
-  return withDash(screen("FINAL ROUND \u2014 PHASE 2", "musical chairs", `
+  return withDash(screen("FINAL ROUND \u00b7 PHASE 2", "musical chairs", `
     <p class="eyebrow">FINAL ROUND \u00b7 PHASE 2 OF 3</p>
     <h2 class="screen-title">THE MUSIC IS PLAYING</h2>
     <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:16px 0">
@@ -2428,15 +2428,15 @@ V.music = () => {
 
 V.tardy = () => {
   const t = BY_ID[S.tardy], alive = ALIVE();
-  return withDash(screen("FINAL ROUND \u2014 PHASE 3", "tardy elimination", `
+  return withDash(screen("FINAL ROUND \u00b7 PHASE 3", "tardy elimination", `
     <p class="eyebrow">FINAL ROUND \u00b7 PHASE 3 OF 3</p>
     <h2 class="screen-title">THE TIMER GOES OFF</h2>
     ${kaia(TEXT.tardyKaia)}
     ${S.tardyLink ? `<div class="linkline" role="alert" style="margin-top:18px"><b>MR. SYSTEM</b><p>${esc(S.tardyLink)}</p></div>` : ""}
     <div class="res r-out" style="margin-top:18px"><span style="flex:none">${SP(t.id,4,true)}</span>
-      <div class="res-b"><div class="res-n">${esc(t.name)} \u2014 TARDY</div>
+      <div class="res-b"><div class="res-n">${esc(t.name)} \u00b7 TARDY</div>
         <p class="res-say">${esc(t.name)} got in last and is eliminated. ${esc(TARDY_WHY[t.id] || "The distance was never the same for everyone.")}</p>
-        ${badge("out","TARDY \u2014 ELIMINATED")}</div></div>
+        ${badge("out","TARDY \u00b7 ELIMINATED")}</div></div>
     <hr class="hr">
     <div class="eyebrow">STILL IN</div>
     <div class="bin" style="margin-top:11px">${alive.filter(c => c.id !== t.id).map(ch =>
@@ -2503,11 +2503,11 @@ V.debrief = () => {
       ? "David made a choice in all three rounds and every single option available to him ended with him in school. His dilemmas were about which good thing to pick."
       : "Even when David's plan fell apart, the front office didn't write it down.");
   if (on("marcus"))
-    insights.push("Marcus never got to choose between good and bad. He chose which sibling absorbed the cost \u2014 and the game charged him for it either way.");
+    insights.push("Marcus never got to choose between good and bad. He chose which sibling absorbed the cost, and the game charged him for it either way.");
   if (on("lucia"))
     insights.push("Lucia's Round 1 had three options and all three ended out of school. She was eliminated before she made a decision. That is what a barrier is.");
   insights.push(votedOut.length
-    ? `The room voted out ${votedOut.map(c => c.name).join(", ")}${votedUpper ? "" : " \u2014 nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
+    ? `The room voted out ${votedOut.map(c => c.name).join(", ")}${votedUpper ? "" : ", nobody upper-class"}. The vote didn't rescue anyone who was already struggling; it removed them faster.`
     : "The vote removed people who were already struggling. It never rescued anyone.");
   insights.push(privLeft
     ? `At the end, ${privLeft} of the survivors had an extension nobody made them ask for. The rule was the same for everyone; the enforcement was not.`
@@ -2559,7 +2559,7 @@ V.debrief = () => {
   if (on("isabella") && on("alejandra"))
     insights.push("Isabella and Alejandra have the same disease. One has a diagnosis, a 504 plan, and a rescheduled test. The other has a closed file that says weight-related. The difference between them is not medical.");
   if (on("marie") && st("marie") !== "out")
-    insights.push("Marie's family has no margin and she is still standing \u2014 because forty people decided she would be. Community is infrastructure. It is also unpaid, and it is also not enough on its own.");
+    insights.push("Marie's family has no margin and she is still standing because forty people decided she would be. Community is infrastructure. It is also unpaid, and it is also not enough on its own.");
   const bar = o => `<span style="width:${pct(o,"in")}%;background:${cssVar("--st-in")}"></span>
     <span style="width:${pct(o,"strug")}%;background:${cssVar("--st-strug")}"></span>
     <span style="width:${pct(o,"out")}%;background:${cssVar("--st-out")}"></span>`;
@@ -2570,16 +2570,16 @@ V.debrief = () => {
     <div class="cols" style="margin-top:22px">
       <div><div class="eyebrow" style="color:${cssVar("--st-in")}">SURVIVED (${alive.length})</div>
         <ul class="list">${alive.map(c => `<li><span data-icon="check" data-px="2" data-color="--st-in"></span>
-          <span><span class="who">${esc(c.name)}</span> <span class="why">\u2014 ${esc(c.cls)}</span></span></li>`).join("")
+          <span><span class="who">${esc(c.name)}</span> <span class="why">\u00b7 ${esc(c.cls)}</span></span></li>`).join("")
           || '<li class="why">Nobody.</li>'}</ul></div>
       <div><div class="eyebrow" style="color:${cssVar("--st-out")}">ELIMINATED (${dead.length})</div>
         <ul class="list">${dead.map(c => `<li><span data-icon="x" data-px="2" data-color="--st-out"></span>
           <span><span class="who">${esc(c.name)}</span>
-          <span class="why">\u2014 ${esc(c.cls)} \u00b7 ${esc(S.roster[c.id].why || "Round "+S.roster[c.id].outRound)}</span></span></li>`).join("")
+          <span class="why">\u00b7 ${esc(c.cls)} \u00b7 ${esc(S.roster[c.id].why || "Round "+S.roster[c.id].outRound)}</span></span></li>`).join("")
           || '<li class="why">Nobody.</li>'}</ul></div>
     </div>
     <hr class="hr">
-    <h3 class="screen-title" style="font-size:13px">THE PATTERN \u2014 WHOLE CLASS (${S.classSize} STUDENTS)</h3>
+    <h3 class="screen-title" style="font-size:13px">THE PATTERN \u00b7 WHOLE CLASS (${S.classSize} STUDENTS)</h3>
     <div class="pattern">${["upper","work","pov"].map(k => `<div class="prow">
       <span class="prow-l">${esc(TIER_LABEL[k])}</span>
       <span class="prow-t" role="img" aria-label="${TIER_LABEL[k]}: ${pct(t[k],"in")}% in school, ${pct(t[k],"strug")}% struggling, ${pct(t[k],"out")}% out">${bar(t[k])}</span>
@@ -2735,16 +2735,16 @@ function edDanger(c, cpath, i){
   if (!c.danger)
     return `<button class="ed-mini" data-ed="adddanger" data-i="${i}">+ Add a danger roll</button>`;
   const dd = c.danger;
-  return `<div class="ed-sub" style="color:${cssVar("--alarm")}">DANGER \u2014 MR. SYSTEM CAN STRIKE HERE</div>
+  return `<div class="ed-sub" style="color:${cssVar("--alarm")}">DANGER: MR. SYSTEM CAN STRIKE HERE</div>
     <div class="ed-row">
-      ${fNum("Chance (0\u2013100%)", cpath + ".danger.__pct", Math.round((dd.p || 0) * 100), 0, 100,
+      ${fNum("Chance (0 to 100%)", cpath + ".danger.__pct", Math.round((dd.p || 0) * 100), 0, 100,
         "Rolled once when this choice is picked. Danger mode off disables all rolls.")}
       <button class="ed-mini danger" data-ed="deldanger" data-i="${i}" style="margin-bottom:13px;align-self:flex-end">Remove danger</button>
     </div>
-    ${fSel("Standard \u2014 status", cpath + ".danger.standard.st", (dd.standard || {}).st || "out", ST_KEYS)}
-    ${fArea("Standard \u2014 what Mr. System says", cpath + ".danger.standard.say", (dd.standard || {}).say || "", 3)}
-    ${fSel("Unsparing \u2014 status", cpath + ".danger.unsparing.st", (dd.unsparing || {}).st || "out", ST_KEYS)}
-    ${fArea("Unsparing \u2014 what Mr. System says", cpath + ".danger.unsparing.say", (dd.unsparing || {}).say || "", 3,
+    ${fSel("Standard: status", cpath + ".danger.standard.st", (dd.standard || {}).st || "out", ST_KEYS)}
+    ${fArea("Standard: what Mr. System says", cpath + ".danger.standard.say", (dd.standard || {}).say || "", 3)}
+    ${fSel("Unsparing: status", cpath + ".danger.unsparing.st", (dd.unsparing || {}).st || "out", ST_KEYS)}
+    ${fArea("Unsparing: what Mr. System says", cpath + ".danger.unsparing.say", (dd.unsparing || {}).say || "", 3,
       "Shown only when danger mode is set to unsparing.")}`;
 }
 function edChoices(d, dpath){
@@ -2760,7 +2760,7 @@ function edChoices(d, dpath){
       ${fArea("Choice text", dpath + ".choices." + i + ".t", c.t, 2)}
       ${fText("Cost line", dpath + ".choices." + i + ".cost", c.cost, "Shown in orange under the choice.")}
       ${fSel("Challenge", dpath + ".choices." + i + ".__kind", c.auto ? "" : (c.chal || ""),
-        [["", "No challenge \u2014 outcome is automatic"]].concat(Object.keys(ED.draft.challenges).map(k =>
+        [["", "No challenge: outcome is automatic"]].concat(Object.keys(ED.draft.challenges).map(k =>
           [k, ED.draft.challenges[k].title + "  (" + ED.draft.challenges[k].secs + "s)"])),
         "Switching rewrites this choice's outcomes; edit them below.")}
       ${c.auto ? edOutcome(dpath + ".choices." + i + ".auto", c.auto, "Outcome")
@@ -2784,7 +2784,7 @@ function edQuestions(key, def){
       ${(q.opts || []).map((o, oi) =>
         fText("Option " + (oi + 1), "challenges." + key + ".qs." + i + ".opts." + oi, o)).join("")}
       ${def.kind === "quiz" ? fSel("Correct answer", "challenges." + key + ".qs." + i + ".a", q.a,
-        (q.opts || []).map((o, oi) => [oi, (oi + 1) + " \u2014 " + o])) : ""}
+        (q.opts || []).map((o, oi) => [oi, (oi + 1) + ": " + o])) : ""}
     </div>`).join("");
 }
 
@@ -2804,26 +2804,26 @@ function edPane(){
       ${fArea("Opening paragraph", "text.titleBlurb", t.titleBlurb, 3)}
       ${fArea("Second paragraph", "text.titleBlurb2", t.titleBlurb2, 2)}
       ${fText("Strip under the sprites", "text.titleStrip", t.titleStrip)}
-      ${fArea("Kaia \u2014 character assignment", "text.castKaia", t.castKaia, 3)}
+      ${fArea("Kaia: character assignment", "text.castKaia", t.castKaia, 3)}
       <div class="ed-h">THE THREE ROUNDS</div>
       ${[1,2,3].map(r => `<div class="ed-card"><div class="ed-card-h"><b>ROUND ${r}</b></div>
         ${fText("Round name", "rounds." + r + ".name", D.rounds[r].name)}
         ${fArea("Kaia's opening line", "rounds." + r + ".kaia", D.rounds[r].kaia, 3)}</div>`).join("")}
       <div class="ed-h">DURING PLAY</div>
-      ${fArea("Kaia \u2014 round results", "text.resultsKaia", t.resultsKaia, 2)}
-      ${fArea("Kaia \u2014 the vote", "text.voteKaia", t.voteKaia, 3)}
+      ${fArea("Kaia: round results", "text.resultsKaia", t.resultsKaia, 2)}
+      ${fArea("Kaia: the vote", "text.voteKaia", t.voteKaia, 3)}
       ${fArea("Facilitator note on the vote screen", "text.voteNote", t.voteNote, 4)}
-      ${fArea("Kaia \u2014 homework", "text.homeworkKaia", t.homeworkKaia, 3)}
+      ${fArea("Kaia: homework", "text.homeworkKaia", t.homeworkKaia, 3)}
       ${fArea("Note under the homework bin", "text.homeworkNote", t.homeworkNote, 2)}
       ${fArea("Instructions during musical chairs", "text.musicLine", t.musicLine, 2)}
-      ${fArea("Kaia \u2014 the timer goes off", "text.tardyKaia", t.tardyKaia, 3)}`;
+      ${fArea("Kaia: the timer goes off", "text.tardyKaia", t.tardyKaia, 3)}`;
   }
 
   if (ED.tab === "characters"){
     const i = D.cast.findIndex(c => c.id === ED.sel.ch);
     const c = D.cast[i];
     return `<div class="ed-warn"><b>Names, class labels and identity markers only.</b> The pixel sprite,
-        the character's slot in the running order, and which dilemmas belong to them stay fixed &mdash;
+        the character's slot in the running order, and which dilemmas belong to them stay fixed;
         rewrite a character here and their dilemmas follow them.</div>
       ${fSel("Editing", "__sel.ch", ED.sel.ch, D.cast.map(x => [x.id, x.name]))}
       <div class="ed-h">${esc(c.name)}</div>
@@ -2835,7 +2835,7 @@ function edPane(){
         [["upper","Upper-class"],["work","Working-class"],["pov","Poverty / crisis"]],
         "Drives the colour of their chip and which band they count in on the debrief chart.")}
       ${fArea("One-line description", "cast." + i + ".who", c.who, 2)}
-      <div class="ed-sub">Siblings (the link) \u2014 leave empty for an unlinked family</div>
+      <div class="ed-sub">Siblings (the link): leave empty for an unlinked family</div>
       ${(c.sibs || []).map((sb, si) => `<div class="ed-row" style="align-items:flex-end">
         ${fText("Sibling " + (si + 1), "cast." + i + ".sibs." + si, sb,
           si === 0 ? "Named out loud when the family goes down." : "")}
@@ -2849,7 +2849,7 @@ function edPane(){
           ${c.tags.length < 2 ? "disabled" : ""}>Remove</button></div>`).join("")}
       <button class="ed-mini" data-ed="addtag">+ Add marker</button>
       <div style="height:16px"></div>
-      ${fNum("Morning load (1\u20135)", "cast." + i + ".load", c.load, 1, 5,
+      ${fNum("Morning load (1 to 5)", "cast." + i + ".load", c.load, 1, 5,
         "Shown on the character card. Also decides who comes in last at musical chairs.")}`;
   }
 
@@ -2857,11 +2857,11 @@ function edPane(){
     const r = ED.sel.round, id = ED.sel.dil;
     const d = D.dilemmas[r][id], dpath = "dilemmas." + r + "." + id;
     return `<div class="ed-row">
-        ${fSel("Round", "__sel.round", r, [[1, "1 \u2014 " + D.rounds[1].name],[2, "2 \u2014 " + D.rounds[2].name],
-                                           [3, "3 \u2014 " + D.rounds[3].name]])}
+        ${fSel("Round", "__sel.round", r, [[1, "1: " + D.rounds[1].name],[2, "2: " + D.rounds[2].name],
+                                           [3, "3: " + D.rounds[3].name]])}
         ${fSel("Character", "__sel.dil", id, D.cast.map(x => [x.id, x.name]))}
       </div>
-      <div class="ed-h">${esc(edName(id))} &mdash; ROUND ${r}</div>
+      <div class="ed-h">${esc(edName(id))} \u00b7 ROUND ${r}</div>
       ${fArea("The situation", dpath + ".sit", d.sit, 4)}
       ${fText("Red note under it (optional)", dpath + ".note", d.note || "",
         "Lucia's round 1 uses this: \u201cThere is no challenge here. There is nothing to win.\u201d")}
@@ -2878,17 +2878,17 @@ function edPane(){
     return `${fSel("Editing", "__sel.chal", key,
         Object.keys(D.challenges).map(k => [k, D.challenges[k].title]))}
       <div class="ed-warn">Used by: <b>${used.length ? esc([...new Set(used)].join(", ")) : "nobody right now"}</b>.
-        The kind of challenge (quiz, typed list, rapid-fire) is fixed &mdash; everything else is yours.</div>
+        The kind of challenge (quiz, typed list, rapid-fire) is fixed. Everything else is yours.</div>
       <div class="ed-h">${esc(def.title)}</div>
       ${fText("Challenge title", "challenges." + key + ".title", def.title)}
       ${fArea("Instructions", "challenges." + key + ".brief", def.brief, 2)}
       <div class="ed-row">
         ${fNum("Seconds", "challenges." + key + ".secs", def.secs, 5, 300)}
-        ${fNum("Difficulty (1\u20135)", "challenges." + key + ".diff", def.diff, 1, 5)}
+        ${fNum("Difficulty (1 to 5)", "challenges." + key + ".diff", def.diff, 1, 5)}
         ${fNum("Needed to pass", "challenges." + key + ".need", def.need, 1, 20)}
       </div>
       ${fText("Difficulty label", "challenges." + key + ".diffLabel", def.diffLabel,
-        "Easy / Tight / Heavy / Brutal \u2014 or whatever you like.")}
+        "Easy / Tight / Heavy / Brutal, or whatever you like.")}
       <div class="ed-h">${def.kind === "list" ? "ANSWERS" : "QUESTIONS"}</div>
       ${edQuestions(key, def)}
       ${def.kind !== "list" ? `<button class="ed-mini" data-ed="addq">+ Add a question</button>` : ""}`;
@@ -2898,16 +2898,16 @@ function edPane(){
     const t = D.text;
     return `<div class="ed-h" style="color:${cssVar("--alarm")}">DANGER MODE</div>
       <div class="ed-warn"><b>When a choice leaves a kid unprotected, Mr. System can strike.</b>
-        Standard narrates near-misses and injuries \u2014 the kid survives. Unsparing is the unsoftened
+        Standard narrates near-misses and injuries; the kid survives. Unsparing is the unsoftened
         version: a kid can die. Off disables every roll. Say which mode you are using in your content
         warning before the first round.</div>
       ${fSel("Lean on the link", "settings.leanEnabled", (D.settings || {}).leanEnabled !== false ? "on" : "off",
-        [["on","On \u2014 each linked family may convert one failed challenge"],
-         ["off","Off \u2014 no tokens"]],
+        [["on","On: each linked family may convert one failed challenge"],
+         ["off","Off: no tokens"]],
         "The only buff in the game, and it belongs to linked families alone.")}
       ${fSel("Danger mode", "settings.dangerMode", (D.settings || {}).dangerMode || "standard",
-        [["off","Off \u2014 no danger events"],["standard","Standard \u2014 near-misses and injuries"],
-         ["unsparing","Unsparing \u2014 the full severity"]])}
+        [["off","Off: no danger events"],["standard","Standard: near-misses and injuries"],
+         ["unsparing","Unsparing: the full severity"]])}
       <div class="ed-h">SPECIAL TREATMENT</div>
       <div class="ed-warn">These students never have to rush at the end. Blank a line to take that
         student's privilege away; the tardy elimination re-sorts itself.</div>
@@ -2915,7 +2915,7 @@ function edPane(){
       <div class="ed-h">WHY THEY CAME IN LAST</div>
       ${D.cast.map(c => fText(c.name, "tardyWhy." + c.id, D.tardyWhy[c.id] || "")).join("")}
       <div class="ed-h">DEBRIEF</div>
-      ${fArea("Kaia \u2014 debrief", "text.debriefKaia", t.debriefKaia, 3)}
+      ${fArea("Kaia: debrief", "text.debriefKaia", t.debriefKaia, 3)}
       <div class="ed-sub">Reflection questions</div>
       ${t.questions.map((q, i) => `<div class="ed-row" style="align-items:flex-end">
         ${fArea("Question " + (i + 1), "text.questions." + i, q, 2)}
@@ -2942,17 +2942,17 @@ function edPane(){
               ? fText("Only for (character id, optional)", base + i + ".forId", x.forId || "",
                   "Leave blank for a {NAME} template aimed at whoever is struggling.")
               : fSel("Aim", base + i + ".aim", x.aim || "any",
-                  [["any","Any student \u2014 purely absurd"],
-                   ["pointed","Pointed \u2014 lands on working-class and marginalized kids"]]))
+                  [["any","Any student: purely absurd"],
+                   ["pointed","Pointed: lands on working-class and marginalized kids"]]))
             + fArea("The charge", base + i + ".text", x.text, 2)
             + fText("Policy number", base + i + ".policy", x.policy)}
       </div>`).join("");
     return `<div class="ed-warn"><b>Before every vote, Mr. System files recommendations.</b> Grounded-sounding
         charges only ever target the already-struggling; absurd ones are template nonsense with bureaucratic
         confidence; withdrawn ones are filed against thriving students and struck through with an excuse.
-        The room can feel itself being steered \u2014 that is the mechanic.</div>
+        The room can feel itself being steered. That is the mechanic.</div>
       ${fSel("Recommendations", "settings.chargesEnabled", (D.settings || {}).chargesEnabled !== false ? "on" : "off",
-        [["on","On"],["off","Off \u2014 no memo before votes"]])}
+        [["on","On"],["off","Off: no memo before votes"]])}
       ${fNum("A withdrawn charge about every N votes", "settings.withdrawnEvery",
         (D.settings || {}).withdrawnEvery || 3, 1, 9, "One is guaranteed by the second vote either way.")}
       ${fArea("Memo introduction", "charges.memoIntro", C.memoIntro, 3)}
@@ -2970,7 +2970,7 @@ function edPane(){
   /* pack tab */
   return `<div class="ed-warn"><b>Where your edits live.</b> They are saved in this browser only, so what a
       student opens is never changed by what another student types. To move your version to another machine
-      &mdash; or hand it to a colleague &mdash; copy the JSON below, and paste it into the same box there.
+      (or hand it to a colleague) copy the JSON below, and paste it into the same box there.
       Saving it as a file only works on a link that isn't shared publicly.</div>
     <div class="ed-h">PASSCODE</div>
     ${fText("Passcode for this editor", "pass", ED.draft.pass,
@@ -3004,7 +3004,7 @@ function renderEd(){
           <input type="password" id="edPass" autocomplete="off"></label>
         <button class="btn" data-ed="unlock" style="margin-top:8px">UNLOCK</button>
         <p style="font-size:13px;color:${cssVar("--ink-3")};margin-top:18px">Default passcode:
-          <b>mrsystem</b> &mdash; change it on the Content pack tab.</p>
+          <b>mrsystem</b>. Change it on the Content pack tab.</p>
         ${ED.msg ? `<p style="color:${cssVar("--alarm")};font-weight:600;margin-top:14px">${esc(ED.msg)}</p>` : ""}
       </div></div></div></div>`;
     const f = document.getElementById("edPass"); if (f) f.focus();
@@ -3088,13 +3088,13 @@ async function edExport(){
   let dl = null;
   try { dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null; }
   catch (e) { dl = null; }
-  if (!dl){ ED.msg = "Downloads aren't available here \u2014 use Copy to clipboard instead."; return renderEd(); }
+  if (!dl){ ED.msg = "Downloads aren't available here. Use Copy to clipboard instead."; return renderEd(); }
   try {
     await dl.save({filename:"mr-system-content.json", data:json});
     ED.msg = "Exported.";
   } catch (e) {
     ED.msg = e && e.code === "declined" ? "Export cancelled."
-           : "Couldn't export \u2014 use Copy to clipboard instead.";
+           : "Couldn't export. Use Copy to clipboard instead.";
   }
   renderEd();
 }
@@ -3103,8 +3103,8 @@ async function edCopy(){
   try { await navigator.clipboard.writeText(json); ED.msg = "Copied to the clipboard."; }
   catch (e) {
     const box = document.getElementById("edJson");
-    if (box){ box.focus(); box.select(); ED.msg = "Selected the JSON \u2014 press Cmd/Ctrl+C."; return; }
-    ED.msg = "Couldn't copy \u2014 select the JSON below by hand.";
+    if (box){ box.focus(); box.select(); ED.msg = "Selected the JSON. Press Cmd/Ctrl+C."; return; }
+    ED.msg = "Couldn't copy. Select the JSON below by hand.";
   }
   renderEd();
 }
@@ -3118,7 +3118,7 @@ function edImport(){
     if (!ED.draft.dilemmas[1][ED.sel.dil]) ED.sel.dil = ED.draft.cast[0].id;
     if (!ED.draft.challenges[ED.sel.chal]) ED.sel.chal = Object.keys(ED.draft.challenges)[0];
     ED.msg = "Imported. Press Apply & save to switch the game over to it.";
-  } catch (e) { ED.msg = "That isn't valid JSON \u2014 check for a missing comma or bracket."; }
+  } catch (e) { ED.msg = "That isn't valid JSON. Check for a missing comma or bracket."; }
   renderEd();
 }
 
@@ -3193,7 +3193,7 @@ function choose(i){
       r.hist.push({round:S.round, k:c.k, st:v.st, say:v.say, danger:true});
       if (v.st === "out" && r.outRound === null){
         r.outRound = S.round;
-        r.why = "Round " + S.round + " \u2014 Mr. System struck: " + c.t;
+        r.why = "Round " + S.round + ", Mr. System struck: " + c.t;
       }
       S.dangerLog.push({id:ch.id, round:S.round, fatal:!!v.fatal});
       let dlink = "";
@@ -3218,7 +3218,7 @@ function resolve(ch, choice, out, chalNote, failed){
   r.hist.push({round:S.round, k:choice.k, st:out.st, say:out.say});
   if (out.st === "out" && r.outRound === null){
     r.outRound = S.round;
-    r.why = "Round " + S.round + " \u2014 chose: " + choice.t;
+    r.why = "Round " + S.round + ", chose: " + choice.t;
   }
   let strained = false;
   if (out.strain != null && ch.sibs && r.strained.indexOf(out.strain) < 0){
@@ -3239,7 +3239,7 @@ function finishChallenge(passed){
     : def.kind === "rapid"
       ? (passed ? `You handled ${t.step} of ${def.qs.length} before the clock ran out.`
                 : `You got through ${t.step} of ${def.qs.length}. The rest happened without you.`)
-      : (passed ? `Challenge passed.` : `Challenge failed \u2014 and notice what that does and doesn't cost you.`);
+      : (passed ? `Challenge passed.` : `Challenge failed. Notice what that does and doesn't cost you.`);
   S.chal = null;
   resolve(t.ch, c, out, note, !passed);
 }
@@ -3296,7 +3296,7 @@ function buildMemo(){
   const items = [];
   const struggling = aliveA.filter(c => S.roster[c.id].st === "strug"
     || S.roster[c.id].hist.some(h => h.st !== "in"));
-  /* 1. one grounded charge \u2014 only ever against the already-struggling */
+  /* 1. one grounded charge: only ever against the already-struggling */
   if (struggling.length){
     const bespoke = memoPick(CHARGES.patterns,
       x => x.forId && struggling.some(c => c.id === x.forId));
@@ -3321,7 +3321,7 @@ function buildMemo(){
     items.push({kind:"absurd", id:who.id, name:who.name, text:pick.text, policy:pick.policy});
     S.chargeUsed.add(pick.text);
   }
-  /* 3. the withdrawn charge \u2014 upper tier only, guaranteed by vote 2 */
+  /* 3. the withdrawn charge: upper tier only, guaranteed by vote 2 */
   const cadence = Math.max(1, SETTINGS.withdrawnEvery || 3);
   const withdrawnYet = S.memoLog.some(m => m.withdrawn);
   const fire = (S.voteN % cadence === 0) || (S.voteN === 2 && !withdrawnYet) || (rnd(cadence) === 0);
@@ -3373,7 +3373,7 @@ function runVote(){
   S.eliminated = tally[0].id;
   const r = S.roster[S.eliminated];
   r.st = "out"; r.outRound = S.round; r.why = "Voted out in Round " + S.round;
-  r.hist.push({round:S.round, k:"\u2014", st:"out", say:"Voted out by the surviving families."});
+  r.hist.push({round:S.round, k:"\u00b7", st:"out", say:"Voted out by the surviving families."});
   const lastMemo = S.memoLog[S.memoLog.length - 1];
   if (lastMemo) lastMemo.hit = lastMemo.flagged.indexOf(S.eliminated) >= 0;
   S.voteLink = linkLine(BY_ID[S.eliminated]);
@@ -3444,8 +3444,8 @@ function pickTardy(){
     (b.load + (S.roster[b.id].st === "strug" ? 1.5 : 0)) - (a.load + (S.roster[a.id].st === "strug" ? 1.5 : 0)))[0];
   S.tardy = last.id;
   const r = S.roster[last.id];
-  r.st = "out"; r.outRound = 4; r.why = "Final round \u2014 tardy";
-  r.hist.push({round:4, k:"\u2014", st:"out", say:"Last one in when the music stopped."});
+  r.st = "out"; r.outRound = 4; r.why = "Final round, tardy";
+  r.hist.push({round:4, k:"\u00b7", st:"out", say:"Last one in when the music stopped."});
   S.tardyLink = linkLine(last);
 }
 
@@ -3514,7 +3514,7 @@ document.addEventListener("click", e => {
     if (r.hist.length) r.hist[r.hist.length - 1] = Object.assign({}, r.hist[r.hist.length - 1],
       {st:"strug", say:say, lean:true});
     S.pending = Object.assign({}, S.pending, {st:"strug", say:say, failed:false, link:"", chalNote:
-      "LEAN ON THE LINK \u2014 spent. This family's one token is gone."});
+      "LEAN ON THE LINK: spent. This family's one token is gone."});
     render();
   }
   else if (a === "submithw"){ if (ALIVE().length === 0){ go("empty"); } else go("music"); }
@@ -3551,15 +3551,15 @@ document.addEventListener("keydown", e => {
    10. SCREEN INDEX  (jump straight to any screen, for review)
    ========================================================== */
 const INDEX = [
-  ["01","Title / intro","title"], ["02","Setup \u2014 class size","setup"],
+  ["01","Title / intro","title"], ["02","Setup: class size","setup"],
   ["03","Character assignment","cast"], ["04","Round intro","intro"],
-  ["05","Dilemma \u2014 David (easy)","dilemma","david"],
-  ["06","Dilemma \u2014 Marcus (impossible)","dilemma","marcus"],
-  ["07","Challenge \u2014 timed","challenge","marcus"],
-  ["08","Outcome \u2014 Lucia","outcome","lucia"],
+  ["05","Dilemma: David (easy)","dilemma","david"],
+  ["06","Dilemma: Marcus (impossible)","dilemma","marcus"],
+  ["07","Challenge: timed","challenge","marcus"],
+  ["08","Outcome: Lucia","outcome","lucia"],
   ["09","Round results","results"], ["10","Voting","vote"], ["11","Vote result","voteres"],
-  ["12","Final \u2014 homework","homework"], ["13","Final \u2014 musical chairs","music"],
-  ["14","Final \u2014 tardy","tardy"], ["15","Debrief","debrief"]
+  ["12","Final: homework","homework"], ["13","Final: musical chairs","music"],
+  ["14","Final: tardy","tardy"], ["15","Debrief","debrief"]
 ];
 function openIndex(){
   overlay.innerHTML = `<div class="idx" role="dialog" aria-modal="true" aria-label="Screen index">
@@ -3581,11 +3581,11 @@ function seedMid(round){
   S.crowd = Array.from({length:n}, (_,i) => ({tier:mix[i % mix.length], st:"in"}));
   S.round = round || 2;
   ["lucia","jayson"].forEach(id => { const r = S.roster[id]; r.st = "out"; r.outRound = 1;
-    r.why = "Round 1 \u2014 every option led out";
+    r.why = "Round 1, every option led out";
     const dd = DILEMMAS[1][id];
     const c = dd && (dd.choices.find(x => x.auto && x.auto.st === "out") || dd.choices[0]);
     const say = (c && (c.auto ? c.auto.say : (c.fail && c.fail.say))) || "Out before the first bell.";
-    r.hist.push({round:1, k: c ? c.k : "\u2014", st:"out", say:say}); });
+    r.hist.push({round:1, k: c ? c.k : "\u00b7", st:"out", say:say}); });
   const pick = (id, want) => {
     const cs = (DILEMMAS[1][id] || {choices:[]}).choices;
     for (const c of cs) if (c.auto && c.auto.st === want) return {k:c.k, say:c.auto.say};
@@ -3637,7 +3637,7 @@ function jumpTo(p, id){
     seedMid(3); S.round = 4;
     ["marcus","sophia"].forEach(x => { S.roster[x].st = "out"; S.roster[x].outRound = 2;
       S.roster[x].why = "Voted out in Round 2"; });
-    S.roster.carlos.st = "out"; S.roster.carlos.outRound = 3; S.roster.carlos.why = "Round 3 \u2014 chose the shift";
+    S.roster.carlos.st = "out"; S.roster.carlos.outRound = 3; S.roster.carlos.why = "Round 3, chose the shift";
     pickTardy();
     return go("debrief");
   }
@@ -3705,7 +3705,7 @@ edroot.addEventListener("click", e => {
     applyPack(mergePack(D));
     ED.draft = clone(PACK);
     ED.msg = savePack(PACK) ? "Saved. The game is running your version."
-                            : "Applied, but this browser blocked saving \u2014 export the file to keep it.";
+                            : "Applied, but this browser blocked saving. Export the file to keep it.";
     render(); return renderEd();
   }
   if (a === "revert"){ ED.draft = clone(PACK); ED.msg = "Changes discarded."; return renderEd(); }
@@ -3753,7 +3753,7 @@ edroot.addEventListener("click", e => {
   if (a === "deldanger"){ delete dil().choices[+b.dataset.i].danger; return renderEd(); }
   if (a === "addcharge"){
     const k = b.dataset.list, C = D.charges;
-    if (k === "pattern") C.patterns.push({text:"{NAME} \u2014 new charge.", policy:"0.0"});
+    if (k === "pattern") C.patterns.push({text:"{NAME}: new charge.", policy:"0.0"});
     else if (k === "absurd") C.absurd.push({text:"New charge.", policy:"0.0", aim:"any"});
     else C.withdrawn.push({charge:"New charge.", excuse:"Reclassified."});
     return renderEd(); }
